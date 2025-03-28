@@ -1,0 +1,23 @@
+public class NotCommonMultiple {
+    /*@ ensures (\result == false)  ==>  (\old(m) % \old(a) == 0); */
+    /*@ ensures (\result == false)  ==>  (\old(m) % \old(b) == 0); */
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}

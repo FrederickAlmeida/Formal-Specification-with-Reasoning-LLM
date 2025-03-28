@@ -1,0 +1,40 @@
+class PowerOfTwoLoop {
+    /*@ ensures (n >= 1)  ==>  (\old(n) % n == 0); */
+    /*@ ensures (\result == true)  ==>  (n == 1); */
+    /*@ ensures (\result == true)  ==>  (\old(n) is a power of 2); */
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    /*@ requires n >= 2; */
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(35);
+        isPowerOfTwo(45);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}

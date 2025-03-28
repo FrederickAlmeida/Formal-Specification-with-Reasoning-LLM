@@ -1,0 +1,1884 @@
+public class IsPrefix {
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ non_null
+    //@ non_null
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ non_null
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: error: Embedded block comment must terminate within the JML line comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:4: error: illegal start of type
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:6: error: ';' expected
+    //@ ensures \result;
+               ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:6: error: Token \result is not a type
+    //@ ensures \result;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:30: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:52: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:52: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:62: error: reached end of file while parsing
+9 errors
+
+public class IsPrefix {
+
+    //@ non_null
+    //@ non_null
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ non_null
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:29: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:51: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:51: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:61: error: reached end of file while parsing
+5 errors
+
+public class IsPrefix {
+
+    //@ non_null
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ non_null
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:28: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:50: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:50: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:60: error: reached end of file while parsing
+5 errors
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ non_null
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:49: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:49: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:59: error: reached end of file while parsing
+4 errors
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:48: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:48: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:58: error: reached end of file while parsing
+4 errors
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:47: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:47: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:57: error: reached end of file while parsing
+3 errors
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:45:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:45: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:29: verify: Precondition conjunct is false: i == 1
+    //@ requires i == 1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:44:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:44: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:30: verify: Precondition conjunct is false: i >= 1
+    //@ requires i >= 1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:43:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:43: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:30: verify: Precondition conjunct is false: i > 1
+    //@ requires i > 1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:42:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:30: verify: Precondition conjunct is false: i < 0
+    //@ requires i < 0;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:41:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i < 1
+    //@ requires i < 1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:40:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:31: verify: Precondition conjunct is false: i != 0
+    //@ requires i != 0;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:39:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:32: verify: Precondition conjunct is false: i > 0
+    //@ requires i > 0;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i >= 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:38:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i <= 1
+    //@ requires i <= 1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i >= 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:37:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i != 1
+    //@ requires i != 1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i >= 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:36:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i <= 0
+    //@ requires i <= 0;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i == 0;
+    //@ requires i >= 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:35:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i == 0
+    //@ requires i == 0;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i >= 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:34:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:28: verify: Precondition conjunct is false: i < -1
+    //@ requires i < -1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i >= 0;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:33:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:33: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i >= 0
+    //@ requires i >= 0;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:32:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i <= -1
+    //@ requires i <= -1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:31:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i == -1
+    //@ requires i == -1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:30:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i != -1
+    //@ requires i != -1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:29:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:28: verify: Precondition conjunct is false: i > -1
+    //@ requires i > -1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    //@ requires i >= -1;
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:28:) in method isPrefix
+            __Loop_Invariant_Dummy1(pat, txt, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:27: verify: Precondition conjunct is false: i >= -1
+    //@ requires i >= -1;
+                   ^
+3 verification failures
+
+public class IsPrefix {
+
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:3:) in method isPrefix
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:20:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> \result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:7:) in method isPrefix
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:19:
+    //@ ensures pat != null ==> \result;
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> \result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:10:) in method isPrefix
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    //@ ensures txt != null ==> \result;
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:16: verify: The prover cannot establish an assertion (ExceptionalPostcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:4:) in method isPrefix
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                                              ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:16:
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures !\result;
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:31: verify: The prover cannot establish an assertion (ExceptionalPostcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:25:) in method __HoudiniInvoker
+        isPrefix("", "ab");
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:25: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:31:
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:3:) in method isPrefix
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:20:
+    //@ ensures !\result;
+        ^
+4 verification failures
+
+public class IsPrefix {
+
+    //@ ensures !\result;
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:3:) in method isPrefix
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:20:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures pat != null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:5:) in method isPrefix
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:19:
+    //@ ensures pat != null ==> !\result;
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    //@ ensures txt != null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:7:) in method isPrefix
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:18:
+    //@ ensures txt != null ==> !\result;
+        ^
+2 verification failures
+
+public class IsPrefix {
+
+    //@ ensures pat == null ==> \result;
+    //@ ensures pat == null ==> !\result;
+    //@ ensures txt == null ==> \result;
+    //@ ensures txt == null ==> !\result;
+    public static boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        while(i < pat.length()) {
+            __Loop_Invariant_Dummy1(pat, txt, i);
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+    public static void __Loop_Invariant_Dummy1(String pat, String txt, int i){}
+
+    public static void __HoudiniInvoker() {
+        isPrefix("abcde", "abcdefg");
+        isPrefix("a", "abc");
+        isPrefix("", "");
+        isPrefix("a", "");
+        isPrefix("", "ab");
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsPrefix.java:7: verify: The prover cannot establish an assertion (InvariantExit: /home/max/Documents/JMLGPT/openjml/specs/java/lang/CharSequence.jml:30:) in method isPrefix: IsPrefix.isPrefix(java.lang.String,java.lang.String) (parameter txt)
+    public static boolean isPrefix (String pat, String txt) {
+                                                       ^
+/home/max/Documents/JMLGPT/openjml/specs/java/lang/CharSequence.jml:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPrefix.java:7:
+	//-RAC@ public invariant charArray != null; // FIXME - why this when there is a non_null declaration
+	               ^
+2 verification failures
+

@@ -1,0 +1,423 @@
+public class UniqueCharNested {
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ non_null
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result >= 0;
+    //@ ensures s != null ==> \result >= 0;
+    public static int uniqueChar(String s) {
+        for (int i = 0; i < s.length(); ++i) {
+            __Loop_Invariant_Dummy1(s, i);
+            int j = 0;
+            while(j < s.length()) {
+                __Loop_Invariant_Dummy2(s, i, j);
+                if(i != j && s.charAt(i) == s.charAt(j))
+                    break;
+                j++;
+            }
+            if(j == s.length())
+                return i;
+        }
+        return -1;
+    }
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int i) {}
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    public static void __Loop_Invariant_Dummy2(String s, int i, int j) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        uniqueChar("");
+        uniqueChar("a");
+        uniqueChar("aabb");
+        uniqueChar("ab");
+        uniqueChar("qabababc");
+        uniqueChar("dagvwhfejrk");
+        uniqueChar("dagvwhfejrkv");
+        uniqueChar("eeeeer");
+        uniqueChar("114514");
+    }
+    
+}
+
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:3: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:3: error: Embedded block comment must terminate within the JML line comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:4: error: illegal start of type
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:5: error: ';' expected
+    //@ ensures \result < 1;
+               ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:5: error: Token \result is not a type
+    //@ ensures \result < 1;
+                ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:5: error: ';' expected
+    //@ ensures \result < 1;
+                       ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:5: error: <identifier> expected
+    //@ ensures \result < 1;
+                         ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:5: error: illegal start of type
+    //@ ensures \result < 1;
+                          ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:42: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:63: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:108: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:108: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:123: error: reached end of file while parsing
+13 errors
+
+public class UniqueCharNested {
+
+    //@ non_null
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result >= 0;
+    //@ ensures s != null ==> \result >= 0;
+    public static int uniqueChar(String s) {
+        for (int i = 0; i < s.length(); ++i) {
+            __Loop_Invariant_Dummy1(s, i);
+            int j = 0;
+            while(j < s.length()) {
+                __Loop_Invariant_Dummy2(s, i, j);
+                if(i != j && s.charAt(i) == s.charAt(j))
+                    break;
+                j++;
+            }
+            if(j == s.length())
+                return i;
+        }
+        return -1;
+    }
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int i) {}
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    public static void __Loop_Invariant_Dummy2(String s, int i, int j) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        uniqueChar("");
+        uniqueChar("a");
+        uniqueChar("aabb");
+        uniqueChar("ab");
+        uniqueChar("qabababc");
+        uniqueChar("dagvwhfejrk");
+        uniqueChar("dagvwhfejrkv");
+        uniqueChar("eeeeer");
+        uniqueChar("114514");
+    }
+    
+}
+
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:3: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:41: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:62: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:107: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:107: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/UniqueCharNested.java:122: error: reached end of file while parsing
+6 errors
+
+public class UniqueCharNested {
+
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result >= 0;
+    //@ ensures s != null ==> \result >= 0;
+    public static int uniqueChar(String s) {
+        for (int i = 0; i < s.length(); ++i) {
+            __Loop_Invariant_Dummy1(s, i);
+            int j = 0;
+            while(j < s.length()) {
+                __Loop_Invariant_Dummy2(s, i, j);
+                if(i != j && s.charAt(i) == s.charAt(j))
+                    break;
+                j++;
+            }
+            if(j == s.length())
+                return i;
+        }
+        return -1;
+    }
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int i) {}
+
+    //@ non_null
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    public static void __Loop_Invariant_Dummy2(String s, int i, int j) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        uniqueChar("");
+        uniqueChar("a");
+        uniqueChar("aabb");
+        uniqueChar("ab");
+        uniqueChar("qabababc");
+        uniqueChar("dagvwhfejrk");
+        uniqueChar("dagvwhfejrkv");
+        uniqueChar("eeeeer");
+        uniqueChar("114514");
+    }
+    
+}
+

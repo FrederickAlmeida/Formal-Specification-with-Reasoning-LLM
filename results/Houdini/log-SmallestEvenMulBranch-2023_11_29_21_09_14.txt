@@ -1,0 +1,2431 @@
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:54: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:45:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:45: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:54:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:53: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:44:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:44: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:53:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:5: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:52: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:43:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:43: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:52:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:5: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:51: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:42:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:51:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:5: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:50: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:41:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:50:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:7: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:40:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:49:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:39:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:48:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:38:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:47:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:37:) in method main
+        smallestEvenMultiple(0);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:46:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:38: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:13:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:38:
+    //@ ensures \result == 1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:37: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:37:
+    //@ ensures \result >= 1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:36: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:36:
+    //@ ensures \result > 1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:35: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:35:
+    //@ ensures \result < 0;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:34: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:16:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:34:
+    //@ ensures \result != 0;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:33: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:33:
+    //@ ensures \result > 0;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:32: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:32:
+    //@ ensures \result < -1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:31:
+    //@ ensures \result <= -1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:30: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:30:
+    //@ ensures \result == -1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:20:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:29:
+    //@ ensures \result < n;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:28: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:22:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:28:
+    //@ ensures \result != n;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:27: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:27:
+    //@ ensures \result > n;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:24:) in method main
+        smallestEvenMultiple(1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:34:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:2: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23:) in method main
+        smallestEvenMultiple(1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:33:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:3: verify: Precondition conjunct is false: n != 1
+    //@ requires n != 1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:32: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:22:) in method main
+        smallestEvenMultiple(1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:32:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:3: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:31: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:21:) in method main
+        smallestEvenMultiple(1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:31:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:3: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:24: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:7:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:24:
+    //@ ensures \result < 1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:7:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23:
+    //@ ensures \result <= 1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:22: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:22:
+    //@ ensures \result <= 0;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:21: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:21:
+    //@ ensures \result == 0;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:12:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:20:
+    //@ ensures \result <= n;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:12:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:19:
+    //@ ensures \result == n;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14:) in method main
+        smallestEvenMultiple(2);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:25:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:13:) in method main
+        smallestEvenMultiple(-1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:25:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:2: verify: Precondition conjunct is false: n >= 0
+    //@ requires n >= 0;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:12:) in method main
+        smallestEvenMultiple(-1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:24:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:2: verify: Precondition conjunct is false: n != -1
+    //@ requires n != -1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:11:) in method main
+        smallestEvenMultiple(-1);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:3: verify: Precondition conjunct is false: n > -1
+    //@ requires n > -1;
+                   ^
+3 verification failures
+
+class SmallestEvenMulBranch {
+    //@ requires n >= -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:10:) in method main
+        smallestEvenMultiple(-2);
+                            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:23:
+    public static int smallestEvenMultiple(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:2: verify: Precondition conjunct is false: n >= -1
+    //@ requires n >= -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:14:
+    //@ ensures \result >= 0;
+        ^
+5 verification failures
+
+class SmallestEvenMulBranch {
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:11: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:3:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:11:
+    //@ ensures \result >= 0;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ ensures \result != 1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:10: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:10:
+    //@ ensures \result >= -1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ ensures \result != 1;
+    //@ ensures \result != -1;
+    //@ ensures \result > -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:9: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4:) in method smallestEvenMultiple
+            return n;
+            ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:9:
+    //@ ensures \result > -1;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ ensures \result != 1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:10: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4:) in method smallestEvenMultiple
+        return 2 * n;
+        ^
+/home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/SmallestEvenMulBranch.java:10:
+    //@ ensures \result >= n;
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    //@ ensures \result != 1;
+    //@ ensures \result != -1;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        smallestEvenMultiple(0);
+        smallestEvenMultiple(1);
+        smallestEvenMultiple(2);
+        smallestEvenMultiple(-1);
+        smallestEvenMultiple(-2);
+        smallestEvenMultiple(-3);
+        smallestEvenMultiple(-4);
+        smallestEvenMultiple(4);
+        smallestEvenMultiple(16);
+        smallestEvenMultiple(25);
+        smallestEvenMultiple(48);
+        smallestEvenMultiple(12);
+        smallestEvenMultiple(24);
+        smallestEvenMultiple(64);
+    }
+}
+
+

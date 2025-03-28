@@ -1,0 +1,1752 @@
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:51: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:45:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:45: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:51:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:4: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:50: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:44:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:44: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:50:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:5: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:43:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:43: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:49:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:5: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:42:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:48:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:5: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:41:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:47:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:7: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:40:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:46:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:8: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:39:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:45:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:38:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:44:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:8: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:37:) in method main
+        numberOfCuts(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:43:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:8: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:37: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:13:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:37:
+    //@ ensures \result == 1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:36: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:36:
+    //@ ensures \result >= 1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:35: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:35:
+    //@ ensures \result > 1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:34: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:34:
+    //@ ensures \result < 0;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:33: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:16:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:33:
+    //@ ensures \result != 0;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:32: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:32:
+    //@ ensures \result > 0;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:31: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:31:
+    //@ ensures \result < -1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:30: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:30:
+    //@ ensures \result <= -1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:29:
+    //@ ensures \result == -1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:28: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:20:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:28:
+    //@ ensures \result < n;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:27: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:22:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:27:
+    //@ ensures \result != n;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:26: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:23:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:26:
+    //@ ensures \result > n;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:31: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:24:) in method main
+        numberOfCuts(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:31:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:2: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:23:) in method main
+        numberOfCuts(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:30:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:3: verify: Precondition conjunct is false: n != 1
+    //@ requires n != 1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n <= 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:22:) in method main
+        numberOfCuts(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:29:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:3: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n <= 1;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:21:) in method main
+        numberOfCuts(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:28:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:3: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:21: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:21:
+    //@ ensures \result == n;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result >= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:20:
+    //@ ensures \result >= n;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:18:) in method main
+        numberOfCuts(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:26:
+    public static int numberOfCuts(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:18:
+    //@ ensures \result < 1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:17:
+    //@ ensures \result <= 1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result != 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:16:
+    //@ ensures \result != 1;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:15:
+    //@ ensures \result <= 0;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result == 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6:) in method numberOfCuts
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+        ^
+/home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NumberOfCutsSeq.java:14:
+    //@ ensures \result == 0;
+        ^
+2 verification failures
+
+class NumberOfCutsSeq {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int numberOfCuts(int n) {
+        return ((n == 1) ? 0 : ((n % 2 == 0) ? (n / 2) : n));
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        numberOfCuts(0);
+        numberOfCuts(1);
+        numberOfCuts(2);
+        numberOfCuts(3);
+        numberOfCuts(8);
+    }
+}
+
+
+

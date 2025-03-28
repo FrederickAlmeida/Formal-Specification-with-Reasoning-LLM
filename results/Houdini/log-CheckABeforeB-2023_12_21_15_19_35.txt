@@ -1,0 +1,921 @@
+class CheckABeforeB {
+    //@ non_null
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < chars.length && chars[i] == 'a') {
+            __Loop_Invariant_Dummy1(s, chars, i);
+            i++;
+        }
+        __Loop_Invariant_Dummy1(s, chars, i);
+	    int j = i;
+        while (j < chars.length && chars[j] == 'b') {
+            __Loop_Invariant_Dummy2(s, chars, i, j);
+            j++;
+        }
+        __Loop_Invariant_Dummy2(s, chars, i, j);
+        return j == chars.length;
+    }
+
+    //@ non_null
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    public static void __Loop_Invariant_Dummy1(String s, char[] c, int i) {}
+
+    //@ non_null
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    //@ requires j < c.length;
+    //@ requires j <= c.length;
+    //@ requires j == c.length;
+    //@ requires j != c.length;
+    //@ requires j >= c.length;
+    //@ requires j > c.length;
+    public static void __Loop_Invariant_Dummy2(String s, char[] c, int i, int j) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        checkString("a");
+        checkString("b");
+        checkString("aabb");
+        checkString("abab");
+        checkString("");
+        checkString("abbbbaaaabbb");
+        checkString("aaaaaaaaaaaabbbbbbbbbb");
+        
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:2: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:26: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:66: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+3 errors
+
+class CheckABeforeB {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < chars.length && chars[i] == 'a') {
+            __Loop_Invariant_Dummy1(s, chars, i);
+            i++;
+        }
+        __Loop_Invariant_Dummy1(s, chars, i);
+	    int j = i;
+        while (j < chars.length && chars[j] == 'b') {
+            __Loop_Invariant_Dummy2(s, chars, i, j);
+            j++;
+        }
+        __Loop_Invariant_Dummy2(s, chars, i, j);
+        return j == chars.length;
+    }
+
+    //@ non_null
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    public static void __Loop_Invariant_Dummy1(String s, char[] c, int i) {}
+
+    //@ non_null
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    //@ requires j < c.length;
+    //@ requires j <= c.length;
+    //@ requires j == c.length;
+    //@ requires j != c.length;
+    //@ requires j >= c.length;
+    //@ requires j > c.length;
+    public static void __Loop_Invariant_Dummy2(String s, char[] c, int i, int j) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        checkString("a");
+        checkString("b");
+        checkString("aabb");
+        checkString("abab");
+        checkString("");
+        checkString("abbbbaaaabbb");
+        checkString("aaaaaaaaaaaabbbbbbbbbb");
+        
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:65: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+2 errors
+
+class CheckABeforeB {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < chars.length && chars[i] == 'a') {
+            __Loop_Invariant_Dummy1(s, chars, i);
+            i++;
+        }
+        __Loop_Invariant_Dummy1(s, chars, i);
+	    int j = i;
+        while (j < chars.length && chars[j] == 'b') {
+            __Loop_Invariant_Dummy2(s, chars, i, j);
+            j++;
+        }
+        __Loop_Invariant_Dummy2(s, chars, i, j);
+        return j == chars.length;
+    }
+
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    public static void __Loop_Invariant_Dummy1(String s, char[] c, int i) {}
+
+    //@ non_null
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    //@ requires j < c.length;
+    //@ requires j <= c.length;
+    //@ requires j == c.length;
+    //@ requires j != c.length;
+    //@ requires j >= c.length;
+    //@ requires j > c.length;
+    public static void __Loop_Invariant_Dummy2(String s, char[] c, int i, int j) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        checkString("a");
+        checkString("b");
+        checkString("aabb");
+        checkString("abab");
+        checkString("");
+        checkString("abbbbaaaabbb");
+        checkString("aaaaaaaaaaaabbbbbbbbbb");
+        
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:64: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+2 errors
+
+class CheckABeforeB {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < chars.length && chars[i] == 'a') {
+            __Loop_Invariant_Dummy1(s, chars, i);
+            i++;
+        }
+        __Loop_Invariant_Dummy1(s, chars, i);
+	    int j = i;
+        while (j < chars.length && chars[j] == 'b') {
+            __Loop_Invariant_Dummy2(s, chars, i, j);
+            j++;
+        }
+        __Loop_Invariant_Dummy2(s, chars, i, j);
+        return j == chars.length;
+    }
+
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    public static void __Loop_Invariant_Dummy1(String s, char[] c, int i) {}
+
+    //@ non_null
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    //@ requires j < c.length;
+    //@ requires j <= c.length;
+    //@ requires j == c.length;
+    //@ requires j != c.length;
+    //@ requires j >= c.length;
+    //@ requires j > c.length;
+    public static void __Loop_Invariant_Dummy2(String s, char[] c, int i, int j) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        checkString("a");
+        checkString("b");
+        checkString("aabb");
+        checkString("abab");
+        checkString("");
+        checkString("abbbbaaaabbb");
+        checkString("aaaaaaaaaaaabbbbbbbbbb");
+        
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:63: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+class CheckABeforeB {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < chars.length && chars[i] == 'a') {
+            __Loop_Invariant_Dummy1(s, chars, i);
+            i++;
+        }
+        __Loop_Invariant_Dummy1(s, chars, i);
+	    int j = i;
+        while (j < chars.length && chars[j] == 'b') {
+            __Loop_Invariant_Dummy2(s, chars, i, j);
+            j++;
+        }
+        __Loop_Invariant_Dummy2(s, chars, i, j);
+        return j == chars.length;
+    }
+
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    public static void __Loop_Invariant_Dummy1(String s, char[] c, int i) {}
+
+    //@ non_null
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    //@ requires j < c.length;
+    //@ requires j <= c.length;
+    //@ requires j == c.length;
+    //@ requires j != c.length;
+    //@ requires j >= c.length;
+    //@ requires j > c.length;
+    public static void __Loop_Invariant_Dummy2(String s, char[] c, int i, int j) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        checkString("a");
+        checkString("b");
+        checkString("aabb");
+        checkString("abab");
+        checkString("");
+        checkString("abbbbaaaabbb");
+        checkString("aaaaaaaaaaaabbbbbbbbbb");
+        
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:63: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+class CheckABeforeB {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        while (i < chars.length && chars[i] == 'a') {
+            __Loop_Invariant_Dummy1(s, chars, i);
+            i++;
+        }
+        __Loop_Invariant_Dummy1(s, chars, i);
+	    int j = i;
+        while (j < chars.length && chars[j] == 'b') {
+            __Loop_Invariant_Dummy2(s, chars, i, j);
+            j++;
+        }
+        __Loop_Invariant_Dummy2(s, chars, i, j);
+        return j == chars.length;
+    }
+
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    public static void __Loop_Invariant_Dummy1(String s, char[] c, int i) {}
+
+    //@ requires 1 < c.length;
+    //@ requires 1 <= c.length;
+    //@ requires 1 == c.length;
+    //@ requires 1 != c.length;
+    //@ requires 1 >= c.length;
+    //@ requires 1 > c.length;
+    //@ requires -1 < c.length;
+    //@ requires -1 <= c.length;
+    //@ requires -1 == c.length;
+    //@ requires -1 != c.length;
+    //@ requires -1 >= c.length;
+    //@ requires -1 > c.length;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < c.length;
+    //@ requires i <= c.length;
+    //@ requires i == c.length;
+    //@ requires i != c.length;
+    //@ requires i >= c.length;
+    //@ requires i > c.length;
+    //@ requires j < i;
+    //@ requires j <= i;
+    //@ requires j == i;
+    //@ requires j != i;
+    //@ requires j >= i;
+    //@ requires j > i;
+    //@ requires j < 1;
+    //@ requires j <= 1;
+    //@ requires j == 1;
+    //@ requires j != 1;
+    //@ requires j >= 1;
+    //@ requires j > 1;
+    //@ requires j < 0;
+    //@ requires j <= 0;
+    //@ requires j == 0;
+    //@ requires j != 0;
+    //@ requires j >= 0;
+    //@ requires j > 0;
+    //@ requires j < -1;
+    //@ requires j <= -1;
+    //@ requires j == -1;
+    //@ requires j != -1;
+    //@ requires j >= -1;
+    //@ requires j > -1;
+    //@ requires j < c.length;
+    //@ requires j <= c.length;
+    //@ requires j == c.length;
+    //@ requires j != c.length;
+    //@ requires j >= c.length;
+    //@ requires j > c.length;
+    public static void __Loop_Invariant_Dummy2(String s, char[] c, int i, int j) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        checkString("a");
+        checkString("b");
+        checkString("aabb");
+        checkString("abab");
+        checkString("");
+        checkString("abbbbaaaabbb");
+        checkString("aaaaaaaaaaaabbbbbbbbbb");
+        
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/CheckABeforeB.java:11: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method checkString
+        while (i < chars.length && chars[i] == 'a') {
+                                        ^
+1 verification failure
+

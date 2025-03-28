@@ -1,0 +1,5611 @@
+public class IsCommonMultiple {
+    //@ requires a < 1;
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a != 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:88: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:82:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:82: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:88:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:2: verify: Precondition conjunct is false: a < 1
+    //@ requires a < 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a != 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:87: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:81:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:81: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:87:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: a != 1
+    //@ requires a != 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:86: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:80:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:80: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:86:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Precondition conjunct is false: a > 1
+    //@ requires a > 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:85: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:79:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:79: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:85:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Precondition conjunct is false: a < 0
+    //@ requires a < 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:84: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:78:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:78: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:84:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Precondition conjunct is false: a <= 0
+    //@ requires a <= 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:83: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:77:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:77: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:83:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Precondition conjunct is false: a == 0
+    //@ requires a == 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:82: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:76:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:76: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:82:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8: verify: Precondition conjunct is false: a < -1
+    //@ requires a < -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:81: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:75:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:75: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:81:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8: verify: Precondition conjunct is false: a <= -1
+    //@ requires a <= -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:80: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:74:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:74: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:80:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8: verify: Precondition conjunct is false: a == -1
+    //@ requires a == -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:79: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:73:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:73: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:79:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:11: verify: Precondition conjunct is false: b < a
+    //@ requires b < a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:78: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:72:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:72: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:78:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:13: verify: Precondition conjunct is false: b != a
+    //@ requires b != a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:77: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:71:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:71: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:77:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14: verify: Precondition conjunct is false: b > a
+    //@ requires b > a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:76: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:70:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:70: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:76:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14: verify: Precondition conjunct is false: b < 1
+    //@ requires b < 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:75: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:69:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:69: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:75:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:16: verify: Precondition conjunct is false: b != 1
+    //@ requires b != 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:74: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:68:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:68: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:74:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: Precondition conjunct is false: b > 1
+    //@ requires b > 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:73: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:67:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:67: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:73:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: Precondition conjunct is false: b < 0
+    //@ requires b < 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:72: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:66:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:66: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:72:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: Precondition conjunct is false: b <= 0
+    //@ requires b <= 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:71: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:65:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:65: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:71:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: Precondition conjunct is false: b == 0
+    //@ requires b == 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:70: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:64:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:64: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:70:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: Precondition conjunct is false: b < -1
+    //@ requires b < -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:69: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:63:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:63: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:69:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: Precondition conjunct is false: b <= -1
+    //@ requires b <= -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:68: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:62:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:62: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:68:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: Precondition conjunct is false: b == -1
+    //@ requires b == -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:67: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:61:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:61: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:67:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:23: verify: Precondition conjunct is false: m < b
+    //@ requires m < b;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:66: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:60:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:60: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:66:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:25: verify: Precondition conjunct is false: m != b
+    //@ requires m != b;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:65: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:59:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:59: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:65:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:26: verify: Precondition conjunct is false: m > b
+    //@ requires m > b;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:64: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:58:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:58: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:64:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:26: verify: Precondition conjunct is false: m < a
+    //@ requires m < a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:63: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:57:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:57: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:63:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:28: verify: Precondition conjunct is false: m != a
+    //@ requires m != a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:62: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:56:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:56: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:62:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:29: verify: Precondition conjunct is false: m > a
+    //@ requires m > a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:61: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:55:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:55: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:61:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:29: verify: Precondition conjunct is false: m < 1
+    //@ requires m < 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:60: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:54:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:54: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:60:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:31: verify: Precondition conjunct is false: m != 1
+    //@ requires m != 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:59: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:53:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:53: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:59:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: Precondition conjunct is false: m > 1
+    //@ requires m > 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:58: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:52:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:52: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:58:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: Precondition conjunct is false: m < 0
+    //@ requires m < 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:57: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:51:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:51: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:57:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: Precondition conjunct is false: m <= 0
+    //@ requires m <= 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:56: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:50:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:50: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:56:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: Precondition conjunct is false: m == 0
+    //@ requires m == 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:55: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:49:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:49: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:55:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35: verify: Precondition conjunct is false: m < -1
+    //@ requires m < -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:54: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:48:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:48: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:54:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35: verify: Precondition conjunct is false: m <= -1
+    //@ requires m <= -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:53: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:47:) in method main
+        isCommonMultiple(1, 1, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:47: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:53:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35: verify: Precondition conjunct is false: m == -1
+    //@ requires m == -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:47: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:39:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:47:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:46: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:40:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:46:
+    //@ ensures a >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:45: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:41:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:45:
+    //@ ensures b >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:44: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:42:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:44:
+    //@ ensures m >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:42:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:49:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:3: verify: Precondition conjunct is false: a == 1
+    //@ requires a == 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:41:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:48:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:3: verify: Precondition conjunct is false: a >= 1
+    //@ requires a >= 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:40:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:47:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: a >= 0
+    //@ requires a >= 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:39:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:46:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: a > 0
+    //@ requires a > 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:38:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:45:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: a != -1
+    //@ requires a != -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:37:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:44:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Precondition conjunct is false: a > -1
+    //@ requires a > -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:36:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:43:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: b == 1
+    //@ requires b == 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:42:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: b >= 1
+    //@ requires b >= 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:34:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:41:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:10: verify: Precondition conjunct is false: b >= 0
+    //@ requires b >= 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:33:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:33: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:40:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:10: verify: Precondition conjunct is false: b > 0
+    //@ requires b > 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:39: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:39:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:10: verify: Precondition conjunct is false: b != -1
+    //@ requires b != -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:38: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:31:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:38:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:11: verify: Precondition conjunct is false: b > -1
+    //@ requires b > -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:37: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:30:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:37:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18: verify: Precondition conjunct is false: m == 1
+    //@ requires m == 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:36: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:29:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:36:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18: verify: Precondition conjunct is false: m >= 1
+    //@ requires m >= 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:28:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:35:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: Precondition conjunct is false: m >= 0
+    //@ requires m >= 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:27:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:27: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:34:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: Precondition conjunct is false: m > 0
+    //@ requires m > 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:26:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:26: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:33:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: Precondition conjunct is false: m != -1
+    //@ requires m != -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:25:) in method main
+        isCommonMultiple(-1, -1, -1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:25: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: Precondition conjunct is false: m > -1
+    //@ requires m > -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:24:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:32:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:2: verify: Precondition conjunct is false: a <= 1
+    //@ requires a <= 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:31: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:23:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:31:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: b <= a
+    //@ requires b <= a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:22:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:30:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: b == a
+    //@ requires b == a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:21:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:29:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Precondition conjunct is false: b <= 1
+    //@ requires b <= 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:28:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8: verify: Precondition conjunct is false: m == b
+    //@ requires m == b;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:27: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:27:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8: verify: Precondition conjunct is false: m >= b
+    //@ requires m >= b;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures \result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19:
+    //@ ensures \result;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:26:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m == a
+    //@ requires m == a;
+                   ^
+5 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:15:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18:
+    //@ ensures b >= 0 ==> \result;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:25:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m == a
+    //@ requires m == a;
+                   ^
+5 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17:
+    //@ ensures a >= 0 ==> \result;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:16:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:24:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m == a
+    //@ requires m == a;
+                   ^
+5 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    //@ ensures m >= 0 ==> \result;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14:) in method isCommonMultiple
+        return m % a == 0 && m % b == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:16:
+    //@ ensures m >= 0 ==> \result;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:15:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:23:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m == a
+    //@ requires m == a;
+                   ^
+5 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:22:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m == a
+    //@ requires m == a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:21: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:13:) in method main
+        isCommonMultiple(2, 3, 1);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:21:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m >= a
+    //@ requires m >= a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:21: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:12:) in method main
+        isCommonMultiple(6, 1, 0);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:21:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: b >= a
+    //@ requires b >= a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:11:) in method main
+        isCommonMultiple(6, 1, 0);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Precondition conjunct is false: m != 0
+    //@ requires m != 0;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:10:) in method main
+        isCommonMultiple(2, 114, 228);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:20:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:6: verify: Precondition conjunct is false: m <= b
+    //@ requires m <= b;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9:) in method main
+        isCommonMultiple(2, 114, 228);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:6: verify: Precondition conjunct is false: m <= a
+    //@ requires m <= a;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8:) in method main
+        isCommonMultiple(2, 114, 228);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:6: verify: Precondition conjunct is false: m <= 1
+    //@ requires m <= 1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:7:) in method main
+        isCommonMultiple(-5, -6, -30);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:19:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:3: verify: Precondition conjunct is false: a >= -1
+    //@ requires a >= -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:6:) in method main
+        isCommonMultiple(-5, -6, -30);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:18:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: b >= -1
+    //@ requires b >= -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ requires m >= -1;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5:) in method main
+        isCommonMultiple(-5, -6, -30);
+                        ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:17:
+    public static boolean isCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsCommonMultiple.java:4: verify: Precondition conjunct is false: m >= -1
+    //@ requires m >= -1;
+                   ^
+3 verification failures
+
+public class IsCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    public static boolean isCommonMultiple (int a, int b, int m) {
+        return m % a == 0 && m % b == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isCommonMultiple(1, 1, 1);
+        isCommonMultiple(-1, -1, -1);
+        isCommonMultiple(2, 3, 1);
+        isCommonMultiple(6, 1, 0);
+        isCommonMultiple(2, 114, 228);
+        isCommonMultiple(3, 5, 7);
+        isCommonMultiple(-5, -6, -30);
+        isCommonMultiple(8, 9, 46);
+        isCommonMultiple(7, 10, 49);
+    }
+}
+
+

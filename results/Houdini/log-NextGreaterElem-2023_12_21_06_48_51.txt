@@ -1,0 +1,610 @@
+class NextGreaterElem {
+    //@ non_null
+    //@ requires 5 < nums1.length;
+    //@ requires 5 <= nums1.length;
+    //@ requires 5 == nums1.length;
+    //@ requires 5 != nums1.length;
+    //@ requires 5 >= nums1.length;
+    //@ requires 5 > nums1.length;
+    //@ requires 4 < nums1.length;
+    //@ requires 4 <= nums1.length;
+    //@ requires 4 == nums1.length;
+    //@ requires 4 != nums1.length;
+    //@ requires 4 >= nums1.length;
+    //@ requires 4 > nums1.length;
+    //@ requires 3 < nums1.length;
+    //@ requires 3 <= nums1.length;
+    //@ requires 3 == nums1.length;
+    //@ requires 3 != nums1.length;
+    //@ requires 3 >= nums1.length;
+    //@ requires 3 > nums1.length;
+    //@ requires 2 < nums1.length;
+    //@ requires 2 <= nums1.length;
+    //@ requires 2 == nums1.length;
+    //@ requires 2 != nums1.length;
+    //@ requires 2 >= nums1.length;
+    //@ requires 2 > nums1.length;
+    //@ requires 1 < nums1.length;
+    //@ requires 1 <= nums1.length;
+    //@ requires 1 == nums1.length;
+    //@ requires 1 != nums1.length;
+    //@ requires 1 >= nums1.length;
+    //@ requires 1 > nums1.length;
+    //@ requires -1 < nums1.length;
+    //@ requires -1 <= nums1.length;
+    //@ requires -1 == nums1.length;
+    //@ requires -1 != nums1.length;
+    //@ requires -1 >= nums1.length;
+    //@ requires -1 > nums1.length;
+    //@ non_null
+    //@ requires 5 < nums2.length;
+    //@ requires 5 <= nums2.length;
+    //@ requires 5 == nums2.length;
+    //@ requires 5 != nums2.length;
+    //@ requires 5 >= nums2.length;
+    //@ requires 5 > nums2.length;
+    //@ requires 4 < nums2.length;
+    //@ requires 4 <= nums2.length;
+    //@ requires 4 == nums2.length;
+    //@ requires 4 != nums2.length;
+    //@ requires 4 >= nums2.length;
+    //@ requires 4 > nums2.length;
+    //@ requires 3 < nums2.length;
+    //@ requires 3 <= nums2.length;
+    //@ requires 3 == nums2.length;
+    //@ requires 3 != nums2.length;
+    //@ requires 3 >= nums2.length;
+    //@ requires 3 > nums2.length;
+    //@ requires 2 < nums2.length;
+    //@ requires 2 <= nums2.length;
+    //@ requires 2 == nums2.length;
+    //@ requires 2 != nums2.length;
+    //@ requires 2 >= nums2.length;
+    //@ requires 2 > nums2.length;
+    //@ requires 1 < nums2.length;
+    //@ requires 1 <= nums2.length;
+    //@ requires 1 == nums2.length;
+    //@ requires 1 != nums2.length;
+    //@ requires 1 >= nums2.length;
+    //@ requires 1 > nums2.length;
+    //@ requires -1 < nums2.length;
+    //@ requires -1 <= nums2.length;
+    //@ requires -1 == nums2.length;
+    //@ requires -1 != nums2.length;
+    //@ requires -1 >= nums2.length;
+    //@ requires -1 > nums2.length;
+    //@ requires nums1.length < nums2.length;
+    //@ requires nums1.length <= nums2.length;
+    //@ requires nums1.length == nums2.length;
+    //@ requires nums1.length != nums2.length;
+    //@ requires nums1.length >= nums2.length;
+    //@ requires nums1.length > nums2.length;
+    //@ ensures \result != null;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures nums2.length < \result.length;
+    //@ ensures nums2.length <= \result.length;
+    //@ ensures nums2.length == \result.length;
+    //@ ensures nums2.length != \result.length;
+    //@ ensures nums2.length >= \result.length;
+    //@ ensures nums2.length > \result.length;
+    //@ ensures nums1.length < \result.length;
+    //@ ensures nums1.length <= \result.length;
+    //@ ensures nums1.length == \result.length;
+    //@ ensures nums1.length != \result.length;
+    //@ ensures nums1.length >= \result.length;
+    //@ ensures nums1.length > \result.length;
+    //@ ensures 5 < \result.length;
+    //@ ensures 5 <= \result.length;
+    //@ ensures 5 == \result.length;
+    //@ ensures 5 != \result.length;
+    //@ ensures 5 >= \result.length;
+    //@ ensures 5 > \result.length;
+    //@ ensures 4 < \result.length;
+    //@ ensures 4 <= \result.length;
+    //@ ensures 4 == \result.length;
+    //@ ensures 4 != \result.length;
+    //@ ensures 4 >= \result.length;
+    //@ ensures 4 > \result.length;
+    //@ ensures 3 < \result.length;
+    //@ ensures 3 <= \result.length;
+    //@ ensures 3 == \result.length;
+    //@ ensures 3 != \result.length;
+    //@ ensures 3 >= \result.length;
+    //@ ensures 3 > \result.length;
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures \fresh(\result);
+    //@ ensures nums1 == null ==> \result != null;
+    //@ ensures nums1 != null ==> \result != null;
+    //@ ensures nums2 == null ==> \result != null;
+    //@ ensures nums2 != null ==> \result != null;
+    public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[] a = {};
+        int[] b = {};
+        nextGreaterElement(a, b);
+        a = new int[]{0};
+        b = new int[]{0};
+        nextGreaterElement(a, b);
+        a = new int[]{0};
+        b = new int[]{0, 1};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1};
+        b = new int[]{0, 1};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1};
+        b = new int[]{0, 1, 2};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{0, 1, 2};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{0, 1, 2, 6};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{114, 1, 2, 0};
+        nextGreaterElement(a, b);
+        a = new int[]{2, 1, 114, 0};
+        b = new int[]{114, 1919, 2, 1, 0};
+        nextGreaterElement(a, b);
+        
+
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NextGreaterElem.java:2: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/NextGreaterElem.java:39: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+2 errors
+
+class NextGreaterElem {
+    //@ requires 5 < nums1.length;
+    //@ requires 5 <= nums1.length;
+    //@ requires 5 == nums1.length;
+    //@ requires 5 != nums1.length;
+    //@ requires 5 >= nums1.length;
+    //@ requires 5 > nums1.length;
+    //@ requires 4 < nums1.length;
+    //@ requires 4 <= nums1.length;
+    //@ requires 4 == nums1.length;
+    //@ requires 4 != nums1.length;
+    //@ requires 4 >= nums1.length;
+    //@ requires 4 > nums1.length;
+    //@ requires 3 < nums1.length;
+    //@ requires 3 <= nums1.length;
+    //@ requires 3 == nums1.length;
+    //@ requires 3 != nums1.length;
+    //@ requires 3 >= nums1.length;
+    //@ requires 3 > nums1.length;
+    //@ requires 2 < nums1.length;
+    //@ requires 2 <= nums1.length;
+    //@ requires 2 == nums1.length;
+    //@ requires 2 != nums1.length;
+    //@ requires 2 >= nums1.length;
+    //@ requires 2 > nums1.length;
+    //@ requires 1 < nums1.length;
+    //@ requires 1 <= nums1.length;
+    //@ requires 1 == nums1.length;
+    //@ requires 1 != nums1.length;
+    //@ requires 1 >= nums1.length;
+    //@ requires 1 > nums1.length;
+    //@ requires -1 < nums1.length;
+    //@ requires -1 <= nums1.length;
+    //@ requires -1 == nums1.length;
+    //@ requires -1 != nums1.length;
+    //@ requires -1 >= nums1.length;
+    //@ requires -1 > nums1.length;
+    //@ non_null
+    //@ requires 5 < nums2.length;
+    //@ requires 5 <= nums2.length;
+    //@ requires 5 == nums2.length;
+    //@ requires 5 != nums2.length;
+    //@ requires 5 >= nums2.length;
+    //@ requires 5 > nums2.length;
+    //@ requires 4 < nums2.length;
+    //@ requires 4 <= nums2.length;
+    //@ requires 4 == nums2.length;
+    //@ requires 4 != nums2.length;
+    //@ requires 4 >= nums2.length;
+    //@ requires 4 > nums2.length;
+    //@ requires 3 < nums2.length;
+    //@ requires 3 <= nums2.length;
+    //@ requires 3 == nums2.length;
+    //@ requires 3 != nums2.length;
+    //@ requires 3 >= nums2.length;
+    //@ requires 3 > nums2.length;
+    //@ requires 2 < nums2.length;
+    //@ requires 2 <= nums2.length;
+    //@ requires 2 == nums2.length;
+    //@ requires 2 != nums2.length;
+    //@ requires 2 >= nums2.length;
+    //@ requires 2 > nums2.length;
+    //@ requires 1 < nums2.length;
+    //@ requires 1 <= nums2.length;
+    //@ requires 1 == nums2.length;
+    //@ requires 1 != nums2.length;
+    //@ requires 1 >= nums2.length;
+    //@ requires 1 > nums2.length;
+    //@ requires -1 < nums2.length;
+    //@ requires -1 <= nums2.length;
+    //@ requires -1 == nums2.length;
+    //@ requires -1 != nums2.length;
+    //@ requires -1 >= nums2.length;
+    //@ requires -1 > nums2.length;
+    //@ requires nums1.length < nums2.length;
+    //@ requires nums1.length <= nums2.length;
+    //@ requires nums1.length == nums2.length;
+    //@ requires nums1.length != nums2.length;
+    //@ requires nums1.length >= nums2.length;
+    //@ requires nums1.length > nums2.length;
+    //@ ensures \result != null;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures nums2.length < \result.length;
+    //@ ensures nums2.length <= \result.length;
+    //@ ensures nums2.length == \result.length;
+    //@ ensures nums2.length != \result.length;
+    //@ ensures nums2.length >= \result.length;
+    //@ ensures nums2.length > \result.length;
+    //@ ensures nums1.length < \result.length;
+    //@ ensures nums1.length <= \result.length;
+    //@ ensures nums1.length == \result.length;
+    //@ ensures nums1.length != \result.length;
+    //@ ensures nums1.length >= \result.length;
+    //@ ensures nums1.length > \result.length;
+    //@ ensures 5 < \result.length;
+    //@ ensures 5 <= \result.length;
+    //@ ensures 5 == \result.length;
+    //@ ensures 5 != \result.length;
+    //@ ensures 5 >= \result.length;
+    //@ ensures 5 > \result.length;
+    //@ ensures 4 < \result.length;
+    //@ ensures 4 <= \result.length;
+    //@ ensures 4 == \result.length;
+    //@ ensures 4 != \result.length;
+    //@ ensures 4 >= \result.length;
+    //@ ensures 4 > \result.length;
+    //@ ensures 3 < \result.length;
+    //@ ensures 3 <= \result.length;
+    //@ ensures 3 == \result.length;
+    //@ ensures 3 != \result.length;
+    //@ ensures 3 >= \result.length;
+    //@ ensures 3 > \result.length;
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures \fresh(\result);
+    //@ ensures nums1 == null ==> \result != null;
+    //@ ensures nums1 != null ==> \result != null;
+    //@ ensures nums2 == null ==> \result != null;
+    //@ ensures nums2 != null ==> \result != null;
+    public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[] a = {};
+        int[] b = {};
+        nextGreaterElement(a, b);
+        a = new int[]{0};
+        b = new int[]{0};
+        nextGreaterElement(a, b);
+        a = new int[]{0};
+        b = new int[]{0, 1};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1};
+        b = new int[]{0, 1};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1};
+        b = new int[]{0, 1, 2};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{0, 1, 2};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{0, 1, 2, 6};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{114, 1, 2, 0};
+        nextGreaterElement(a, b);
+        a = new int[]{2, 1, 114, 0};
+        b = new int[]{114, 1919, 2, 1, 0};
+        nextGreaterElement(a, b);
+        
+
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NextGreaterElem.java:38: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+class NextGreaterElem {
+    //@ requires 5 < nums1.length;
+    //@ requires 5 <= nums1.length;
+    //@ requires 5 == nums1.length;
+    //@ requires 5 != nums1.length;
+    //@ requires 5 >= nums1.length;
+    //@ requires 5 > nums1.length;
+    //@ requires 4 < nums1.length;
+    //@ requires 4 <= nums1.length;
+    //@ requires 4 == nums1.length;
+    //@ requires 4 != nums1.length;
+    //@ requires 4 >= nums1.length;
+    //@ requires 4 > nums1.length;
+    //@ requires 3 < nums1.length;
+    //@ requires 3 <= nums1.length;
+    //@ requires 3 == nums1.length;
+    //@ requires 3 != nums1.length;
+    //@ requires 3 >= nums1.length;
+    //@ requires 3 > nums1.length;
+    //@ requires 2 < nums1.length;
+    //@ requires 2 <= nums1.length;
+    //@ requires 2 == nums1.length;
+    //@ requires 2 != nums1.length;
+    //@ requires 2 >= nums1.length;
+    //@ requires 2 > nums1.length;
+    //@ requires 1 < nums1.length;
+    //@ requires 1 <= nums1.length;
+    //@ requires 1 == nums1.length;
+    //@ requires 1 != nums1.length;
+    //@ requires 1 >= nums1.length;
+    //@ requires 1 > nums1.length;
+    //@ requires -1 < nums1.length;
+    //@ requires -1 <= nums1.length;
+    //@ requires -1 == nums1.length;
+    //@ requires -1 != nums1.length;
+    //@ requires -1 >= nums1.length;
+    //@ requires -1 > nums1.length;
+    //@ requires 5 < nums2.length;
+    //@ requires 5 <= nums2.length;
+    //@ requires 5 == nums2.length;
+    //@ requires 5 != nums2.length;
+    //@ requires 5 >= nums2.length;
+    //@ requires 5 > nums2.length;
+    //@ requires 4 < nums2.length;
+    //@ requires 4 <= nums2.length;
+    //@ requires 4 == nums2.length;
+    //@ requires 4 != nums2.length;
+    //@ requires 4 >= nums2.length;
+    //@ requires 4 > nums2.length;
+    //@ requires 3 < nums2.length;
+    //@ requires 3 <= nums2.length;
+    //@ requires 3 == nums2.length;
+    //@ requires 3 != nums2.length;
+    //@ requires 3 >= nums2.length;
+    //@ requires 3 > nums2.length;
+    //@ requires 2 < nums2.length;
+    //@ requires 2 <= nums2.length;
+    //@ requires 2 == nums2.length;
+    //@ requires 2 != nums2.length;
+    //@ requires 2 >= nums2.length;
+    //@ requires 2 > nums2.length;
+    //@ requires 1 < nums2.length;
+    //@ requires 1 <= nums2.length;
+    //@ requires 1 == nums2.length;
+    //@ requires 1 != nums2.length;
+    //@ requires 1 >= nums2.length;
+    //@ requires 1 > nums2.length;
+    //@ requires -1 < nums2.length;
+    //@ requires -1 <= nums2.length;
+    //@ requires -1 == nums2.length;
+    //@ requires -1 != nums2.length;
+    //@ requires -1 >= nums2.length;
+    //@ requires -1 > nums2.length;
+    //@ requires nums1.length < nums2.length;
+    //@ requires nums1.length <= nums2.length;
+    //@ requires nums1.length == nums2.length;
+    //@ requires nums1.length != nums2.length;
+    //@ requires nums1.length >= nums2.length;
+    //@ requires nums1.length > nums2.length;
+    //@ ensures \result != null;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures nums2.length < \result.length;
+    //@ ensures nums2.length <= \result.length;
+    //@ ensures nums2.length == \result.length;
+    //@ ensures nums2.length != \result.length;
+    //@ ensures nums2.length >= \result.length;
+    //@ ensures nums2.length > \result.length;
+    //@ ensures nums1.length < \result.length;
+    //@ ensures nums1.length <= \result.length;
+    //@ ensures nums1.length == \result.length;
+    //@ ensures nums1.length != \result.length;
+    //@ ensures nums1.length >= \result.length;
+    //@ ensures nums1.length > \result.length;
+    //@ ensures 5 < \result.length;
+    //@ ensures 5 <= \result.length;
+    //@ ensures 5 == \result.length;
+    //@ ensures 5 != \result.length;
+    //@ ensures 5 >= \result.length;
+    //@ ensures 5 > \result.length;
+    //@ ensures 4 < \result.length;
+    //@ ensures 4 <= \result.length;
+    //@ ensures 4 == \result.length;
+    //@ ensures 4 != \result.length;
+    //@ ensures 4 >= \result.length;
+    //@ ensures 4 > \result.length;
+    //@ ensures 3 < \result.length;
+    //@ ensures 3 <= \result.length;
+    //@ ensures 3 == \result.length;
+    //@ ensures 3 != \result.length;
+    //@ ensures 3 >= \result.length;
+    //@ ensures 3 > \result.length;
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures \fresh(\result);
+    //@ ensures nums1 == null ==> \result != null;
+    //@ ensures nums1 != null ==> \result != null;
+    //@ ensures nums2 == null ==> \result != null;
+    //@ ensures nums2 != null ==> \result != null;
+    public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[] a = {};
+        int[] b = {};
+        nextGreaterElement(a, b);
+        a = new int[]{0};
+        b = new int[]{0};
+        nextGreaterElement(a, b);
+        a = new int[]{0};
+        b = new int[]{0, 1};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1};
+        b = new int[]{0, 1};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1};
+        b = new int[]{0, 1, 2};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{0, 1, 2};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{0, 1, 2, 6};
+        nextGreaterElement(a, b);
+        a = new int[]{0, 1, 2};
+        b = new int[]{114, 1, 2, 0};
+        nextGreaterElement(a, b);
+        a = new int[]{2, 1, 114, 0};
+        b = new int[]{114, 1919, 2, 1, 0};
+        nextGreaterElement(a, b);
+        
+
+    }
+}
+
+
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.newNode(HashMap.java:1888)
+	at java.base/java.util.HashMap.putVal(HashMap.java:631)
+	at java.base/java.util.HashMap.putMapEntries(HashMap.java:516)
+	at java.base/java.util.HashMap.putAll(HashMap.java:785)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2$VarMap.putAll(BasicBlocker2.java:2511)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.initMap(BasicBlocker2.java:809)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:545)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:152)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.startBlock(BasicBlockerParent.java:463)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:404)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.visitTry(BasicBlockerParent.java:1048)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCTry.accept(JCTree.java:1401)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processStats(BasicBlockerParent.java:426)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processCurrentBlock(BasicBlockerParent.java:418)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:405)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.convertMethodBody(BasicBlocker2.java:617)
+	at jdk.compiler/org.jmlspecs.openjml.esc.MethodProverSMT.prove(MethodProverSMT.java:361)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.doMethod(JmlEsc.java:329)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitMethodDef(JmlEsc.java:221)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlMethodDecl(JmlTreeScanner.java:238)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitClassDef(JmlEsc.java:169)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlClassDecl(JmlTreeScanner.java:106)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:117)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+/home/max/Documents/JMLGPT/tmp/NextGreaterElem.java:152: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    public static void main(String[] args) {
+                       ^
+  Reason: Prover aborted with exception: ZZZZZ
+1 error
+

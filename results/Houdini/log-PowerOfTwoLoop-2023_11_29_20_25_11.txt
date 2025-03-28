@@ -1,0 +1,2675 @@
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:56: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:24:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:56:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:4: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:55: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:55:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:5: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:54: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:22:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:54:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:5: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:53: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:21:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:53:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:5: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:52: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:52:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:51: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:51:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:8: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:50: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:18:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:50:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:17:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:49:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:8: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:16:) in method main
+        isPowerOfTwo(0);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:48:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:8: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:11:) in method isPowerOfTwo
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:17:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:) in method isPowerOfTwo
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:16:
+    //@ ensures n >= 0 ==> \result;
+        ^
+2 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:13:) in method main
+        isPowerOfTwo(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:46:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:) in method main
+        isPowerOfTwo(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:45:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:3: verify: Precondition conjunct is false: n != 1
+    //@ requires n != 1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:11:) in method main
+        isPowerOfTwo(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:44:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:3: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:10:) in method main
+        isPowerOfTwo(1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:43:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:3: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:38:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:43:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:37:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:42:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:36:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:41:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:35:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:14:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:21: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:40:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method isPowerOfTwo
+        return n == 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:17:
+    //@ ensures !\result;
+        ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:39: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:39:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+5 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method isPowerOfTwo
+        return n == 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:16:
+    //@ ensures n >= 0 ==> !\result;
+        ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:38: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:8:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:38:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+5 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:32:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:37: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:37:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:31:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:36: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:36:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:30:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:35: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:35:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:29:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:34:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:28:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:33:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:27:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:27: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:32: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:32:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:26:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:26: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:31: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:31:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:25:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:25: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:30:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:24:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:29:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:19: verify: Precondition conjunct is false: n >= 0
+    //@ requires n >= 0;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:28:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:22:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n >= -1
+    //@ requires n >= -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:27: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:27:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:21:) in method isPowerOfTwo
+            __Loop_Invariant_Dummy1(n);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:12:
+    public static void __Loop_Invariant_Dummy1(int n) {}
+                       ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:20: verify: Precondition conjunct is false: n > -1
+    //@ requires n > -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:26:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+6 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n <= 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7:) in method main
+        isPowerOfTwo(2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:25:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:6:) in method main
+        isPowerOfTwo(-1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:25:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n >= 0
+    //@ requires n >= 0;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:5:) in method main
+        isPowerOfTwo(-1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:24:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n != -1
+    //@ requires n != -1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:4:) in method main
+        isPowerOfTwo(-1);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:3: verify: Precondition conjunct is false: n > -1
+    //@ requires n > -1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    //@ requires n >= -1;
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:3:) in method main
+        isPowerOfTwo(-2);
+                    ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:23:
+    public static boolean isPowerOfTwo(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/PowerOfTwoLoop.java:2: verify: Precondition conjunct is false: n >= -1
+    //@ requires n >= -1;
+                   ^
+3 verification failures
+
+class PowerOfTwoLoop {
+    public static boolean isPowerOfTwo(int n) {
+        if(n <= 0) {
+            return false;
+        }
+        while (n % 2 == 0) {
+            __Loop_Invariant_Dummy1(n);
+            n /= 2;
+        }
+        return n == 1;
+    }
+
+    //@ requires n != 1;
+    //@ requires n != -1;
+    public static void __Loop_Invariant_Dummy1(int n) {}
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPowerOfTwo(0);
+        isPowerOfTwo(1);
+        isPowerOfTwo(2);
+        isPowerOfTwo(-1);
+        isPowerOfTwo(-2);
+        isPowerOfTwo(-3);
+        isPowerOfTwo(-4);
+        isPowerOfTwo(4);
+        isPowerOfTwo(16);
+        isPowerOfTwo(25);
+        isPowerOfTwo(48);
+        isPowerOfTwo(12);
+        isPowerOfTwo(24);
+        isPowerOfTwo(64);
+    }
+}
+
+
+

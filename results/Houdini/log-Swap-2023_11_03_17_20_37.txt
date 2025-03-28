@@ -1,0 +1,355 @@
+public class Swap {
+    //@ non_null
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 3 < arr.length;
+    //@ requires 3 <= arr.length;
+    //@ requires 3 == arr.length;
+    //@ requires 3 != arr.length;
+    //@ requires 3 >= arr.length;
+    //@ requires 3 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ requires a < arr.length;
+    //@ requires a <= arr.length;
+    //@ requires a == arr.length;
+    //@ requires a != arr.length;
+    //@ requires a >= arr.length;
+    //@ requires a > arr.length;
+    //@ requires a < 5;
+    //@ requires a <= 5;
+    //@ requires a == 5;
+    //@ requires a != 5;
+    //@ requires a >= 5;
+    //@ requires a > 5;
+    //@ requires a < 3;
+    //@ requires a <= 3;
+    //@ requires a == 3;
+    //@ requires a != 3;
+    //@ requires a >= 3;
+    //@ requires a > 3;
+    //@ requires a < 2;
+    //@ requires a <= 2;
+    //@ requires a == 2;
+    //@ requires a != 2;
+    //@ requires a >= 2;
+    //@ requires a > 2;
+    //@ requires a < 1;
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a != 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < arr.length;
+    //@ requires b <= arr.length;
+    //@ requires b == arr.length;
+    //@ requires b != arr.length;
+    //@ requires b >= arr.length;
+    //@ requires b > arr.length;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 5;
+    //@ requires b <= 5;
+    //@ requires b == 5;
+    //@ requires b != 5;
+    //@ requires b >= 5;
+    //@ requires b > 5;
+    //@ requires b < 3;
+    //@ requires b <= 3;
+    //@ requires b == 3;
+    //@ requires b != 3;
+    //@ requires b >= 3;
+    //@ requires b > 3;
+    //@ requires b < 2;
+    //@ requires b <= 2;
+    //@ requires b == 2;
+    //@ requires b != 2;
+    //@ requires b >= 2;
+    //@ requires b > 2;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    public static void swap (int[] arr, int a, int b) {
+        if(a >= arr.length || a < 0 || b >= arr.length || b < 0) {
+            return;
+        }
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[] arr = new int[]{-2, -1, 0, 1, 2};
+        swap(arr, 0, 0);
+        swap(arr, 2, -2);
+        swap(arr, -2, 2);
+        swap(arr, -2, -2);
+        swap(arr, 2, 2);
+        arr = new int[]{0};
+        swap(arr, 0, 1);
+        arr = new int[]{-2, -1};
+        swap(arr, 1, 0);
+        arr = new int[]{2, 3};
+        swap(arr, 1, 1);
+        arr = new int[]{0, 1};
+        swap(arr, 1, -1);
+        arr = new int[]{0, 1};
+        swap(arr, 2, 2);
+        arr = new int[]{-2, -3, 114};
+        swap(arr, -1, 1); 
+        arr = new int[]{-2, -3, 114};
+        swap(arr, 514, 114);      
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/Swap.java:2: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+public class Swap {
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 3 < arr.length;
+    //@ requires 3 <= arr.length;
+    //@ requires 3 == arr.length;
+    //@ requires 3 != arr.length;
+    //@ requires 3 >= arr.length;
+    //@ requires 3 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ requires a < arr.length;
+    //@ requires a <= arr.length;
+    //@ requires a == arr.length;
+    //@ requires a != arr.length;
+    //@ requires a >= arr.length;
+    //@ requires a > arr.length;
+    //@ requires a < 5;
+    //@ requires a <= 5;
+    //@ requires a == 5;
+    //@ requires a != 5;
+    //@ requires a >= 5;
+    //@ requires a > 5;
+    //@ requires a < 3;
+    //@ requires a <= 3;
+    //@ requires a == 3;
+    //@ requires a != 3;
+    //@ requires a >= 3;
+    //@ requires a > 3;
+    //@ requires a < 2;
+    //@ requires a <= 2;
+    //@ requires a == 2;
+    //@ requires a != 2;
+    //@ requires a >= 2;
+    //@ requires a > 2;
+    //@ requires a < 1;
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a != 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < arr.length;
+    //@ requires b <= arr.length;
+    //@ requires b == arr.length;
+    //@ requires b != arr.length;
+    //@ requires b >= arr.length;
+    //@ requires b > arr.length;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 5;
+    //@ requires b <= 5;
+    //@ requires b == 5;
+    //@ requires b != 5;
+    //@ requires b >= 5;
+    //@ requires b > 5;
+    //@ requires b < 3;
+    //@ requires b <= 3;
+    //@ requires b == 3;
+    //@ requires b != 3;
+    //@ requires b >= 3;
+    //@ requires b > 3;
+    //@ requires b < 2;
+    //@ requires b <= 2;
+    //@ requires b == 2;
+    //@ requires b != 2;
+    //@ requires b >= 2;
+    //@ requires b > 2;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    public static void swap (int[] arr, int a, int b) {
+        if(a >= arr.length || a < 0 || b >= arr.length || b < 0) {
+            return;
+        }
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[] arr = new int[]{-2, -1, 0, 1, 2};
+        swap(arr, 0, 0);
+        swap(arr, 2, -2);
+        swap(arr, -2, 2);
+        swap(arr, -2, -2);
+        swap(arr, 2, 2);
+        arr = new int[]{0};
+        swap(arr, 0, 1);
+        arr = new int[]{-2, -1};
+        swap(arr, 1, 0);
+        arr = new int[]{2, 3};
+        swap(arr, 1, 1);
+        arr = new int[]{0, 1};
+        swap(arr, 1, -1);
+        arr = new int[]{0, 1};
+        swap(arr, 2, 2);
+        arr = new int[]{-2, -3, 114};
+        swap(arr, -1, 1); 
+        arr = new int[]{-2, -3, 114};
+        swap(arr, 514, 114);      
+    }
+}
+
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.resize(HashMap.java:704)
+	at java.base/java.util.HashMap.putVal(HashMap.java:629)
+	at java.base/java.util.HashMap.putMapEntries(HashMap.java:516)
+	at java.base/java.util.HashMap.putAll(HashMap.java:785)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2$VarMap.putAll(BasicBlocker2.java:2513)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.initMap(BasicBlocker2.java:792)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:545)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:152)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.startBlock(BasicBlockerParent.java:463)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:404)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.visitTry(BasicBlockerParent.java:1048)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCTry.accept(JCTree.java:1401)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processStats(BasicBlockerParent.java:426)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processCurrentBlock(BasicBlockerParent.java:418)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:405)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.convertMethodBody(BasicBlocker2.java:617)
+	at jdk.compiler/org.jmlspecs.openjml.esc.MethodProverSMT.prove(MethodProverSMT.java:361)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.doMethod(JmlEsc.java:329)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitMethodDef(JmlEsc.java:221)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlMethodDecl(JmlTreeScanner.java:238)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitClassDef(JmlEsc.java:169)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlClassDecl(JmlTreeScanner.java:106)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:117)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+/home/max/Documents/JMLGPT/tmp/Swap.java:132: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    public static void main(String[] args) {
+                       ^
+  Reason: Prover aborted with exception: ZZZZZ
+1 error
+

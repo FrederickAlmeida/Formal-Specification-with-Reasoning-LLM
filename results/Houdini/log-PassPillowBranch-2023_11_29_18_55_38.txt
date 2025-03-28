@@ -1,0 +1,5018 @@
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:86: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:76:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:76: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:86:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:4: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:85: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:75:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:75: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:85:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:5: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:84: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:74:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:74: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:84:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:5: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:83: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:73:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:73: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:83:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:5: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:82: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:72:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:72: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:82:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:7: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:81: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:71:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:71: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:81:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:80: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:70:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:70: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:80:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:79: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:69:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:69: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:79:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:78: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:68:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:68: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:78:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time == 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:77: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:67:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:67: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:77:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Precondition conjunct is false: time == 1
+    //@ requires time == 1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time >= 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:76: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:66:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:66: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:76:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Precondition conjunct is false: time >= 1
+    //@ requires time >= 1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time > 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:75: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:65:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:65: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:75:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Precondition conjunct is false: time > 1
+    //@ requires time > 1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time < 0;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:74: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:64:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:64: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:74:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Precondition conjunct is false: time < 0
+    //@ requires time < 0;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time != 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:73: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:63:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:63: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:73:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:16: verify: Precondition conjunct is false: time != 0
+    //@ requires time != 0;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time > 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:72: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:62:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:62: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:72:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:17: verify: Precondition conjunct is false: time > 0
+    //@ requires time > 0;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time < -1;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:71: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:61:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:61: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:71:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:17: verify: Precondition conjunct is false: time < -1
+    //@ requires time < -1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time <= -1;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:70: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:60:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:60: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:70:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:17: verify: Precondition conjunct is false: time <= -1
+    //@ requires time <= -1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time == -1;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:69: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:59:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:59: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:69:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:17: verify: Precondition conjunct is false: time == -1
+    //@ requires time == -1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time < n;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:68: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:58:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:58: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:68:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:20: verify: Precondition conjunct is false: time < n
+    //@ requires time < n;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time != n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:67: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:57:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:57: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:67:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:22: verify: Precondition conjunct is false: time != n
+    //@ requires time != n;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ requires time > n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:66: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:56:) in method main
+        passPillow(0, 0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:56: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:66:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:23: verify: Precondition conjunct is false: time > n
+    //@ requires time > n;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:60: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:25:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:25: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:60:
+    //@ ensures \result == 1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:59: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:26:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:26: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:59:
+    //@ ensures \result >= 1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:58: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:26:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:26: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:58:
+    //@ ensures \result > 1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:57: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:28:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:57:
+    //@ ensures \result == 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:56: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:56:
+    //@ ensures \result >= 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:55: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:55:
+    //@ ensures \result > 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:54: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:54:
+    //@ ensures \result < -1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:53: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:31:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:53:
+    //@ ensures \result != -1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:52: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:32:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:52:
+    //@ ensures \result > -1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result == time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:51: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:34:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:51:
+    //@ ensures \result == time;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result >= time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:50: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:35:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:50:
+    //@ ensures \result >= time;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result > time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:49: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:35:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:49:
+    //@ ensures \result > time;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:48: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:37:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:48:
+    //@ ensures \result == n;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:47: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:47:
+    //@ ensures \result >= n;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:46: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:46:
+    //@ ensures \result > n;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:45: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:45:
+    //@ ensures n >= 0 ==> \result >= 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    //@ ensures time >= 0 ==> \result >= 0;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:44: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38:) in method passPillow
+        return n * 2 - time - 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:44:
+    //@ ensures time >= 0 ==> \result >= 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:49:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:2: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:37:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:48:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:36:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:47:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:3: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:35:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:46:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:3: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time < 1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:34:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:45:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:7: verify: Precondition conjunct is false: time < 1
+    //@ requires time < 1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time <= 1;
+    //@ requires time != 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:33:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:33: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:44:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: time != 1
+    //@ requires time != 1;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time <= 1;
+    //@ requires time <= 0;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:32:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:43:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: time <= 0
+    //@ requires time <= 0;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time <= 1;
+    //@ requires time == 0;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:31:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:42:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:8: verify: Precondition conjunct is false: time == 0
+    //@ requires time == 0;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time <= 1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time == n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:30:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:41:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Precondition conjunct is false: time == n
+    //@ requires time == n;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time <= 1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ requires time >= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29:) in method main
+        passPillow(2, 1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:40:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Precondition conjunct is false: time >= n
+    //@ requires time >= n;
+                      ^
+3 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time <= 1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:28:) in method main
+        passPillow(2, 2);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:40:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:7: verify: Precondition conjunct is false: time <= 1
+    //@ requires time <= 1;
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:31:
+    //@ ensures \result < 1;
+        ^
+5 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ requires time <= n;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:27:) in method main
+        passPillow(2, 3);
+                  ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:27: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:40:
+    public static int passPillow(int n, int time) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:11: verify: Precondition conjunct is false: time <= n
+    //@ requires time <= n;
+                      ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:30: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:30:
+    //@ ensures \result < 1;
+        ^
+5 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:11:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:29:
+    //@ ensures \result < 1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:28: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:28:
+    //@ ensures \result != 1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:27: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:27:
+    //@ ensures \result < 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:26: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:26:
+    //@ ensures \result <= 0;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:25: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:25:
+    //@ ensures \result <= -1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 0;
+    //@ ensures \result == -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:24: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:24:
+    //@ ensures \result == -1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result < time;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:23: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:23:
+    //@ ensures \result < time;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result <= time;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:22: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:22:
+    //@ ensures \result <= time;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result != time;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:21: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:21:
+    //@ ensures \result != time;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:11:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:20:
+    //@ ensures \result <= 1;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:19:
+    //@ ensures \result < n;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result <= n;
+    //@ ensures \result != n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14:) in method passPillow
+            return time + 1;
+            ^
+/home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/PassPillowBranch.java:18:
+    //@ ensures \result != n;
+        ^
+2 verification failures
+
+class PassPillowBranch {
+    //@ requires n != 1;
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires time >= 0;
+    //@ requires time != -1;
+    //@ requires time >= -1;
+    //@ requires time > -1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= -1;
+    //@ ensures \result <= n;
+    public static int passPillow(int n, int time) {
+        time = time % (n - 1) * 2;
+        if (time < n) {
+            return time + 1;
+        }
+        return n * 2 - time - 1;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        passPillow(0, 0);
+        passPillow(2, 1);
+        passPillow(2, 2);
+        passPillow(2, 3);
+        passPillow(3, 1);
+        passPillow(3, 2);
+        passPillow(3, 3);
+        passPillow(3, 114);
+        passPillow(4, 3);
+        passPillow(114, 514);
+        passPillow(1919, 810);
+        passPillow(1919, 811);
+        passPillow(1622, 1621);
+    }
+}
+
+

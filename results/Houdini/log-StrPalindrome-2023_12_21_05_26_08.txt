@@ -1,0 +1,478 @@
+public class StrPalindrome {
+   //@ spec_public
+   //@ non_null
+   private static String reverse = "";
+   
+   //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+   //@ non_null
+   //@ ensures \result;
+   //@ ensures !\result;
+   //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+   //@ ensures str == null ==> \result;
+   //@ ensures str == null ==> !\result;
+   //@ ensures str != null ==> \result;
+   //@ ensures str != null ==> !\result;
+   public static boolean isPalindrome(String str) {
+      
+      int length = str.length();
+      int i;
+      for (i = length - 1; 0 <= i; i--) {
+         __Loop_Invariant_Dummy1(str, length, i);
+         reverse = reverse + str.charAt(i);
+      }
+      __Loop_Invariant_Dummy1(str, length, i);
+      
+      return reverse.equals(str);
+   }
+
+   //@ non_null
+   //@ requires length < 1;
+   //@ requires length <= 1;
+   //@ requires length == 1;
+   //@ requires length != 1;
+   //@ requires length >= 1;
+   //@ requires length > 1;
+   //@ requires length < 0;
+   //@ requires length <= 0;
+   //@ requires length == 0;
+   //@ requires length != 0;
+   //@ requires length >= 0;
+   //@ requires length > 0;
+   //@ requires length < -1;
+   //@ requires length <= -1;
+   //@ requires length == -1;
+   //@ requires length != -1;
+   //@ requires length >= -1;
+   //@ requires length > -1;
+   //@ requires i < 1;
+   //@ requires i <= 1;
+   //@ requires i == 1;
+   //@ requires i != 1;
+   //@ requires i >= 1;
+   //@ requires i > 1;
+   //@ requires i < length;
+   //@ requires i <= length;
+   //@ requires i == length;
+   //@ requires i != length;
+   //@ requires i >= length;
+   //@ requires i > length;
+   //@ requires i < 0;
+   //@ requires i <= 0;
+   //@ requires i == 0;
+   //@ requires i != 0;
+   //@ requires i >= 0;
+   //@ requires i > 0;
+   //@ requires i < -1;
+   //@ requires i <= -1;
+   //@ requires i == -1;
+   //@ requires i != -1;
+   //@ requires i >= -1;
+   //@ requires i > -1;
+   public static void __Loop_Invariant_Dummy1(String str, int length, int i) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+        isPalindrome("ab");
+        isPalindrome("qabababc");
+        isPalindrome("dagvwhfejrk");
+    }
+} 
+
+
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:6: error: illegal start of type
+   //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+       ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:6: error: Embedded block comment must terminate within the JML line comment
+   //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                           ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:7: error: illegal start of type
+   //@ non_null
+       ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:8: error: ';' expected
+   //@ ensures \result;
+              ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:8: error: Token \result is not a type
+   //@ ensures \result;
+               ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:28: error: No modifiers are allowed prior to a lightweight specification case
+   //@ non_null
+       ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:73: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:73: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:85: error: reached end of file while parsing
+9 errors
+
+public class StrPalindrome {
+   //@ spec_public
+   //@ non_null
+   private static String reverse = "";
+   
+   //@ non_null
+   //@ ensures \result;
+   //@ ensures !\result;
+   //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+   //@ ensures str == null ==> \result;
+   //@ ensures str == null ==> !\result;
+   //@ ensures str != null ==> \result;
+   //@ ensures str != null ==> !\result;
+   public static boolean isPalindrome(String str) {
+      
+      int length = str.length();
+      int i;
+      for (i = length - 1; 0 <= i; i--) {
+         __Loop_Invariant_Dummy1(str, length, i);
+         reverse = reverse + str.charAt(i);
+      }
+      __Loop_Invariant_Dummy1(str, length, i);
+      
+      return reverse.equals(str);
+   }
+
+   //@ non_null
+   //@ requires length < 1;
+   //@ requires length <= 1;
+   //@ requires length == 1;
+   //@ requires length != 1;
+   //@ requires length >= 1;
+   //@ requires length > 1;
+   //@ requires length < 0;
+   //@ requires length <= 0;
+   //@ requires length == 0;
+   //@ requires length != 0;
+   //@ requires length >= 0;
+   //@ requires length > 0;
+   //@ requires length < -1;
+   //@ requires length <= -1;
+   //@ requires length == -1;
+   //@ requires length != -1;
+   //@ requires length >= -1;
+   //@ requires length > -1;
+   //@ requires i < 1;
+   //@ requires i <= 1;
+   //@ requires i == 1;
+   //@ requires i != 1;
+   //@ requires i >= 1;
+   //@ requires i > 1;
+   //@ requires i < length;
+   //@ requires i <= length;
+   //@ requires i == length;
+   //@ requires i != length;
+   //@ requires i >= length;
+   //@ requires i > length;
+   //@ requires i < 0;
+   //@ requires i <= 0;
+   //@ requires i == 0;
+   //@ requires i != 0;
+   //@ requires i >= 0;
+   //@ requires i > 0;
+   //@ requires i < -1;
+   //@ requires i <= -1;
+   //@ requires i == -1;
+   //@ requires i != -1;
+   //@ requires i >= -1;
+   //@ requires i > -1;
+   public static void __Loop_Invariant_Dummy1(String str, int length, int i) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+        isPalindrome("ab");
+        isPalindrome("qabababc");
+        isPalindrome("dagvwhfejrk");
+    }
+} 
+
+
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:6: error: No modifiers are allowed prior to a lightweight specification case
+   //@ non_null
+       ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:27: error: No modifiers are allowed prior to a lightweight specification case
+   //@ non_null
+       ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:72: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:72: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:84: error: reached end of file while parsing
+5 errors
+
+public class StrPalindrome {
+   //@ spec_public
+   //@ non_null
+   private static String reverse = "";
+   
+   //@ ensures \result;
+   //@ ensures !\result;
+   //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+   //@ ensures str == null ==> \result;
+   //@ ensures str == null ==> !\result;
+   //@ ensures str != null ==> \result;
+   //@ ensures str != null ==> !\result;
+   public static boolean isPalindrome(String str) {
+      
+      int length = str.length();
+      int i;
+      for (i = length - 1; 0 <= i; i--) {
+         __Loop_Invariant_Dummy1(str, length, i);
+         reverse = reverse + str.charAt(i);
+      }
+      __Loop_Invariant_Dummy1(str, length, i);
+      
+      return reverse.equals(str);
+   }
+
+   //@ non_null
+   //@ requires length < 1;
+   //@ requires length <= 1;
+   //@ requires length == 1;
+   //@ requires length != 1;
+   //@ requires length >= 1;
+   //@ requires length > 1;
+   //@ requires length < 0;
+   //@ requires length <= 0;
+   //@ requires length == 0;
+   //@ requires length != 0;
+   //@ requires length >= 0;
+   //@ requires length > 0;
+   //@ requires length < -1;
+   //@ requires length <= -1;
+   //@ requires length == -1;
+   //@ requires length != -1;
+   //@ requires length >= -1;
+   //@ requires length > -1;
+   //@ requires i < 1;
+   //@ requires i <= 1;
+   //@ requires i == 1;
+   //@ requires i != 1;
+   //@ requires i >= 1;
+   //@ requires i > 1;
+   //@ requires i < length;
+   //@ requires i <= length;
+   //@ requires i == length;
+   //@ requires i != length;
+   //@ requires i >= length;
+   //@ requires i > length;
+   //@ requires i < 0;
+   //@ requires i <= 0;
+   //@ requires i == 0;
+   //@ requires i != 0;
+   //@ requires i >= 0;
+   //@ requires i > 0;
+   //@ requires i < -1;
+   //@ requires i <= -1;
+   //@ requires i == -1;
+   //@ requires i != -1;
+   //@ requires i >= -1;
+   //@ requires i > -1;
+   public static void __Loop_Invariant_Dummy1(String str, int length, int i) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+        isPalindrome("ab");
+        isPalindrome("qabababc");
+        isPalindrome("dagvwhfejrk");
+    }
+} 
+
+
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:26: error: No modifiers are allowed prior to a lightweight specification case
+   //@ non_null
+       ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:71: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:71: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:83: error: reached end of file while parsing
+4 errors
+
+public class StrPalindrome {
+   //@ spec_public
+   //@ non_null
+   private static String reverse = "";
+   
+   //@ ensures \result;
+   //@ ensures !\result;
+   //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+   //@ ensures str == null ==> \result;
+   //@ ensures str == null ==> !\result;
+   //@ ensures str != null ==> \result;
+   //@ ensures str != null ==> !\result;
+   public static boolean isPalindrome(String str) {
+      
+      int length = str.length();
+      int i;
+      for (i = length - 1; 0 <= i; i--) {
+         __Loop_Invariant_Dummy1(str, length, i);
+         reverse = reverse + str.charAt(i);
+      }
+      __Loop_Invariant_Dummy1(str, length, i);
+      
+      return reverse.equals(str);
+   }
+
+   //@ requires length < 1;
+   //@ requires length <= 1;
+   //@ requires length == 1;
+   //@ requires length != 1;
+   //@ requires length >= 1;
+   //@ requires length > 1;
+   //@ requires length < 0;
+   //@ requires length <= 0;
+   //@ requires length == 0;
+   //@ requires length != 0;
+   //@ requires length >= 0;
+   //@ requires length > 0;
+   //@ requires length < -1;
+   //@ requires length <= -1;
+   //@ requires length == -1;
+   //@ requires length != -1;
+   //@ requires length >= -1;
+   //@ requires length > -1;
+   //@ requires i < 1;
+   //@ requires i <= 1;
+   //@ requires i == 1;
+   //@ requires i != 1;
+   //@ requires i >= 1;
+   //@ requires i > 1;
+   //@ requires i < length;
+   //@ requires i <= length;
+   //@ requires i == length;
+   //@ requires i != length;
+   //@ requires i >= length;
+   //@ requires i > length;
+   //@ requires i < 0;
+   //@ requires i <= 0;
+   //@ requires i == 0;
+   //@ requires i != 0;
+   //@ requires i >= 0;
+   //@ requires i > 0;
+   //@ requires i < -1;
+   //@ requires i <= -1;
+   //@ requires i == -1;
+   //@ requires i != -1;
+   //@ requires i >= -1;
+   //@ requires i > -1;
+   public static void __Loop_Invariant_Dummy1(String str, int length, int i) {}
+
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+        isPalindrome("ab");
+        isPalindrome("qabababc");
+        isPalindrome("dagvwhfejrk");
+    }
+} 
+
+
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:70: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:70: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/StrPalindrome.java:82: error: reached end of file while parsing
+3 errors
+
+public class StrPalindrome {
+   //@ spec_public
+   //@ non_null
+   private static String reverse = "";
+   
+   //@ ensures \result;
+   //@ ensures !\result;
+   //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+   //@ ensures str == null ==> \result;
+   //@ ensures str == null ==> !\result;
+   //@ ensures str != null ==> \result;
+   //@ ensures str != null ==> !\result;
+   public static boolean isPalindrome(String str) {
+      
+      int length = str.length();
+      int i;
+      for (i = length - 1; 0 <= i; i--) {
+         __Loop_Invariant_Dummy1(str, length, i);
+         reverse = reverse + str.charAt(i);
+      }
+      __Loop_Invariant_Dummy1(str, length, i);
+      
+      return reverse.equals(str);
+   }
+
+   //@ requires length < 1;
+   //@ requires length <= 1;
+   //@ requires length == 1;
+   //@ requires length != 1;
+   //@ requires length >= 1;
+   //@ requires length > 1;
+   //@ requires length < 0;
+   //@ requires length <= 0;
+   //@ requires length == 0;
+   //@ requires length != 0;
+   //@ requires length >= 0;
+   //@ requires length > 0;
+   //@ requires length < -1;
+   //@ requires length <= -1;
+   //@ requires length == -1;
+   //@ requires length != -1;
+   //@ requires length >= -1;
+   //@ requires length > -1;
+   //@ requires i < 1;
+   //@ requires i <= 1;
+   //@ requires i == 1;
+   //@ requires i != 1;
+   //@ requires i >= 1;
+   //@ requires i > 1;
+   //@ requires i < length;
+   //@ requires i <= length;
+   //@ requires i == length;
+   //@ requires i != length;
+   //@ requires i >= length;
+   //@ requires i > length;
+   //@ requires i < 0;
+   //@ requires i <= 0;
+   //@ requires i == 0;
+   //@ requires i != 0;
+   //@ requires i >= 0;
+   //@ requires i > 0;
+   //@ requires i < -1;
+   //@ requires i <= -1;
+   //@ requires i == -1;
+   //@ requires i != -1;
+   //@ requires i >= -1;
+   //@ requires i > -1;
+   public static void __Loop_Invariant_Dummy1(String str, int length, int i) {}
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+        isPalindrome("ab");
+        isPalindrome("qabababc");
+        isPalindrome("dagvwhfejrk");
+    }
+} 
+
+

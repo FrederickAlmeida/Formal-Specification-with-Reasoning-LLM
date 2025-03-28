@@ -1,0 +1,477 @@
+class ComputeOverlapBranch {
+    //@ requires ax1 < 1;
+    //@ requires ax1 <= 1;
+    //@ requires ax1 == 1;
+    //@ requires ax1 != 1;
+    //@ requires ax1 >= 1;
+    //@ requires ax1 > 1;
+    //@ requires ax1 < 0;
+    //@ requires ax1 <= 0;
+    //@ requires ax1 == 0;
+    //@ requires ax1 != 0;
+    //@ requires ax1 >= 0;
+    //@ requires ax1 > 0;
+    //@ requires ax1 < -1;
+    //@ requires ax1 <= -1;
+    //@ requires ax1 == -1;
+    //@ requires ax1 != -1;
+    //@ requires ax1 >= -1;
+    //@ requires ax1 > -1;
+    //@ requires ay1 < ax1;
+    //@ requires ay1 <= ax1;
+    //@ requires ay1 == ax1;
+    //@ requires ay1 != ax1;
+    //@ requires ay1 >= ax1;
+    //@ requires ay1 > ax1;
+    //@ requires ay1 < 1;
+    //@ requires ay1 <= 1;
+    //@ requires ay1 == 1;
+    //@ requires ay1 != 1;
+    //@ requires ay1 >= 1;
+    //@ requires ay1 > 1;
+    //@ requires ay1 < 0;
+    //@ requires ay1 <= 0;
+    //@ requires ay1 == 0;
+    //@ requires ay1 != 0;
+    //@ requires ay1 >= 0;
+    //@ requires ay1 > 0;
+    //@ requires ay1 < -1;
+    //@ requires ay1 <= -1;
+    //@ requires ay1 == -1;
+    //@ requires ay1 != -1;
+    //@ requires ay1 >= -1;
+    //@ requires ay1 > -1;
+    //@ requires ax2 < ax1;
+    //@ requires ax2 <= ax1;
+    //@ requires ax2 == ax1;
+    //@ requires ax2 != ax1;
+    //@ requires ax2 >= ax1;
+    //@ requires ax2 > ax1;
+    //@ requires ax2 < ay1;
+    //@ requires ax2 <= ay1;
+    //@ requires ax2 == ay1;
+    //@ requires ax2 != ay1;
+    //@ requires ax2 >= ay1;
+    //@ requires ax2 > ay1;
+    //@ requires ax2 < 1;
+    //@ requires ax2 <= 1;
+    //@ requires ax2 == 1;
+    //@ requires ax2 != 1;
+    //@ requires ax2 >= 1;
+    //@ requires ax2 > 1;
+    //@ requires ax2 < 0;
+    //@ requires ax2 <= 0;
+    //@ requires ax2 == 0;
+    //@ requires ax2 != 0;
+    //@ requires ax2 >= 0;
+    //@ requires ax2 > 0;
+    //@ requires ax2 < -1;
+    //@ requires ax2 <= -1;
+    //@ requires ax2 == -1;
+    //@ requires ax2 != -1;
+    //@ requires ax2 >= -1;
+    //@ requires ax2 > -1;
+    //@ requires ay2 < ax1;
+    //@ requires ay2 <= ax1;
+    //@ requires ay2 == ax1;
+    //@ requires ay2 != ax1;
+    //@ requires ay2 >= ax1;
+    //@ requires ay2 > ax1;
+    //@ requires ay2 < ay1;
+    //@ requires ay2 <= ay1;
+    //@ requires ay2 == ay1;
+    //@ requires ay2 != ay1;
+    //@ requires ay2 >= ay1;
+    //@ requires ay2 > ay1;
+    //@ requires ay2 < 1;
+    //@ requires ay2 <= 1;
+    //@ requires ay2 == 1;
+    //@ requires ay2 != 1;
+    //@ requires ay2 >= 1;
+    //@ requires ay2 > 1;
+    //@ requires ay2 < 0;
+    //@ requires ay2 <= 0;
+    //@ requires ay2 == 0;
+    //@ requires ay2 != 0;
+    //@ requires ay2 >= 0;
+    //@ requires ay2 > 0;
+    //@ requires ay2 < -1;
+    //@ requires ay2 <= -1;
+    //@ requires ay2 == -1;
+    //@ requires ay2 != -1;
+    //@ requires ay2 >= -1;
+    //@ requires ay2 > -1;
+    //@ requires ay2 < ax2;
+    //@ requires ay2 <= ax2;
+    //@ requires ay2 == ax2;
+    //@ requires ay2 != ax2;
+    //@ requires ay2 >= ax2;
+    //@ requires ay2 > ax2;
+    //@ requires bx1 < ax1;
+    //@ requires bx1 <= ax1;
+    //@ requires bx1 == ax1;
+    //@ requires bx1 != ax1;
+    //@ requires bx1 >= ax1;
+    //@ requires bx1 > ax1;
+    //@ requires bx1 < ay2;
+    //@ requires bx1 <= ay2;
+    //@ requires bx1 == ay2;
+    //@ requires bx1 != ay2;
+    //@ requires bx1 >= ay2;
+    //@ requires bx1 > ay2;
+    //@ requires bx1 < ay1;
+    //@ requires bx1 <= ay1;
+    //@ requires bx1 == ay1;
+    //@ requires bx1 != ay1;
+    //@ requires bx1 >= ay1;
+    //@ requires bx1 > ay1;
+    //@ requires bx1 < 1;
+    //@ requires bx1 <= 1;
+    //@ requires bx1 == 1;
+    //@ requires bx1 != 1;
+    //@ requires bx1 >= 1;
+    //@ requires bx1 > 1;
+    //@ requires bx1 < 0;
+    //@ requires bx1 <= 0;
+    //@ requires bx1 == 0;
+    //@ requires bx1 != 0;
+    //@ requires bx1 >= 0;
+    //@ requires bx1 > 0;
+    //@ requires bx1 < -1;
+    //@ requires bx1 <= -1;
+    //@ requires bx1 == -1;
+    //@ requires bx1 != -1;
+    //@ requires bx1 >= -1;
+    //@ requires bx1 > -1;
+    //@ requires bx1 < ax2;
+    //@ requires bx1 <= ax2;
+    //@ requires bx1 == ax2;
+    //@ requires bx1 != ax2;
+    //@ requires bx1 >= ax2;
+    //@ requires bx1 > ax2;
+    //@ requires by1 < ax1;
+    //@ requires by1 <= ax1;
+    //@ requires by1 == ax1;
+    //@ requires by1 != ax1;
+    //@ requires by1 >= ax1;
+    //@ requires by1 > ax1;
+    //@ requires by1 < ay2;
+    //@ requires by1 <= ay2;
+    //@ requires by1 == ay2;
+    //@ requires by1 != ay2;
+    //@ requires by1 >= ay2;
+    //@ requires by1 > ay2;
+    //@ requires by1 < ay1;
+    //@ requires by1 <= ay1;
+    //@ requires by1 == ay1;
+    //@ requires by1 != ay1;
+    //@ requires by1 >= ay1;
+    //@ requires by1 > ay1;
+    //@ requires by1 < 1;
+    //@ requires by1 <= 1;
+    //@ requires by1 == 1;
+    //@ requires by1 != 1;
+    //@ requires by1 >= 1;
+    //@ requires by1 > 1;
+    //@ requires by1 < 0;
+    //@ requires by1 <= 0;
+    //@ requires by1 == 0;
+    //@ requires by1 != 0;
+    //@ requires by1 >= 0;
+    //@ requires by1 > 0;
+    //@ requires by1 < bx1;
+    //@ requires by1 <= bx1;
+    //@ requires by1 == bx1;
+    //@ requires by1 != bx1;
+    //@ requires by1 >= bx1;
+    //@ requires by1 > bx1;
+    //@ requires by1 < -1;
+    //@ requires by1 <= -1;
+    //@ requires by1 == -1;
+    //@ requires by1 != -1;
+    //@ requires by1 >= -1;
+    //@ requires by1 > -1;
+    //@ requires by1 < ax2;
+    //@ requires by1 <= ax2;
+    //@ requires by1 == ax2;
+    //@ requires by1 != ax2;
+    //@ requires by1 >= ax2;
+    //@ requires by1 > ax2;
+    //@ requires bx2 < by1;
+    //@ requires bx2 <= by1;
+    //@ requires bx2 == by1;
+    //@ requires bx2 != by1;
+    //@ requires bx2 >= by1;
+    //@ requires bx2 > by1;
+    //@ requires bx2 < ax2;
+    //@ requires bx2 <= ax2;
+    //@ requires bx2 == ax2;
+    //@ requires bx2 != ax2;
+    //@ requires bx2 >= ax2;
+    //@ requires bx2 > ax2;
+    //@ requires bx2 < -1;
+    //@ requires bx2 <= -1;
+    //@ requires bx2 == -1;
+    //@ requires bx2 != -1;
+    //@ requires bx2 >= -1;
+    //@ requires bx2 > -1;
+    //@ requires bx2 < ax1;
+    //@ requires bx2 <= ax1;
+    //@ requires bx2 == ax1;
+    //@ requires bx2 != ax1;
+    //@ requires bx2 >= ax1;
+    //@ requires bx2 > ax1;
+    //@ requires bx2 < bx1;
+    //@ requires bx2 <= bx1;
+    //@ requires bx2 == bx1;
+    //@ requires bx2 != bx1;
+    //@ requires bx2 >= bx1;
+    //@ requires bx2 > bx1;
+    //@ requires bx2 < ay2;
+    //@ requires bx2 <= ay2;
+    //@ requires bx2 == ay2;
+    //@ requires bx2 != ay2;
+    //@ requires bx2 >= ay2;
+    //@ requires bx2 > ay2;
+    //@ requires bx2 < 1;
+    //@ requires bx2 <= 1;
+    //@ requires bx2 == 1;
+    //@ requires bx2 != 1;
+    //@ requires bx2 >= 1;
+    //@ requires bx2 > 1;
+    //@ requires bx2 < ay1;
+    //@ requires bx2 <= ay1;
+    //@ requires bx2 == ay1;
+    //@ requires bx2 != ay1;
+    //@ requires bx2 >= ay1;
+    //@ requires bx2 > ay1;
+    //@ requires bx2 < 0;
+    //@ requires bx2 <= 0;
+    //@ requires bx2 == 0;
+    //@ requires bx2 != 0;
+    //@ requires bx2 >= 0;
+    //@ requires bx2 > 0;
+    //@ requires by2 < by1;
+    //@ requires by2 <= by1;
+    //@ requires by2 == by1;
+    //@ requires by2 != by1;
+    //@ requires by2 >= by1;
+    //@ requires by2 > by1;
+    //@ requires by2 < ax2;
+    //@ requires by2 <= ax2;
+    //@ requires by2 == ax2;
+    //@ requires by2 != ax2;
+    //@ requires by2 >= ax2;
+    //@ requires by2 > ax2;
+    //@ requires by2 < -1;
+    //@ requires by2 <= -1;
+    //@ requires by2 == -1;
+    //@ requires by2 != -1;
+    //@ requires by2 >= -1;
+    //@ requires by2 > -1;
+    //@ requires by2 < ax1;
+    //@ requires by2 <= ax1;
+    //@ requires by2 == ax1;
+    //@ requires by2 != ax1;
+    //@ requires by2 >= ax1;
+    //@ requires by2 > ax1;
+    //@ requires by2 < bx2;
+    //@ requires by2 <= bx2;
+    //@ requires by2 == bx2;
+    //@ requires by2 != bx2;
+    //@ requires by2 >= bx2;
+    //@ requires by2 > bx2;
+    //@ requires by2 < bx1;
+    //@ requires by2 <= bx1;
+    //@ requires by2 == bx1;
+    //@ requires by2 != bx1;
+    //@ requires by2 >= bx1;
+    //@ requires by2 > bx1;
+    //@ requires by2 < ay2;
+    //@ requires by2 <= ay2;
+    //@ requires by2 == ay2;
+    //@ requires by2 != ay2;
+    //@ requires by2 >= ay2;
+    //@ requires by2 > ay2;
+    //@ requires by2 < 1;
+    //@ requires by2 <= 1;
+    //@ requires by2 == 1;
+    //@ requires by2 != 1;
+    //@ requires by2 >= 1;
+    //@ requires by2 > 1;
+    //@ requires by2 < ay1;
+    //@ requires by2 <= ay1;
+    //@ requires by2 == ay1;
+    //@ requires by2 != ay1;
+    //@ requires by2 >= ay1;
+    //@ requires by2 > ay1;
+    //@ requires by2 < 0;
+    //@ requires by2 <= 0;
+    //@ requires by2 == 0;
+    //@ requires by2 != 0;
+    //@ requires by2 >= 0;
+    //@ requires by2 > 0;
+    //@ ensures \result < by2;
+    //@ ensures \result <= by2;
+    //@ ensures \result == by2;
+    //@ ensures \result != by2;
+    //@ ensures \result >= by2;
+    //@ ensures \result > by2;
+    //@ ensures \result < by1;
+    //@ ensures \result <= by1;
+    //@ ensures \result == by1;
+    //@ ensures \result != by1;
+    //@ ensures \result >= by1;
+    //@ ensures \result > by1;
+    //@ ensures \result < ax2;
+    //@ ensures \result <= ax2;
+    //@ ensures \result == ax2;
+    //@ ensures \result != ax2;
+    //@ ensures \result >= ax2;
+    //@ ensures \result > ax2;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < ax1;
+    //@ ensures \result <= ax1;
+    //@ ensures \result == ax1;
+    //@ ensures \result != ax1;
+    //@ ensures \result >= ax1;
+    //@ ensures \result > ax1;
+    //@ ensures \result < bx2;
+    //@ ensures \result <= bx2;
+    //@ ensures \result == bx2;
+    //@ ensures \result != bx2;
+    //@ ensures \result >= bx2;
+    //@ ensures \result > bx2;
+    //@ ensures \result < bx1;
+    //@ ensures \result <= bx1;
+    //@ ensures \result == bx1;
+    //@ ensures \result != bx1;
+    //@ ensures \result >= bx1;
+    //@ ensures \result > bx1;
+    //@ ensures \result < ay2;
+    //@ ensures \result <= ay2;
+    //@ ensures \result == ay2;
+    //@ ensures \result != ay2;
+    //@ ensures \result >= ay2;
+    //@ ensures \result > ay2;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < ay1;
+    //@ ensures \result <= ay1;
+    //@ ensures \result == ay1;
+    //@ ensures \result != ay1;
+    //@ ensures \result >= ay1;
+    //@ ensures \result > ay1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures ax1 >= 0 ==> \result >= 0;
+    //@ ensures ay1 >= 0 ==> \result >= 0;
+    //@ ensures ax2 >= 0 ==> \result >= 0;
+    //@ ensures ay2 >= 0 ==> \result >= 0;
+    //@ ensures bx1 >= 0 ==> \result >= 0;
+    //@ ensures by1 >= 0 ==> \result >= 0;
+    //@ ensures bx2 >= 0 ==> \result >= 0;
+    //@ ensures by2 >= 0 ==> \result >= 0;
+    public static int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int minX2 = bx2;
+        if(ax2 < bx2) {
+            minX2 = ax2;
+        }
+        int maxX1 = bx1;
+        if(ax1 > bx1) {
+            maxX1 = ax1;
+        }
+        int minY2 = by2;
+        if(ay2 < by2) {
+            minY2 = ay2;
+        }
+        int maxY1 = by1;
+        if(ay1 > by1) {
+            maxY1 = ay1;
+        }
+        int overlapWidth = minX2 - maxX1;
+        int overlapHeight = minY2 - maxY1;
+        if(overlapWidth < 0) {
+            overlapWidth = 0;
+        }
+        if(overlapHeight < 0) {
+            overlapHeight = 0;
+        }
+        int overlapArea = overlapWidth * overlapWidth;
+        return overlapArea;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        computeOverlapArea(-3, 3, -2, 2, -1, 1, 0, 0);
+        computeOverlapArea(3, -2, 2, -1, 1, 0, 0, -3);
+        computeOverlapArea(-2, 2, -1, 1, 0, 0, -3, 3);
+        computeOverlapArea(2, -1, 1, 0, 0, -3, 3, -2);
+        computeOverlapArea(-1, 1, 0, 0, -3, 3, -2, 2);
+        computeOverlapArea(1, 0, 0, -3, 3, -2, 2, -1);
+        computeOverlapArea(0, 0, -3, 3, -2, 2, -1, 1);
+        computeOverlapArea(0, -3, 3, -2, 2, -1, 1, 0);
+        computeOverlapArea(114, 114, 514, 514, 19, 19, 8, 10);
+        computeOverlapArea(0, 0, 0, 0, 0, 0, 0, 0);
+        computeOverlapArea(1, 4, 4, 1, 2, 3, 3, 2);
+        computeOverlapArea(1, 4, 4, 1, 3, 2, 2, 3);
+        computeOverlapArea(1, 1, 4, 4, 2, 2, 3, 3);
+        computeOverlapArea(1, 1, 4, 4, 2, 2, 5, 5);
+        computeOverlapArea(1, 1, 8, 8, 3, 4, 5, 5);
+        computeOverlapArea(1, 1, 8, 8, 2, 2, 5, 5);
+    }
+}
+
+
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.newNode(HashMap.java:1888)
+	at java.base/java.util.HashMap.putVal(HashMap.java:631)
+	at java.base/java.util.HashMap.putMapEntries(HashMap.java:516)
+	at java.base/java.util.HashMap.putAll(HashMap.java:785)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2$VarMap.putAll(BasicBlocker2.java:2511)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.initMap(BasicBlocker2.java:792)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:545)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.setCurrentBlock(BasicBlocker2.java:152)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.startBlock(BasicBlockerParent.java:463)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:404)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.visitTry(BasicBlockerParent.java:1048)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCTry.accept(JCTree.java:1401)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processStats(BasicBlockerParent.java:426)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processCurrentBlock(BasicBlockerParent.java:418)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlock(BasicBlockerParent.java:405)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlockerParent.processBlocks(BasicBlockerParent.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.esc.BasicBlocker2.convertMethodBody(BasicBlocker2.java:617)
+	at jdk.compiler/org.jmlspecs.openjml.esc.MethodProverSMT.prove(MethodProverSMT.java:361)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.doMethod(JmlEsc.java:329)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitMethodDef(JmlEsc.java:221)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlMethodDecl(JmlTreeScanner.java:238)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.visitClassDef(JmlEsc.java:169)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.visitJmlClassDecl(JmlTreeScanner.java:106)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:117)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+/home/max/Documents/JMLGPT/tmp/ComputeOverlapBranch.java:418: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    public static void main(String[] args) {
+                       ^
+  Reason: Prover aborted with exception: ZZZZZ
+1 error
+

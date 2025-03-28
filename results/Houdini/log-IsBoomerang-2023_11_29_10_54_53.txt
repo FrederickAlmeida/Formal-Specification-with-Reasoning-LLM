@@ -1,0 +1,1011 @@
+class IsBoomerang {
+    //@ non_null
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 < points.length;
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 != points.length;
+    //@ requires 3 >= points.length;
+    //@ requires 3 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 == points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 >= points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:2: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 < points.length;
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 != points.length;
+    //@ requires 3 >= points.length;
+    //@ requires 3 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 == points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 >= points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:50: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:41:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:50:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:3: verify: Precondition conjunct is false: 3 < points.length
+    //@ requires 3 < points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 != points.length;
+    //@ requires 3 >= points.length;
+    //@ requires 3 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 == points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 >= points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:40:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:49:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:5: verify: Precondition conjunct is false: 3 != points.length
+    //@ requires 3 != points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires 3 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 == points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 >= points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:39:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:48:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:6: verify: Precondition conjunct is false: 3 > points.length
+    //@ requires 3 > points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 == points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 >= points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:38:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:47:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:10: verify: Precondition conjunct is false: 2 == points.length
+    //@ requires 2 == points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 >= points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:37:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:46:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:11: verify: Precondition conjunct is false: 2 >= points.length
+    //@ requires 2 >= points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires 2 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:36:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:45:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:11: verify: Precondition conjunct is false: 2 > points.length
+    //@ requires 2 > points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 == points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:35:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:44:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:15: verify: Precondition conjunct is false: 1 == points.length
+    //@ requires 1 == points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 >= points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:34:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:43:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:16: verify: Precondition conjunct is false: 1 >= points.length
+    //@ requires 1 >= points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires 1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:33:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:33: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:42:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:16: verify: Precondition conjunct is false: 1 > points.length
+    //@ requires 1 > points.length;
+                   ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 == points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:32:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:41:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:20: verify: Precondition conjunct is false: -1 == points.length
+    //@ requires -1 == points.length;
+                    ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 >= points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:31:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:40:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:21: verify: Precondition conjunct is false: -1 >= points.length
+    //@ requires -1 >= points.length;
+                    ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 != points.length;
+    //@ requires -1 > points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:39: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:30:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:39:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:21: verify: Precondition conjunct is false: -1 > points.length
+    //@ requires -1 > points.length;
+                    ^
+3 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:30: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isBoomerang
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+                             ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:38: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:29:) in method main
+        isBoomerang(ps);
+                   ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsBoomerang.java:38:
+    public static boolean isBoomerang(int[][] points) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:22: verify: Precondition conjunct is false: (\forall int houdiniTmp; ; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null)
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+                 ^
+4 verification failures
+
+class IsBoomerang {
+    //@ requires points != null ==> \nonnullelements(points);
+    //@ requires 3 <= points.length;
+    //@ requires 3 == points.length;
+    //@ requires 3 >= points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 3 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 3 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 2 < points.length;
+    //@ requires 2 <= points.length;
+    //@ requires 2 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires 1 < points.length;
+    //@ requires 1 <= points.length;
+    //@ requires 1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> points[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < points.length ==> points[houdiniTmp] != null);
+    //@ requires -1 < points.length;
+    //@ requires -1 <= points.length;
+    //@ requires -1 != points.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> points[houdiniTmp] != null);
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures points == null ==> \result;
+    //@ ensures points == null ==> !\result;
+    //@ ensures points != null ==> \result;
+    //@ ensures points != null ==> !\result;
+    public static boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int[][] ps = {{0, 0}, {0, 0}, {0, 0}};
+        isBoomerang(ps);
+        ps = new int[][]{{-2, -1}, {0, 1}, {2, 3}};
+        isBoomerang(ps);
+        ps = new int[][]{{3, 2}, {1, 0}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {3, 4}, {-4, -4}};
+        isBoomerang(ps);
+        ps = new int[][]{{-1, -2}, {-1, -2}, {-1, -2}};
+        isBoomerang(ps);
+        ps = new int[][]{{5, 5}, {4, 4}, {3, 3}};
+        isBoomerang(ps);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsBoomerang.java:29: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method isBoomerang
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+                             ^
+1 verification failure
+

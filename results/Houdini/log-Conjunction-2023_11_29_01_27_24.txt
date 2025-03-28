@@ -1,0 +1,460 @@
+public class Conjunction {
+    //@ requires b1;
+    //@ requires !b1;
+    //@ requires b2;
+    //@ requires !b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:16:) in method main
+        conjunctOf(true, true);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:26:
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:3: verify: Precondition conjunct is false: !b1
+    //@ requires !b1;
+                 ^
+3 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ requires !b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:15:) in method main
+        conjunctOf(true, true);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:25:
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:4: verify: Precondition conjunct is false: !b2
+    //@ requires !b2;
+                 ^
+3 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:5:) in method conjunctOf
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:19:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:6:) in method conjunctOf
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:18:
+    //@ ensures b1 ==> !\result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:9:) in method conjunctOf
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:17:
+    //@ ensures b2 ==> !\result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:11:) in method main
+        conjunctOf(true, false);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:22:
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:3: verify: Precondition conjunct is false: b2
+    //@ requires b2;
+                 ^
+3 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:3:) in method conjunctOf
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:14:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:13: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:3:) in method conjunctOf
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:13:
+    //@ ensures b1 ==> \result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:12: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:6:) in method conjunctOf
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:12:
+    //@ ensures !b2 ==> \result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ requires b1;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:19: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:7:) in method main
+        conjunctOf(false, true);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:19:
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:2: verify: Precondition conjunct is false: b1
+    //@ requires b1;
+                 ^
+3 verification failures
+
+public class Conjunction {
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:8: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:2:) in method conjunctOf
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:8:
+    //@ ensures !b1 ==> \result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:7: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Conjunction.java:3:) in method conjunctOf
+            return false;
+            ^
+/home/max/Documents/JMLGPT/tmp/Conjunction.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Conjunction.java:7:
+    //@ ensures b2 ==> \result;
+        ^
+2 verification failures
+
+public class Conjunction {
+    //@ ensures !b1 ==> !\result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean conjunctOf(boolean b1, boolean b2) {
+        if(b1 == false)
+            return false;
+        if(b2 == false)
+            return false;
+        return true;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        conjunctOf(true, true);
+        conjunctOf(true, false);
+        conjunctOf(false, true);
+        conjunctOf(false, false);
+    }
+}
+
+
+

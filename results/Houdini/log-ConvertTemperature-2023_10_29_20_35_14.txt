@@ -1,0 +1,388 @@
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:23: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:3:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:23:
+    //@ ensures 2 < \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:22: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:5:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:22:
+    //@ ensures 2 != \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:21: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:6:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:21:
+    //@ ensures 2 > \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:8:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:20:
+    //@ ensures 1 == \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:9:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:19:
+    //@ ensures 1 >= \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:18: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:9:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:18:
+    //@ ensures 1 > \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:11:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:17:
+    //@ ensures -1 == \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:12:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:16:
+    //@ ensures -1 >= \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:12:) in method convertTemperature
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+        ^
+/home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ConvertTemperature.java:15:
+    //@ ensures -1 > \result.length;
+        ^
+2 verification failures
+
+class ConvertTemperature {
+    //@ ensures \result != null;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures \fresh(\result);
+    public static double[] convertTemperature(double celsius) {
+        return new double[]{celsius + 273.15, celsius * 1.80 + 32.00};
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        convertTemperature(-2);
+        convertTemperature(-1);
+        convertTemperature(0);
+        convertTemperature(1);
+        convertTemperature(2);
+    }
+}
+
+
+

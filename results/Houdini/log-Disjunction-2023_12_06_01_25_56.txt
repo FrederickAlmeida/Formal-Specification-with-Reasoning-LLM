@@ -1,0 +1,460 @@
+public class Disjunction {
+    //@ requires b1;
+    //@ requires !b1;
+    //@ requires b2;
+    //@ requires !b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:16:) in method main
+        disjunctOf(true, true);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:26:
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:3: verify: Precondition conjunct is false: !b1
+    //@ requires !b1;
+                 ^
+3 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ requires !b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:15:) in method main
+        disjunctOf(true, true);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:25:
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:4: verify: Precondition conjunct is false: !b2
+    //@ requires !b2;
+                 ^
+3 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:5:) in method disjunctOf
+            return true;
+            ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:16:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:6:) in method disjunctOf
+            return true;
+            ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:15:
+    //@ ensures b1 ==> !\result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:9:) in method disjunctOf
+            return true;
+            ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:14:
+    //@ ensures b2 ==> !\result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:11:) in method main
+        disjunctOf(true, false);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:22:
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:3: verify: Precondition conjunct is false: b2
+    //@ requires b2;
+                 ^
+3 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:12: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:9:) in method disjunctOf
+            return true;
+            ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:12:
+    //@ ensures !b2 ==> !\result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ requires b1;
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:21: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:9:) in method main
+        disjunctOf(false, true);
+                  ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:21:
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:2: verify: Precondition conjunct is false: b1
+    //@ requires b1;
+                 ^
+3 verification failures
+
+public class Disjunction {
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:12: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:5:) in method disjunctOf
+            return true;
+            ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:12:
+    //@ ensures !b1 ==> !\result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ ensures \result;
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:12: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:2:) in method disjunctOf
+        return false;
+        ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:12:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ ensures b1 ==> \result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:11: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:3:) in method disjunctOf
+        return false;
+        ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:11:
+    //@ ensures !b1 ==> \result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ ensures b1 ==> \result;
+    //@ ensures b2 ==> \result;
+    //@ ensures !b2 ==> \result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:10: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/Disjunction.java:4:) in method disjunctOf
+        return false;
+        ^
+/home/max/Documents/JMLGPT/tmp/Disjunction.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/Disjunction.java:10:
+    //@ ensures !b2 ==> \result;
+        ^
+2 verification failures
+
+public class Disjunction {
+    //@ ensures b1 ==> \result;
+    //@ ensures b2 ==> \result;
+    public static boolean disjunctOf(boolean b1, boolean b2) {
+        if(b1 == true)
+            return true;
+        if(b2 == true)
+            return true;
+        return false;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        disjunctOf(true, true);
+        disjunctOf(true, false);
+        disjunctOf(false, true);
+        disjunctOf(false, false);
+    }
+}
+
+
+

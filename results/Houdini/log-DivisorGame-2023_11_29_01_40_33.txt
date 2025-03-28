@@ -1,0 +1,1031 @@
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:24:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:30:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:4: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:23:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:29:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:5: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:22:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:28:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:5: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:27: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:21:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:27:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:7: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:20:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:26:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:8: verify: Precondition conjunct is false: n >= 0
+    //@ requires n >= 0;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:19:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:19: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:25:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:8: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:18:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:24:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:10: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:17:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:23:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:11: verify: Precondition conjunct is false: n >= -1
+    //@ requires n >= -1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ requires n > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:16:) in method main
+        divisorGame(-5);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:22:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:11: verify: Precondition conjunct is false: n > -1
+    //@ requires n > -1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:11:) in method divisorGame
+        return n % 2 == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:16:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures !\result;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:11:) in method divisorGame
+        return n % 2 == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:15:
+    //@ ensures !\result;
+        ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:14:) in method main
+        divisorGame(-1);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:24:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+5 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:13:) in method main
+        divisorGame(-1);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:23:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:12:) in method main
+        divisorGame(-1);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:22:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:9: verify: Precondition conjunct is false: n != -1
+    //@ requires n != -1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n <= -1;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:11:) in method main
+        divisorGame(0);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:22:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:5: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n <= -1;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:21: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:10:) in method main
+        divisorGame(0);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:21:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:6: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n <= -1;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:20: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:9:) in method main
+        divisorGame(0);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:20:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:6: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ ensures n >= 0 ==> \result;
+    //@ ensures n >= 0 ==> !\result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:9: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:7:) in method divisorGame
+        return n % 2 == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:9:
+    //@ ensures n >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class DivisorGame {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ ensures n >= 0 ==> \result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:19: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:7:) in method main
+        divisorGame(1);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:19:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:2: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ ensures n >= 0 ==> \result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:6:) in method main
+        divisorGame(1);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:18:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:3: verify: Precondition conjunct is false: n != 1
+    //@ requires n != 1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n <= 1;
+    //@ requires n <= 0;
+    //@ ensures n >= 0 ==> \result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:17: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:5:) in method main
+        divisorGame(1);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:17:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:3: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    //@ requires n <= 1;
+    //@ ensures n >= 0 ==> \result;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:5: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:3:) in method divisorGame
+        return n % 2 == 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:5:
+    //@ ensures n >= 0 ==> \result;
+        ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:17: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:4:) in method main
+        divisorGame(2);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:17:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+5 verification failures
+
+public class DivisorGame {
+    //@ requires n <= 1;
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:16: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:3:) in method main
+        divisorGame(2);
+                   ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/DivisorGame.java:16:
+    public static boolean divisorGame(int n) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/DivisorGame.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+public class DivisorGame {
+    public static boolean divisorGame(int n) {
+        return n % 2 == 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        divisorGame(-5);
+        divisorGame(-4);
+        divisorGame(-3);
+        divisorGame(-2);
+        divisorGame(-1);
+        divisorGame(0);
+        divisorGame(1);
+        divisorGame(2);
+        divisorGame(3);
+        divisorGame(4);
+        divisorGame(114);
+        divisorGame(1919);
+    }
+}
+
+
+

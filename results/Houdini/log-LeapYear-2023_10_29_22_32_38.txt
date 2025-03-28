@@ -1,0 +1,1468 @@
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year == 1;
+    //@ requires year != 1;
+    //@ requires year >= 1;
+    //@ requires year > 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year == 0;
+    //@ requires year != 0;
+    //@ requires year >= 0;
+    //@ requires year > 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:25:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:25: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:48:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:5: verify: Precondition conjunct is false: year == 1
+    //@ requires year == 1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year >= 1;
+    //@ requires year > 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year == 0;
+    //@ requires year != 0;
+    //@ requires year >= 0;
+    //@ requires year > 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:24:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:47:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:6: verify: Precondition conjunct is false: year >= 1
+    //@ requires year >= 1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year > 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year == 0;
+    //@ requires year != 0;
+    //@ requires year >= 0;
+    //@ requires year > 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:23:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:46:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:6: verify: Precondition conjunct is false: year > 1
+    //@ requires year > 1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year == 0;
+    //@ requires year != 0;
+    //@ requires year >= 0;
+    //@ requires year > 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:22:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:45:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:8: verify: Precondition conjunct is false: year == 0
+    //@ requires year == 0;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year >= 0;
+    //@ requires year > 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:21:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:44:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:9: verify: Precondition conjunct is false: year >= 0
+    //@ requires year >= 0;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year > 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:20:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:43:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:9: verify: Precondition conjunct is false: year > 0
+    //@ requires year > 0;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year == -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:19:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:19: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:42:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:11: verify: Precondition conjunct is false: year == -1
+    //@ requires year == -1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year != -1;
+    //@ requires year >= -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:18:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:41:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:12: verify: Precondition conjunct is false: year >= -1
+    //@ requires year >= -1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year != -1;
+    //@ requires year > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:17:) in method main
+        isLeapYear(-4);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:40:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:12: verify: Precondition conjunct is false: year > -1
+    //@ requires year > -1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year != -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:34: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:12:) in method isLeapYear
+	    return leap;
+	    ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:34:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year != -1;
+    //@ ensures !\result;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:33: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:12:) in method isLeapYear
+	    return leap;
+	    ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:33:
+    //@ ensures !\result;
+        ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:15:) in method main
+        isLeapYear(-1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:41:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:9: verify: Precondition conjunct is false: year < -1
+    //@ requires year < -1;
+                      ^
+5 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year < -1;
+    //@ requires year <= -1;
+    //@ requires year != -1;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:14:) in method main
+        isLeapYear(-1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:40:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:9: verify: Precondition conjunct is false: year < -1
+    //@ requires year < -1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year <= -1;
+    //@ requires year != -1;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:39: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:13:) in method main
+        isLeapYear(-1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:39:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:10: verify: Precondition conjunct is false: year != -1
+    //@ requires year != -1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year < 0;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year <= -1;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:39: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:12:) in method main
+        isLeapYear(0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:39:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:6: verify: Precondition conjunct is false: year < 0
+    //@ requires year < 0;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year <= 0;
+    //@ requires year != 0;
+    //@ requires year <= -1;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:38: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:11:) in method main
+        isLeapYear(0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:38:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:7: verify: Precondition conjunct is false: year != 0
+    //@ requires year != 0;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year <= 0;
+    //@ requires year <= -1;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:37: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:10:) in method main
+        isLeapYear(0);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:37:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:7: verify: Precondition conjunct is false: year <= -1
+    //@ requires year <= -1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year <= 0;
+    //@ ensures year >= 0 ==> \result;
+    //@ ensures year >= 0 ==> !\result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:27: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:8:) in method isLeapYear
+	    return leap;
+	    ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:27:
+    //@ ensures year >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class LeapYear {
+    
+    //@ requires year < 1;
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year <= 0;
+    //@ ensures year >= 0 ==> \result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:36: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:8:) in method main
+        isLeapYear(1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:36:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:3: verify: Precondition conjunct is false: year < 1
+    //@ requires year < 1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year <= 1;
+    //@ requires year != 1;
+    //@ requires year <= 0;
+    //@ ensures year >= 0 ==> \result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:35: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:7:) in method main
+        isLeapYear(1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:35:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:4: verify: Precondition conjunct is false: year != 1
+    //@ requires year != 1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year <= 1;
+    //@ requires year <= 0;
+    //@ ensures year >= 0 ==> \result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:6:) in method main
+        isLeapYear(1);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:34:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:4: verify: Precondition conjunct is false: year <= 0
+    //@ requires year <= 0;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    //@ requires year <= 1;
+    //@ ensures year >= 0 ==> \result;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:23: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:4:) in method isLeapYear
+	    return leap;
+	    ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:23:
+    //@ ensures year >= 0 ==> \result;
+        ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:5:) in method main
+        isLeapYear(2);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:34:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:3: verify: Precondition conjunct is false: year <= 1
+    //@ requires year <= 1;
+                      ^
+5 verification failures
+
+public class LeapYear {
+    
+    //@ requires year <= 1;
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/LeapYear.java:4:) in method main
+        isLeapYear(2);
+                  ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/LeapYear.java:33:
+    public static boolean isLeapYear(int year) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/LeapYear.java:3: verify: Precondition conjunct is false: year <= 1
+    //@ requires year <= 1;
+                      ^
+3 verification failures
+
+public class LeapYear {
+    
+    public static boolean isLeapYear(int year) {
+        boolean leap = false;
+         
+        if (year % 4 == 0)
+        {
+            if ( year % 100 == 0)
+            {
+                if ( year % 400 == 0)
+                    leap = true;
+                else
+                    leap = false;
+            }
+            else
+                leap = true;
+        }
+        else
+            leap = false;
+	
+	    return leap;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isLeapYear(-4);
+        isLeapYear(-3);
+        isLeapYear(-2);
+        isLeapYear(-1);
+        isLeapYear(0);
+        isLeapYear(1);
+        isLeapYear(2);
+        isLeapYear(2000);
+        isLeapYear(2004);
+        isLeapYear(2008);
+        isLeapYear(2001);
+        isLeapYear(2010);
+        isLeapYear(2011);
+    }
+}
+
+
+

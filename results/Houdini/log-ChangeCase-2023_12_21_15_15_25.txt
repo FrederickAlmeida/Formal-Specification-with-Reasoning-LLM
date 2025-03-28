@@ -1,0 +1,1920 @@
+public class ChangeCase {
+
+  //@ requires c < 1;
+  //@ requires c <= 1;
+  //@ requires c == 1;
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c < 0;
+  //@ requires c <= 0;
+  //@ requires c == 0;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:64: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:46:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:46: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:64:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:3: verify: Precondition conjunct is false: c < 1
+  //@ requires c < 1;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c <= 1;
+  //@ requires c == 1;
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c < 0;
+  //@ requires c <= 0;
+  //@ requires c == 0;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:63: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:45:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:45: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:63:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:3: verify: Precondition conjunct is false: c <= 1
+  //@ requires c <= 1;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c == 1;
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c < 0;
+  //@ requires c <= 0;
+  //@ requires c == 0;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:62: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:44:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:44: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:62:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:3: verify: Precondition conjunct is false: c == 1
+  //@ requires c == 1;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c < 0;
+  //@ requires c <= 0;
+  //@ requires c == 0;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:61: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:43:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:43: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:61:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:6: verify: Precondition conjunct is false: c < 0
+  //@ requires c < 0;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c <= 0;
+  //@ requires c == 0;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:60: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:42:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:60:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:6: verify: Precondition conjunct is false: c <= 0
+  //@ requires c <= 0;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c == 0;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:59: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:41:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:59:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:6: verify: Precondition conjunct is false: c == 0
+  //@ requires c == 0;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c < -1;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:58: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:40:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:58:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:9: verify: Precondition conjunct is false: c < -1
+  //@ requires c < -1;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c <= -1;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:57: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:39:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:57:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:9: verify: Precondition conjunct is false: c <= -1
+  //@ requires c <= -1;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c == -1;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:56: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:38:) in method main
+    changeCase('a');
+              ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:56:
+  public static char changeCase(char c) {
+                     ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:9: verify: Precondition conjunct is false: c == -1
+  //@ requires c == -1;
+                 ^
+3 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result < 1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:50: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:12:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:50:
+  //@ ensures \result < 1;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result <= 1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:49: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:12:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:49:
+  //@ ensures \result <= 1;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result == 1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:48: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:12:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:48:
+  //@ ensures \result == 1;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result < 0;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:47: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:15:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:47:
+  //@ ensures \result < 0;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result <= 0;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:46: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:15:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:46:
+  //@ ensures \result <= 0;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result == 0;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:45: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:15:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:45:
+  //@ ensures \result == 0;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result < -1;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:44: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:18:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:44:
+  //@ ensures \result < -1;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result <= -1;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:43: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:18:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:43:
+  //@ ensures \result <= -1;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result == -1;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:42: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:18:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:42:
+  //@ ensures \result == -1;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result < c;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:41: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:21:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:41:
+  //@ ensures \result < c;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result != c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:40: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:23:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:40:
+  //@ ensures \result != c;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result >= c;
+  //@ ensures \result > c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:39: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:24:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:39:
+  //@ ensures \result > c;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result <= c;
+  //@ ensures \result == c;
+  //@ ensures \result >= c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:38: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:22:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:38:
+  //@ ensures \result == c;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result <= c;
+  //@ ensures \result >= c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:37: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:22:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:37:
+  //@ ensures \result >= c;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures \result <= c;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:36: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:21:) in method changeCase
+    return result;
+    ^
+/home/max/Documents/JMLGPT/tmp/ChangeCase.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/ChangeCase.java:36:
+  //@ ensures \result <= c;
+      ^
+2 verification failures
+
+public class ChangeCase {
+
+  //@ requires c != 1;
+  //@ requires c >= 1;
+  //@ requires c > 1;
+  //@ requires c != 0;
+  //@ requires c >= 0;
+  //@ requires c > 0;
+  //@ requires c != -1;
+  //@ requires c >= -1;
+  //@ requires c > -1;
+  //@ ensures \result != 1;
+  //@ ensures \result >= 1;
+  //@ ensures \result > 1;
+  //@ ensures \result != 0;
+  //@ ensures \result >= 0;
+  //@ ensures \result > 0;
+  //@ ensures \result != -1;
+  //@ ensures \result >= -1;
+  //@ ensures \result > -1;
+  //@ ensures c >= 0 ==> \result >= 0;
+  public static char changeCase(char c) {
+    char result = ' ';    
+    if (c > 'z') {
+      result = c;
+    } else if (c >= 'a') {
+      result =  (char)(c - 'a' + 'A');
+    } else if (c > 'Z') {
+      result =  c;
+    } else if (c >= 'A') {
+      result =  (char)(c - 'A' + 'a');
+    } else {
+      result = c;
+    }
+    return result;
+  }
+
+  //@ requires \nonnullelements(args);
+  public static void main(String[] args) {
+    changeCase('a');
+    changeCase('b');
+    changeCase('p');
+    changeCase('z');
+    changeCase('1');
+    changeCase('?');
+    changeCase('A');
+    changeCase('N');
+    changeCase('Z');
+    changeCase('R');
+    changeCase(' ');
+    changeCase('+');
+  }
+
+}
+
+
+

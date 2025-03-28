@@ -1,0 +1,3714 @@
+class IsPalindrome {
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ non_null
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ non_null
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2: error: Embedded block comment must terminate within the JML line comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:3: error: illegal start of type
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:4: error: ';' expected
+    //@ ensures \result;
+               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:4: error: Token \result is not a type
+    //@ ensures \result;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:25: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:74: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:74: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:90: error: reached end of file while parsing
+9 errors
+
+class IsPalindrome {
+    //@ non_null
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ non_null
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:24: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:73: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:73: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:89: error: reached end of file while parsing
+5 errors
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ non_null
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:23: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:72: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:72: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:88: error: reached end of file while parsing
+4 errors
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:71: error: illegal start of type
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:71: error: unclosed comment
+    //@ */ throws java.lang.StringIndexOutOfBoundsException /* Houdini inferred exceptions
+                                                            ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:87: error: reached end of file while parsing
+3 errors
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:65:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:65: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:25: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:64:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:64: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:23: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:63:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:63: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:25: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:62:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:62: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:24: verify: Precondition conjunct is false: n != 1
+    //@ requires n != 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:61:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:61: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:24: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:60:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:60: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:24: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 1;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:59:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:59: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:23: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:58:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:58: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:25: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:57:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:57: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:26: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:56:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:56: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:26: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:55:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:55: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:23: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n == 0;
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:54:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:54: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:23: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:53:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:53: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:24: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:52:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:52: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:24: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:51:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:51: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:29: verify: Precondition conjunct is false: i == 1
+    //@ requires i == 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:50:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:50: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30: verify: Precondition conjunct is false: i >= 1
+    //@ requires i >= 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:49:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:49: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30: verify: Precondition conjunct is false: i > 1
+    //@ requires i > 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:48:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:48: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:32: verify: Precondition conjunct is false: i == 0
+    //@ requires i == 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:47:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:47: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:33: verify: Precondition conjunct is false: i >= 0
+    //@ requires i >= 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:46:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:46: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:33: verify: Precondition conjunct is false: i > 0
+    //@ requires i > 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:45:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:45: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:35: verify: Precondition conjunct is false: i == -1
+    //@ requires i == -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:44:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:44: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:36: verify: Precondition conjunct is false: i >= -1
+    //@ requires i >= -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i != -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:43:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:43: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27: verify: Precondition conjunct is false: i < 1
+    //@ requires i < 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i != -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:42:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:29: verify: Precondition conjunct is false: i < 0
+    //@ requires i < 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i != 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i != -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:41:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30: verify: Precondition conjunct is false: i != 0
+    //@ requires i != 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i != -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:40:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30: verify: Precondition conjunct is false: i < -1
+    //@ requires i < -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i <= -1;
+    //@ requires i != -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:39:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:31: verify: Precondition conjunct is false: i != -1
+    //@ requires i != -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i <= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:38:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:31: verify: Precondition conjunct is false: i > -1
+    //@ requires i > -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i != 1;
+    //@ requires i <= 0;
+    //@ requires i <= -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:37:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:28: verify: Precondition conjunct is false: i != 1
+    //@ requires i != 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 1;
+    //@ requires i <= 0;
+    //@ requires i <= -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:36:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27: verify: Precondition conjunct is false: i <= 1
+    //@ requires i <= 1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= 0;
+    //@ requires i <= -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:35:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27: verify: Precondition conjunct is false: i <= 0
+    //@ requires i <= 0;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:34:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27: verify: Precondition conjunct is false: i <= -1
+    //@ requires i <= -1;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:33:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:33: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:29: verify: Precondition conjunct is false: i == n
+    //@ requires i == n;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:32:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30: verify: Precondition conjunct is false: i >= n
+    //@ requires i >= n;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i != n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:31:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:18:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27: verify: Precondition conjunct is false: i < n
+    //@ requires i < n;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= n;
+    //@ requires i != n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:29: verify: Precondition conjunct is false: i > n
+    //@ requires i > n;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= n;
+    //@ requires i != n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2:) in method isPalindrome
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:15:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+class IsPalindrome {
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i <= n;
+    //@ requires i != n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:17: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:28:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:17:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:26: verify: Precondition conjunct is false: i <= n
+    //@ requires i <= n;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i != n;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:17: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27:) in method isPalindrome
+        __Loop_Invariant_Dummy1(s, n, i);
+                               ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:27: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:17:
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+                       ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:26: verify: Precondition conjunct is false: i != n
+    //@ requires i != n;
+                   ^
+3 verification failures
+
+class IsPalindrome {
+    //@ ensures !\result;
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:12: verify: The prover cannot establish an assertion (ExceptionalPostcondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:3:) in method isPalindrome
+            __Loop_Invariant_Dummy1(s, n, i);
+                                   ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:12:
+    //@ exsures (java.lang.StringIndexOutOfBoundsException ex) (false);
+        ^
+2 verification failures
+
+class IsPalindrome {
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> \result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:5:) in method isPalindrome
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:13:
+    //@ ensures s != null ==> \result;
+        ^
+2 verification failures
+
+class IsPalindrome {
+    //@ ensures !\result;
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2:) in method isPalindrome
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:17:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+class IsPalindrome {
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    //@ ensures s != null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:4:) in method isPalindrome
+        return true;
+        ^
+/home/max/Documents/JMLGPT/tmp/IsPalindrome.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/IsPalindrome.java:16:
+    //@ ensures s != null ==> !\result;
+        ^
+2 verification failures
+
+class IsPalindrome {
+    //@ ensures s == null ==> \result;
+    //@ ensures s == null ==> !\result;
+    public static boolean isPalindrome(String s) {
+        int n = s.length();
+        int i = 0;
+        for(i = 0; i < s.length(); i++) {
+            __Loop_Invariant_Dummy1(s, n, i);
+            if(s.charAt(i) != s.charAt(n - 1 - i)) {
+                return false;
+            }
+        }
+        __Loop_Invariant_Dummy1(s, n, i);
+
+        return true;
+    }
+
+    //@ requires n >= 0;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    public static void __Loop_Invariant_Dummy1(String s, int n, int i){}
+
+    /*@ requires args != null; */
+    /*@ requires \typeof(args) == \type(java.lang.String[]); */
+    /*@ requires (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    /*@ ensures (args.length == 0) && ((\forall int i; (0 <= i && i <= args.length-1) ==> (args[i] != null))); */
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        isPalindrome("");
+        isPalindrome("a");
+        isPalindrome("aabb");
+	isPalindrome("abba");
+        isPalindrome("ab");
+        isPalindrome("cc");
+        isPalindrome("114514");
+        isPalindrome("qabbaq");
+        isPalindrome("dagvwwvgad");
+        isPalindrome("114514415411");
+    }
+}
+
+
+

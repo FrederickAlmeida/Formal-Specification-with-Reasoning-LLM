@@ -1,0 +1,680 @@
+public class XOR {
+    //@ requires b1;
+    //@ requires !b1;
+    //@ requires b2;
+    //@ requires !b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:37: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/XOR.java:16:) in method main
+        xor(true, true);
+           ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:37:
+    public static boolean xor(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:3: verify: Precondition conjunct is false: !b1
+    //@ requires !b1;
+                 ^
+3 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ requires b2;
+    //@ requires !b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:36: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/XOR.java:15:) in method main
+        xor(true, true);
+           ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:36:
+    public static boolean xor(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:4: verify: Precondition conjunct is false: !b2
+    //@ requires !b2;
+                 ^
+3 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:17: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:4:) in method xor
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:17:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures !\result;
+    //@ ensures b1 ==> \result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:5:) in method xor
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:16:
+    //@ ensures b1 ==> \result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures !\result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> \result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:8:) in method xor
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:15:
+    //@ ensures b2 ==> \result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ requires b2;
+    //@ ensures !\result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/XOR.java:11:) in method main
+        xor(true, false);
+           ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:33:
+    public static boolean xor(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:3: verify: Precondition conjunct is false: b2
+    //@ requires b2;
+                 ^
+3 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ ensures !\result;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:3:) in method xor
+                return true;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:16:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ ensures b1 ==> !\result;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:3:) in method xor
+                return true;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:3: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:15:
+    //@ ensures b1 ==> !\result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    //@ ensures !b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:7:) in method xor
+                return true;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:14:
+    //@ ensures !b2 ==> !\result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ requires b1;
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/XOR.java:7:) in method main
+        xor(false, true);
+           ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:30:
+    public static boolean xor(boolean b1, boolean b2) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:2: verify: Precondition conjunct is false: b1
+    //@ requires b1;
+                 ^
+3 verification failures
+
+public class XOR {
+    //@ ensures !b1 ==> \result;
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:20: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:2:) in method xor
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:20:
+    //@ ensures !b1 ==> \result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    //@ ensures !b2 ==> \result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:4:) in method xor
+                return false;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:19:
+    //@ ensures !b2 ==> \result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ ensures !b1 ==> !\result;
+    //@ ensures b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:2:) in method xor
+                return true;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:15:
+    //@ ensures !b1 ==> !\result;
+        ^
+2 verification failures
+
+public class XOR {
+    //@ ensures b2 ==> !\result;
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/XOR.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/XOR.java:2:) in method xor
+                return true;
+                ^
+/home/max/Documents/JMLGPT/tmp/XOR.java:2: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/XOR.java:14:
+    //@ ensures b2 ==> !\result;
+        ^
+2 verification failures
+
+public class XOR {
+    public static boolean xor(boolean b1, boolean b2) {
+        if(b1 == true) {
+            if(b2 == true) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            if(b2 == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        xor(true, true);
+        xor(true, false);
+        xor(false, true);
+        xor(false, false);
+    }
+}
+
+
+

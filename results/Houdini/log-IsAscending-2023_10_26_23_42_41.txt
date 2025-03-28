@@ -1,0 +1,513 @@
+public class IsAscending {
+    //@ non_null
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures arr == null ==> \result;
+    //@ ensures arr == null ==> !\result;
+    //@ ensures arr != null ==> \result;
+    //@ ensures arr != null ==> !\result;
+    public boolean isAscending (int[] arr) {
+        int n = arr.length;
+        if (n < 2) {
+            return true;
+        }
+        for (int i = 0; i < n; i++) {
+            __Loop_Invariant_Dummy1(arr, n, i);
+            if(arr[i] >= arr[i+1])
+                return false;
+        }
+        return true;
+    }
+
+    //@ non_null
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ requires n < arr.length;
+    //@ requires n <= arr.length;
+    //@ requires n == arr.length;
+    //@ requires n != arr.length;
+    //@ requires n >= arr.length;
+    //@ requires n > arr.length;
+    //@ requires n < 5;
+    //@ requires n <= 5;
+    //@ requires n == 5;
+    //@ requires n != 5;
+    //@ requires n >= 5;
+    //@ requires n > 5;
+    //@ requires n < 2;
+    //@ requires n <= 2;
+    //@ requires n == 2;
+    //@ requires n != 2;
+    //@ requires n >= 2;
+    //@ requires n > 2;
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < arr.length;
+    //@ requires i <= arr.length;
+    //@ requires i == arr.length;
+    //@ requires i != arr.length;
+    //@ requires i >= arr.length;
+    //@ requires i > arr.length;
+    //@ requires i < 5;
+    //@ requires i <= 5;
+    //@ requires i == 5;
+    //@ requires i != 5;
+    //@ requires i >= 5;
+    //@ requires i > 5;
+    //@ requires i < 2;
+    //@ requires i <= 2;
+    //@ requires i == 2;
+    //@ requires i != 2;
+    //@ requires i >= 2;
+    //@ requires i > 2;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(int[] arr, int n, int i);
+
+    public void __HoudiniInvoker() {
+        int[] arr = new int[]{-2, -1, 0, 1, 2};
+        isAscending(arr);
+        arr = new int[]{0};
+        isAscending(arr);
+        arr = new int[]{-2, -1};
+        isAscending(arr);
+        arr = new int[]{2, 3};
+        isAscending(arr);
+        arr = new int[]{0, 1};
+        isAscending(arr);
+        arr = new int[]{-2, -3};
+        isAscending(arr);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsAscending.java:2: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/IsAscending.java:46: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+2 errors
+
+public class IsAscending {
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures arr == null ==> \result;
+    //@ ensures arr == null ==> !\result;
+    //@ ensures arr != null ==> \result;
+    //@ ensures arr != null ==> !\result;
+    public boolean isAscending (int[] arr) {
+        int n = arr.length;
+        if (n < 2) {
+            return true;
+        }
+        for (int i = 0; i < n; i++) {
+            __Loop_Invariant_Dummy1(arr, n, i);
+            if(arr[i] >= arr[i+1])
+                return false;
+        }
+        return true;
+    }
+
+    //@ non_null
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ requires n < arr.length;
+    //@ requires n <= arr.length;
+    //@ requires n == arr.length;
+    //@ requires n != arr.length;
+    //@ requires n >= arr.length;
+    //@ requires n > arr.length;
+    //@ requires n < 5;
+    //@ requires n <= 5;
+    //@ requires n == 5;
+    //@ requires n != 5;
+    //@ requires n >= 5;
+    //@ requires n > 5;
+    //@ requires n < 2;
+    //@ requires n <= 2;
+    //@ requires n == 2;
+    //@ requires n != 2;
+    //@ requires n >= 2;
+    //@ requires n > 2;
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < arr.length;
+    //@ requires i <= arr.length;
+    //@ requires i == arr.length;
+    //@ requires i != arr.length;
+    //@ requires i >= arr.length;
+    //@ requires i > arr.length;
+    //@ requires i < 5;
+    //@ requires i <= 5;
+    //@ requires i == 5;
+    //@ requires i != 5;
+    //@ requires i >= 5;
+    //@ requires i > 5;
+    //@ requires i < 2;
+    //@ requires i <= 2;
+    //@ requires i == 2;
+    //@ requires i != 2;
+    //@ requires i >= 2;
+    //@ requires i > 2;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(int[] arr, int n, int i);
+
+    public void __HoudiniInvoker() {
+        int[] arr = new int[]{-2, -1, 0, 1, 2};
+        isAscending(arr);
+        arr = new int[]{0};
+        isAscending(arr);
+        arr = new int[]{-2, -1};
+        isAscending(arr);
+        arr = new int[]{2, 3};
+        isAscending(arr);
+        arr = new int[]{0, 1};
+        isAscending(arr);
+        arr = new int[]{-2, -3};
+        isAscending(arr);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsAscending.java:45: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+public class IsAscending {
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures arr == null ==> \result;
+    //@ ensures arr == null ==> !\result;
+    //@ ensures arr != null ==> \result;
+    //@ ensures arr != null ==> !\result;
+    public boolean isAscending (int[] arr) {
+        int n = arr.length;
+        if (n < 2) {
+            return true;
+        }
+        for (int i = 0; i < n; i++) {
+            __Loop_Invariant_Dummy1(arr, n, i);
+            if(arr[i] >= arr[i+1])
+                return false;
+        }
+        return true;
+    }
+
+    //@ requires 5 < arr.length;
+    //@ requires 5 <= arr.length;
+    //@ requires 5 == arr.length;
+    //@ requires 5 != arr.length;
+    //@ requires 5 >= arr.length;
+    //@ requires 5 > arr.length;
+    //@ requires 2 < arr.length;
+    //@ requires 2 <= arr.length;
+    //@ requires 2 == arr.length;
+    //@ requires 2 != arr.length;
+    //@ requires 2 >= arr.length;
+    //@ requires 2 > arr.length;
+    //@ requires 1 < arr.length;
+    //@ requires 1 <= arr.length;
+    //@ requires 1 == arr.length;
+    //@ requires 1 != arr.length;
+    //@ requires 1 >= arr.length;
+    //@ requires 1 > arr.length;
+    //@ requires -1 < arr.length;
+    //@ requires -1 <= arr.length;
+    //@ requires -1 == arr.length;
+    //@ requires -1 != arr.length;
+    //@ requires -1 >= arr.length;
+    //@ requires -1 > arr.length;
+    //@ requires n < arr.length;
+    //@ requires n <= arr.length;
+    //@ requires n == arr.length;
+    //@ requires n != arr.length;
+    //@ requires n >= arr.length;
+    //@ requires n > arr.length;
+    //@ requires n < 5;
+    //@ requires n <= 5;
+    //@ requires n == 5;
+    //@ requires n != 5;
+    //@ requires n >= 5;
+    //@ requires n > 5;
+    //@ requires n < 2;
+    //@ requires n <= 2;
+    //@ requires n == 2;
+    //@ requires n != 2;
+    //@ requires n >= 2;
+    //@ requires n > 2;
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ requires i < arr.length;
+    //@ requires i <= arr.length;
+    //@ requires i == arr.length;
+    //@ requires i != arr.length;
+    //@ requires i >= arr.length;
+    //@ requires i > arr.length;
+    //@ requires i < 5;
+    //@ requires i <= 5;
+    //@ requires i == 5;
+    //@ requires i != 5;
+    //@ requires i >= 5;
+    //@ requires i > 5;
+    //@ requires i < 2;
+    //@ requires i <= 2;
+    //@ requires i == 2;
+    //@ requires i != 2;
+    //@ requires i >= 2;
+    //@ requires i > 2;
+    //@ requires i < 1;
+    //@ requires i <= 1;
+    //@ requires i == 1;
+    //@ requires i != 1;
+    //@ requires i >= 1;
+    //@ requires i > 1;
+    //@ requires i < 0;
+    //@ requires i <= 0;
+    //@ requires i == 0;
+    //@ requires i != 0;
+    //@ requires i >= 0;
+    //@ requires i > 0;
+    //@ requires i < -1;
+    //@ requires i <= -1;
+    //@ requires i == -1;
+    //@ requires i != -1;
+    //@ requires i >= -1;
+    //@ requires i > -1;
+    //@ requires i < n;
+    //@ requires i <= n;
+    //@ requires i == n;
+    //@ requires i != n;
+    //@ requires i >= n;
+    //@ requires i > n;
+    public static void __Loop_Invariant_Dummy1(int[] arr, int n, int i);
+
+    public void __HoudiniInvoker() {
+        int[] arr = new int[]{-2, -1, 0, 1, 2};
+        isAscending(arr);
+        arr = new int[]{0};
+        isAscending(arr);
+        arr = new int[]{-2, -1};
+        isAscending(arr);
+        arr = new int[]{2, 3};
+        isAscending(arr);
+        arr = new int[]{0, 1};
+        isAscending(arr);
+        arr = new int[]{-2, -3};
+        isAscending(arr);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/IsAscending.java:147: error: missing method body, or declare abstract
+    public static void __Loop_Invariant_Dummy1(int[] arr, int n, int i);
+                       ^
+1 error
+

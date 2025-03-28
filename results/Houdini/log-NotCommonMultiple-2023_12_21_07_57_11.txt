@@ -1,0 +1,5775 @@
+public class NotCommonMultiple {
+    //@ requires a < 1;
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a != 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:88: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:82:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:82: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:88:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:2: verify: Precondition conjunct is false: a < 1
+    //@ requires a < 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a != 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:87: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:81:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:81: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:87:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: a != 1
+    //@ requires a != 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a > 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:86: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:80:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:80: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:86:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Precondition conjunct is false: a > 1
+    //@ requires a > 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a < 0;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:85: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:79:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:79: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:85:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Precondition conjunct is false: a < 0
+    //@ requires a < 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a <= 0;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:84: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:78:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:78: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:84:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Precondition conjunct is false: a <= 0
+    //@ requires a <= 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a == 0;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:83: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:77:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:77: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:83:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Precondition conjunct is false: a == 0
+    //@ requires a == 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a < -1;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:82: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:76:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:76: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:82:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8: verify: Precondition conjunct is false: a < -1
+    //@ requires a < -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a <= -1;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:81: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:75:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:75: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:81:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8: verify: Precondition conjunct is false: a <= -1
+    //@ requires a <= -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a == -1;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:80: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:74:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:74: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:80:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8: verify: Precondition conjunct is false: a == -1
+    //@ requires a == -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b < a;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:79: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:73:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:73: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:79:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11: verify: Precondition conjunct is false: b < a
+    //@ requires b < a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b != a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:78: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:72:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:72: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:78:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:13: verify: Precondition conjunct is false: b != a
+    //@ requires b != a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b > a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:77: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:71:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:71: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:77:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14: verify: Precondition conjunct is false: b > a
+    //@ requires b > a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b < 1;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:76: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:70:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:70: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:76:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14: verify: Precondition conjunct is false: b < 1
+    //@ requires b < 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b != 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:75: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:69:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:69: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:75:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:16: verify: Precondition conjunct is false: b != 1
+    //@ requires b != 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b > 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:74: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:68:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:68: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:74:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:17: verify: Precondition conjunct is false: b > 1
+    //@ requires b > 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b < 0;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:73: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:67:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:67: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:73:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:17: verify: Precondition conjunct is false: b < 0
+    //@ requires b < 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b <= 0;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:72: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:66:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:66: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:72:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:17: verify: Precondition conjunct is false: b <= 0
+    //@ requires b <= 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b == 0;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:71: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:65:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:65: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:71:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:17: verify: Precondition conjunct is false: b == 0
+    //@ requires b == 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b < -1;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:70: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:64:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:64: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:70:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:20: verify: Precondition conjunct is false: b < -1
+    //@ requires b < -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b <= -1;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:69: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:63:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:63: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:69:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:20: verify: Precondition conjunct is false: b <= -1
+    //@ requires b <= -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b == -1;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:68: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:62:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:62: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:68:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:20: verify: Precondition conjunct is false: b == -1
+    //@ requires b == -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m < b;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:67: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:61:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:61: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:67:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23: verify: Precondition conjunct is false: m < b
+    //@ requires m < b;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m != b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:66: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:60:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:60: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:66:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25: verify: Precondition conjunct is false: m != b
+    //@ requires m != b;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m > b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:65: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:59:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:59: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:65:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: Precondition conjunct is false: m > b
+    //@ requires m > b;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m < a;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:64: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:58:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:58: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:64:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: Precondition conjunct is false: m < a
+    //@ requires m < a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m != a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:63: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:57:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:57: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:63:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28: verify: Precondition conjunct is false: m != a
+    //@ requires m != a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m > a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:62: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:56:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:56: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:62:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:29: verify: Precondition conjunct is false: m > a
+    //@ requires m > a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m < 1;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:61: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:55:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:55: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:61:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:29: verify: Precondition conjunct is false: m < 1
+    //@ requires m < 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m != 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:60: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:54:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:54: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:60:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:31: verify: Precondition conjunct is false: m != 1
+    //@ requires m != 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m > 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:59: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:53:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:53: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:59:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32: verify: Precondition conjunct is false: m > 1
+    //@ requires m > 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m < 0;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:58: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:52:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:52: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:58:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32: verify: Precondition conjunct is false: m < 0
+    //@ requires m < 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m <= 0;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:57: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:51:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:51: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:57:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32: verify: Precondition conjunct is false: m <= 0
+    //@ requires m <= 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m == 0;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:56: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:50:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:50: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:56:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32: verify: Precondition conjunct is false: m == 0
+    //@ requires m == 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m < -1;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:55: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:49:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:49: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:55:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35: verify: Precondition conjunct is false: m < -1
+    //@ requires m < -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m <= -1;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:54: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:48:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:48: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:54:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35: verify: Precondition conjunct is false: m <= -1
+    //@ requires m <= -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m == -1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:53: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:47:) in method main
+        notCommonMultiple(1, 1, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:47: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:53:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35: verify: Precondition conjunct is false: m == -1
+    //@ requires m == -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures \result;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:47: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:38:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:47:
+    //@ ensures \result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> \result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:46: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:39:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:46:
+    //@ ensures a >= 0 ==> \result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> \result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:45: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:40:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:45:
+    //@ ensures b >= 0 ==> \result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> \result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:44: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:41:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:44:
+    //@ ensures m >= 0 ==> \result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m == b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:42:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:49:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24: verify: Precondition conjunct is false: m == b
+    //@ requires m == b;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m >= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:41:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:48:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24: verify: Precondition conjunct is false: m >= b
+    //@ requires m >= b;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m == a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:40:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:47:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25: verify: Precondition conjunct is false: m == a
+    //@ requires m == a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m >= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:39:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:46:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25: verify: Precondition conjunct is false: m >= a
+    //@ requires m >= a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m == 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:45: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:38:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:45:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: Precondition conjunct is false: m == 1
+    //@ requires m == 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:44: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:37:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:44:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: Precondition conjunct is false: m >= 1
+    //@ requires m >= 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m != 0;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:43: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:36:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:36: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:43:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: Precondition conjunct is false: m != 0
+    //@ requires m != 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m > 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35:) in method main
+        notCommonMultiple(1, 1, 0);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:42:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:27: verify: Precondition conjunct is false: m > 0
+    //@ requires m > 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a == 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:42: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:34:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:34: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:42:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:3: verify: Precondition conjunct is false: a == 1
+    //@ requires a == 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a >= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:41: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:33:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:33: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:41:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:3: verify: Precondition conjunct is false: a >= 1
+    //@ requires a >= 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:40: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:40:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: a >= 0
+    //@ requires a >= 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a > 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:39: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:31:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:31: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:39:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: a > 0
+    //@ requires a > 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a != -1;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:38: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:30:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:30: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:38:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: a != -1
+    //@ requires a != -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires a > -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:37: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:29:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:29: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:37:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Precondition conjunct is false: a > -1
+    //@ requires a > -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b == 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:36: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:36:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9: verify: Precondition conjunct is false: b == 1
+    //@ requires b == 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b >= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:27:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:27: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:35:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9: verify: Precondition conjunct is false: b >= 1
+    //@ requires b >= 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:34:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10: verify: Precondition conjunct is false: b >= 0
+    //@ requires b >= 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b > 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:33:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10: verify: Precondition conjunct is false: b > 0
+    //@ requires b > 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b != -1;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:32:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10: verify: Precondition conjunct is false: b != -1
+    //@ requires b != -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires b > -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:31: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:31:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11: verify: Precondition conjunct is false: b > -1
+    //@ requires b > -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= 0;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:22:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:30:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14: verify: Precondition conjunct is false: m >= 0
+    //@ requires m >= 0;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m != -1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:21:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:29:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14: verify: Precondition conjunct is false: m != -1
+    //@ requires m != -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ requires m > -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:20:) in method main
+        notCommonMultiple(-1, -1, -1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:15: verify: Precondition conjunct is false: m > -1
+    //@ requires m > -1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a <= 1;
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:19:) in method main
+        notCommonMultiple(2, 3, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:19: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:28:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:2: verify: Precondition conjunct is false: a <= 1
+    //@ requires a <= 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b <= a;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:27: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:18:) in method main
+        notCommonMultiple(2, 3, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:27:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: b <= a
+    //@ requires b <= a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b == a;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:17:) in method main
+        notCommonMultiple(2, 3, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:26:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: b == a
+    //@ requires b == a;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b <= 1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:16:) in method main
+        notCommonMultiple(2, 3, 1);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Precondition conjunct is false: b <= 1
+    //@ requires b <= 1;
+                   ^
+3 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b >= a;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:15:) in method main
+        notCommonMultiple(6, 1, 6);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:25:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: b >= a
+    //@ requires b >= a;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:16:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= b;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14:) in method main
+        notCommonMultiple(6, 1, 6);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6: verify: Precondition conjunct is false: m <= b
+    //@ requires m <= b;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:15:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= a;
+    //@ requires m <= 1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:13:) in method main
+        notCommonMultiple(6, 1, 6);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:7: verify: Precondition conjunct is false: m <= 1
+    //@ requires m <= 1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:14:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m <= a;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:12:) in method main
+        notCommonMultiple(2, 114, 228);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6: verify: Precondition conjunct is false: m <= a
+    //@ requires m <= a;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:13: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:13:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires a >= -1;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11:) in method main
+        notCommonMultiple(-5, -6, -30);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:24:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:3: verify: Precondition conjunct is false: a >= -1
+    //@ requires a >= -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:12: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:7:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:12:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ requires b >= -1;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10:) in method main
+        notCommonMultiple(-5, -6, -30);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:23:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: b >= -1
+    //@ requires b >= -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:11:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ requires m >= -1;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:22: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9:) in method main
+        notCommonMultiple(-5, -6, -30);
+                         ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:22:
+    public static boolean notCommonMultiple (int a, int b, int m) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Precondition conjunct is false: m >= -1
+    //@ requires m >= -1;
+                   ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:10:
+    //@ ensures !\result;
+        ^
+5 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ ensures !\result;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:9:
+    //@ ensures !\result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    //@ ensures m >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:8:
+    //@ ensures m >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ ensures a >= 0 ==> !\result;
+    //@ ensures b >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:7: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:5: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:7:
+    //@ ensures b >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    //@ ensures a >= 0 ==> !\result;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4:) in method notCommonMultiple
+        return m % a != 0 || m % b != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:4: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/NotCommonMultiple.java:6:
+    //@ ensures a >= 0 ==> !\result;
+        ^
+2 verification failures
+
+public class NotCommonMultiple {
+    //@ requires a != 0;
+    //@ requires b != 0;
+    public static boolean notCommonMultiple (int a, int b, int m) {
+        return m % a != 0 || m % b != 0;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        notCommonMultiple(1, 1, 1);
+        notCommonMultiple(1, 1, 0);
+        notCommonMultiple(-1, -1, -1);
+        notCommonMultiple(2, 3, 1);
+        notCommonMultiple(6, 1, 6);
+        notCommonMultiple(2, 114, 228);
+        notCommonMultiple(3, 5, 7);
+        notCommonMultiple(-5, -6, -30);
+        notCommonMultiple(8, 9, 46);
+        notCommonMultiple(7, 10, 49);
+    }
+}
+
+
+

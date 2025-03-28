@@ -1,0 +1,165 @@
+
+public class CalculatorShuffled {
+    
+    //@ requires num1 < 1;
+    //@ requires num1 <= 1;
+    //@ requires num1 == 1;
+    //@ requires num1 != 1;
+    //@ requires num1 >= 1;
+    //@ requires num1 > 1;
+    //@ requires num1 < 0;
+    //@ requires num1 <= 0;
+    //@ requires num1 == 0;
+    //@ requires num1 != 0;
+    //@ requires num1 >= 0;
+    //@ requires num1 > 0;
+    //@ requires num1 < -1;
+    //@ requires num1 <= -1;
+    //@ requires num1 == -1;
+    //@ requires num1 != -1;
+    //@ requires num1 >= -1;
+    //@ requires num1 > -1;
+    //@ requires num2 < 1;
+    //@ requires num2 <= 1;
+    //@ requires num2 == 1;
+    //@ requires num2 != 1;
+    //@ requires num2 >= 1;
+    //@ requires num2 > 1;
+    //@ requires num2 < 0;
+    //@ requires num2 <= 0;
+    //@ requires num2 == 0;
+    //@ requires num2 != 0;
+    //@ requires num2 >= 0;
+    //@ requires num2 > 0;
+    //@ requires num2 < -1;
+    //@ requires num2 <= -1;
+    //@ requires num2 == -1;
+    //@ requires num2 != -1;
+    //@ requires num2 >= -1;
+    //@ requires num2 > -1;
+    //@ requires num2 < num1;
+    //@ requires num2 <= num1;
+    //@ requires num2 == num1;
+    //@ requires num2 != num1;
+    //@ requires num2 >= num1;
+    //@ requires num2 > num1;
+    //@ requires operator < 1;
+    //@ requires operator <= 1;
+    //@ requires operator == 1;
+    //@ requires operator != 1;
+    //@ requires operator >= 1;
+    //@ requires operator > 1;
+    //@ requires operator < 0;
+    //@ requires operator <= 0;
+    //@ requires operator == 0;
+    //@ requires operator != 0;
+    //@ requires operator >= 0;
+    //@ requires operator > 0;
+    //@ requires operator < num2;
+    //@ requires operator <= num2;
+    //@ requires operator == num2;
+    //@ requires operator != num2;
+    //@ requires operator >= num2;
+    //@ requires operator > num2;
+    //@ requires operator < -1;
+    //@ requires operator <= -1;
+    //@ requires operator == -1;
+    //@ requires operator != -1;
+    //@ requires operator >= -1;
+    //@ requires operator > -1;
+    //@ requires operator < num1;
+    //@ requires operator <= num1;
+    //@ requires operator == num1;
+    //@ requires operator != num1;
+    //@ requires operator >= num1;
+    //@ requires operator > num1;
+    //@ ensures \result < operator;
+    //@ ensures \result <= operator;
+    //@ ensures \result == operator;
+    //@ ensures \result != operator;
+    //@ ensures \result >= operator;
+    //@ ensures \result > operator;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < num2;
+    //@ ensures \result <= num2;
+    //@ ensures \result == num2;
+    //@ ensures \result != num2;
+    //@ ensures \result >= num2;
+    //@ ensures \result > num2;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < num1;
+    //@ ensures \result <= num1;
+    //@ ensures \result == num1;
+    //@ ensures \result != num1;
+    //@ ensures \result >= num1;
+    //@ ensures \result > num1;
+    //@ ensures num1 >= 0 ==> \result >= 0;
+    //@ ensures num2 >= 0 ==> \result >= 0;
+    //@ ensures operator >= 0 ==> \result >= 0;
+    public static int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '-':
+            	output = num1 * num2;
+                break;
+
+            case '*':
+            	output = num1 / num2;
+                break;
+
+            case '/':
+            	output = num1 + num2;
+                break;
+
+            case '+':
+            	output = num1 - num2;
+		break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+    
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        calculate(-4, 0, '+');
+        calculate(0, -4, '+');
+        calculate(4, 0, '-');
+        calculate(0, 4, '*');
+        calculate(-4, -4, '+');
+        calculate(4, 4, '/');
+        calculate(0, 0, '+');
+        calculate(-4, 4, '*');
+        calculate(4, -4, '/');
+        calculate(1, -1, '*');
+        calculate(-1, 1, '+');
+    }
+}
+
+
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 58953728 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /home/max/Documents/JMLGPT/hs_err_pid20023.log
+

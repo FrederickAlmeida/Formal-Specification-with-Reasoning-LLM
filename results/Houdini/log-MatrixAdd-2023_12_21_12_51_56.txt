@@ -1,0 +1,425 @@
+public class MatrixAdd {
+    
+    //@ non_null
+    //@ requires a != null ==> \nonnullelements(a);
+    //@ requires 2 < a.length;
+    //@ requires 2 <= a.length;
+    //@ requires 2 == a.length;
+    //@ requires 2 != a.length;
+    //@ requires 2 >= a.length;
+    //@ requires 2 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires 1 < a.length;
+    //@ requires 1 <= a.length;
+    //@ requires 1 == a.length;
+    //@ requires 1 != a.length;
+    //@ requires 1 >= a.length;
+    //@ requires 1 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires -1 < a.length;
+    //@ requires -1 <= a.length;
+    //@ requires -1 == a.length;
+    //@ requires -1 != a.length;
+    //@ requires -1 >= a.length;
+    //@ requires -1 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ non_null
+    //@ requires b != null ==> \nonnullelements(b);
+    //@ requires a.length < b.length;
+    //@ requires a.length <= b.length;
+    //@ requires a.length == b.length;
+    //@ requires a.length != b.length;
+    //@ requires a.length >= b.length;
+    //@ requires a.length > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < a.length ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; a.length <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires 2 < b.length;
+    //@ requires 2 <= b.length;
+    //@ requires 2 == b.length;
+    //@ requires 2 != b.length;
+    //@ requires 2 >= b.length;
+    //@ requires 2 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires 1 < b.length;
+    //@ requires 1 <= b.length;
+    //@ requires 1 == b.length;
+    //@ requires 1 != b.length;
+    //@ requires 1 >= b.length;
+    //@ requires 1 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires -1 < b.length;
+    //@ requires -1 <= b.length;
+    //@ requires -1 == b.length;
+    //@ requires -1 != b.length;
+    //@ requires -1 >= b.length;
+    //@ requires -1 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ ensures \result != null;
+    //@ ensures \result != null ==> \nonnullelements(\result);
+    //@ ensures b.length < \result.length;
+    //@ ensures b.length <= \result.length;
+    //@ ensures b.length == \result.length;
+    //@ ensures b.length != \result.length;
+    //@ ensures b.length >= \result.length;
+    //@ ensures b.length > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < b.length ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; b.length <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures a.length < \result.length;
+    //@ ensures a.length <= \result.length;
+    //@ ensures a.length == \result.length;
+    //@ ensures a.length != \result.length;
+    //@ ensures a.length >= \result.length;
+    //@ ensures a.length > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < a.length ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; a.length <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures \fresh(\result);
+    //@ ensures a == null ==> \result != null;
+    //@ ensures a == null ==> \nonnullelements(\result);
+    //@ ensures a != null ==> \result != null;
+    //@ ensures a != null ==> \nonnullelements(\result);
+    //@ ensures b == null ==> \result != null;
+    //@ ensures b == null ==> \nonnullelements(\result);
+    //@ ensures b != null ==> \result != null;
+    //@ ensures b != null ==> \nonnullelements(\result);
+    public static int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int a[][] = {{-2, -1}, {0, 1}};
+        int b[][] = {{-2, -1}, {0, 1}};
+        add(a, b);
+    }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:3: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:29: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+2 errors
+
+public class MatrixAdd {
+    
+    //@ requires a != null ==> \nonnullelements(a);
+    //@ requires 2 < a.length;
+    //@ requires 2 <= a.length;
+    //@ requires 2 == a.length;
+    //@ requires 2 != a.length;
+    //@ requires 2 >= a.length;
+    //@ requires 2 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires 1 < a.length;
+    //@ requires 1 <= a.length;
+    //@ requires 1 == a.length;
+    //@ requires 1 != a.length;
+    //@ requires 1 >= a.length;
+    //@ requires 1 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires -1 < a.length;
+    //@ requires -1 <= a.length;
+    //@ requires -1 == a.length;
+    //@ requires -1 != a.length;
+    //@ requires -1 >= a.length;
+    //@ requires -1 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ non_null
+    //@ requires b != null ==> \nonnullelements(b);
+    //@ requires a.length < b.length;
+    //@ requires a.length <= b.length;
+    //@ requires a.length == b.length;
+    //@ requires a.length != b.length;
+    //@ requires a.length >= b.length;
+    //@ requires a.length > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < a.length ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; a.length <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires 2 < b.length;
+    //@ requires 2 <= b.length;
+    //@ requires 2 == b.length;
+    //@ requires 2 != b.length;
+    //@ requires 2 >= b.length;
+    //@ requires 2 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires 1 < b.length;
+    //@ requires 1 <= b.length;
+    //@ requires 1 == b.length;
+    //@ requires 1 != b.length;
+    //@ requires 1 >= b.length;
+    //@ requires 1 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires -1 < b.length;
+    //@ requires -1 <= b.length;
+    //@ requires -1 == b.length;
+    //@ requires -1 != b.length;
+    //@ requires -1 >= b.length;
+    //@ requires -1 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ ensures \result != null;
+    //@ ensures \result != null ==> \nonnullelements(\result);
+    //@ ensures b.length < \result.length;
+    //@ ensures b.length <= \result.length;
+    //@ ensures b.length == \result.length;
+    //@ ensures b.length != \result.length;
+    //@ ensures b.length >= \result.length;
+    //@ ensures b.length > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < b.length ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; b.length <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures a.length < \result.length;
+    //@ ensures a.length <= \result.length;
+    //@ ensures a.length == \result.length;
+    //@ ensures a.length != \result.length;
+    //@ ensures a.length >= \result.length;
+    //@ ensures a.length > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < a.length ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; a.length <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures \fresh(\result);
+    //@ ensures a == null ==> \result != null;
+    //@ ensures a == null ==> \nonnullelements(\result);
+    //@ ensures a != null ==> \result != null;
+    //@ ensures a != null ==> \nonnullelements(\result);
+    //@ ensures b == null ==> \result != null;
+    //@ ensures b == null ==> \nonnullelements(\result);
+    //@ ensures b != null ==> \result != null;
+    //@ ensures b != null ==> \nonnullelements(\result);
+    public static int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int a[][] = {{-2, -1}, {0, 1}};
+        int b[][] = {{-2, -1}, {0, 1}};
+        add(a, b);
+    }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:28: error: No modifiers are allowed prior to a lightweight specification case
+    //@ non_null
+        ^
+1 error
+
+public class MatrixAdd {
+    
+    //@ requires a != null ==> \nonnullelements(a);
+    //@ requires 2 < a.length;
+    //@ requires 2 <= a.length;
+    //@ requires 2 == a.length;
+    //@ requires 2 != a.length;
+    //@ requires 2 >= a.length;
+    //@ requires 2 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires 1 < a.length;
+    //@ requires 1 <= a.length;
+    //@ requires 1 == a.length;
+    //@ requires 1 != a.length;
+    //@ requires 1 >= a.length;
+    //@ requires 1 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires -1 < a.length;
+    //@ requires -1 <= a.length;
+    //@ requires -1 == a.length;
+    //@ requires -1 != a.length;
+    //@ requires -1 >= a.length;
+    //@ requires -1 > a.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> a[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < a.length ==> a[houdiniTmp] != null);
+    //@ requires b != null ==> \nonnullelements(b);
+    //@ requires a.length < b.length;
+    //@ requires a.length <= b.length;
+    //@ requires a.length == b.length;
+    //@ requires a.length != b.length;
+    //@ requires a.length >= b.length;
+    //@ requires a.length > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < a.length ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; a.length <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires 2 < b.length;
+    //@ requires 2 <= b.length;
+    //@ requires 2 == b.length;
+    //@ requires 2 != b.length;
+    //@ requires 2 >= b.length;
+    //@ requires 2 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires 1 < b.length;
+    //@ requires 1 <= b.length;
+    //@ requires 1 == b.length;
+    //@ requires 1 != b.length;
+    //@ requires 1 >= b.length;
+    //@ requires 1 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ requires -1 < b.length;
+    //@ requires -1 <= b.length;
+    //@ requires -1 == b.length;
+    //@ requires -1 != b.length;
+    //@ requires -1 >= b.length;
+    //@ requires -1 > b.length;
+    //@ requires (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> b[houdiniTmp] != null);
+    //@ requires (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < b.length ==> b[houdiniTmp] != null);
+    //@ ensures \result != null;
+    //@ ensures \result != null ==> \nonnullelements(\result);
+    //@ ensures b.length < \result.length;
+    //@ ensures b.length <= \result.length;
+    //@ ensures b.length == \result.length;
+    //@ ensures b.length != \result.length;
+    //@ ensures b.length >= \result.length;
+    //@ ensures b.length > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < b.length ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; b.length <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures a.length < \result.length;
+    //@ ensures a.length <= \result.length;
+    //@ ensures a.length == \result.length;
+    //@ ensures a.length != \result.length;
+    //@ ensures a.length >= \result.length;
+    //@ ensures a.length > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < a.length ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; a.length <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures 2 < \result.length;
+    //@ ensures 2 <= \result.length;
+    //@ ensures 2 == \result.length;
+    //@ ensures 2 != \result.length;
+    //@ ensures 2 >= \result.length;
+    //@ ensures 2 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 2 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; 2 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures 1 < \result.length;
+    //@ ensures 1 <= \result.length;
+    //@ ensures 1 == \result.length;
+    //@ ensures 1 != \result.length;
+    //@ ensures 1 >= \result.length;
+    //@ ensures 1 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < 1 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; 1 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures -1 < \result.length;
+    //@ ensures -1 <= \result.length;
+    //@ ensures -1 == \result.length;
+    //@ ensures -1 != \result.length;
+    //@ ensures -1 >= \result.length;
+    //@ ensures -1 > \result.length;
+    //@ ensures (\forall int houdiniTmp; 0 <= houdiniTmp && houdiniTmp < -1 ==> \result[houdiniTmp] != null);
+    //@ ensures (\forall int houdiniTmp; -1 <= houdiniTmp && houdiniTmp < \result.length ==> \result[houdiniTmp] != null);
+    //@ ensures \fresh(\result);
+    //@ ensures a == null ==> \result != null;
+    //@ ensures a == null ==> \nonnullelements(\result);
+    //@ ensures a != null ==> \result != null;
+    //@ ensures a != null ==> \nonnullelements(\result);
+    //@ ensures b == null ==> \result != null;
+    //@ ensures b == null ==> \nonnullelements(\result);
+    //@ ensures b != null ==> \result != null;
+    //@ ensures b != null ==> \nonnullelements(\result);
+    public static int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        int a[][] = {{-2, -1}, {0, 1}};
+        int b[][] = {{-2, -1}, {0, 1}};
+        add(a, b);
+    }
+
+}
+
+
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:116: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_6067_6067___26 i_6067_6081___29
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:126: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/MatrixAdd.java:112:) in method main
+        add(a, b);
+           ^
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:112: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/MatrixAdd.java:126:
+    public static int[][] add(int[][] a, int[][] b) {
+                          ^
+/home/max/Documents/JMLGPT/tmp/MatrixAdd.java:4: verify: Precondition conjunct is false: 2 < a.length
+    //@ requires 2 < a.length;
+                   ^
+1 error
+3 verification failures
+

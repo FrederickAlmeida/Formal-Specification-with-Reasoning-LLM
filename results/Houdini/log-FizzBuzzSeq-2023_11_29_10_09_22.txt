@@ -1,0 +1,2134 @@
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n == 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:54: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:45:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:45: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:54:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:4: verify: Precondition conjunct is false: n == 1
+    //@ requires n == 1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n >= 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:53: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:44:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:44: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:53:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:5: verify: Precondition conjunct is false: n >= 1
+    //@ requires n >= 1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n > 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:52: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:43:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:43: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:52:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:5: verify: Precondition conjunct is false: n > 1
+    //@ requires n > 1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n == 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:51: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:42:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:42: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:51:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:7: verify: Precondition conjunct is false: n == 0
+    //@ requires n == 0;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n >= 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:50: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:41:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:41: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:50:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n >= 0
+    //@ requires n >= 0;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n > 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:49: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:40:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:40: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:49:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n > 0
+    //@ requires n > 0;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n == -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:48: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:39:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:39: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:48:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:10: verify: Precondition conjunct is false: n == -1
+    //@ requires n == -1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ requires n >= -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:47: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:38:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:38: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:47:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11: verify: Precondition conjunct is false: n >= -1
+    //@ requires n >= -1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ requires n > -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:46: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:37:) in method main
+        fizzBuzz(-2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:37: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:46:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11: verify: Precondition conjunct is false: n > -1
+    //@ requires n > -1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result < 1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:40: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:40:
+    //@ ensures \result < 1;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result <= 1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:39: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:39:
+    //@ ensures \result <= 1;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result == 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:38: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:38:
+    //@ ensures \result == 1;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result < 0;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:37: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:37:
+    //@ ensures \result < 0;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result <= 0;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:36: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:36:
+    //@ ensures \result <= 0;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result == 0;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:35: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:35:
+    //@ ensures \result == 0;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result < -1;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:34: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:34:
+    //@ ensures \result < -1;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result <= -1;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:33: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:33:
+    //@ ensures \result <= -1;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result == -1;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:32: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:32:
+    //@ ensures \result == -1;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result < n;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:31: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:31:
+    //@ ensures \result < n;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result <= n;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:30: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:30:
+    //@ ensures \result <= n;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result == n;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:29:
+    //@ ensures \result == n;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:28: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:28:
+    //@ ensures \result >= 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:34: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:24:) in method main
+        fizzBuzz(-1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:24: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:34:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+5 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result > 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:27: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:27:
+    //@ ensures \result > 1;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:33: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:23:) in method main
+        fizzBuzz(-1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:23: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:33:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+5 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result != 0;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:26: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:26:
+    //@ ensures \result != 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:32: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:22:) in method main
+        fizzBuzz(-1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:22: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:32:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+5 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result > 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:25: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:13:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:25:
+    //@ ensures \result > 0;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:31: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:21:) in method main
+        fizzBuzz(-1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:21: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:31:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+5 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n < -1;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:30: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20:) in method main
+        fizzBuzz(-1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:20: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:30:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:8: verify: Precondition conjunct is false: n < -1
+    //@ requires n < -1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n <= -1;
+    //@ requires n != -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:19:) in method main
+        fizzBuzz(-1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:19: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:29:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:9: verify: Precondition conjunct is false: n != -1
+    //@ requires n != -1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n < 0;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n <= -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:29: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:18:) in method main
+        fizzBuzz(0);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:18: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:29:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:5: verify: Precondition conjunct is false: n < 0
+    //@ requires n < 0;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n != 0;
+    //@ requires n <= -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:28: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17:) in method main
+        fizzBuzz(0);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:17: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:28:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:6: verify: Precondition conjunct is false: n != 0
+    //@ requires n != 0;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ requires n <= -1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:27: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:16:) in method main
+        fizzBuzz(0);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:16: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:27:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:6: verify: Precondition conjunct is false: n <= -1
+    //@ requires n <= -1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n < 1;
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:27: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:15:) in method main
+        fizzBuzz(1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:15: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:27:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:2: verify: Precondition conjunct is false: n < 1
+    //@ requires n < 1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n <= 1;
+    //@ requires n != 1;
+    //@ requires n <= 0;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:26: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14:) in method main
+        fizzBuzz(1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:14: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:26:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:3: verify: Precondition conjunct is false: n != 1
+    //@ requires n != 1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n <= 1;
+    //@ requires n <= 0;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:13:) in method main
+        fizzBuzz(1);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:13: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:25:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:3: verify: Precondition conjunct is false: n <= 0
+    //@ requires n <= 0;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result >= n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:16: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:9:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:16:
+    //@ ensures \result >= n;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:25: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12:) in method main
+        fizzBuzz(2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:12: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:25:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+5 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures \result > n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:15: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:9:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:9: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:15:
+    //@ ensures \result > n;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:24: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11:) in method main
+        fizzBuzz(2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:11: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:24:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+5 verification failures
+
+class FizzBuzzSeq {
+    //@ requires n <= 1;
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:23: verify: The prover cannot establish an assertion (Precondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:10:) in method main
+        fizzBuzz(2);
+                ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:10: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:23:
+    public static int fizzBuzz(int n) {
+                      ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:2: verify: Precondition conjunct is false: n <= 1
+    //@ requires n <= 1;
+                   ^
+3 verification failures
+
+class FizzBuzzSeq {
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures \result != n;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:13: verify: The prover cannot establish an assertion (Postcondition: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:7:) in method fizzBuzz
+        return res;
+        ^
+/home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:7: verify: Associated declaration: /home/max/Documents/JMLGPT/tmp/FizzBuzzSeq.java:13:
+    //@ ensures \result != n;
+        ^
+2 verification failures
+
+class FizzBuzzSeq {
+    //@ ensures \result != 1;
+    //@ ensures \result >= 0;
+    //@ ensures \result != -1;
+    //@ ensures \result >= -1;
+    //@ ensures \result > -1;
+    //@ ensures n >= 0 ==> \result >= 0;
+    public static int fizzBuzz(int n) {
+        int res = 0;
+        res += ((n % 3 == 0) ? 3 : 0);
+        res += ((n % 5 == 0) ? 5 : 0);
+        return res;
+    }
+
+    //@ requires \nonnullelements(args);
+    public static void main(String[] args) {
+        fizzBuzz(-2);
+        fizzBuzz(-1);
+        fizzBuzz(0);
+        fizzBuzz(1);
+        fizzBuzz(2);
+	    fizzBuzz(5);
+        fizzBuzz(12);
+        fizzBuzz(15);
+    }
+}
+
+
