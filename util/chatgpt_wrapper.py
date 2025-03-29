@@ -1,43 +1,42 @@
 import openai
 import os
-import signal
 import time
+import threading
 
 def create_chatgpt_config(messages):
     config = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-4o-mini",
         "temperature": 0.4,
         "messages": []
     }
     config["messages"] = messages
     return config
 
-def handler(signum, frame):
+def timeout_handler():
     raise Exception("end of time")
 
 def request_chatgpt_engine(config):
     ret = None
     while ret is None:
         try:
-            signal.signal(signal.SIGALRM, handler)
-            signal.alarm(100)
+            timer = threading.Timer(100, timeout_handler)  # Set a timeout of 100 seconds
+            timer.start()
             ret = openai.ChatCompletion.create(**config)
-            signal.alarm(0)  # cancel alarm
+            timer.cancel()  # Cancel the timeout if the request is successful
         except openai.error.InvalidRequestError as e:
-            print(e)
-            signal.alarm(0)  # cancel alarm
+            print(f"Invalid Request: {e}")
+            timer.cancel()
         except openai.error.RateLimitError as e:
             print("Rate limit exceeded. Waiting...")
             print(e)
-            signal.alarm(0)  # cancel alarm
-            time.sleep(5)  # wait for a minute
+            timer.cancel()
+            time.sleep(60)  # Wait for a minute before retrying
         except openai.error.APIConnectionError as e:
             print("API connection error. Waiting...")
-            signal.alarm(0)  # cancel alarm
-            time.sleep(5)  # wait for a minute
+            timer.cancel()
+            time.sleep(60)  # Wait for a minute before retrying
         except Exception as e:
-            print(e)
-            print("Unknown error. Waiting...")
-            signal.alarm(0)  # cancel alarm
-            time.sleep(1)  # wait for a minute
+            print(f"Unknown error: {e}")
+            timer.cancel()
+            time.sleep(1)  # Wait for a second before retrying
     return ret

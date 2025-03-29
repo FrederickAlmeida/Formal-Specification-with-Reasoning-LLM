@@ -2,6 +2,7 @@ import argparse
 import os
 import openai
 import time
+import subprocess
 
 from util.chatgpt_wrapper import request_chatgpt_engine, create_chatgpt_config
 from util.prompt_format import FORMAT_INIT_PROMPT, FORMAT_REFINE_PROMPT
@@ -19,17 +20,135 @@ def token_limit_fitter(config, token_limit=4090):
         res['messages'].insert(0, config['messages'][0])
     return res
 
+# def validate_openjml(code_with_spec, classname):
+#     base_dir = os.path.abspath(".")
+#     tmp_dir = os.path.join(base_dir, "tmp")
+#     openjml_dir = os.path.join(base_dir, "openjml")
+
+#     try:
+#         os.makedirs(tmp_dir, exist_ok=True)
+#     except OSError as e:
+#         return f"Error creating temporary directory: {e}"
+    
+#     tmp_filename = os.path.join(tmp_dir, f"{classname}.java")
+
+#     tmp_file = open(tmp_filename, 'w')
+#     tmp_file.write(code_with_spec)
+#     tmp_file.close()
+#     cmd = os.path.abspath(".") + "/openjml/openjml --esc --esc-max-warnings 1 --arithmetic-failure=quiet --nonnull-by-default --quiet -nowarn --prover=cvc4 " + tmp_filename
+#     res_lines = os.popen(cmd).readlines()
+#     res = ""
+#     for line in res_lines:
+#         res = res + line
+#     return res
+
+# def validate_openjml(code_with_spec, classname):
+#     # Setup paths
+#     base_dir = os.path.abspath(".")
+#     tmp_dir = os.path.join(base_dir, "tmp")
+#     openjml_dir = os.path.join(base_dir, "openjml")
+    
+#     # Ensure tmp directory exists
+#     try:
+#         os.makedirs(tmp_dir, exist_ok=True)
+#     except OSError as e:
+#         return f"Error creating temporary directory: {e}"
+
+#     # Create temporary file
+#     tmp_filename = os.path.join(tmp_dir, f"{classname}.java")
+#     try:
+#         with open(tmp_filename, 'w') as tmp_file:
+#             tmp_file.write(code_with_spec)
+#     except IOError as e:
+#         return f"Error writing temporary file: {e}"
+
+#     # Prepare OpenJML command
+#     openjml_path = os.path.join(openjml_dir, "openjml")
+#     cmd = [
+#         openjml_path,
+#         "--esc",
+#         "--esc-max-warnings", "1",
+#         "--arithmetic-failure=quiet",
+#         "--nonnull-by-default",
+#         "--quiet",
+#         "-nowarn",
+#         "--prover=cvc4",
+#         tmp_filename
+#     ]
+
+#     # Execute command with better process handling
+#     try:
+#         print("Running command:", " ".join(cmd))
+#         result = subprocess.run(
+#             cmd,
+#             capture_output=True,
+#             text=True,
+#             check=False  # We want to capture errors, not raise exceptions
+#         )
+#         return result.stdout + result.stderr
+#     except Exception as e:
+#         return f"Error running OpenJML: {str(e)}"
+#     finally:
+#         # Clean up temporary file
+#         try:
+#             if os.path.exists(tmp_filename):
+#                 os.remove(tmp_filename)
+#         except OSError:
+#             pass  # Ignore cleanup errors
+
 def validate_openjml(code_with_spec, classname):
-    tmp_filename = os.path.abspath(".") + "/tmp/{filename}.java".format(filename=classname)
-    tmp_file = open(tmp_filename, 'w')
-    tmp_file.write(code_with_spec)
-    tmp_file.close()
-    cmd = os.path.abspath(".") + "/openjml/openjml --esc --esc-max-warnings 1 --arithmetic-failure=quiet --nonnull-by-default --quiet -nowarn --prover=cvc4 " + tmp_filename
-    res_lines = os.popen(cmd).readlines()
-    res = ""
-    for line in res_lines:
-        res = res + line
-    return res
+    # Setup paths
+    base_dir = os.path.abspath(".")
+    tmp_dir = os.path.join(base_dir, "tmp")
+    openjml_dir = os.path.join(base_dir, "openjml/openjml")
+    
+    # Ensure tmp directory exists
+    try:
+        os.makedirs(tmp_dir, exist_ok=True)
+    except OSError as e:
+        return f"Error creating temporary directory: {e}"
+
+    # Create temporary file
+    tmp_filename = os.path.join(tmp_dir, f"{classname}.java")
+    try:
+        with open(tmp_filename, 'w') as tmp_file:
+            tmp_file.write(code_with_spec)
+    except IOError as e:
+        return f"Error writing temporary file: {e}"
+
+    # Prepare OpenJML command (using java -jar to run jmlruntime.jar)
+    openjml_jar = os.path.join(openjml_dir, "jmlruntime.jar")
+    cmd = [
+        "java",
+        "-jar", openjml_jar,
+        "--esc",
+        "--esc-max-warnings", "1",
+        "--arithmetic-failure=quiet",
+        "--nonnull-by-default",
+        "--quiet",
+        "-nowarn",
+        "--prover=cvc4",
+        tmp_filename
+    ]
+
+    # Execute command with better process handling
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=False  # We want to capture errors, not raise exceptions
+        )
+        return result.stdout + result.stderr
+    except Exception as e:
+        return f"Error running OpenJML: {str(e)}"
+    finally:
+        # Clean up temporary file
+        try:
+            if os.path.exists(tmp_filename):
+                os.remove(tmp_filename)
+        except OSError:
+            pass  # Ignore cleanup errors
 
 def mutate_token_list_random(token_list, has_forall, dont_mutate_logical):
     res_list = []
@@ -160,7 +279,15 @@ def main():
     input_code = file2str(args.input)
 
     current_time_str = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime(time.time()))
-    f_log = open(os.path.abspath(".") + "/logs/log-{name}-{time_str}.txt".format(name=classname, time_str=current_time_str), "w")
+
+    log_filename = "log-{name}-{time_str}.txt".format(name=classname, time_str=current_time_str)
+    log_dir = os.path.join(os.path.abspath("."), "logs")
+    log_path = os.path.join(log_dir, log_filename)
+    
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    f_log = open(log_path, "w")
 
     num_verify = 0
 
