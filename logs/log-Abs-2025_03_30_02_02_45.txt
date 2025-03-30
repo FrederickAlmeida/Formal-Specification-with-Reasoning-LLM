@@ -1,0 +1,31 @@
+public class Abs {
+	
+	//@ ensures \result == num < 0 ? -num : num;
+	//@ ensures \result >= 0;
+	public int Abs(int num) {
+		if (num < 0)
+			return -num;
+		else
+			return num;
+	}
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Abs.java:3: error: incomparable types: int and boolean
+	//@ ensures \result == num < 0 ? -num : num;
+	                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Abs.java:3: error: incompatible types: int cannot be converted to boolean
+	//@ ensures \result == num < 0 ? -num : num;
+	                               ^
+2 errors
+
+public class Abs {
+	
+	//@ ensures \result == (num < 0 ? -num : num);
+	//@ ensures \result >= 0;
+	public int Abs(int num) {
+		if (num < 0)
+			return -num;
+		else
+			return num;
+	}
+}
+

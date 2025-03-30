@@ -25,7 +25,7 @@ def validate_openjml(code_with_spec, classname):
     tmp_file = open(tmp_filename, 'w')
     tmp_file.write(code_with_spec)
     tmp_file.close()
-    cmd = os.path.abspath(".") + "/openjml/openjml --esc --esc-max-warnings 1 --arithmetic-failure=quiet --nonnull-by-default --quiet -nowarn --prover=cvc4 " + tmp_filename
+    cmd = os.path.abspath(".") + "/openjml/openjml --esc --esc-max-warnings 1 --arithmetic-failure=quiet --nonnull-by-default --quiet -nowarn " + tmp_filename
     res_lines = os.popen(cmd).readlines()
     res = ""
     for line in res_lines:
@@ -278,7 +278,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, default="")
     parser.add_argument("--key_file", type=str, default="api_key.txt")
-    parser.add_argument("--max_iterations", type=int, default=20)
+    parser.add_argument("--max_iterations", type=int, default=10)
     parser.add_argument("--verbose", action='store_true')
     args = parser.parse_args()
 

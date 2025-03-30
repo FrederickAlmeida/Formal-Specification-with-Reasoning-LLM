@@ -1,0 +1,522 @@
+public class SelectionSort {
+
+    //@ requires arr != null;
+    //@ requires arr.length > 0;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+    //           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+    public static void selectionSort(int[] arr) {  
+        //@ maintaining 0 <= i && i <= arr.length - 1;
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+        //           (\forall int m; 0 <= m && m < arr.length; arr[m] == \old(arr[m]) || m == k));
+        //@ decreases arr.length - 1 - i;
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            //@ maintaining i + 1 <= j && j < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+            //@ decreases arr.length - j;
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: Token @*/ does not introduce an expression
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: ')' expected
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: ')' expected
+        //@ decreases arr.length - 1 - i;
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: Incorrectly formed or terminated loop_invariant statement near here
+        //@ decreases arr.length - 1 - i;
+                      ^
+4 errors
+
+public class SelectionSort {
+
+    //@ requires arr != null;
+    //@ requires arr.length > 0;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+    //           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+    public static void selectionSort(int[] arr) {  
+        //@ maintaining 0 <= i && i <= arr.length - 1;
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+        //           (\forall int m; 0 <= m && m < arr.length; arr[m] == \old(arr[m]) || m == k));
+        //@ decreases arr.length - 1 - i;
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            //@ maintaining i + 1 <= j && j < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+            //@ decreases arr.length - j;
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: Token @*/ does not introduce an expression
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: ')' expected
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: ')' expected
+        //@ decreases arr.length - 1 - i;
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: Incorrectly formed or terminated loop_invariant statement near here
+        //@ decreases arr.length - 1 - i;
+                      ^
+4 errors
+
+public class SelectionSort {
+
+    //@ requires arr != null;
+    //@ requires arr.length > 0;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+    //           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+    public static void selectionSort(int[] arr) {  
+        //@ loop_invariant 0 <= i && i <= arr.length - 1;
+        //@ loop_invariant (\forall int k; 0 <= k && k < i; 
+        //           (\forall int m; 0 <= m && m < arr.length; arr[m] == \old(arr[m]) || m == k));
+        //@ decreases arr.length - 1 - i;
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            //@ loop_invariant i + 1 <= j && j <= arr.length;
+            //@ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+            //@ decreases arr.length - j;
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: Token @*/ does not introduce an expression
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: ')' expected
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: ')' expected
+        //@ decreases arr.length - 1 - i;
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: Incorrectly formed or terminated loop_invariant statement near here
+        //@ decreases arr.length - 1 - i;
+                      ^
+4 errors
+
+public class SelectionSort {
+
+    //@ requires arr != null;
+    //@ requires arr.length > 0;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+    //           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+    public static void selectionSort(int[] arr) {  
+        //@ loop_invariant 0 <= i && i <= arr.length - 1;
+        //@ loop_invariant (\forall int k; 0 <= k && k < i; 
+        //           (\forall int m; 0 <= m && m < arr.length; arr[m] == \old(arr[m]) || m == k));
+        //@ decreases arr.length - 1 - i;
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            //@ loop_invariant i + 1 <= j && j <= arr.length;
+            //@ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+            //@ decreases arr.length - j;
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: Token @*/ does not introduce an expression
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: ')' expected
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: ')' expected
+        //@ decreases arr.length - 1 - i;
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: error: Incorrectly formed or terminated loop_invariant statement near here
+        //@ decreases arr.length - 1 - i;
+                      ^
+4 errors
+
+public class SelectionSort {
+
+    //@ requires arr != null;
+    //@ requires arr.length > 0;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+    //           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+    public static void selectionSort(int[] arr) {  
+        //@ loop_invariant 0 <= i && i <= arr.length - 1;
+        //@ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= arr[i]);
+        //@ decreases arr.length - 1 - i;
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            //@ loop_invariant i + 1 <= j && j <= arr.length;
+            //@ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+            //@ decreases arr.length - j;
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: Token @*/ does not introduce an expression
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:5: error: ')' expected
+    //@ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+                                                             ^
+2 errors
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 <= i && i < arr.length - 1; 
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 < i && i < arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 < i && i < arr.length - 1;   
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 < i && i <= arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 < i && i <= arr.length - 1;   
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 <= i && i < arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 <= i && i < arr.length - 1;   
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 <= i && i <= arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 <= i && i <= arr.length - 1;   
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1;   
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6:) in method selectionSort
+    public static void selectionSort(int[] arr) {  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:9:
+      @ ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1;   
+        ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @ requires arr != null;
+      @ requires arr.length > 0;
+      @ ensures (\exists int i; 0 < i && i < arr.length - 1;   
+      @           (\forall int j; 0 <= j && j < arr.length; arr[i] <= arr[j]));
+      @*/
+    public static void selectionSort(int[] arr) {  
+        /*@
+          @ loop_invariant 0 <= i && i < arr.length;
+          @ loop_invariant (\forall int k; 0 <= k && k < i; arr[k] <= \old(arr[k]));
+          @ decreases arr.length - 1 - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            /*@
+              @ loop_invariant i + 1 <= j && j <= arr.length;
+              @ loop_invariant (\forall int k; i + 1 <= k && k < j; arr[k] >= arr[index]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:23: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method selectionSort
+                if (arr[j] < arr[index]) {  
+                                ^
+1 verification failure
+

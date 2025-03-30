@@ -1,0 +1,55 @@
+class SmallestEvenMulBranch {
+    /*@ requires n >= 0; 
+      @ ensures \result == n <==> (n % 2 == 0);
+      @ ensures \result == 2 * n <==> (n % 2 != 0);
+      @*/
+    public int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:4:) in method smallestEvenMultiple
+            return n;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:4: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:8:
+      @ ensures \result == 2 * n <==> (n % 2 != 0);
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    /*@ requires n >= 0; 
+      @ ensures \result == n <==> (n % 2 == 0);
+      @ ensures \result == 2 * n <==> (n % 2 != 0);  
+      @*/
+    public int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:4:) in method smallestEvenMultiple
+            return n;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:4: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SmallestEvenMulBranch.java:8:
+      @ ensures \result == 2 * n <==> (n % 2 != 0);  
+        ^
+2 verification failures
+
+class SmallestEvenMulBranch {
+    /*@ requires n >= 0; 
+      @ ensures \result == n <==> (n % 2 == 0);
+ 
+      @*/
+    public int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) {
+            return n;
+        }
+        return 2 * n;
+    }
+}
+
+
