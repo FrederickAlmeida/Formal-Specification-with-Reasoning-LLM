@@ -1,0 +1,169 @@
+class FindClosestNum {
+    
+    //@ ensures \result == Integer.MAX_VALUE <==> nums.length == 0;
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+    public int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            if (absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                           ^
+  symbol:   variable ans
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                               ^
+  symbol:   variable ans
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                            ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:9: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                        ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:9: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                                   ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:9: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                                                    ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:9: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                                                                ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+10 errors
+
+class FindClosestNum {
+    
+    //@ ensures \result == Integer.MAX_VALUE <==> nums.length == 0;
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+    //@ ensures \result != Integer.MAX_VALUE ==> (\forall int i; 0 <= i && i < nums.length; (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+    public int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            if (absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                           ^
+  symbol:   variable ans
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                               ^
+  symbol:   variable ans
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                            ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:4: error: cannot find symbol
+    //@ ensures \result == ans ==> (\forall int i; 0 <= i && i < nums.length; (ans == Integer.MAX_VALUE) || (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:5: error: cannot find symbol
+    //@ ensures \result != Integer.MAX_VALUE ==> (\forall int i; 0 <= i && i < nums.length; (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:5: error: cannot find symbol
+    //@ ensures \result != Integer.MAX_VALUE ==> (\forall int i; 0 <= i && i < nums.length; (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                            ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:5: error: cannot find symbol
+    //@ ensures \result != Integer.MAX_VALUE ==> (\forall int i; 0 <= i && i < nums.length; (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:5: error: cannot find symbol
+    //@ ensures \result != Integer.MAX_VALUE ==> (\forall int i; 0 <= i && i < nums.length; (abs(\result) < abs(nums[i]) || (abs(\result) == abs(nums[i]) && \result > nums[i])));
+                                                                                                                                             ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:10: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                        ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:10: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                                   ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:10: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                                                    ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:10: error: cannot find symbol
+        //@ maintaining (\forall int j; 0 <= j && j < i; (ans == Integer.MAX_VALUE) || (abs(ans) < abs(nums[j]) || (abs(ans) == abs(nums[j]) && ans > nums[j])));
+                                                                                                                                ^
+  symbol:   method abs(int)
+  location: class FindClosestNum
+14 errors
+

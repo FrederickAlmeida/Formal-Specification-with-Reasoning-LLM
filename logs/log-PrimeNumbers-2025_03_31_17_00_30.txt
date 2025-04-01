@@ -1,0 +1,379 @@
+/*@ 
+  @ public class PrimeNumbers {
+  @ 
+  @   /************************************************************
+  @    * The private helper method div is pure, meaning it has no 
+  @    * visible side effects.
+  @    ************************************************************/
+  @   /*@ private pure @*/ static boolean div(int n, int d);
+  @ 
+  @   /************************************************************
+  @    * The array primeArray will store the first n prime numbers.
+  @    * We mark it spec_public so that it can appear in specifications.
+  @    ************************************************************/
+  @   /*@ spec_public @*/ private int primeArray[];
+  @ 
+  @   /************************************************************
+  @    * Returns an integer array of length n that contains the first 
+  @    * n prime numbers in ascending order. 
+  @    *
+  @    * Specification details:
+  @    * 1. We require n > 0, otherwise the behavior is unspecified.
+  @    * 2. The method assigns to this.primeArray and its contents.
+  @    * 3. The length of the returned array is exactly n.
+  @    * 4. The returned array is the same reference as this.primeArray.
+  @    * 5. The first element of the returned array is 2.
+  @    * 6. Each returned number is prime:
+  @    *    For every index i (0 ≤ i < n), for all j (2 ≤ j ≤ primeArray[i]/2), 
+  @    *    primeArray[i] % j ≠ 0.
+  @    * 7. The primes in the returned array are in strictly increasing order.
+  @    ************************************************************/
+  @   public normal_behavior
+  @     requires n > 0;
+  @     assignable primeArray, primeArray[*];
+  @     ensures \result.length == n;
+  @     ensures \result == primeArray;
+  @     ensures \result[0] == 2;
+  @     ensures (\forall int i; 0 <= i && i < n;
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+  @*/
+public class PrimeNumbers
+{
+    private static boolean div(int n, int d) { 
+        return n % d == 0; 
+    }
+
+    private int primeArray[];
+
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        for (count = 2; count <= n;)
+        {
+            for (j = 2; j <= num / 2; j++)
+            {
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        }
+        return primeArray;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:34: error: illegal character: '\'
+  @     ensures \result.length == n;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:35: error: illegal character: '\'
+  @     ensures \result == primeArray;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: illegal character: '\'
+  @     ensures \result[0] == 2;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: illegal character: '\'
+  @     ensures (\forall int i; 0 <= i && i < n;
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal character: '\'
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal character: '\'
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal character: '\'
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal character: '\'
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal character: '\'
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal character: '\'
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:4: error: Javadoc comments are not permitted within JML comments
+  @   /************************************************************
+      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:8: error: Block comments may not be embedded inside JML block comments
+  @   /*@ private pure @*/ static boolean div(int n, int d);
+      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:9: error: <identifier> expected
+  @ 
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:10: error: <identifier> expected
+  @   /************************************************************
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:15: error: <identifier> expected
+  @ 
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:16: error: <identifier> expected
+  @   /************************************************************
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:31: error: <identifier> expected
+  @   public normal_behavior
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:32: error: illegal start of type
+  @     requires n > 0;
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:32: error: ';' expected
+  @     requires n > 0;
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:32: error: illegal start of type
+  @     requires n > 0;
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:32: error: <identifier> expected
+  @     requires n > 0;
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:32: error: illegal start of type
+  @     requires n > 0;
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:32: error: <identifier> expected
+  @     requires n > 0;
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:33: error: <identifier> expected
+  @     assignable primeArray, primeArray[*];
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:33: error: ']' expected
+  @     assignable primeArray, primeArray[*];
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:33: error: <identifier> expected
+  @     assignable primeArray, primeArray[*];
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:33: error: <identifier> expected
+  @     assignable primeArray, primeArray[*];
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:34: error: illegal start of type
+  @     ensures \result.length == n;
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:34: error: ';' expected
+  @     ensures \result.length == n;
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:34: error: illegal start of type
+  @     ensures \result.length == n;
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:35: error: illegal start of type
+  @     ensures \result == primeArray;
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: illegal start of type
+  @     ensures \result[0] == 2;
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: <identifier> expected
+  @     ensures \result[0] == 2;
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: <identifier> expected
+  @     ensures \result[0] == 2;
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: <identifier> expected
+  @     ensures \result[0] == 2;
+                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: illegal start of type
+  @     ensures \result[0] == 2;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: <identifier> expected
+  @     ensures \result[0] == 2;
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: illegal start of type
+  @     ensures \result[0] == 2;
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:36: error: <identifier> expected
+  @     ensures \result[0] == 2;
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: ')' expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: ';' expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: ';' expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: > expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n;
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: '(' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: ')' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: ';' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: ';' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: ';' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: ';' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: ';' expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: illegal start of type
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:38: error: <identifier> expected
+  @                (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0));
+                                                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: ')' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: ';' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: ';' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: > expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: '(' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: illegal start of type
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: ';' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: '(' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: ';' expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:39: error: <identifier> expected
+  @     ensures (\forall int i; 0 <= i && i < n - 1; \result[i] < \result[i+1]);
+                                                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:40: error: <identifier> expected
+  @*/
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:40: error: <identifier> expected
+  @*/
+    ^
+100 errors
+only showing the first 100 errors, of 102 total; use -Xmaxerrs if you would like to see more
+

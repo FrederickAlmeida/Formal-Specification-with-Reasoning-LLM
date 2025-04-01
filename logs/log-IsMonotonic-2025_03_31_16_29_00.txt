@@ -1,0 +1,362 @@
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 <= i && i <= n - 1;
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:18: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isMonotonic
+          @ maintaining 0 <= i && i <= n - 1;
+            ^
+1 verification failure
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 < i && i < n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:18: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isMonotonic
+          @ maintaining 0 < i && i < n - 1;  
+            ^
+1 verification failure
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 < i && i <= n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:18: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isMonotonic
+          @ maintaining 0 < i && i <= n - 1;  
+            ^
+1 verification failure
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 < i && i - 1 <= n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:18: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isMonotonic
+          @ maintaining 0 < i && i - 1 <= n - 1;  
+            ^
+1 verification failure
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 <= i && i < n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:18: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isMonotonic
+          @ maintaining 0 <= i && i < n - 1;  
+            ^
+1 verification failure
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 <= i && i <= n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:18: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isMonotonic
+          @ maintaining 0 <= i && i <= n - 1;  
+            ^
+1 verification failure
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==> 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 <= i && i - 1 <= n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:5:) in method isMonotonic
+        return inc || dec;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:5: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:31:
+      @ ensures \result <==> 
+        ^
+2 verification failures
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+      @ ensures \result <==>   
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 <= i && i - 1 <= n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:5:) in method isMonotonic
+        return inc || dec;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:5: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:31:
+      @ ensures \result <==>   
+        ^
+2 verification failures
+
+public class IsMonotonic {
+
+    /*@
+      @ requires nums != null;
+ 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+      @      )
+      @      || 
+      @      (
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] >= nums[i + 1])
+      @      );
+      @*/
+    public boolean isMonotonic(int[] nums) {
+        boolean inc = true, dec = true;
+        int n = nums.length;
+        /*@
+          @ maintaining 0 <= i && i - 1 <= n - 1;  
+          @ maintaining inc == (\forall int j; 0 <= j && j < i; nums[j] <= nums[j + 1]);
+          @ maintaining dec == (\forall int j; 0 <= j && j < i; nums[j] >= nums[j + 1]);
+          @ decreases n - i;
+          @*/
+        for (int i = 0; i < n - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                inc = false;
+            }
+            if (nums[i] < nums[i + 1]) {
+                dec = false;
+            }
+        }
+        return inc || dec;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:6: error: illegal start of type
+      @      (
+             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:6: error: <identifier> expected
+      @      (
+              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsMonotonic.java:7: error: <identifier> expected
+      @         (\forall int i; 0 <= i && i < nums.length - 1; nums[i] <= nums[i + 1]) 
+                                                                                     ^
+3 errors
+

@@ -1,0 +1,1281 @@
+class ComputeAreaBranch {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@          ( (min(ay2, by2) - max(ay1, by1)) * (min(ax2, bx2) - max(ax1, bx1)) ) );
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        int minX2 = bx2;
+        if(ax2 < bx2) {
+            minX2 = ax2;
+        }
+        int maxX1 = bx1;
+        if(ax1 > bx1) {
+            maxX1 = ax1;
+        }
+        int minY2 = by2;
+        if(ay2 < by2) {
+            minY2 = ay2;
+        }
+        int maxY1 = by1;
+        if(ay1 > by1) {
+            maxY1 = ay1;
+        }
+        int overlapWidth = minX2 - maxX1;
+        int overlapHeight = minY2 - maxY1;
+        if(overlapWidth < 0) {
+            overlapWidth = 0;
+        }
+        if(overlapHeight < 0) {
+            overlapHeight = 0;
+        }
+        int overlapArea = overlapHeight * overlapWidth;
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:4: error: cannot find symbol
+    //@          ( (min(ay2, by2) - max(ay1, by1)) * (min(ax2, bx2) - max(ax1, bx1)) ) );
+                    ^
+  symbol:   method min(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:4: error: cannot find symbol
+    //@          ( (min(ay2, by2) - max(ay1, by1)) * (min(ax2, bx2) - max(ax1, bx1)) ) );
+                                    ^
+  symbol:   method max(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:4: error: cannot find symbol
+    //@          ( (min(ay2, by2) - max(ay1, by1)) * (min(ax2, bx2) - max(ax1, bx1)) ) );
+                                                      ^
+  symbol:   method min(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:4: error: cannot find symbol
+    //@          ( (min(ay2, by2) - max(ay1, by1)) * (min(ax2, bx2) - max(ax1, bx1)) ) );
+                                                                      ^
+  symbol:   method max(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                 ^
+  symbol:   method min(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                 ^
+  symbol:   method max(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                          ^
+  symbol:   method min(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                          ^
+  symbol:   method max(int,int)
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                                                              ^
+  symbol:   variable area1
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                                                                      ^
+  symbol:   variable area2
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures (min(ay2, by2) - max(ay1, by1)) >= 0 ==> (min(ax2, bx2) - max(ax1, bx1)) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                                                                              ^
+  symbol:   variable overlapArea
+  location: class ComputeAreaBranch
+11 errors
+
+class ComputeAreaBranch {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@          ( ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) * ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) ) );
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> \result == (area1 + area2 - overlapArea);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        int minX2 = bx2;
+        if(ax2 < bx2) {
+            minX2 = ax2;
+        }
+        int maxX1 = bx1;
+        if(ax1 > bx1) {
+            maxX1 = ax1;
+        }
+        int minY2 = by2;
+        if(ay2 < by2) {
+            minY2 = ay2;
+        }
+        int maxY1 = by1;
+        if(ay1 > by1) {
+            maxY1 = ay1;
+        }
+        int overlapWidth = minX2 - maxX1;
+        int overlapHeight = minY2 - maxY1;
+        if(overlapWidth < 0) {
+            overlapWidth = 0;
+        }
+        if(overlapHeight < 0) {
+            overlapHeight = 0;
+        }
+        int overlapArea = overlapHeight * overlapWidth;
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                                                                                                          ^
+  symbol:   variable area1
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                                                                                                                  ^
+  symbol:   variable area2
+  location: class ComputeAreaBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:5: error: cannot find symbol
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> \result == (area1 + area2 - overlapArea);
+                                                                                                                                                                          ^
+  symbol:   variable overlapArea
+  location: class ComputeAreaBranch
+3 errors
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> 
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - overlapArea );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:18: error: cannot find symbol
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - overlapArea );
+                                                                                     ^
+  symbol:   variable overlapArea
+  location: class ComputeAreaBranch
+1 error
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> 
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==> 
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) - (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 < by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 > by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) > 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16:) in method computeArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:31:
+    //@ ensures ( (ay2 <= by2 ? ay2 : by2) + (ay1 >= by1 ? ay1 : by1) ) + 1 >= 0 ==>   
+        ^
+2 verification failures
+
+public class ComputeAreaBranch {
+
+    /**
+     * Computes the area of two rectangles and their overlap.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The total area covered by the two rectangles.
+     */
+ 
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+    //@         \result == ( (ax2 - ax1) * (ay2 - ay1) + (bx2 - bx1) * (by2 - by1) - 
+    //@         Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1)) * 
+    //@         Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)) );
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, 
+                           int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        
+        // Calculate overlap area
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        int overlapArea = overlapWidth * overlapHeight;
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:17: error: illegal start of type
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:17: error: <identifier> expected
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:17: error: > or ',' expected
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:17: error: ';' expected
+    //@         ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) >= 0 ==> 
+                                         ^
+4 errors
+

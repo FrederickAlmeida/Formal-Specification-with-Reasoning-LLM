@@ -1,0 +1,1101 @@
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 <= k && k < i; a[k] == res);
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 <= k && k < i; a[k] == res);
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 < k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 < k && k < i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 < k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 < k && k <= i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 <= k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 <= k && k < i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 <= k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 <= k && k <= i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 - 1 <= k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 - 1 <= k && k < i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\exists int k; 0 - 1 <= k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\exists int k; 0 - 1 <= k && k <= i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 < k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:4:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:4: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures \result == -1 <==> a.length == 0;
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+    //@ ensures \result == -1 <==> a.length == 0;  
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 < k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:4:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:4: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures \result == -1 <==> a.length == 0;  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 < k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 < j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 < k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method maxElementInArray
+        //@ maintaining (\forall int k; 0 < k && k < i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 < j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 < k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 < j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 < j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 < k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method maxElementInArray
+        //@ maintaining (\forall int k; 0 < k && k <= i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 < j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 <= k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 < j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 <= k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method maxElementInArray
+        //@ maintaining (\forall int k; 0 <= k && k < i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 <= k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\forall int k; 0 <= k && k <= i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 - 1 <= k && k < i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\forall int k; 0 - 1 <= k && k < i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+        //@ maintaining (\forall int k; 0 - 1 <= k && k <= i; a[k] == res);  
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method maxElementInArray
+        //@ maintaining (\forall int k; 0 - 1 <= k && k <= i; a[k] == res);  
+            ^
+1 verification failure
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\exists int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\exists int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 < j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        if (a.length == 0) return -1;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8:
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 < j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 < j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        if (a.length == 0) return -1;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8:
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 < j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        if (a.length == 0) return -1;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8:
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        if (a.length == 0) return -1;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8:
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\exists int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\forall int j; 0 < j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\forall int j; 0 < j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\forall int j; 0 < j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\forall int j; 0 < j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\forall int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\forall int j; 0 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\forall int j; 0 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\forall int j; 0 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\forall int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\forall int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length > 0 ==> (\forall int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length > 0 ==> (\forall int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 < j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 < j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 < j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 < j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        if (a.length == 0) return -1;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:8:
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 - 1 <= j && j < a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6:) in method maxElementInArray
+        return res;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MaxInArray.java:17:
+    //@ ensures a.length >= 0 ==> (\forall int j; 0 - 1 <= j && j <= a.length; a[j] == \result);  
+        ^
+2 verification failures
+
+class MaxInArray {
+    //@ requires a != null;
+    //@ requires a.length >= 0;
+ 
+    //@ ensures a.length > 0 ==> (\forall int i; 0 <= i && i < a.length; \result >= a[i]);
+ 
+    public int maxElementInArray(int[] a) {
+        if (a.length == 0) return -1;
+        int res = Integer.MIN_VALUE;
+        //@ maintaining 0 <= i && i <= a.length;
+        //@ maintaining (\forall int j; 0 <= j && j < i; res >= a[j]);
+ 
+        //@ decreases a.length - i;
+        for(int i = 0; i < a.length; i++) {
+            res = ((a[i] > res) ? a[i] : res);
+        }
+        return res;
+    }
+}
+
+

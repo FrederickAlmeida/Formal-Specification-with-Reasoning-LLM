@@ -1,0 +1,1630 @@
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 < i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 < i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 < i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 < i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 < i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 < i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 - 1 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\forall int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 < i && i < arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 < i && i < arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 < i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 < i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 < i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 < i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 < i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 < i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 < i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 < i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 < i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 < i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 - 1 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 - 1 <= i && i < arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 - 1 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 - 1 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 - 1 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 - 1 <= i && i < arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] < arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+      @   ensures (\exists int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11:) in method selectionSort
+    public static void selectionSort(int[] arr){  
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:11: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:20:
+      @   ensures (\exists int i; 0 - 1 <= i && i <= arr.length - 1; arr[i] - 1 <= arr[i+1]);  
+          ^
+2 verification failures
+
+public class SelectionSort {
+
+    /*@
+      @   // The array to be sorted must not be null.
+      @   requires arr != null;
+      @
+      @   // This method may modify any element of the array.
+      @   assignable arr[*];
+      @
+      @   // After this method terminates, the array must be sorted in non-decreasing order.
+ 
+      @
+      @   // Additionally, each element in the final array appears the same number of times
+      @   // as it did in the original array (i.e., the final array is a permutation
+      @   // of the initial array).
+      @   ensures (\forall int x; 
+      @               (\exists int i; 0 <= i && i < arr.length; arr[i] == x)
+      @            <==> (\exists int j; 0 <= j && j < \old(arr).length; \old(arr)[j] == x));
+      @*/
+    public static void selectionSort(int[] arr){  
+        for (int i = 0; i < arr.length - 1; i++) {  
+            int index = i;  
+            for (int j = i + 1; j < arr.length; j++) {  
+                if (arr[j] < arr[index]) {  
+                    index = j;
+                }  
+            }  
+            int smallerNumber = arr[index];   
+            arr[index] = arr[i];  
+            arr[i] = smallerNumber;  
+        }  
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSort.java:29: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method selectionSort
+            arr[index] = arr[i];  
+                            ^
+1 verification failure
+

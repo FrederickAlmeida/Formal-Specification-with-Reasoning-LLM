@@ -1,0 +1,1705 @@
+class IsAllUnique {
+
+    /*@
+      @  // We require that the input string is not null.
+      @  requires str != null;
+      @
+      @  // We require that all characters in str lie between 'a' and 'z'.
+      @  requires (\forall int i; 0 <= i && i < str.length(); 
+      @                                'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @  /* We guarantee that this method returns true exactly when all characters in str 
+      @     are distinct. Otherwise, it returns false.
+      @     Equivalently, 'true' means there are no duplicates in str, and 'false' means
+      @     either str has length > 26 or there is at least one duplicate character. */
+      @  ensures \result == 
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct lowercase letters is impossible
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @ // Loop invariant: at the start of each iteration, all characters read so far
+          @ // (from index 0 to i-1) are pairwise distinct.
+          @ maintaining 0 <= i && i <= len;
+          @ maintaining (\forall int k, m; 0 <= k < m && m < i; 
+          @                                  str.charAt(k) != str.charAt(m));
+          @ // We use a standard decreasing clause on the remaining iterations.
+          @ decreasing len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;  // by our precondition on str
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:11: error: Block comments may not be embedded inside JML block comments
+      @  /* We guarantee that this method returns true exactly when all characters in str 
+         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: illegal character: '\'
+      @  ensures \result == 
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: illegal start of type
+      @  ensures \result == 
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: <identifier> expected
+      @  ensures \result == 
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: <identifier> expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal character: '\'
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: ')' expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: Method specs may not precede a variable declaration
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: <identifier> expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal start of type
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: <identifier> expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal start of type
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: ';' expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: > expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal start of type
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: '(' expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: > expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: <identifier> expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: <identifier> expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: ';' expected
+      @      (\forall int i, j; 0 <= i < j && j < str.length(); str.charAt(i) != str.charAt(j));
+                                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:17: error: <identifier> expected
+      @*/
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:17: error: <identifier> expected
+      @*/
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:17: error: <identifier> expected
+      @*/
+         ^
+23 errors
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 <= k < m && m < i; str.charAt(k) != str.charAt(m));
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 <= k < m && m < i; str.charAt(k) != str.charAt(m));
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 < k < m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 < k < m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 < k < m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 < k < m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 < k <= m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 < k <= m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 < k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 < k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 - 1 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 - 1 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 - 1 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 - 1 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 - 1 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 - 1 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\forall int k, m; 0 - 1 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\forall int k, m; 0 - 1 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 < k < m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 < k < m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 < k < m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 < k < m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 < k <= m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 < k <= m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 < k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 < k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 - 1 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 - 1 <= k < m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 - 1 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 - 1 <= k < m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 - 1 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 - 1 <= k <= m && m < i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+          @   maintaining (\exists int k, m; 0 - 1 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:32: verify: The prover cannot establish an assertion (LoopInvariant) in method isAllUnique
+          @   maintaining (\exists int k, m; 0 - 1 <= k <= m && m <= i; str.charAt(k) != str.charAt(m));  
+              ^
+1 verification failure
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==> 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+ 
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:47: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:14:) in method isAllUnique
+        return true;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:14: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:47:
+      @   ensures \result <==> 
+          ^
+2 verification failures
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+      @   ensures \result <==>   
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+ 
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:47: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:14:) in method isAllUnique
+        return true;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:14: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:47:
+      @   ensures \result <==>   
+          ^
+2 verification failures
+
+class IsAllUnique {
+
+    /*@
+      @   // Precondition: the input string must not be null.
+      @   requires str != null;
+      @
+      @   // Precondition: all characters in str must be between 'a' and 'z'.
+      @   requires (\forall int i; 0 <= i && i < str.length();
+      @                          'a' <= str.charAt(i) && str.charAt(i) <= 'z');
+      @
+      @   // Postcondition: the result is true if and only if:
+      @   // (1) str.length() <= 26, and
+      @   // (2) all characters of str are distinct.
+ 
+      @     (str.length() <= 26
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+      @                            str.charAt(i) != str.charAt(j)));
+      @*/
+    boolean isAllUnique(String str) {
+        int len = str.length();
+        if (len > 26) {
+            // More than 26 distinct letters is impossible given only a-z
+            return false;
+        }
+        int num = 0;
+
+        /*@
+          @   // Invariant (before each iteration): 
+          @   //   1) 0 <= i <= len, 
+          @   //   2) the substring from index 0 to i-1 contains no duplicate characters.
+          @   maintaining 0 <= i && i <= len;
+ 
+          @   decreases len - i;
+          @*/
+        for (int i = 0; i < len; i++) {
+            char c = str.charAt(i);
+            //@ assert 'a' <= c && c <= 'z';
+            int index = c - 'a';
+            //@ assert 0 <= index && index < 26;
+
+            if ((num & (1 << index)) != 0) {
+                return false;
+            } else {
+                num |= (1 << index);
+            }
+        }
+        return true;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: illegal start of type
+      @     (str.length() <= 26
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: ';' expected
+      @     (str.length() <= 26
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: Method specs may not precede a variable declaration
+      @     (str.length() <= 26
+             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:15: error: ';' expected
+      @     (str.length() <= 26
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal start of type
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: <identifier> expected
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal start of type
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: ';' expected
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: > expected
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: illegal start of type
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: '(' expected
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:16: error: > expected
+      @      && (\forall int i, j; 0 <= i < j && j < str.length();
+                                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:17: error: <identifier> expected
+      @                            str.charAt(i) != str.charAt(j)));
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:17: error: <identifier> expected
+      @                            str.charAt(i) != str.charAt(j)));
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsAllUnique.java:17: error: ';' expected
+      @                            str.charAt(i) != str.charAt(j)));
+                                                ^
+15 errors
+

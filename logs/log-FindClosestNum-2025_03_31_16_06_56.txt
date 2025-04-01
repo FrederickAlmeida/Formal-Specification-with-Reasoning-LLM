@@ -1,0 +1,2508 @@
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 <= j && j < i; 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariant) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 <= j && j < i; 
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 < j && j < i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariant) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 < j && j < i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 < j && j <= i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariant) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 < j && j <= i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 <= j && j < i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariant) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 <= j && j < i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 <= j && j <= i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 <= j && j <= i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 - 1 <= j && j < i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 - 1 <= j && j < i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\forall int j; 0 - 1 <= j && j <= i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\forall int j; 0 - 1 <= j && j <= i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\exists int j; 0 < j && j < i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\exists int j; 0 < j && j < i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\exists int j; 0 < j && j <= i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\exists int j; 0 < j && j <= i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\exists int j; 0 <= j && j < i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\exists int j; 0 <= j && j < i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\exists int j; 0 <= j && j <= i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\exists int j; 0 <= j && j <= i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\exists int j; 0 - 1 <= j && j < i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\exists int j; 0 - 1 <= j && j < i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+        //@ maintaining (\exists int j; 0 - 1 <= j && j <= i;   
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:27: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method findClosestNumber
+        //@ maintaining (\exists int j; 0 - 1 <= j && j <= i;   
+            ^
+1 verification failure
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= i && i <= nums.length;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 < i && i < nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 < i && i < nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 < i && i <= nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 < i && i <= nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 < i && i - 1 <= nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 < i && i - 1 <= nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i < nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= i && i < nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i <= nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= i && i <= nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 <= i && i - 1 <= nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 <= i && i - 1 <= nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 - 1 <= i && i < nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 - 1 <= i && i < nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 - 1 <= i && i <= nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 - 1 <= i && i <= nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+        //@ maintaining 0 - 1 <= i && i - 1 <= nums.length;  
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:24: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining 0 - 1 <= i && i - 1 <= nums.length;  
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx]) 
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 < idx && idx < i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 < idx && idx < i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 < idx && idx <= i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 < idx && idx <= i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 <= idx && idx < i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 <= idx && idx <= i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 <= idx && idx <= i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 - 1 <= idx && idx < i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 - 1 <= idx && idx < i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\exists int idx; 0 - 1 <= idx && idx <= i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\exists int idx; 0 - 1 <= idx && idx <= i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\forall int idx; 0 < idx && idx < i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\forall int idx; 0 < idx && idx < i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\forall int idx; 0 < idx && idx <= i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\forall int idx; 0 < idx && idx <= i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\forall int idx; 0 <= idx && idx < i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\forall int idx; 0 <= idx && idx < i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\forall int idx; 0 <= idx && idx <= i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\forall int idx; 0 <= idx && idx <= i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\forall int idx; 0 - 1 <= idx && idx < i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\forall int idx; 0 - 1 <= idx && idx < i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+        //@ maintaining (\forall int idx; 0 - 1 <= idx && idx <= i; ans == nums[idx])   
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:25: error: Loop specifications must immediately precede a loop statement
+        //@ maintaining (\forall int idx; 0 - 1 <= idx && idx <= i; ans == nums[idx])   
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+9 errors
+
+class FindClosestNum {
+
+    //@ requires nums != null;
+    //@ requires nums.length > 0;
+    /*
+      @ ensures
+      @   (\exists int i; 0 <= i && i < nums.length; \result == nums[i]) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) > Math.abs(\result))
+      @        ==> false) 
+      @   && (\forall int j; 0 <= j && j < nums.length;
+      @       (Math.abs(nums[j]) == Math.abs(\result) && nums[j] > \result)
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length; 
+      @       (Math.abs(nums[x]) < Math.abs(\result)) 
+      @        ==> false)
+      @   && (\forall int x; 0 <= x && x < nums.length;
+      @       (Math.abs(nums[x]) == Math.abs(\result) && nums[x] > \result) 
+      @        ==> false);
+      @*/
+    public /*@ pure @*/ int findClosestNumber(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+
+ 
+ 
+        //@               || ans == Integer.MAX_VALUE;
+ 
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+        //@        ==> ans == nums[j])
+        //@     &&  (\forall int j; 0 <= j && j < i;
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+        //@           ==> ans == nums[j]);
+        //@ decreases nums.length - i;
+        for(int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int absNum = (num < 0 ? -num : num);
+            int absAns = (ans < 0 ? -ans : ans);
+            //@ assert absNum >= 0 && absAns >= 0;
+            if(absNum < absAns || (absNum == absAns && num > ans)) {
+                ans = num;
+            }
+        }
+
+        return ans;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:26: error: illegal start of expression
+        //@               || ans == Integer.MAX_VALUE;
+                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:26: error: ';' expected
+        //@               || ans == Integer.MAX_VALUE;
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:26: error: not a statement
+        //@               || ans == Integer.MAX_VALUE;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:26: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@               || ans == Integer.MAX_VALUE;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: not a statement
+        //@        ==> ans == nums[j])
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:29: error: ';' expected
+        //@        ==> ans == nums[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:28: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@       (Math.abs(nums[j]) <  (ans < 0 ? -ans : ans))
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: not a statement
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:30: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@     &&  (\forall int j; 0 <= j && j < i;
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: not a statement
+        //@           ==> ans == nums[j]);
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:32: error: ';' expected
+        //@           ==> ans == nums[j]);
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/FindClosestNum.java:31: error: Expected a declaration or a JML construct inside the JML annotation here
+        //@          (Math.abs(nums[j]) == (ans < 0 ? -ans : ans) && nums[j] > ans)
+                     ^
+12 errors
+

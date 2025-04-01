@@ -1,0 +1,584 @@
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result < arr.length && arr[\result] == key) ||
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 <= i && i < low; arr[i] < key);
+              @ loop_invariant (\forall int j; high <= j && j < arr.length; arr[j] > key);
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:20: verify: The prover cannot establish an assertion (LoopInvariant) in method Binary
+              @ loop_invariant (\forall int j; high <= j && j < arr.length; arr[j] > key);
+                ^
+1 verification failure
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result < arr.length && arr[\result] == key) ||
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 <= i && i < low; arr[i] < key);
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:19: verify: The prover cannot establish an assertion (LoopInvariant) in method Binary
+              @ loop_invariant (\forall int i; 0 <= i && i < low; arr[i] < key);
+                ^
+1 verification failure
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result < arr.length && arr[\result] == key) ||
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6:) in method Binary
+                return -1;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33:
+      @ ensures (\result >= 0 && \result < arr.length && arr[\result] == key) ||
+        ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result > 0 && \result < arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6:) in method Binary
+                return -1;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33:
+      @ ensures (\result > 0 && \result < arr.length && arr[\result] == key) ||  
+        ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result > 0 && \result <= arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6:) in method Binary
+                return -1;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33:
+      @ ensures (\result > 0 && \result <= arr.length && arr[\result] == key) ||  
+        ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result < arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6:) in method Binary
+                return -1;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33:
+      @ ensures (\result >= 0 && \result < arr.length && arr[\result] == key) ||  
+        ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result <= arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:19: verify: The prover cannot establish an assertion (LoopInvariant) in method Binary
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] < key);  
+                ^
+1 verification failure
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result <= arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] <= key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:19: verify: The prover cannot establish an assertion (LoopInvariant) in method Binary
+              @ loop_invariant (\forall int i; 0 < i && i < low; arr[i] <= key);  
+                ^
+1 verification failure
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result >= 0 && \result <= arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i <= low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6:) in method Binary
+                return -1;
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33:
+      @ ensures (\result >= 0 && \result <= arr.length && arr[\result] == key) ||  
+        ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result + 1 >= 0 && \result < arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i <= low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: The prover cannot establish an assertion (UndefinedNegativeIndex) in method Binary
+      @ ensures (\result + 1 >= 0 && \result < arr.length && arr[\result] == key) ||  
+                                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:33: verify: Associated method exit
+                return -1;
+                ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+      @ ensures (\result + 1 >= 0 && \result <= arr.length && arr[\result] == key) ||  
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i <= low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:6: verify: The prover cannot establish an assertion (UndefinedNegativeIndex) in method Binary
+      @ ensures (\result + 1 >= 0 && \result <= arr.length && arr[\result] == key) ||  
+                                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:11: verify: Associated method exit
+            return -1;
+            ^
+2 verification failures
+
+public class BinarySearch {
+
+    /*@ 
+      @ requires arr != null;
+      @ requires (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i+1]);
+ 
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+      @*/
+    public static int Binary(int[] arr, int key) {
+        if (arr.length == 0) {
+            return -1;
+        } else {
+            int low = 0;
+            int high = arr.length;
+            int mid = high / 2;
+
+            /*@ 
+              @ loop_invariant 0 <= low && low <= high && high <= arr.length;
+              @ loop_invariant (\forall int i; 0 < i && i <= low; arr[i] < key);  
+              @ loop_invariant (\forall int j; high < j && j < arr.length; arr[j] > key);  
+              @ loop_invariant low < high ==> mid == low + (high - low) / 2;
+              @ decreases high - low;
+              @*/
+            while (low < high && arr[mid] != key) {
+                if (arr[mid] < key) {
+                    low = mid + 1;
+                } else {
+                    high = mid;
+                }
+                mid = low + (high - low) / 2;
+            }
+            if (low >= high) {
+                return -1;
+            }
+            return mid;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: illegal start of type
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: ';' expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: Method specs may not precede a variable declaration
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: illegal start of type
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: <identifier> expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: illegal start of type
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: <identifier> expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: <identifier> expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: illegal start of type
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: <identifier> expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: illegal start of type
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: <identifier> expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BinarySearch.java:7: error: <identifier> expected
+      @         (\result == -1 && ! (\exists int i; 0 <= i && i < arr.length; arr[i] == key));
+                                                                                           ^
+13 errors
+

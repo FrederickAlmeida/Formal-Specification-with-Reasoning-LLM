@@ -1,0 +1,413 @@
+class ComputeOverlapBranch {
+    //@ requires ax1 <= ax2 && ay1 <= ay2 && bx1 <= bx2 && by1 <= by2;
+    //@ ensures \result == 0 ==> (overlapWidth <= 0 || overlapHeight <= 0);
+    //@ ensures \result == overlapHeight * overlapWidth;
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+    //@ ensures minX2 == (ax2 < bx2 ? ax2 : bx2);
+    //@ ensures maxX1 == (ax1 > bx1 ? ax1 : bx1);
+    //@ ensures minY2 == (ay2 < by2 ? ay2 : by2);
+    //@ ensures maxY1 == (ay1 > by1 ? ay1 : by1);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int minX2 = bx2;
+        if(ax2 < bx2) {
+            minX2 = ax2;
+        }
+        int maxX1 = bx1;
+        if(ax1 > bx1) {
+            maxX1 = ax1;
+        }
+        int minY2 = by2;
+        if(ay2 < by2) {
+            minY2 = ay2;
+        }
+        int maxY1 = by1;
+        if(ay1 > by1) {
+            maxY1 = ay1;
+        }
+        int overlapWidth = minX2 - maxX1;
+        int overlapHeight = minY2 - maxY1;
+        if(overlapWidth < 0) {
+            overlapWidth = 0;
+        }
+        if(overlapHeight < 0) {
+            overlapHeight = 0;
+        }
+        int overlapArea = overlapHeight * overlapWidth;
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (overlapWidth <= 0 || overlapHeight <= 0);
+                                  ^
+  symbol:   variable overlapWidth
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (overlapWidth <= 0 || overlapHeight <= 0);
+                                                       ^
+  symbol:   variable overlapHeight
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == overlapHeight * overlapWidth;
+                           ^
+  symbol:   variable overlapHeight
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == overlapHeight * overlapWidth;
+                                           ^
+  symbol:   variable overlapWidth
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+                ^
+  symbol:   variable overlapWidth
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+                                 ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+                                         ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+                                                   ^
+  symbol:   variable overlapHeight
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+                                                                     ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures overlapWidth == (minX2 - maxX1) && overlapHeight == (minY2 - maxY1);
+                                                                             ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:6: error: cannot find symbol
+    //@ ensures minX2 == (ax2 < bx2 ? ax2 : bx2);
+                ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:7: error: cannot find symbol
+    //@ ensures maxX1 == (ax1 > bx1 ? ax1 : bx1);
+                ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:8: error: cannot find symbol
+    //@ ensures minY2 == (ay2 < by2 ? ay2 : by2);
+                ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:9: error: cannot find symbol
+    //@ ensures maxY1 == (ay1 > by1 ? ay1 : by1);
+                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+14 errors
+
+class ComputeOverlapBranch {
+    //@ requires ax1 <= ax2 && ay1 <= ay2 && bx1 <= bx2 && by1 <= by2;
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+    //@ ensures minX2 == (bx2 < ax2 ? bx2 : ax2);
+    //@ ensures maxX1 == (bx1 > ax1 ? bx1 : ax1);
+    //@ ensures minY2 == (by2 < ay2 ? by2 : ay2);
+    //@ ensures maxY1 == (by1 > ay1 ? by1 : ay1);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int minX2 = bx2;
+        if(ax2 < bx2) {
+            minX2 = ax2;
+        }
+        int maxX1 = bx1;
+        if(ax1 > bx1) {
+            maxX1 = ax1;
+        }
+        int minY2 = by2;
+        if(ay2 < by2) {
+            minY2 = ay2;
+        }
+        int maxY1 = by1;
+        if(ay1 > by1) {
+            maxY1 = ay1;
+        }
+        int overlapWidth = minX2 - maxX1;
+        int overlapHeight = minY2 - maxY1;
+        if(overlapWidth < 0) {
+            overlapWidth = 0;
+        }
+        if(overlapHeight < 0) {
+            overlapHeight = 0;
+        }
+        int overlapArea = overlapHeight * overlapWidth;
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                  ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                          ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                                        ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                                                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                   ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                           ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                                           ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                                                   ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures minX2 == (bx2 < ax2 ? bx2 : ax2);
+                ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:6: error: cannot find symbol
+    //@ ensures maxX1 == (bx1 > ax1 ? bx1 : ax1);
+                ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:7: error: cannot find symbol
+    //@ ensures minY2 == (by2 < ay2 ? by2 : ay2);
+                ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:8: error: cannot find symbol
+    //@ ensures maxY1 == (by1 > ay1 ? by1 : ay1);
+                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+12 errors
+
+public class ComputeOverlapBranch {
+
+    // Method to compute the overlap area between two rectangles
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+    //@ ensures minX2 == (bx2 < ax2 ? bx2 : ax2);
+    //@ ensures maxX1 == (bx1 > ax1 ? bx1 : ax1);
+    //@ ensures minY2 == (by2 < ay2 ? by2 : ay2);
+    //@ ensures maxY1 == (by1 > ay1 ? by1 : ay1);
+    public static int computeOverlap(int ax1, int ay1, int ax2, int ay2, 
+                                      int bx1, int by1, int bx2, int by2) {
+        // Calculate the min and max coordinates for both rectangles
+        int minX1 = ax1, maxX1 = ax2;
+        int minY1 = ay1, maxY1 = ay2;
+        int minX2 = bx1, maxX2 = bx2;
+        int minY2 = by1, maxY2 = by2;
+
+        // Calculate the overlap dimensions
+        int overlapWidth = Math.max(0, Math.min(maxX2, maxX1) - Math.max(minX2, minX1));
+        int overlapHeight = Math.max(0, Math.min(maxY2, maxY1) - Math.max(minY2, minY1));
+
+        // Return the area of the overlap
+        return overlapWidth * overlapHeight;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                  ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                          ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                                        ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                                                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                   ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                           ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                                           ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                                                   ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:6: error: cannot find symbol
+    //@ ensures minX2 == (bx2 < ax2 ? bx2 : ax2);
+                ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:7: error: cannot find symbol
+    //@ ensures maxX1 == (bx1 > ax1 ? bx1 : ax1);
+                ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:8: error: cannot find symbol
+    //@ ensures minY2 == (by2 < ay2 ? by2 : ay2);
+                ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:9: error: cannot find symbol
+    //@ ensures maxY1 == (by1 > ay1 ? by1 : ay1);
+                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+12 errors
+
+public class ComputeOverlapBranch {
+
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+    //@ ensures minX2 == (bx2 < ax2 ? bx2 : ax2);
+    //@ ensures maxX1 == (bx1 > ax1 ? bx1 : ax1);
+    //@ ensures minY2 == (by2 < ay2 ? by2 : ay2);
+    //@ ensures maxY1 == (by1 > ay1 ? by1 : ay1);
+    public static int computeOverlap(int ax1, int ay1, int ax2, int ay2,
+                                      int bx1, int by1, int bx2, int by2) {
+        // Calculate the boundaries of the rectangles
+        int minX2 = Math.min(bx2, ax2);
+        int maxX1 = Math.max(bx1, ax1);
+        int minY2 = Math.min(by2, ay2);
+        int maxY1 = Math.max(by1, ay1);
+
+        // Calculate the width and height of the overlap
+        int overlapWidth = Math.max(0, minX2 - maxX1);
+        int overlapHeight = Math.max(0, minY2 - maxY1);
+
+        // Return the area of the overlap
+        return overlapWidth * overlapHeight;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                  ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                          ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                                        ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:3: error: cannot find symbol
+    //@ ensures \result == 0 ==> (minX2 - maxX1 <= 0 || minY2 - maxY1 <= 0);
+                                                                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                   ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                           ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                                           ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:4: error: cannot find symbol
+    //@ ensures \result == (max(0, minX2 - maxX1) * max(0, minY2 - maxY1));
+                                                                   ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:5: error: cannot find symbol
+    //@ ensures minX2 == (bx2 < ax2 ? bx2 : ax2);
+                ^
+  symbol:   variable minX2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:6: error: cannot find symbol
+    //@ ensures maxX1 == (bx1 > ax1 ? bx1 : ax1);
+                ^
+  symbol:   variable maxX1
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:7: error: cannot find symbol
+    //@ ensures minY2 == (by2 < ay2 ? by2 : ay2);
+                ^
+  symbol:   variable minY2
+  location: class ComputeOverlapBranch
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlapBranch.java:8: error: cannot find symbol
+    //@ ensures maxY1 == (by1 > ay1 ? by1 : ay1);
+                ^
+  symbol:   variable maxY1
+  location: class ComputeOverlapBranch
+12 errors
+
+public class ComputeOverlapBranch {
+
+    /**
+     * Computes the area of overlap between two rectangles defined by their coordinates.
+     *
+     * @param ax1 The x-coordinate of the bottom-left corner of the first rectangle.
+     * @param ay1 The y-coordinate of the bottom-left corner of the first rectangle.
+     * @param ax2 The x-coordinate of the top-right corner of the first rectangle.
+     * @param ay2 The y-coordinate of the top-right corner of the first rectangle.
+     * @param bx1 The x-coordinate of the bottom-left corner of the second rectangle.
+     * @param by1 The y-coordinate of the bottom-left corner of the second rectangle.
+     * @param bx2 The x-coordinate of the top-right corner of the second rectangle.
+     * @param by2 The y-coordinate of the top-right corner of the second rectangle.
+     * @return The area of overlap between the two rectangles.
+     */
+    public int computeOverlap(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        // Calculate the overlap coordinates
+        int minX1 = Math.max(ax1, bx1);
+        int maxX2 = Math.min(ax2, bx2);
+        int minY1 = Math.max(ay1, by1);
+        int maxY2 = Math.min(ay2, by2);
+
+        // Calculate the width and height of the overlap
+        int overlapWidth = Math.max(0, maxX2 - minX1);
+        int overlapHeight = Math.max(0, maxY2 - minY1);
+
+        // Return the area of overlap
+        return overlapWidth * overlapHeight;
+    }
+}
+

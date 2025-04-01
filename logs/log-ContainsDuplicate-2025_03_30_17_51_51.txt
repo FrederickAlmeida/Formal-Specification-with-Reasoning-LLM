@@ -1,0 +1,275 @@
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 <= i && i < n - 1;
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 <= i && i < n - 1;
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 < i && i < n - 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 < i && i < n - 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 < i && i <= n - 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 < i && i <= n - 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 <= i && i < n - 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 <= i && i < n - 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 <= i && i <= n - 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 <= i && i <= n - 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 - 1 <= i && i < n - 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 - 1 <= i && i < n - 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 - 1 <= i && i <= n - 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 - 1 <= i && i <= n - 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 < i && i < n + 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 < i && i < n + 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 < i && i <= n + 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ContainsDuplicate.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method containsDuplicate
+        //@ maintaining 0 < i && i <= n + 1;  
+            ^
+1 verification failure
+
+import java.util.Arrays;
+
+public class ContainsDuplicate {
+
+    //@ requires nums != null;
+    //@ requires 0 <= nums.length;
+    //@ ensures \result <==> (\exists int i; 0 <= i && i < nums.length - 1; nums[i] == nums[i + 1]);
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+
+        //@ maintaining 0 <= i && i < n + 1;  
+        //@ maintaining (\forall int j; 0 <= j && j < i; nums[j] != nums[j + 1]);
+        //@ decreases n - 1 - i;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+

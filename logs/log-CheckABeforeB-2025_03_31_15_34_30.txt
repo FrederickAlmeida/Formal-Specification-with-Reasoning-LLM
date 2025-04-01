@@ -1,0 +1,131 @@
+public class CheckABeforeB {
+
+    /*@ 
+      @ requires s != null;
+      @ 
+      @ ensures \result 
+      @     <==> (\exists int k; 0 <= k && k <= s.length();
+      @              (\forall int i; 0 <= i < k; s.charAt(i) == 'a') &&
+      @              (\forall int i; k <= i < s.length(); s.charAt(i) == 'b'));
+      @
+      @ pure
+      @*/
+    public boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        
+        //@ maintaining 0 <= i && i <= chars.length;
+        //@ maintaining (\forall int k; 0 <= k && k < i; chars[k] == 'a');
+        //@ decreases chars.length - i;
+        while (i < chars.length && chars[i] == 'a') {
+            i++;
+        }
+
+        int j = i;
+        
+        //@ maintaining i <= j && j <= chars.length;
+        //@ maintaining (\forall int m; i <= m && m < j; chars[m] == 'b');
+        //@ decreases chars.length - j;
+        while (j < chars.length && chars[j] == 'b') {
+            j++;
+        }
+
+        return j == chars.length;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:6:) in method checkString
+        return j == chars.length;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:33:
+      @ ensures \result 
+        ^
+2 verification failures
+
+public class CheckABeforeB {
+
+    /*@ 
+      @ requires s != null;
+      @ 
+      @ ensures \result   
+      @     <==> (\exists int k; 0 <= k && k <= s.length();
+      @              (\forall int i; 0 <= i < k; s.charAt(i) == 'a') &&
+      @              (\forall int i; k <= i < s.length(); s.charAt(i) == 'b'));
+      @
+      @ pure
+      @*/
+    public boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        
+        //@ maintaining 0 <= i && i <= chars.length;
+        //@ maintaining (\forall int k; 0 <= k && k < i; chars[k] == 'a');
+        //@ decreases chars.length - i;
+        while (i < chars.length && chars[i] == 'a') {
+            i++;
+        }
+
+        int j = i;
+        
+        //@ maintaining i <= j && j <= chars.length;
+        //@ maintaining (\forall int m; i <= m && m < j; chars[m] == 'b');
+        //@ decreases chars.length - j;
+        while (j < chars.length && chars[j] == 'b') {
+            j++;
+        }
+
+        return j == chars.length;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:6:) in method checkString
+        return j == chars.length;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:33:
+      @ ensures \result   
+        ^
+2 verification failures
+
+public class CheckABeforeB {
+
+    /*@ 
+      @ requires s != null;
+      @ 
+ 
+      @     <==> (\exists int k; 0 <= k && k <= s.length();
+      @              (\forall int i; 0 <= i < k; s.charAt(i) == 'a') &&
+      @              (\forall int i; k <= i < s.length(); s.charAt(i) == 'b'));
+      @
+      @ pure
+      @*/
+    public boolean checkString(String s) {
+        char[] chars = s.toCharArray();
+        int i = 0;
+        
+        //@ maintaining 0 <= i && i <= chars.length;
+        //@ maintaining (\forall int k; 0 <= k && k < i; chars[k] == 'a');
+        //@ decreases chars.length - i;
+        while (i < chars.length && chars[i] == 'a') {
+            i++;
+        }
+
+        int j = i;
+        
+        //@ maintaining i <= j && j <= chars.length;
+        //@ maintaining (\forall int m; i <= m && m < j; chars[m] == 'b');
+        //@ decreases chars.length - j;
+        while (j < chars.length && chars[j] == 'b') {
+            j++;
+        }
+
+        return j == chars.length;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:7: error: Token <==> does not introduce an expression
+      @     <==> (\exists int k; 0 <= k && k <= s.length();
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/CheckABeforeB.java:9: error: <identifier> expected
+      @              (\forall int i; k <= i < s.length(); s.charAt(i) == 'b'));
+                                                                             ^
+2 errors
+

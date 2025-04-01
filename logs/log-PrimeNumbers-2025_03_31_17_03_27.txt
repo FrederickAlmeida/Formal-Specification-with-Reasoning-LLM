@@ -1,0 +1,66 @@
+public class PrimeNumbers {
+
+    /*@ 
+      @   requires d != 0;
+      @   ensures \result <==> (n % d == 0);
+      @*/
+    private static boolean div(int n, int d) {
+        return n % d == 0;
+    }
+
+    private /*@ spec_public @*/ int primeArray[];
+
+    /*@ 
+      @   // Require that n is at least 1 so primeArray[0] = 2 is valid.
+      @   requires n >= 1;
+      @   // The returned array must have length n.
+      @   ensures \result.length == n;
+      @   // Each element in the result is a prime number, and greater or equal to 2.
+      @   ensures (\forall int i; 0 <= i && i < \result.length;
+      @       \result[i] >= 2 &&
+      @       (\forall int j; 2 <= j && j <= \result[i]/2; \result[i] % j != 0)
+      @   );
+      @   // The primes are in strictly ascending order (no duplicates).
+      @   ensures (\forall int i; 0 <= i && i < \result.length - 1; 
+      @       \result[i] < \result[i+1]);
+      @*/
+    public int[] primeList(int n) {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        /*@
+          @ loop_invariant 2 <= count && count <= n+1;
+          @ loop_invariant primeArray.length == n;
+          @ loop_invariant (\forall int i; 0 <= i && i < count - 1;
+          @     primeArray[i] >= 2 &&
+          @     (\forall int k; 2 <= k && k <= primeArray[i]/2; primeArray[i] % k != 0) 
+          @ );
+          @ loop_invariant (\forall int i; 0 <= i && i < count - 2; primeArray[i] < primeArray[i+1]);
+          @ decreases n - count + 1;
+        */
+        for (count = 2; count <= n;) {
+
+            /*@
+              @ loop_invariant 2 <= j && j <= (num/2) + 1;
+              @ loop_invariant status == 0 || status == 1;
+              @ decreases (num/2) - j + 1;
+            */
+            for (j = 2; j <= num / 2; j++) {
+                if (div(num, j)) {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0) {
+                primeArray[count - 1] = num;
+                count++;
+            }
+
+            status = 1;
+            num++;
+        }
+        return primeArray;
+    }
+}

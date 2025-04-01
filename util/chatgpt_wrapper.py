@@ -5,8 +5,7 @@ import threading
 
 def create_chatgpt_config(messages):
     config = {
-        "model": "gpt-4o-mini",
-        "temperature": 0.4,
+        "model": "o1",
         "messages": []
     }
     config["messages"] = messages

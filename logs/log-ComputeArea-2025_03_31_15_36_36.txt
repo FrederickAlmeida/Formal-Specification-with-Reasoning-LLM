@@ -1,0 +1,369 @@
+public class ComputeArea {
+
+    /*@
+      @   public normal_behavior
+      @   ensures 
+      @       \let area1 = (ax2 - ax1) * (ay2 - ay1);
+      @       \let area2 = (bx2 - bx1) * (by2 - by1);
+      @       \let overlapWidth = ((ax2 < bx2) ? ax2 : bx2) - ((ax1 > bx1) ? ax1 : bx1);
+      @       \let overlapHeight = ((ay2 < by2) ? ay2 : by2) - ((ay1 > by1) ? ay1 : by1);
+      @       \let overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+      @       in 
+      @         \result == area1 + area2 - overlapArea;
+      @   assignable \nothing;
+      @*/
+    public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1, 
+                                               int ax2, int ay2, 
+                                               int bx1, int by1, 
+                                               int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth  = ((ax2 < bx2) ? ax2 : bx2) - ((ax1 > bx1) ? ax1 : bx1);
+        int overlapHeight = ((ay2 < by2) ? ay2 : by2) - ((ay1 > by1) ? ay1 : by1);
+
+        int overlapArea = (overlapWidth  > 0 ? overlapWidth : 0)
+                        * (overlapHeight > 0 ? overlapHeight : 0);
+
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: <identifier> expected
+      @       \let area1 = (ax2 - ax1) * (ay2 - ay1);
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: <identifier> expected
+      @       \let area2 = (bx2 - bx1) * (by2 - by1);
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:8: error: <identifier> expected
+      @       \let overlapWidth = ((ax2 < bx2) ? ax2 : bx2) - ((ax1 > bx1) ? ax1 : bx1);
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:9: error: <identifier> expected
+      @       \let overlapHeight = ((ay2 < by2) ? ay2 : by2) - ((ay1 > by1) ? ay1 : by1);
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:10: error: <identifier> expected
+      @       \let overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: Incorrectly formed or terminated ensures statement near here
+      @         \result == area1 + area2 - overlapArea;
+                ^
+6 errors
+
+public class ComputeArea {
+
+    /*@
+      @ public normal_behavior
+      @   assignable \nothing;
+      @   ensures \result 
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+      @       + ((bx2 - bx1) * (by2 - by1))
+      @       - (
+      @           (
+      @             (
+      @               ((ax2 < bx2) ? ax2 : bx2)
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+      @             ) > 0 
+      @               ? (
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+      @                 )
+      @               : 0
+      @           )
+      @           *
+      @           (
+      @             (
+      @               ((ay2 < by2) ? ay2 : by2)
+      @               - ((ay1 > by1) ? ay1 : by1)
+      @             ) > 0
+      @               ? (
+      @                   ((ay2 < by2) ? ay2 : by2)
+      @                   - ((ay1 > by1) ? ay1 : by1)
+      @                 )
+      @               : 0
+      @           )
+      @         );
+      @*/
+    public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1,
+                                               int ax2, int ay2,
+                                               int bx1, int by1,
+                                               int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+
+        int overlapWidth = ((ax2 < bx2) ? ax2 : bx2)
+                         - ((ax1 > bx1) ? ax1 : bx1);
+        int overlapHeight = ((ay2 < by2) ? ay2 : by2)
+                          - ((ay1 > by1) ? ay1 : by1);
+
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0)
+                        * (overlapHeight > 0 ? overlapHeight : 0);
+
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:50: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:50:
+      @   ensures \result 
+          ^
+2 verification failures
+
+public class ComputeArea {
+
+    /*@
+      @ public normal_behavior
+      @   assignable \nothing;
+      @   ensures \result   
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+      @       + ((bx2 - bx1) * (by2 - by1))
+      @       - (
+      @           (
+      @             (
+      @               ((ax2 < bx2) ? ax2 : bx2)
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+      @             ) > 0 
+      @               ? (
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+      @                 )
+      @               : 0
+      @           )
+      @           *
+      @           (
+      @             (
+      @               ((ay2 < by2) ? ay2 : by2)
+      @               - ((ay1 > by1) ? ay1 : by1)
+      @             ) > 0
+      @               ? (
+      @                   ((ay2 < by2) ? ay2 : by2)
+      @                   - ((ay1 > by1) ? ay1 : by1)
+      @                 )
+      @               : 0
+      @           )
+      @         );
+      @*/
+    public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1,
+                                               int ax2, int ay2,
+                                               int bx1, int by1,
+                                               int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+
+        int overlapWidth = ((ax2 < bx2) ? ax2 : bx2)
+                         - ((ax1 > bx1) ? ax1 : bx1);
+        int overlapHeight = ((ay2 < by2) ? ay2 : by2)
+                          - ((ay1 > by1) ? ay1 : by1);
+
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0)
+                        * (overlapHeight > 0 ? overlapHeight : 0);
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:50: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:50:
+      @   ensures \result   
+          ^
+2 verification failures
+
+public class ComputeArea {
+
+    /*@
+      @ public normal_behavior
+      @   assignable \nothing;
+ 
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+      @       + ((bx2 - bx1) * (by2 - by1))
+      @       - (
+      @           (
+      @             (
+      @               ((ax2 < bx2) ? ax2 : bx2)
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+      @             ) > 0 
+      @               ? (
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+      @                 )
+      @               : 0
+      @           )
+      @           *
+      @           (
+      @             (
+      @               ((ay2 < by2) ? ay2 : by2)
+      @               - ((ay1 > by1) ? ay1 : by1)
+      @             ) > 0
+      @               ? (
+      @                   ((ay2 < by2) ? ay2 : by2)
+      @                   - ((ay1 > by1) ? ay1 : by1)
+      @                 )
+      @               : 0
+      @           )
+      @         );
+      @*/
+    public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1,
+                                               int ax2, int ay2,
+                                               int bx1, int by1,
+                                               int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1);
+        int area2 = (bx2 - bx1) * (by2 - by1);
+
+        int overlapWidth = ((ax2 < bx2) ? ax2 : bx2)
+                         - ((ax1 > bx1) ? ax1 : bx1);
+        int overlapHeight = ((ay2 < by2) ? ay2 : by2)
+                          - ((ay1 > by1) ? ay1 : by1);
+
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0)
+                        * (overlapHeight > 0 ? overlapHeight : 0);
+
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: illegal start of type
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: <identifier> expected
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: illegal start of type
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: ';' expected
+      @     == ((ax2 - ax1) * (ay2 - ay1))
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: > expected
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: <identifier> expected
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: '(' expected
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: ';' expected
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: illegal start of type
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: ';' expected
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: error: <identifier> expected
+      @               ((ax2 < bx2) ? ax2 : bx2)
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:13: error: illegal start of type
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:13: error: <identifier> expected
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:13: error: illegal start of type
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:13: error: ';' expected
+      @               - ((ax1 > bx1) ? ax1 : bx1)
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: > expected
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: <identifier> expected
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: '(' expected
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: ';' expected
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: illegal start of type
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: ';' expected
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:16: error: <identifier> expected
+      @                   ((ax2 < bx2) ? ax2 : bx2)
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:17: error: illegal start of type
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:17: error: <identifier> expected
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:17: error: illegal start of type
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:17: error: ';' expected
+      @                   - ((ax1 > bx1) ? ax1 : bx1)
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: > expected
+      @               ((ay2 < by2) ? ay2 : by2)
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: <identifier> expected
+      @               ((ay2 < by2) ? ay2 : by2)
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: '(' expected
+      @               ((ay2 < by2) ? ay2 : by2)
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: ';' expected
+      @               ((ay2 < by2) ? ay2 : by2)
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: illegal start of type
+      @               ((ay2 < by2) ? ay2 : by2)
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: ';' expected
+      @               ((ay2 < by2) ? ay2 : by2)
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:24: error: <identifier> expected
+      @               ((ay2 < by2) ? ay2 : by2)
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:25: error: illegal start of type
+      @               - ((ay1 > by1) ? ay1 : by1)
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:25: error: <identifier> expected
+      @               - ((ay1 > by1) ? ay1 : by1)
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:25: error: illegal start of type
+      @               - ((ay1 > by1) ? ay1 : by1)
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:25: error: ';' expected
+      @               - ((ay1 > by1) ? ay1 : by1)
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: > expected
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: <identifier> expected
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: '(' expected
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: ';' expected
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: illegal start of type
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: ';' expected
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:28: error: <identifier> expected
+      @                   ((ay2 < by2) ? ay2 : by2)
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:29: error: illegal start of type
+      @                   - ((ay1 > by1) ? ay1 : by1)
+                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:29: error: <identifier> expected
+      @                   - ((ay1 > by1) ? ay1 : by1)
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:29: error: illegal start of type
+      @                   - ((ay1 > by1) ? ay1 : by1)
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:29: error: ';' expected
+      @                   - ((ay1 > by1) ? ay1 : by1)
+                                        ^
+48 errors
+

@@ -1,0 +1,508 @@
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ((ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2) ? 0 : 
+    //                      ((\max(ax1, bx1) < \min(ax2, bx2)) && (\max(ay1, by1) < \min(ay2, by2)) ?
+    //                      (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)) : 0));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: error: Token @*/ does not introduce an expression
+    //@ ensures \result == ((ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2) ? 0 : 
+                                                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: error: ')' expected
+    //@ ensures \result == ((ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2) ? 0 : 
+                                                                                    ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: illegal start of type
+    //@ ensures \result == (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: ')' expected
+    //@ ensures \result == (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+                                          ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == ( (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)) ) <==> (\min(ax2, bx2) > \max(ax1, bx1) && \min(ay2, by2) > \max(ay1, by1));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: illegal start of type
+    //@ ensures \result == ( (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)) ) <==> (\min(ax2, bx2) > \max(ax1, bx1) && \min(ay2, by2) > \max(ay1, by1));
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: ')' expected
+    //@ ensures \result == ( (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)) ) <==> (\min(ax2, bx2) > \max(ax1, bx1) && \min(ay2, by2) > \max(ay1, by1));
+                                   ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: illegal start of type
+    //@ ensures \result == (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: ')' expected
+    //@ ensures \result == (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+                                          ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) 
+    //@          <==> (\max(ax2, bx2) > \min(ax1, bx1) && \max(ay2, by2) > \min(ay1, by1));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1);
+        int overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: illegal start of type
+    //@ ensures \result == ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) 
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: ')' expected
+    //@ ensures \result == ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) 
+                                  ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == \max(0, (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: illegal start of type
+    //@ ensures \result == \max(0, (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)));
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: ')' expected
+    //@ ensures \result == \max(0, (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)));
+                                         ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == ((ax2 - ax1) > 0 && (bx2 - bx1) > 0 && (ay2 - ay1) > 0 && (by2 - by1) > 0) ? 
+    //@         ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) : 0;
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:5: error: illegal start of type
+    //@         ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) : 0;
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:5: error: ')' expected
+    //@         ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) : 0;
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:5: error: Incorrectly formed or terminated ensures statement near here
+    //@         ((\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1))) : 0;
+                          ^
+3 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == \max(0, (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: illegal start of type
+    //@ ensures \result == \max(0, (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)));
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:4: error: ')' expected
+    //@ ensures \result == \max(0, (\min(ax2, bx2) - \max(ax1, bx1)) * (\min(ay2, by2) - \max(ay1, by1)));
+                                         ^
+2 errors
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 <= by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 <= by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 <= by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 > bx2 || ay2 <= by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 < by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 < by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 < by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 < by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 < bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 < by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 < by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 <= by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 <= by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 <= by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 > bx2 || ay2 <= by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 < by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 < by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 < by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 < by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 > by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 > by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 >= by2);  
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3:) in method computeOverlapArea
+        return overlapWidth * overlapHeight;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeOverlap.java:9:
+    //@ ensures \result == 0 <==> (ax2 <= bx1 || ax1 >= bx2 || ay2 <= by1 || ay1 >= by2);  
+        ^
+2 verification failures
+
+class ComputeOverlap {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+ 
+    //@ ensures \result == ((Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1))) * 
+    //@                       Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1)));
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int overlapWidth = Math.max(0, Math.min(ax2, bx2) - Math.max(ax1, bx1));
+        int overlapHeight = Math.max(0, Math.min(ay2, by2) - Math.max(ay1, by1));
+        return overlapWidth * overlapHeight;
+    }
+}
+
+

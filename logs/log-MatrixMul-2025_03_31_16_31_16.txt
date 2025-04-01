@@ -1,0 +1,689 @@
+public class MatrixMul {
+
+    /*@ 
+      @ requires a != null && b != null; 
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @           (\forall int j; 0 <= j && j < 2; 
+      @             \result[i][j] == a[i][0] * b[0][j] + a[i][1] * b[1][j]));
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        /*@ 
+          @ maintaining 0 <= i && i <= 2;
+          @ maintaining (\forall int x; 0 <= x && x < i; 
+          @               (\forall int y; 0 <= y && y < 2; 
+          @                 c[x][y] == a[x][0] * b[0][y] + a[x][1] * b[1][y]));
+          @ decreases 2 - i;
+          @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ 
+              @ maintaining 0 <= j && j <= 2;
+              @ maintaining (\forall int y; 0 <= y && y < j; 
+              @               c[i][y] == a[i][0] * b[0][y] + a[i][1] * b[1][y]);
+              @ decreases 2 - j;
+              @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:30: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_933_933___47 i_933_947___53
+1 error
+
+public class MatrixMul {
+
+    /*@ 
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @           (\forall int j; 0 <= j && j < 2; 
+      @              \result[i][j] == a[i][0] * b[0][j] + a[i][1] * b[1][j]));
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_637_637___51 i_637_651___54
+1 error
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2;
+      @           (\forall int j; 0 <= j && j < 2;
+      @              \result[i][j] == a[i][0] * b[0][j] + a[i][1] * b[1][j]));
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int p = 0; p < 2; p++) {
+            for (int q = 0; q < 2; q++) {
+                c[p][q] = a[p][0] * b[0][q] + a[p][1] * b[1][q];
+            }
+        }
+        return c;
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[p][q] = a[p][0] * b[0][q] + a[p][1] * b[1][q];
+                  ^
+  Reason: Double rewriting of ident: p p_620_620___51 p_620_634___54
+1 error
+
+/*  
+  A minimal JML specification that avoids additional loop annotations (which may trigger rewriting issues)
+  and asserts the main postconditions at the method level.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2;
+      @          (\forall int j; 0 <= j && j < 2;
+      @             \result[i][j] == a[i][0] * b[0][j] + a[i][1] * b[1][j]));
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i2 = 0; i2 < 2; i2++) {
+            for (int j2 = 0; j2 < 2; j2++) {
+                c[i2][j2] = a[i2][0] * b[0][j2] + a[i2][1] * b[1][j2];
+            }
+        }
+        return c;
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:21: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i2][j2] = a[i2][0] * b[0][j2] + a[i2][1] * b[1][j2];
+                  ^
+  Reason: Double rewriting of ident: i2 i2_793_793___51 i2_793_809___54
+1 error
+
+/*  
+  A minimal JML specification asserting the main pre- and postconditions at the method level,
+  avoiding detailed loop specifications to reduce rewriting issues.
+*/
+
+public class MatrixMul {
+
+    /*@ 
+      @ requires a != null && a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b != null && b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2;
+      @          (\forall int j; 0 <= j && j < 2;
+      @             \result[i][j] == (a[i][0] * b[0][j] + a[i][1] * b[1][j])));
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int row = 0; row < 2; row++) {
+            for (int col = 0; col < 2; col++) {
+                c[row][col] = a[row][0] * b[0][col] + a[row][1] * b[1][col];
+            }
+        }
+        return c;
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:20: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[row][col] = a[row][0] * b[0][col] + a[row][1] * b[1][col];
+                  ^
+  Reason: Double rewriting of ident: row row_777_777___54 row_777_795___57
+1 error
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];  
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];  
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];  
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] - a[0][1] * b[1][0];  
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];  
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[0][0] == a[0][0] * b[0][0] - a[0][1] * b[1][0];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];  
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:18:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:18: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];  
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+      @ ensures \result[0][1] == a[0][0] * b[0][1] - a[0][1] * b[1][1];  
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:16: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[0][1] == a[0][0] * b[0][1] - a[0][1] * b[1][1];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+ 
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+ 
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];  
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+ 
+      @ ensures \result[1][0] == a[1][0] * b[0][0] - a[1][1] * b[1][0];  
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:17: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[1][0] == a[1][0] * b[0][0] - a[1][1] * b[1][0];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+ 
+ 
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:18:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:18: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+ 
+ 
+      @ ensures \result[1][1] == a[1][0] * b[0][1] - a[1][1] * b[1][1];  
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:18:) in method multiply
+        return c;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:18: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:29:
+      @ ensures \result[1][1] == a[1][0] * b[0][1] - a[1][1] * b[1][1];  
+        ^
+2 verification failures
+
+/*  
+  This version avoids using loop variables in the implementation, 
+  thus reducing the likelihood of the JML "double rewriting" issue.
+*/
+
+public class MatrixMul {
+
+    /*@
+      @ requires a != null && b != null;
+      @ requires a.length == 2 && a[0].length == 2 && a[1].length == 2;
+      @ requires b.length == 2 && b[0].length == 2 && b[1].length == 2;
+      @ ensures \result != null;
+      @ ensures \result.length == 2 && \result[0].length == 2 && \result[1].length == 2;
+      @ // Postconditions specify the multiplication result for each cell:
+ 
+ 
+ 
+ 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        // By explicitly computing each cell, we avoid loops that may trigger JML rewriting issues:
+        c[0][0] = a[0][0] * b[0][0] + a[0][1] * b[1][0];
+        c[0][1] = a[0][0] * b[0][1] + a[0][1] * b[1][1];
+        c[1][0] = a[1][0] * b[0][0] + a[1][1] * b[1][0];
+        c[1][1] = a[1][0] * b[0][1] + a[1][1] * b[1][1];
+
+        return c;
+    }
+
+}
+
+

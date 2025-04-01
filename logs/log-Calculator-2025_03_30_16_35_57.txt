@@ -1,0 +1,351 @@
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ ensures \result == -1 <==> (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+    //@ ensures (operator == '-') ==> \result == num1 - num2;
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+            	output = num1 + num2;
+                break;
+
+            case '-':
+            	output = num1 - num2;
+                break;
+
+            case '*':
+            	output = num1 * num2;
+                break;
+
+            case '/':
+            	output = num1 / num2;
+		break;
+
+	    case '%':
+		output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:34: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method calculate
+		output = num1 % num2;
+		              ^
+1 verification failure
+
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ requires !(operator == '%' && num2 == 0); // Prevent modulus by zero
+    //@ ensures \result == -1 <==> (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+    //@ ensures (operator == '-') ==> \result == num1 - num2;
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+                output = num1 + num2;
+                break;
+
+            case '-':
+                output = num1 - num2;
+                break;
+
+            case '*':
+                output = num1 * num2;
+                break;
+
+            case '/':
+                output = num1 / num2;
+                break;
+
+            case '%':
+                output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:6:) in method calculate
+        return output;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41:
+    //@ ensures \result == -1 <==> (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
+        ^
+2 verification failures
+
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ requires !(operator == '%' && num2 == 0); // Prevent modulus by zero
+    //@ ensures \result == -1 <==> (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');  
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+    //@ ensures (operator == '-') ==> \result == num1 - num2;
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+                output = num1 + num2;
+                break;
+
+            case '-':
+                output = num1 - num2;
+                break;
+
+            case '*':
+                output = num1 * num2;
+                break;
+
+            case '/':
+                output = num1 / num2;
+                break;
+
+            case '%':
+                output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:6:) in method calculate
+        return output;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:6: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41:
+    //@ ensures \result == -1 <==> (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');  
+        ^
+2 verification failures
+
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ requires !(operator == '%' && num2 == 0); // Prevent modulus by zero
+ 
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+    //@ ensures (operator == '-') ==> \result == num1 - num2;
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+                output = num1 + num2;
+                break;
+
+            case '-':
+                output = num1 - num2;
+                break;
+
+            case '*':
+                output = num1 * num2;
+                break;
+
+            case '/':
+                output = num1 / num2;
+                break;
+
+            case '%':
+                output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:8:) in method calculate
+        return output;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:8: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41:
+    //@ ensures (operator == '-') ==> \result == num1 - num2;
+        ^
+2 verification failures
+
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ requires !(operator == '%' && num2 == 0); // Prevent modulus by zero
+ 
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+    //@ ensures (operator == '-') ==> \result == num1 - num2;  
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+                output = num1 + num2;
+                break;
+
+            case '-':
+                output = num1 - num2;
+                break;
+
+            case '*':
+                output = num1 * num2;
+                break;
+
+            case '/':
+                output = num1 / num2;
+                break;
+
+            case '%':
+                output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:8:) in method calculate
+        return output;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:8: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41:
+    //@ ensures (operator == '-') ==> \result == num1 - num2;  
+        ^
+2 verification failures
+
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ requires !(operator == '%' && num2 == 0); // Prevent modulus by zero
+ 
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+    //@ ensures (operator == '-') ==> \result == num1 + num2;  
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+                output = num1 + num2;
+                break;
+
+            case '-':
+                output = num1 - num2;
+                break;
+
+            case '*':
+                output = num1 * num2;
+                break;
+
+            case '/':
+                output = num1 / num2;
+                break;
+
+            case '%':
+                output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:8:) in method calculate
+        return output;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:8: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Calculator.java:41:
+    //@ ensures (operator == '-') ==> \result == num1 + num2;  
+        ^
+2 verification failures
+
+public class Calculator {
+    
+    //@ requires (operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%' || operator == '\u0000');
+    //@ requires !(operator == '/' && num2 == 0); // Prevent division by zero
+    //@ requires !(operator == '%' && num2 == 0); // Prevent modulus by zero
+ 
+    //@ ensures (operator == '+') ==> \result == num1 + num2;
+ 
+    //@ ensures (operator == '*') ==> \result == num1 * num2;
+    //@ ensures (operator == '/') ==> \result == num1 / num2;
+    //@ ensures (operator == '%') ==> \result == num1 % num2;
+    public int calculate(int num1, int num2, char operator) {
+
+        int output;
+
+        switch (operator)
+        {
+            case '+':
+                output = num1 + num2;
+                break;
+
+            case '-':
+                output = num1 - num2;
+                break;
+
+            case '*':
+                output = num1 * num2;
+                break;
+
+            case '/':
+                output = num1 / num2;
+                break;
+
+            case '%':
+                output = num1 % num2;
+                break;
+
+            default:
+                return -1;
+        }
+        return output;
+    }
+}
+
+

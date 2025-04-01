@@ -1,0 +1,348 @@
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:15: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_583_583___42 i_583_597___45
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        /*@ loop_invariant 0 <= i && i < 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j < 2;
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:23: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_810_810___38 i_810_824___44
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        /*@ loop_invariant 0 <= i && i <= 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j <= 2;
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:23: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_811_811___38 i_811_825___44
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        /*@ loop_invariant 0 <= i && i <= 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j <= 2;
+              @ decreases 2 - j;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_820_820___38 i_820_834___44
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        /*@ loop_invariant 0 <= i && i <= 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j <= 2;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_820_820___38 i_820_834___44
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        /*@ loop_invariant 0 <= i && i < 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j < 2;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j];
+                  ^
+  Reason: Double rewriting of ident: i i_819_819___38 i_819_833___44
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        /*@ loop_invariant 0 <= i && i < 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j < 2;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j]; // This line is causing the error
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j]; // This line is causing the error
+                  ^
+  Reason: Double rewriting of ident: i i_819_819___38 i_819_833___44
+1 error
+
+public class MatrixAdd {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        /*@ loop_invariant 0 <= i && i < 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j < 2;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j]; // This line is causing the error
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j]; // This line is causing the error
+                  ^
+  Reason: Double rewriting of ident: i i_819_819___38 i_819_833___44
+1 error
+
+public class MatrixAdd {
+
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        /*@ loop_invariant 0 <= i && i <= 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j <= 2;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j]; // This line is causing the error
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][j] + b[i][j]; // This line is causing the error
+                  ^
+  Reason: Double rewriting of ident: i i_808_808___38 i_808_822___44
+1 error
+
+public class MatrixAdd {
+
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires (\forall int i; 0 <= i && i < 2; a[i].length == 2 && b[i].length == 2);
+      @ ensures \result != null && \result.length == 2;
+      @ ensures (\forall int i; 0 <= i && i < 2; \result[i].length == 2);
+      @ ensures (\forall int i; 0 <= i && i < 2; 
+      @         (\forall int j; 0 <= j && j < 2; \result[i][j] == a[i][j] + b[i][j]));
+    @*/
+    public int[][] add(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+
+        /*@ loop_invariant 0 <= i && i <= 2;
+          @ loop_invariant (\forall int m; 0 <= m && m < i; 
+          @     (\forall int n; 0 <= n && n < 2; c[m][n] == a[m][n] + b[m][n]));
+          @ decreases 2 - i;
+        @*/
+        for (int i = 0; i < 2; i++) {
+            /*@ loop_invariant 0 <= j && j <= 2;
+              @ loop_invariant (\forall int n; 0 <= n && n < j; c[i][n] == a[i][n] + b[i][n]);
+              @ decreases 2 - j;
+            @*/
+            for (int j = 0; j < 2; j++) {
+                // Avoiding potential conflicts with variable scope
+                int sum = a[i][j] + b[i][j];
+                c[i][j] = sum;
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixAdd.java:27: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = sum;
+                  ^
+  Reason: Double rewriting of ident: i i_808_808___39 i_808_822___45
+1 error
+

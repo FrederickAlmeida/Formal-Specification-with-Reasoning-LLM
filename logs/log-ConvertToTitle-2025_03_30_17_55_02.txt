@@ -1,0 +1,245 @@
+class ConvertToTitle {
+    //@ requires columnNumber > 0;
+    //@ ensures \result != null;
+    //@ ensures \result.length() > 0;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) >= 'A' && \result.charAt(i) <= 'Z');
+    //@ ensures \result.equals(convert(columnNumber)); // where convert is a function that converts columnNumber to its corresponding title
+    public String convertToTitle(int columnNumber) {
+        StringBuffer sb = new StringBuffer();
+        //@ maintaining columnNumber > 0;
+        //@ maintaining sb.length() >= 0;
+        //@ decreases columnNumber;
+        while (columnNumber > 0) {
+            int a0 = (columnNumber - 1) % 26 + 1;
+            sb.append((char)(a0 - 1 + 'A'));
+            columnNumber = (columnNumber - a0) / 26;
+        }
+        return sb.reverse().toString();
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ConvertToTitle.java:6: error: cannot find symbol
+    //@ ensures \result.equals(convert(columnNumber)); // where convert is a function that converts columnNumber to its corresponding title
+                               ^
+  symbol:   method convert(int)
+  location: class ConvertToTitle
+1 error
+
+class ConvertToTitle {
+    //@ requires columnNumber > 0;
+    //@ ensures \result != null;
+    //@ ensures \result.length() > 0;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) >= 'A' && \result.charAt(i) <= 'Z');
+    //@ ensures \result.equals(convertToTitleImpl(columnNumber)); // The result corresponds to the title representation of the column number
+    public String convertToTitle(int columnNumber) {
+        StringBuffer sb = new StringBuffer();
+        //@ maintaining columnNumber > 0;
+        //@ maintaining sb.length() >= 0;
+        //@ decreases columnNumber;
+        while (columnNumber > 0) {
+            int a0 = (columnNumber - 1) % 26 + 1;
+            sb.append((char)(a0 - 1 + 'A'));
+            columnNumber = (columnNumber - a0) / 26;
+        }
+        return sb.reverse().toString();
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ConvertToTitle.java:6: error: cannot find symbol
+    //@ ensures \result.equals(convertToTitleImpl(columnNumber)); // The result corresponds to the title representation of the column number
+                               ^
+  symbol:   method convertToTitleImpl(int)
+  location: class ConvertToTitle
+1 error
+
+class ConvertToTitle {
+    //@ requires columnNumber > 0;
+    //@ ensures \result != null;
+    //@ ensures \result.length() > 0;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) >= 'A' && \result.charAt(i) <= 'Z');
+    //@ ensures \result.equals(convert(columnNumber)); // where convert(columnNumber) is the expected title string
+    //@ ensures \result.equals(reverseTitle(columnNumber)); // where reverseTitle is a function that constructs the title from the column number
+    public String convertToTitle(int columnNumber) {
+        StringBuffer sb = new StringBuffer();
+        //@ maintaining columnNumber > 0;
+        //@ maintaining sb.length() >= 0;
+        //@ decreases columnNumber;
+        while (columnNumber > 0) {
+            int a0 = (columnNumber - 1) % 26 + 1;
+            sb.append((char)(a0 - 1 + 'A'));
+            columnNumber = (columnNumber - a0) / 26;
+        }
+        return sb.reverse().toString();
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ConvertToTitle.java:6: error: cannot find symbol
+    //@ ensures \result.equals(convert(columnNumber)); // where convert(columnNumber) is the expected title string
+                               ^
+  symbol:   method convert(int)
+  location: class ConvertToTitle
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ConvertToTitle.java:7: error: cannot find symbol
+    //@ ensures \result.equals(reverseTitle(columnNumber)); // where reverseTitle is a function that constructs the title from the column number
+                               ^
+  symbol:   method reverseTitle(int)
+  location: class ConvertToTitle
+2 errors
+
+class ConvertToTitle {
+    //@ requires columnNumber > 0;
+    //@ ensures \result != null;
+    //@ ensures \result.length() > 0;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length(); \result.charAt(i) >= 'A' && \result.charAt(i) <= 'Z');
+    //@ ensures \result.equals(convertToTitle(columnNumber)); // The result corresponds to the title representation of the column number
+    public String convertToTitle(int columnNumber) {
+        StringBuffer sb = new StringBuffer();
+        //@ maintaining columnNumber > 0;
+        //@ maintaining sb.length() >= 0;
+        //@ decreases columnNumber;
+        while (columnNumber > 0) {
+            int a0 = (columnNumber - 1) % 26 + 1;
+            sb.append((char)(a0 - 1 + 'A'));
+            columnNumber = (columnNumber - a0) / 26;
+        }
+        return sb.reverse().toString();
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ConvertToTitle.java:6: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    //@ ensures \result.equals(convertToTitle(columnNumber)); // The result corresponds to the title representation of the column number
+                                             ^
+  Reason: No logical function for method convertToTitle(columnNumber) convertToTitle(int)
+error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+  Reason: Unexpected exception: APPLY-HELPER java.lang.NullPointerException: Cannot assign field "type" because "e" is null
+java.lang.NullPointerException: Cannot assign field "type" because "e" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:9322)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertArgs(JmlAssertionAdder.java:8409)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:8863)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1683)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:11011)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertArgs(JmlAssertionAdder.java:8409)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:8863)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1683)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addPostConditions(JmlAssertionAdder.java:5615)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1268)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:18087)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1420)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:16759)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1332)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1480)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:688)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:525)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:967)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:212)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:325)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:557)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:395)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:312)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot assign field "type" because "e" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:9322)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertArgs(JmlAssertionAdder.java:8409)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:8863)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1683)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:11011)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertArgs(JmlAssertionAdder.java:8409)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:8863)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1683)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addPostConditions(JmlAssertionAdder.java:5615)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1268)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:18087)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1420)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:16759)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1332)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1480)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:688)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:525)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:967)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:212)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:325)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:557)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:395)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:312)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.RuntimeException: MISMATCHED BLOCKS
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.popBlock(JmlAssertionAdder.java:1894)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.popBlock(JmlAssertionAdder.java:1878)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:11341)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8289)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1816)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1592)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1683)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addPostConditions(JmlAssertionAdder.java:5615)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1268)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:18087)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1420)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:16759)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1332)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1480)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:688)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:525)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:967)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:212)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:325)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:557)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:395)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:352)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:312)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+2 errors
+

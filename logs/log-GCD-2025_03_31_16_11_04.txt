@@ -1,0 +1,74 @@
+/**
+ * A class providing a method to compute the greatest common divisor (GCD)
+ * of two integers, with the convention that gcd(0,0) = -1.
+ */
+public class GCD {
+
+    /*@ 
+      @  // No particular preconditions on num1, num2.
+      @  // Postcondition cases:
+      @
+      @  // 1) If both num1 and num2 are zero, then \result is -1.
+      @  ensures (num1 == 0 && num2 == 0) 
+      @          ==> \result == -1;
+      @
+      @  // 2) If exactly one of num1 or num2 is zero, then \result is the absolute 
+      @  //    value of the non-zero argument.
+      @  ensures ((num1 == 0 && num2 != 0) 
+      @           || (num2 == 0 && num1 != 0)) 
+      @          ==> \result == ((num1 == 0) 
+      @                            ? ((num2 < 0) ? -num2 : num2) 
+      @                            : ((num1 < 0) ? -num1 : num1));
+      @
+      @  // 3) Otherwise, \result is the greatest positive integer dividing both 
+      @  //    |num1| and |num2|.
+      @  //    - It divides both of them
+      @  //    - No larger positive integer divides both of them
+      @  ensures !(num1 == 0 && num2 == 0)
+      @       && !(num1 == 0 || num2 == 0)
+      @       ==> ( ((num1 < 0) ? -num1 : num1) % \result == 0
+      @            && ((num2 < 0) ? -num2 : num2) % \result == 0
+      @            && (\forall int d; 
+      @                    d > 0 
+      @                    && (( (num1 < 0) ? -num1 : num1 ) % d == 0) 
+      @                    && (( (num2 < 0) ? -num2 : num2 ) % d == 0)
+      @                 ==> d <= \result) );
+      @
+      @  // The method does not modify any static or instance fields.
+      @  assignable \nothing;
+      @*/
+    public static int gcd(int num1, int num2) {
+        int result = 1; 
+        num1 = (0 <= num1) ? num1 : -num1;
+        num2 = (0 <= num2) ? num2 : -num2;
+
+        if (num1 == 0 && num2 == 0) {
+            return -1;	
+        }
+
+        if (num1 == 0 || num2 == 0) { 
+            return (num1 > num2) ? num1 : num2;
+        }
+
+        /*@ 
+          @  // Loop invariant: 
+          @  // 1) i goes from 1 up to min(num1, num2).
+          @  // 2) result is always a common divisor of num1 and num2.
+          @  // 3) result is the greatest of all common divisors encountered so far.
+          @  maintaining 1 <= i && i <= num1 && i <= num2 + 1;
+          @  maintaining num1 % result == 0 && num2 % result == 0;
+          @  maintaining (\forall int d; 
+          @                1 <= d && d < i 
+          @                && num1 % d == 0 
+          @                && num2 % d == 0 
+          @              ==> d <= result);
+          @  decreasing (num1 + num2) - i; 
+          @*/
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+}

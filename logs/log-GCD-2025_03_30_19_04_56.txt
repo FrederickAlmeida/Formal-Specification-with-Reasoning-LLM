@@ -1,0 +1,173 @@
+public class GCD {
+    //@ requires true; // No preconditions on input values
+    //@ ensures \result == -1 <==> (num1 == 0 && num2 == 0);
+    //@ ensures \result == (num1 > num2 ? num1 : num2) <==> (num1 == 0 || num2 == 0);
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+    public static int gcd(int num1, int num2) {
+        int result = 1; 
+        num1 = (0 <= num1) ? num1 : -num1;
+        num2 = (0 <= num2) ? num2 : -num2;
+
+        if (num1 == 0 && num2 == 0) {
+            return -1;	
+        }
+
+        if (num1 == 0 || num2 == 0) { 
+            return (num1 > num2) ? num1 : num2;
+        }
+
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:5: error: A backslash in a JML comment expects to be followed by a valid identifier
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:5: error: ')' or ',' expected
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:5: error: A backslash in a JML comment expects to be followed by a valid identifier
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+                                                                                                          ^
+3 errors
+
+public class GCD {
+    //@ requires true; // No preconditions on input values
+    //@ ensures \result == -1 <==> (num1 == 0 && num2 == 0);
+    //@ ensures \result == (num1 > num2 ? num1 : num2) <==> (num1 == 0 || num2 == 0);
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+    //@ ensures \result >= 0; // The result is non-negative if num1 and num2 are positive
+    public static int gcd(int num1, int num2) {
+        int result = 1; 
+        num1 = (0 <= num1) ? num1 : -num1;
+        num2 = (0 <= num2) ? num2 : -num2;
+
+        if (num1 == 0 && num2 == 0) {
+            return -1;	
+        }
+
+        if (num1 == 0 || num2 == 0) { 
+            return (num1 > num2) ? num1 : num2;
+        }
+
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:5: error: A backslash in a JML comment expects to be followed by a valid identifier
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:5: error: ')' or ',' expected
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:5: error: A backslash in a JML comment expects to be followed by a valid identifier
+    //@ ensures \result == \max(\{i | 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0)\}) <==> (num1 > 0 && num2 > 0);
+                                                                                                          ^
+3 errors
+
+public class GCD {
+    //@ requires true; // No preconditions on input values
+    //@ ensures \result == -1 <==> (num1 == 0 && num2 == 0);
+    //@ ensures \result == (num1 > num2 ? num1 : num2) <==> (num1 == 0 || num2 == 0);
+    //@ ensures \result >= 0 <==> (num1 > 0 && num2 > 0); // The result is non-negative if num1 and num2 are positive
+    //@ ensures (\forall int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result == i) 
+    //@ ensures (\forall int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result >= i); // \result is the greatest common divisor
+    public static int gcd(int num1, int num2) {
+        int result = 1; 
+        num1 = (0 <= num1) ? num1 : -num1;
+        num2 = (0 <= num2) ? num2 : -num2;
+
+        if (num1 == 0 && num2 == 0) {
+            return -1;	
+        }
+
+        if (num1 == 0 || num2 == 0) { 
+            return (num1 > num2) ? num1 : num2;
+        }
+
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:6: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures (\forall int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result == i) 
+                                                                                                                      ^
+1 error
+
+public class GCD {
+    //@ requires true; // No preconditions on input values
+    //@ ensures \result == -1 <==> (num1 == 0 && num2 == 0);
+    //@ ensures \result == (num1 > num2 ? num1 : num2) <==> (num1 == 0 || num2 == 0);
+    //@ ensures \result >= 0 <==> (num1 > 0 && num2 > 0); // The result is non-negative if num1 and num2 are positive
+    //@ ensures (\forall int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result >= i); // \result is the greatest common divisor
+    //@ ensures (\exists int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result == i); // \result is a common divisor
+    public static int gcd(int num1, int num2) {
+        int result = 1; 
+        num1 = (0 <= num1) ? num1 : -num1;
+        num2 = (0 <= num2) ? num2 : -num2;
+
+        if (num1 == 0 && num2 == 0) {
+            return -1;	
+        }
+
+        if (num1 == 0 || num2 == 0) { 
+            return (num1 > num2) ? num1 : num2;
+        }
+
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            if (num1 % i == 0 && num2 % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/GCD.java:22: verify: The prover cannot establish an assertion (PossiblyDivideByZero) in method gcd
+            if (num1 % i == 0 && num2 % i == 0) {
+                     ^
+1 verification failure
+
+public class GCD {
+    //@ requires true; // No preconditions on input values
+    //@ ensures \result == -1 <==> (num1 == 0 && num2 == 0);
+    //@ ensures \result == (num1 > num2 ? num1 : num2) <==> (num1 == 0 || num2 == 0);
+    //@ ensures \result >= 0 <==> (num1 > 0 && num2 > 0); // The result is non-negative if num1 and num2 are positive
+    //@ ensures (\forall int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result >= i); // \result is the greatest common divisor
+    //@ ensures (\exists int i; 1 <= i && i <= num1 && i <= num2 && (num1 % i == 0 && num2 % i == 0) ==> \result == i); // \result is a common divisor
+    public static int gcd(int num1, int num2) {
+        int result = 1; 
+        num1 = (0 <= num1) ? num1 : -num1;
+        num2 = (0 <= num2) ? num2 : -num2;
+
+        if (num1 == 0 && num2 == 0) {
+            return -1;	
+        }
+
+        if (num1 == 0 || num2 == 0) { 
+            return (num1 > num2) ? num1 : num2;
+        }
+
+        // Loop only runs if both num1 and num2 are greater than 0
+        //@ loop_invariant 1 <= i && i <= num1 && i <= num2;
+        //@ loop_invariant (\forall int j; 1 <= j && j < i && (num1 % j == 0 && num2 % j == 0) ==> result >= j);
+        for (int i = 1; i <= num1 && i <= num2; i++) {
+            //@ assert num1 > 0 && num2 > 0; // Ensure we don't divide by zero
+            if (num1 % i == 0 && num2 % i == 0) {
+                result = i;
+            }
+        }
+        return result;
+    }
+}

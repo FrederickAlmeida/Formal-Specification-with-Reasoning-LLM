@@ -1,0 +1,638 @@
+class ComputeAreaBranch {
+
+  /*@ 
+    @ public normal_behavior
+    @   // Precondition: the coordinates define non-negative rectangle widths/heights
+    @   requires ax2 >= ax1 && ay2 >= ay1 
+    @            && bx2 >= bx1 && by2 >= by1;
+    @   
+    @   // Precondition: areas fit in int (to avoid overflow concerns)
+    @   requires (long)(ax2 - ax1)*(long)(ay2 - ay1) <= Integer.MAX_VALUE;
+    @   requires (long)(bx2 - bx1)*(long)(by2 - by1) <= Integer.MAX_VALUE;
+    @
+    @   // Postcondition: 
+    @   // result = area1 + area2 - overlapArea, 
+    @   // where area1 = (ax2 - ax1)*(ay2 - ay1), 
+    @   //       area2 = (bx2 - bx1)*(by2 - by1), and 
+    @   // overlapArea = max(0, minX2 - maxX1) * max(0, minY2 - maxY1), 
+    @   // with minX2 = min(ax2, bx2), maxX1 = max(ax1, bx1),
+    @   //      minY2 = min(ay2, by2), maxY1 = max(ay1, by1).
+    @   ensures \result 
+    @     == ((ax2 - ax1)*(ay2 - ay1)) 
+    @      + ((bx2 - bx1)*(by2 - by1)) 
+    @      - (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) 
+    @         * \max(0, (\min(ay2, by2) - \max(ay1, by1))));
+    @
+    @   // No side effects
+    @   assignable \nothing;
+    @*/
+  public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1, int ax2, int ay2,
+                                            int bx1, int by1, int bx2, int by2) {
+    int area1 = (ax2 - ax1) * (ay2 - ay1);
+    int area2 = (bx2 - bx1) * (by2 - by1);
+
+    int minX2 = bx2;
+    if (ax2 < bx2) {
+        minX2 = ax2;
+    }
+    int maxX1 = bx1;
+    if (ax1 > bx1) {
+        maxX1 = ax1;
+    }
+    int minY2 = by2;
+    if (ay2 < by2) {
+        minY2 = ay2;
+    }
+    int maxY1 = by1;
+    if (ay1 > by1) {
+        maxY1 = ay1;
+    }
+
+    int overlapWidth = minX2 - maxX1;
+    int overlapHeight = minY2 - maxY1;
+
+    if (overlapWidth < 0) {
+        overlapWidth = 0;
+    }
+    if (overlapHeight < 0) {
+        overlapHeight = 0;
+    }
+
+    int overlapArea = overlapHeight * overlapWidth;
+    return area1 + area2 - overlapArea;
+  }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:23: error: illegal start of type
+    @      - (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) 
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:23: error: ')' expected
+    @      - (\max(0, (\min(ax2, bx2) - \max(ax1, bx1))) 
+                            ^
+2 errors
+
+class ComputeAreaBranch {
+
+  /*@ 
+    @ public normal_behavior
+    @   // Precondition: the coordinates define non-negative rectangle widths/heights
+    @   requires ax2 >= ax1 && ay2 >= ay1 
+    @            && bx2 >= bx1 && by2 >= by1;
+    @   
+    @   // Precondition: areas fit in int (to avoid overflow concerns)
+    @   requires (long)(ax2 - ax1)*(long)(ay2 - ay1) <= Integer.MAX_VALUE;
+    @   requires (long)(bx2 - bx1)*(long)(by2 - by1) <= Integer.MAX_VALUE;
+    @
+    @   // No side effects
+    @   assignable \nothing;
+    @
+    @   // Postcondition: result = area1 + area2 - overlapArea 
+    @   //   where:
+    @   //     area1 = (ax2 - ax1)*(ay2 - ay1)
+    @   //     area2 = (bx2 - bx1)*(by2 - by1)
+    @   //     overlapWidth = max(0, min(ax2, bx2) - max(ax1, bx1))
+    @   //     overlapHeight = max(0, min(ay2, by2) - max(ay1, by1))
+    @   //     overlapArea = overlapWidth * overlapHeight
+    @   ensures 
+    @     \let area1         = (ax2 - ax1)*(ay2 - ay1),
+    @          area2         = (bx2 - bx1)*(by2 - by1),
+    @          overlapWidth  = \max(0, \min(ax2, bx2) - \max(ax1, bx1)),
+    @          overlapHeight = \max(0, \min(ay2, by2) - \max(ay1, by1));
+    @     in
+    @       \result == area1 + area2 - (overlapWidth * overlapHeight);
+    @*/
+  public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1, int ax2, int ay2,
+                                            int bx1, int by1, int bx2, int by2) {
+    int area1 = (ax2 - ax1) * (ay2 - ay1);
+    int area2 = (bx2 - bx1) * (by2 - by1);
+
+    int minX2 = (ax2 < bx2) ? ax2 : bx2;
+    int maxX1 = (ax1 > bx1) ? ax1 : bx1;
+    int minY2 = (ay2 < by2) ? ay2 : by2;
+    int maxY1 = (ay1 > by1) ? ay1 : by1;
+
+    int overlapWidth = minX2 - maxX1;
+    int overlapHeight = minY2 - maxY1;
+
+    if (overlapWidth < 0)  overlapWidth  = 0;
+    if (overlapHeight < 0) overlapHeight = 0;
+
+    int overlapArea = overlapHeight * overlapWidth;
+    return area1 + area2 - overlapArea;
+  }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:24: error: <identifier> expected
+    @     \let area1         = (ax2 - ax1)*(ay2 - ay1),
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:25: error: <identifier> expected
+    @          area2         = (bx2 - bx1)*(by2 - by1),
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:26: error: <identifier> expected
+    @          overlapWidth  = \max(0, \min(ax2, bx2) - \max(ax1, bx1)),
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:26: error: illegal start of type
+    @          overlapWidth  = \max(0, \min(ax2, bx2) - \max(ax1, bx1)),
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:26: error: ')' or ',' expected
+    @          overlapWidth  = \max(0, \min(ax2, bx2) - \max(ax1, bx1)),
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:26: error: Incorrectly formed or terminated ensures statement near here
+    @          overlapWidth  = \max(0, \min(ax2, bx2) - \max(ax1, bx1)),
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:29: error: Incorrectly formed or terminated in statement near here
+    @       \result == area1 + area2 - (overlapWidth * overlapHeight);
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:4: error: Misplaced method specifications preceding a in clause (ignored)
+    @ public normal_behavior
+             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:28: error: This in clause must directly follow a field declaration
+    @     in
+          ^
+9 errors
+
+class ComputeAreaBranch {
+
+  /*@
+    @ public normal_behavior
+    @   // We assume the rectangles have non-negative dimensions
+    @   requires ax2 >= ax1 && ay2 >= ay1
+    @         && bx2 >= bx1 && by2 >= by1;
+    @
+    @   // No side effects
+    @   assignable \nothing;
+    @
+    @   // Postcondition: The result is area1 + area2 - overlapArea,
+    @   // where:
+    @   //   area1 = (ax2 - ax1)*(ay2 - ay1)
+    @   //   area2 = (bx2 - bx1)*(by2 - by1)
+    @   //   overlapWidth  = max(0, min(ax2, bx2) - max(ax1, bx1))
+    @   //   overlapHeight = max(0, min(ay2, by2) - max(ay1, by1))
+    @   //   overlapArea   = overlapWidth * overlapHeight
+    @   //
+    @   // JML does not allow direct use of \min/\max in an ensures clause
+    @   // with sub-expressions inside them, so we use the Java ternary operator
+    @   // for clarity and correctness in this specification.
+    @
+    @   ensures \result
+    @     == ( (ax2 - ax1) * (ay2 - ay1) )
+    @      + ( (bx2 - bx1) * (by2 - by1) )
+    @      - ( 
+    @          ( 
+    @            ( ((ax2 < bx2) ? ax2 : bx2) - ((ax1 > bx1) ? ax1 : bx1) ) > 0 
+    @              ? ( ((ax2 < bx2) ? ax2 : bx2) - ((ax1 > bx1) ? ax1 : bx1) )
+    @              : 0
+    @          )
+    @          * 
+    @          ( 
+    @            ( ((ay2 < by2) ? ay2 : by2) - ((ay1 > by1) ? ay1 : by1) ) > 0
+    @              ? ( ((ay2 < by2) ? ay2 : by2) - ((ay1 > by1) ? ay1 : by1) )
+    @              : 0
+    @          )
+    @        );
+    @*/
+  public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1,
+                                            int ax2, int ay2,
+                                            int bx1, int by1,
+                                            int bx2, int by2) {
+    int area1 = (ax2 - ax1) * (ay2 - ay1);
+    int area2 = (bx2 - bx1) * (by2 - by1);
+
+    // Compute the overlapping rectangle boundaries
+    int minX2 = (ax2 < bx2) ? ax2 : bx2;
+    int maxX1 = (ax1 > bx1) ? ax1 : bx1;
+    int minY2 = (ay2 < by2) ? ay2 : by2;
+    int maxY1 = (ay1 > by1) ? ay1 : by1;
+
+    // Compute overlap width and height (clamped to zero if negative)
+    int overlapWidth = minX2 - maxX1;
+    if (overlapWidth < 0) {
+      overlapWidth = 0;
+    }
+
+    int overlapHeight = minY2 - maxY1;
+    if (overlapHeight < 0) {
+      overlapHeight = 0;
+    }
+
+    int overlapArea = overlapWidth * overlapHeight;
+
+    // Return total area minus overlap
+    return area1 + area2 - overlapArea;
+  }
+}
+
+
+The system is out of resources.
+Consult the following stack trace for details.
+java.lang.OutOfMemoryError: Java heap space
+	at jdk.compiler/com.sun.tools.javac.parser.JavadocTokenizer$OffsetMap.<init>(JavadocTokenizer.java:244)
+	at jdk.compiler/com.sun.tools.javac.parser.JavadocTokenizer$JavadocComment.<init>(JavadocTokenizer.java:110)
+	at jdk.compiler/com.sun.tools.javac.parser.JavadocTokenizer.processComment(JavadocTokenizer.java:82)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlTokenizer.processComment(JmlTokenizer.java:193)
+	at jdk.compiler/com.sun.tools.javac.parser.JavaTokenizer.readToken(JavaTokenizer.java:1068)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlTokenizer.readToken(JmlTokenizer.java:355)
+	at jdk.compiler/com.sun.tools.javac.parser.Scanner.nextToken(Scanner.java:117)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlScanner.advance(JmlScanner.java:219)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlScanner.nextToken(JmlScanner.java:239)
+	at jdk.compiler/com.sun.tools.javac.parser.JavacParser.nextToken(JavacParser.java:323)
+	at jdk.compiler/org.jmlspecs.openjml.ext.AssignableClauseExtension$LocationSetClauseType.parse(AssignableClauseExtension.java:86)
+	at jdk.compiler/org.jmlspecs.openjml.ext.AssignableClauseExtension$LocationSetClauseType.parse(AssignableClauseExtension.java:49)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.parseClause(JmlParser.java:1978)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.parseSpecificationCase(JmlParser.java:1839)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.parseMethodSpecs(JmlParser.java:1664)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.classOrInterfaceOrRecordBodyDeclaration(JmlParser.java:1194)
+	at jdk.compiler/com.sun.tools.javac.parser.JavacParser.classInterfaceOrRecordBody(JavacParser.java:4604)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.classInterfaceOrRecordBody(JmlParser.java:689)
+	at jdk.compiler/com.sun.tools.javac.parser.JavacParser.classDeclaration(JavacParser.java:4304)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.classDeclaration(JmlParser.java:700)
+	at jdk.compiler/com.sun.tools.javac.parser.JavacParser.classOrRecordOrInterfaceOrEnumDeclaration(JavacParser.java:4251)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.classOrRecordOrInterfaceOrEnumDeclaration(JmlParser.java:515)
+	at jdk.compiler/com.sun.tools.javac.parser.JavacParser.typeDeclaration(JavacParser.java:4240)
+	at jdk.compiler/com.sun.tools.javac.parser.JavacParser.parseCompilationUnit(JavacParser.java:4047)
+	at jdk.compiler/com.sun.tools.javac.parser.JmlParser.parseCompilationUnit(JmlParser.java:259)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.parse(JavaCompiler.java:652)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.parse(JavaCompiler.java:629)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.parse(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.parseFiles(JavaCompiler.java:1040)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler$InitialFileParser.parse(JavaCompiler.java:1978)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.parseFiles(JavaCompiler.java:1027)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.parseFiles(JmlCompiler.java:218)
+
+Below is a shorter JML specification with helper methods for min and max. By keeping the comments concise and splitting logic into small pure methods, this version may help avoid excessive memory usage in the tooling:
+
+────────────────────────────────────────────────────────────────────────────
+public class ComputeAreaBranch {
+
+  /*@ 
+    @ public normal_behavior
+    @   // We assume the rectangles have non-negative dimensions
+    @   requires ax2 >= ax1 && ay2 >= ay1
+    @         && bx2 >= bx1 && by2 >= by1;
+    @
+    @   // No side effects
+    @   assignable \nothing;
+    @
+    @   // Postcondition: 
+    @   //   The result is area1 + area2 - overlap, where
+    @   //     area1         = (ax2 - ax1)*(ay2 - ay1)
+    @   //     area2         = (bx2 - bx1)*(by2 - by1)
+    @   //     overlapWidth  = max(0, jmlMin(ax2,bx2) - jmlMax(ax1,bx1))
+    @   //     overlapHeight = max(0, jmlMin(ay2,by2) - jmlMax(ay1,by1))
+    @   //     overlap       = overlapWidth * overlapHeight
+    @
+    @   ensures \result 
+    @       == ((ax2 - ax1)*(ay2 - ay1))
+    @        + ((bx2 - bx1)*(by2 - by1))
+    @        - ( ( jmlMin(ax2,bx2) - jmlMax(ax1,bx1) < 0 
+    @              ? 0 
+    @              : (jmlMin(ax2,bx2) - jmlMax(ax1,bx1))
+    @            )
+    @            *
+    @            ( jmlMin(ay2,by2) - jmlMax(ay1,by1) < 0
+    @              ? 0
+    @              : (jmlMin(ay2,by2) - jmlMax(ay1,by1))
+    @            ) 
+    @          );
+    @*/
+  public /*@ pure @*/ int computeOverlapArea(int ax1, int ay1,
+                                            int ax2, int ay2,
+                                            int bx1, int by1,
+                                            int bx2, int by2) {
+    int area1 = (ax2 - ax1) * (ay2 - ay1);
+    int area2 = (bx2 - bx1) * (by2 - by1);
+
+    int overlapWidth = jmlMin(ax2, bx2) - jmlMax(ax1, bx1);
+    if (overlapWidth < 0) {
+      overlapWidth = 0;
+    }
+
+    int overlapHeight = jmlMin(ay2, by2) - jmlMax(ay1, by1);
+    if (overlapHeight < 0) {
+      overlapHeight = 0;
+    }
+
+    return area1 + area2 - (overlapWidth * overlapHeight);
+  }
+
+  //@ public pure helper method for safely using "min" in the specification
+  /*@ public pure @*/ 
+  private static int jmlMin(int a, int b) {
+    return (a < b) ? a : b;
+  }
+
+  //@ public pure helper method for safely using "max" in the specification
+  /*@ public pure @*/ 
+  private static int jmlMax(int a, int b) {
+    return (a > b) ? a : b;
+  }
+}
+────────────────────────────────────────────────────────────────────────────
+
+
+Explanation of key points:
+
+• The specification is kept concise to reduce the parsing load.  
+• Helper methods jmlMin() and jmlMax() are defined as public pure methods, making them usable inside JML ensures expressions.  
+• Overlapping dimension calculations are clamped to zero if negative, ensuring correctness when rectangles do not overlap.
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+ ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:3: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+                                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:1: error: class, interface, enum, or record expected
+Below is a shorter JML specification with helper methods for min and max. By keeping the comments concise and splitting logic into small pure methods, this version may help avoid excessive memory usage in the tooling:
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: <identifier> expected
+  //@ public pure helper method for safely using "min" in the specification
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: illegal start of type
+  //@ public pure helper method for safely using "min" in the specification
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: ';' expected
+  //@ public pure helper method for safely using "min" in the specification
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: <identifier> expected
+  //@ public pure helper method for safely using "min" in the specification
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: illegal start of type
+  //@ public pure helper method for safely using "min" in the specification
+                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: ';' expected
+  //@ public pure helper method for safely using "min" in the specification
+                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:57: error: ';' expected
+  //@ public pure helper method for safely using "min" in the specification
+                                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: <identifier> expected
+  //@ public pure helper method for safely using "max" in the specification
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: illegal start of type
+  //@ public pure helper method for safely using "max" in the specification
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: ';' expected
+  //@ public pure helper method for safely using "max" in the specification
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: <identifier> expected
+  //@ public pure helper method for safely using "max" in the specification
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: illegal start of type
+  //@ public pure helper method for safely using "max" in the specification
+                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: ';' expected
+  //@ public pure helper method for safely using "max" in the specification
+                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:63: error: ';' expected
+  //@ public pure helper method for safely using "max" in the specification
+                                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+ ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeAreaBranch.java:69: error: illegal character: '\u2500'
+────────────────────────────────────────────────────────────────────────────
+        ^
+100 errors
+only showing the first 100 errors, of 172 total; use -Xmaxerrs if you would like to see more
+

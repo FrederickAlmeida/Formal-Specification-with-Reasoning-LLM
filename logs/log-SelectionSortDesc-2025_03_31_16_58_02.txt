@@ -1,0 +1,342 @@
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 <= i && i <= arr.length - 1;
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method selectionSort
+          @ maintaining 0 <= i && i <= arr.length - 1;
+            ^
+1 verification failure
+
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 < i && i < arr.length - 1;  
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method selectionSort
+          @ maintaining 0 < i && i < arr.length - 1;  
+            ^
+1 verification failure
+
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 < i && i <= arr.length - 1;  
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method selectionSort
+          @ maintaining 0 < i && i <= arr.length - 1;  
+            ^
+1 verification failure
+
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 < i && i - 1 <= arr.length - 1;  
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method selectionSort
+          @ maintaining 0 < i && i - 1 <= arr.length - 1;  
+            ^
+1 verification failure
+
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 <= i && i < arr.length - 1;  
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method selectionSort
+          @ maintaining 0 <= i && i < arr.length - 1;  
+            ^
+1 verification failure
+
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 <= i && i <= arr.length - 1;  
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:16: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method selectionSort
+          @ maintaining 0 <= i && i <= arr.length - 1;  
+            ^
+1 verification failure
+
+public class SelectionSortDesc {
+
+    //@ requires arr != null;
+    //@ ensures (\forall int i; 0 <= i && i < arr.length-1; arr[i] >= arr[i+1]);
+    /*@ 
+      @  // A common way to assert that the final array is a permutation of the original is to use a
+      @  // "multiset" property. If we wanted to be thorough, we could define a model function
+      @  // countOccurrences() and use it to ensure each value's multiplicity remains the same.
+      @  // For simplicity, one can also say every element in the final array occurs in the original array
+      @  // and vice versa. Here, we just note it as a comment:
+      @  // ensures "arr" is a permutation of \old(arr).
+      @*/
+    public static void selectionSort(int[] arr){  
+        /*@ 
+          @ // Outer loop invariants:
+          @ maintaining 0 <= i && i - 1 <= arr.length - 1;  
+          @ // The first i elements are sorted in descending order:
+          @ maintaining (\forall int k; 0 <= k && k < i-1; arr[k] >= arr[k+1]);
+          @ // (Optional) They are also the largest i elements from the original array.
+          @ // Decreases can be used to prove loop termination:
+          @ decreases arr.length - i;
+          @*/
+        for (int i = 0; i < arr.length - 1; i++)  {
+            int index = i;
+            /*@
+              @ // Inner loop invariants:
+              @ maintaining i+1 <= j && j <= arr.length;
+              @ // "index" always points to the position of the maximum element seen so far in arr[i..j-1].
+              @ maintaining (\forall int l; i <= l && l < j; arr[index] >= arr[l]);
+              @ decreases arr.length - j;
+              @*/
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > arr[index]) {
+                    index = j;
+                }
+            }
+
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/SelectionSortDesc.java:38: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method selectionSort
+            int smallerNumber = arr[index];
+                                   ^
+1 verification failure
+

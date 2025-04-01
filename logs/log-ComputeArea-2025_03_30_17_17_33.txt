@@ -1,0 +1,1604 @@
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) - 
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) - 
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 + ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 + ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) + ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 + bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 + by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) +   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3:) in method computeOverlapArea
+        return area1 + area2 - overlapArea;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:3: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:12:
+    //@ ensures \result == ( (ax2 - ax1) * (ay2 - ay1) ) - ( (bx2 - bx1) * (by2 - by1) ) -   
+        ^
+2 verification failures
+
+class ComputeArea {
+    //@ requires ax1 < ax2 && ay1 < ay2 && bx1 < bx2 && by1 < by2;
+ 
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+    public int computeOverlapArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int area1 = (ax2 - ax1) * (ay2 - ay1), area2 = (bx2 - bx1) * (by2 - by1);
+        int overlapWidth = (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1), overlapHeight = (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1);
+        int overlapArea = (overlapWidth > 0 ? overlapWidth : 0) * (overlapHeight > 0 ? overlapHeight : 0);
+        return area1 + area2 - overlapArea;
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:4: error: illegal start of type
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:4: error: <identifier> expected
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:4: error: illegal start of type
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:4: error: ';' expected
+    //@          ( ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) > 0 ? 
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: > expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: illegal start of type
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: '(' expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: ';' expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: <identifier> expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: illegal start of type
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: <identifier> expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: <identifier> expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:5: error: ';' expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) > 0 ? 
+                                                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: > expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: illegal start of type
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: '(' expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: ';' expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: <identifier> expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: illegal start of type
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: <identifier> expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: <identifier> expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:6: error: ';' expected
+    //@            ( (ax2 < bx2 ? ax2 : bx2) - (ax1 > bx1 ? ax1 : bx1) ) * 
+                                                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: > expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: illegal start of type
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: '(' expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: ';' expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: <identifier> expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: illegal start of type
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: <identifier> expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: <identifier> expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/ComputeArea.java:7: error: ';' expected
+    //@            ( (ay2 < by2 ? ay2 : by2) - (ay1 > by1 ? ay1 : by1) ) : 0 : 0);
+                                                                      ^
+31 errors
+

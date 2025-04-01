@@ -1,0 +1,311 @@
+/*@ 
+  @  public class Fibonacci {
+  @    /*+ 
+  @      @  // A mathematical model method expressing the nth Fibonacci number.
+  @      @  // For n ≥ 0:
+  @      @  //   fib(0) = 0,
+  @      @  //   fib(1) = 1,
+  @      @  //   fib(n) = fib(n-1) + fib(n-2) for n > 1.
+  @      @  // For n < 0, it is undefined in this model method.
+  @      @  public normal_behavior
+  @      @  requires n >= 0;
+  @      @  ensures \result == (n < 2 ? n : fibonacci(n-1) + fibonacci(n-2));
+  @    +*/
+  @    private model static int fibonacci(int n) {
+  @       if(n < 2) return n;
+  @       return fibonacci(n - 1) + fibonacci(n - 2);
+  @    }
+  @ }
+*/
+
+/** 
+  * The Fibonacci class provides a method to compute the nth Fibonacci number.
+  */
+public class Fibonacci {
+
+    /**
+     * Computes the nth Fibonacci number using a bottom-up approach.
+     *
+     * @param n the index in the Fibonacci sequence to compute
+     * @return  -1 if n < 0,
+     *           0 if n = 0,
+     *           fib(n) otherwise
+     */
+    /*@ 
+      @ public normal_behavior
+      @   ensures n < 0      ==> \result == -1;
+      @   ensures n == 0     ==> \result == 0;
+      @   ensures n > 0      ==> \result == fibonacci(n);
+      @   // No heap locations outside local variables are modified.
+      @   assignable \nothing;
+      @*/
+    public static int fibCompute(int n) {
+        if(n < 0) return -1;
+        else if(n == 0) return 0;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        //@ maintaining 2 <= index && index <= n + 1;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 1] + fib[i - 2]);
+        //@ decreases (n + 1) - index;
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;         
+        }
+
+        return fib[n];
+    }
+
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:3: error: Block comments may not be embedded inside JML block comments
+  @    /*+ 
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:14: error: <identifier> expected
+  @    private model static int fibonacci(int n) {
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:14: error: <identifier> expected
+  @    private model static int fibonacci(int n) {
+                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:15: error: <identifier> expected
+  @       if(n < 2) return n;
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:15: error: illegal start of type
+  @       if(n < 2) return n;
+          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:15: error: <identifier> expected
+  @       if(n < 2) return n;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:15: error: illegal start of type
+  @       if(n < 2) return n;
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:15: error: > or ',' expected
+  @       if(n < 2) return n;
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:15: error: not a statement
+  @       if(n < 2) return n;
+               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:16: error: <identifier> expected
+  @       return fibonacci(n - 1) + fibonacci(n - 2);
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:16: error: illegal start of type
+  @       return fibonacci(n - 1) + fibonacci(n - 2);
+          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:16: error: ';' expected
+  @       return fibonacci(n - 1) + fibonacci(n - 2);
+                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:16: error: not a statement
+  @       return fibonacci(n - 1) + fibonacci(n - 2);
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:16: error: ';' expected
+  @       return fibonacci(n - 1) + fibonacci(n - 2);
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:17: error: <identifier> expected
+  @    }
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:17: error: illegal start of type
+  @    }
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:17: error: <identifier> expected
+  @    }
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:18: error: <identifier> expected
+  @ }
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:19: error: illegal start of type
+*/
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:19: error: <identifier> expected
+*/
+ ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:19: error: <identifier> expected
+*/
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:62: error: reached end of file while parsing
+}
+ ^
+22 errors
+
+public class Fibonacci {
+
+    /** 
+     * A model function defining the mathematical Fibonacci number for non-negative n.
+     * (This function is used only in JML specifications, not at runtime.)
+     */
+    //@ public static model pure int fibModel(int n) {
+    //@     return (n < 2) ? n : fibModel(n - 1) + fibModel(n - 2);
+    //@ }
+
+    /**
+     * Returns the n-th Fibonacci number using a bottom-up array approach
+     * or -1 if n is negative.
+     *
+     * @param n an integer (may be negative)
+     * @return the n-th Fibonacci number if n ≥ 0; -1 otherwise
+     */
+    /*@
+      @ public normal_behavior
+      @   requires n >= 0;
+      @   ensures \result == fibModel(n);
+      @   assignable \nothing;
+      @ also
+      @ public normal_behavior
+      @   requires n < 0;
+      @   ensures \result == -1;
+      @   assignable \nothing;
+      @*/
+    public static int fibCompute(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 0;
+        }
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        /*@ 
+          @ maintaining 2 <= index && index <= n + 1;
+          @ maintaining (\forall int i; 2 <= i && i < index; 
+          @                fib[i] == fib[i - 1] + fib[i - 2]);
+          @ decreases (n + 1) - index;
+          @*/
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:52: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:21:) in method fibCompute
+        return fib[n];
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:21: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:52:
+      @   ensures \result == fibModel(n);
+          ^
+2 verification failures
+
+public class Fibonacci {
+
+    /** 
+     * A model function defining the mathematical Fibonacci number for non-negative n.
+     * (This function is used only in JML specifications, not at runtime.)
+     */
+    //@ public static model pure int fibModel(int n) {
+    //@     return (n < 2) ? n : fibModel(n - 1) + fibModel(n - 2);
+    //@ }
+
+    /**
+     * Returns the n-th Fibonacci number using a bottom-up array approach
+     * or -1 if n is negative.
+     *
+     * @param n an integer (may be negative)
+     * @return the n-th Fibonacci number if n ≥ 0; -1 otherwise
+     */
+    /*@
+      @ public normal_behavior
+      @   requires n >= 0;
+      @   ensures \result == fibModel(n);  
+      @   assignable \nothing;
+      @ also
+      @ public normal_behavior
+      @   requires n < 0;
+      @   ensures \result == -1;
+      @   assignable \nothing;
+      @*/
+    public static int fibCompute(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 0;
+        }
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        /*@ 
+          @ maintaining 2 <= index && index <= n + 1;
+          @ maintaining (\forall int i; 2 <= i && i < index; 
+          @                fib[i] == fib[i - 1] + fib[i - 2]);
+          @ decreases (n + 1) - index;
+          @*/
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;
+        }
+
+        return fib[n];
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:33: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:21:) in method fibCompute
+            return 0;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:21: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:33:
+      @   ensures \result == fibModel(n);  
+          ^
+2 verification failures
+
+public class Fibonacci {
+
+    /** 
+     * A model function defining the mathematical Fibonacci number for non-negative n.
+     * (This function is used only in JML specifications, not at runtime.)
+     */
+    //@ public static model pure int fibModel(int n) {
+    //@     return (n < 2) ? n : fibModel(n - 1) + fibModel(n - 2);
+    //@ }
+
+    /**
+     * Returns the n-th Fibonacci number using a bottom-up array approach
+     * or -1 if n is negative.
+     *
+     * @param n an integer (may be negative)
+     * @return the n-th Fibonacci number if n ≥ 0; -1 otherwise
+     */
+    /*@
+      @ public normal_behavior
+      @   requires n >= 0;
+ 
+      @   assignable \nothing;
+      @ also
+      @ public normal_behavior
+      @   requires n < 0;
+      @   ensures \result == -1;
+      @   assignable \nothing;
+      @*/
+    public static int fibCompute(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 0;
+        }
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        /*@ 
+          @ maintaining 2 <= index && index <= n + 1;
+          @ maintaining (\forall int i; 2 <= i && i < index; 
+          @                fib[i] == fib[i - 1] + fib[i - 2]);
+          @ decreases (n + 1) - index;
+          @*/
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;
+        }
+
+        return fib[n];
+    }
+}
+
+

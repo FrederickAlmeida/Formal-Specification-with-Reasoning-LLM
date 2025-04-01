@@ -1,0 +1,331 @@
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:15: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_653_653___45 i_653_667___48
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        //@ loop_invariant 0 <= i && i <= 2;
+        //@ loop_invariant 0 <= j && j <= 2;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:14: error: cannot find symbol
+        //@ loop_invariant 0 <= j && j <= 2;
+                                ^
+  symbol:   variable j
+  location: class MatrixMul
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:14: error: cannot find symbol
+        //@ loop_invariant 0 <= j && j <= 2;
+                                     ^
+  symbol:   variable j
+  location: class MatrixMul
+2 errors
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        //@ loop_invariant 0 <= i && i <= 2;
+        //@ loop_invariant 0 <= j && j <= 2;
+        for (int i = 0; i < 2; i++) {
+            //@ loop_invariant 0 <= j && j <= 2;
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:14: error: cannot find symbol
+        //@ loop_invariant 0 <= j && j <= 2;
+                                ^
+  symbol:   variable j
+  location: class MatrixMul
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:14: error: cannot find symbol
+        //@ loop_invariant 0 <= j && j <= 2;
+                                     ^
+  symbol:   variable j
+  location: class MatrixMul
+2 errors
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        //@ loop_invariant 0 <= i && i <= 2;
+        //@ loop_invariant (\forall int j; 0 <= j && j < i; 
+        //@                 c[j][0] == a[j][0] * b[0][0] + a[j][1] * b[1][0] &&
+        //@                 c[j][1] == a[j][0] * b[0][1] + a[j][1] * b[1][1]);
+        for (int i = 0; i < 2; i++) {
+            //@ loop_invariant 0 <= j && j <= 2;
+            //@ loop_invariant c[i][0] == a[i][0] * b[0][0] + a[i][1] * b[1][0];
+            //@ loop_invariant c[i][1] == a[i][0] * b[0][1] + a[i][1] * b[1][1];
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:23: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_927_927___41 i_927_941___47
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        //@ loop_invariant 0 <= i && i <= 2;
+        //@ loop_invariant (\forall int k; 0 <= k && k < i; 
+        //@                 c[k][0] == a[k][0] * b[0][0] + a[k][1] * b[1][0] &&
+        //@                 c[k][1] == a[k][0] * b[0][1] + a[k][1] * b[1][1]);
+        for (int i = 0; i < 2; i++) {
+            //@ loop_invariant 0 <= j && j <= 2;
+            //@ loop_invariant c[i][0] == a[i][0] * b[0][0] + a[i][1] * b[1][0];
+            //@ loop_invariant c[i][1] == a[i][0] * b[0][1] + a[i][1] * b[1][1];
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:24: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_934_934___41 i_934_948___47
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        // Loop over the rows of matrix a
+        //@ loop_invariant 0 <= i && i <= 2;
+        for (int i = 0; i < 2; i++) {
+            // Loop over the columns of matrix b
+            //@ loop_invariant 0 <= j && j <= 2;
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:21: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_756_756___45 i_756_770___51
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        // Outer loop over rows of matrix a
+        //@ loop_invariant 0 <= i && i <= 2;
+        for (int i = 0; i < 2; i++) {
+            // Inner loop over columns of matrix b
+            //@ loop_invariant 0 <= j && j <= 2;
+            for (int j = 0; j < 2; j++) {
+                //@ decreases 2 - j; // To help the verifier understand the loop termination
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:21: error: Loop specifications must immediately precede a loop statement
+                //@ decreases 2 - j; // To help the verifier understand the loop termination
+                    ^
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        // Outer loop over rows of matrix a
+        //@ loop_invariant 0 <= i && i <= 2;
+        for (int i = 0; i < 2; i++) {
+            // Inner loop over columns of matrix b
+            //@ loop_invariant 0 <= j && j <= 2;
+            //@ decreases 2 - j; // To help the verifier understand the loop termination
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:22: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+                  ^
+  Reason: Double rewriting of ident: i i_758_758___45 i_758_772___51
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        // Outer loop over rows of matrix a
+        //@ loop_invariant 0 <= i && i <= 2;
+        //@ loop_invariant \forall int k; 0 <= k < i ==> 
+        //@         (c[k][0] == a[k][0] * b[0][0] + a[k][1] * b[1][0] &&
+        //@          c[k][1] == a[k][0] * b[0][1] + a[k][1] * b[1][1]);
+        for (int i = 0; i < 2; i++) {
+            // Inner loop over columns of matrix b
+            //@ loop_invariant 0 <= j && j <= 2;
+            //@ decreases 2 - j; // To help the verifier understand the loop termination
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:19: error: Token @*/ does not introduce an expression
+        //@          c[k][1] == a[k][0] * b[0][1] + a[k][1] * b[1][1]);
+                                                                       ^
+1 error
+
+public class MatrixMul {
+    
+    /*@ requires a != null && b != null;
+      @ requires a.length == 2 && b.length == 2;
+      @ requires a[0].length == 2 && b[0].length == 2;
+      @ ensures \result != null && \result.length == 2 && \result[0].length == 2;
+      @ ensures \result[0][0] == a[0][0] * b[0][0] + a[0][1] * b[1][0];
+      @ ensures \result[0][1] == a[0][0] * b[0][1] + a[0][1] * b[1][1];
+      @ ensures \result[1][0] == a[1][0] * b[0][0] + a[1][1] * b[1][0];
+      @ ensures \result[1][1] == a[1][0] * b[0][1] + a[1][1] * b[1][1]; 
+      @*/
+    public int[][] multiply(int[][] a, int[][] b) {
+        int[][] c = new int[2][2];
+        
+        // Outer loop over rows of matrix a
+        //@ loop_invariant 0 <= i && i <= 2;
+        //@ loop_invariant \forall int k; 0 <= k < i ==> 
+        //@         (c[k][0] == a[k][0] * b[0][0] + a[k][1] * b[1][0] &&
+        //@          c[k][1] == a[k][0] * b[0][1] + a[k][1] * b[1][1]);
+        for (int i = 0; i < 2; i++) {
+            // Inner loop over columns of matrix b
+            //@ loop_invariant 0 <= j && j <= 2;
+            //@ decreases 2 - j; // To help the verifier understand the loop termination
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = a[i][0] * b[0][j] + a[i][1] * b[1][j];
+            }
+        }
+        return c;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/MatrixMul.java:19: error: Token @*/ does not introduce an expression
+        //@          c[k][1] == a[k][0] * b[0][1] + a[k][1] * b[1][1]);
+                                                                       ^
+1 error
+

@@ -1,0 +1,184 @@
+Below is an example of how one might write JML specifications for this “next greater element” method. The specifications assume each element in nums1 is guaranteed to appear somewhere in nums2, so the inner loops will not run out of bounds. In addition, it specifies the intended functional behavior that the returned array must have length m (the length of nums1) and that each entry in the result array is the next greater element in nums2 for the corresponding element in nums1, or −1 if no greater element exists to the right.
+
+--------------------------------------------------------------------------------
+// JML-SPECIFIED CODE
+
+class NextGreaterElem {
+
+    /*
+      @ requires nums1 != null && nums2 != null;
+      @ requires nums1.length >= 0 && nums2.length >= 0;
+      @
+      @   // Each element of nums1 must appear at least once in nums2.
+      @   // Otherwise the search "while (j < n && nums2[j] != nums1[i])" would be unsafe
+      @   // if the element never occurs in nums2.
+      @ requires (\forall int i; 0 <= i && i < nums1.length;
+      @             (\exists int j; 0 <= j && j < nums2.length; nums2[j] == nums1[i]));
+      @
+      @ ensures \result != null;
+      @ ensures \result.length == nums1.length;
+      @
+      @ // For each i, \result[i] is the first element in nums2 to the right of nums1[i]’s
+      @ // position that is strictly greater. If none is found, \result[i] == -1.
+      @ ensures (\forall int i; 0 <= i && i < nums1.length;
+      @           (let int j = (\min int pos; 0 <= pos && pos < nums2.length && nums2[pos] == nums1[i]);
+      @              // If a strictly greater element occurs after index j in nums2,
+      @              // \result[i] must be the first such one; otherwise, it is -1.
+      @              (
+      @                (\exists int k; j < k && k < nums2.length && nums2[k] > nums2[j] 
+      @                   && (\forall int t; j < t && t < k; nums2[t] <= nums2[j]))
+      @                 ==> \result[i] == 
+      @                     ( \let int k_min = (\min int k0; 
+      @                                         j < k0 && k0 < nums2.length 
+      @                                         && nums2[k0] > nums2[j] 
+      @                                         && (\forall int t; j < t && t < k0; nums2[t] <= nums2[j]));
+      @                       nums2[k_min]) )
+      @              &&
+      @                (!(\exists int k; j < k && k < nums2.length && nums2[k] > nums2[j])) 
+      @                 ==> \result[i] == -1
+      @              )
+      @           )
+      @         );
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+
+        //@ maintaining 0 <= i && i <= m;
+        //@ decreasing m - i;
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n;
+            //@ decreasing n - j;
+            //@ maintaining (\forall int t; 0 <= t && t < j; nums2[t] != nums1[i]);
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+
+            // At this point, nums2[j] == nums1[i], guaranteed by precondition existence
+            int k = j + 1;
+            //@ maintaining k >= j + 1 && k <= n;
+            //@ decreasing n - k;
+            //@ maintaining (\forall int t; j < t && t < k; nums2[t] < nums2[j]);
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+--------------------------------------------------------------------------------
+
+Explanation of Key Specification Points:
+
+1) Precondition on arrays:  
+   • nums1 != null && nums2 != null ensures neither reference is null.  
+   • We allow any nonnegative length for each.  
+
+2) Existence of elements in nums2:  
+   • The loop logic relies on being able to find nums1[i] in nums2. Therefore, the specification includes:  
+         requires (\forall int i; 0 <= i && i < nums1.length;  
+                     (\exists int j; 0 <= j && j < nums2.length; nums2[j] == nums1[i]));  
+     Without this assumption, j might run past the end of nums2 and cause an out-of-bounds access.  
+
+3) Postcondition on result length:  
+   • ensures \result.length == nums1.length states the returned array must match nums1 in size.  
+
+4) Functional behavior:  
+   • We use a bit of first-order logic to capture that for each element nums1[i], the method returns the first strictly greater element in nums2 after that element’s position, or −1 if none is found. The existential conditions ensure correctness of the “next greater” logic:
+     — With let int j = (…minimum position of nums1[i] in nums2…)  
+     — If there is some index k > j with nums2[k] > nums2[j] and everything in between is no larger than nums2[j], then \result[i] equals nums2[k_min], where k_min is the leftmost such k.  
+     — Otherwise, the result is −1.  
+
+5) Loop invariants (//@ maintaining, //@ decreasing) ensure correctness and termination of the internal while loops.
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:1: error: illegal character: '\u201c'
+Below is an example of how one might write JML specifications for this “next greater element” method. The specifications assume each element in nums1 is guaranteed to appear somewhere in nums2, so the inner loops will not run out of bounds. In addition, it specifies the intended functional behavior that the returned array must have length m (the length of nums1) and that each entry in the result array is the next greater element in nums2 for the corresponding element in nums1, or −1 if no greater element exists to the right.
+                                                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:1: error: illegal character: '\u201d'
+Below is an example of how one might write JML specifications for this “next greater element” method. The specifications assume each element in nums1 is guaranteed to appear somewhere in nums2, so the inner loops will not run out of bounds. In addition, it specifies the intended functional behavior that the returned array must have length m (the length of nums1) and that each entry in the result array is the next greater element in nums2 for the corresponding element in nums1, or −1 if no greater element exists to the right.
+                                                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:1: error: illegal character: '\u2212'
+Below is an example of how one might write JML specifications for this “next greater element” method. The specifications assume each element in nums1 is guaranteed to appear somewhere in nums2, so the inner loops will not run out of bounds. In addition, it specifies the intended functional behavior that the returned array must have length m (the length of nums1) and that each entry in the result array is the next greater element in nums2 for the corresponding element in nums1, or −1 if no greater element exists to the right.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:1: error: class, interface, enum, or record expected
+Below is an example of how one might write JML specifications for this “next greater element” method. The specifications assume each element in nums1 is guaranteed to appear somewhere in nums2, so the inner loops will not run out of bounds. In addition, it specifies the intended functional behavior that the returned array must have length m (the length of nums1) and that each entry in the result array is the next greater element in nums2 for the corresponding element in nums1, or −1 if no greater element exists to the right.
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:72: error: class, interface, enum, or record expected
+--------------------------------------------------------------------------------
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:77: error: illegal character: '\u2022'
+   • nums1 != null && nums2 != null ensures neither reference is null.  
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:78: error: illegal character: '\u2022'
+   • We allow any nonnegative length for each.  
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:81: error: illegal character: '\u2022'
+   • The loop logic relies on being able to find nums1[i] in nums2. Therefore, the specification includes:  
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:82: error: illegal character: '\'
+         requires (\forall int i; 0 <= i && i < nums1.length;  
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:82: error: class, interface, enum, or record expected
+         requires (\forall int i; 0 <= i && i < nums1.length;  
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:83: error: class, interface, enum, or record expected
+                     (\exists int j; 0 <= j && j < nums2.length; nums2[j] == nums1[i]));  
+                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:83: error: illegal character: '\'
+                     (\exists int j; 0 <= j && j < nums2.length; nums2[j] == nums1[i]));  
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:83: error: class, interface, enum, or record expected
+                     (\exists int j; 0 <= j && j < nums2.length; nums2[j] == nums1[i]));  
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:83: error: class, interface, enum, or record expected
+                     (\exists int j; 0 <= j && j < nums2.length; nums2[j] == nums1[i]));  
+                                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:84: error: class, interface, enum, or record expected
+     Without this assumption, j might run past the end of nums2 and cause an out-of-bounds access.  
+     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:87: error: illegal character: '\u2022'
+   • ensures \result.length == nums1.length states the returned array must match nums1 in size.  
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:87: error: illegal character: '\'
+   • ensures \result.length == nums1.length states the returned array must match nums1 in size.  
+             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:90: error: illegal character: '\u2022'
+   • We use a bit of first-order logic to capture that for each element nums1[i], the method returns the first strictly greater element in nums2 after that element’s position, or −1 if none is found. The existential conditions ensure correctness of the “next greater” logic:
+   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:90: error: illegal character: '\u2019'
+   • We use a bit of first-order logic to capture that for each element nums1[i], the method returns the first strictly greater element in nums2 after that element’s position, or −1 if none is found. The existential conditions ensure correctness of the “next greater” logic:
+                                                                                                                                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:90: error: illegal character: '\u2212'
+   • We use a bit of first-order logic to capture that for each element nums1[i], the method returns the first strictly greater element in nums2 after that element’s position, or −1 if none is found. The existential conditions ensure correctness of the “next greater” logic:
+                                                                                                                                                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:90: error: illegal character: '\u201c'
+   • We use a bit of first-order logic to capture that for each element nums1[i], the method returns the first strictly greater element in nums2 after that element’s position, or −1 if none is found. The existential conditions ensure correctness of the “next greater” logic:
+                                                                                                                                                                                                                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:90: error: illegal character: '\u201d'
+   • We use a bit of first-order logic to capture that for each element nums1[i], the method returns the first strictly greater element in nums2 after that element’s position, or −1 if none is found. The existential conditions ensure correctness of the “next greater” logic:
+                                                                                                                                                                                                                                                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:91: error: illegal character: '\u2014'
+     — With let int j = (…minimum position of nums1[i] in nums2…)  
+     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:91: error: illegal character: '\u2026'
+     — With let int j = (…minimum position of nums1[i] in nums2…)  
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:91: error: illegal character: '\u2026'
+     — With let int j = (…minimum position of nums1[i] in nums2…)  
+                                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:92: error: illegal character: '\u2014'
+     — If there is some index k > j with nums2[k] > nums2[j] and everything in between is no larger than nums2[j], then \result[i] equals nums2[k_min], where k_min is the leftmost such k.  
+     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:92: error: illegal character: '\'
+     — If there is some index k > j with nums2[k] > nums2[j] and everything in between is no larger than nums2[j], then \result[i] equals nums2[k_min], where k_min is the leftmost such k.  
+                                                                                                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:93: error: illegal character: '\u2014'
+     — Otherwise, the result is −1.  
+     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:93: error: illegal character: '\u2212'
+     — Otherwise, the result is −1.  
+                                ^
+29 errors
+

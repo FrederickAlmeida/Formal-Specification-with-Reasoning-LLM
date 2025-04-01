@@ -1,0 +1,457 @@
+Below is an example of how you might specify this method in JML. The specification captures:
+
+• A non-null array precondition.  
+• If the method returns −1, it means no element in the array is unique.  
+• Otherwise, the returned index is the first place in the array that has a unique value.
+
+-------------------------------------------------------------------------------
+public class UniqueNumNested {
+
+    /*@
+      @   // The array must not be null.
+      @   requires arr != null;
+      @
+      @   // If \result == -1, then every element in arr has a duplicate.
+      @   // In other words, there is no i such that arr[i] is unique.
+      @   ensures (\result == -1)
+      @       <==> (\forall int i; 0 <= i && i < arr.length;
+      @              (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+      @
+      @   // If \result != -1, then
+      @   // 1) it is in valid range for arr,
+      @   // 2) arr[\result] is unique (no other element equals arr[\result]),
+      @   // 3) it is the first unique element in the array. (For all i < \result, arr[i] is not unique.)
+      @   ensures (\result != -1) ==> (
+      @       0 <= \result && \result < arr.length
+      @       && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+      @       && (\forall int i; 0 <= i && i < \result;
+      @           (\exists int k; 0 <= k && k < arr.length && k != i && arr[k] == arr[i])));
+      @*/
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            while (j < arr.length) {
+                if (i != j && arr[i] == arr[j]) {
+                    break;
+                }
+                j++;
+            }
+            if (j == arr.length) {
+                return i;  // arr[i] is unique
+            }
+        }
+        return -1;  // no unique elements
+    }
+}
+
+-------------------------------------------------------------------------------
+Explanation of the specification:
+
+• requires arr != null: The method requires a non-null array.  
+• ensures (\result == -1) <==> ( … ): If the method returns -1, then every element has at least one duplicate. Conversely, if every element has at least one duplicate, then the method must return -1.  
+• ensures (\result != -1) ==> ( … ): If the method returns some valid index, then that index must be the first unique element in the array. Specifically:  
+  – 0 <= \result < arr.length: The returned index is in range.  
+  – No other element in the array equals arr[\result].  
+  – For all positions i < \result, arr[i] is not unique (there exists some other position k that has the same value).
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:3: error: illegal character: '\u2022'
+• A non-null array precondition.  
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:4: error: illegal character: '\u2022'
+• If the method returns −1, it means no element in the array is unique.  
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:4: error: illegal character: '\u2212'
+• If the method returns −1, it means no element in the array is unique.  
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:5: error: illegal character: '\u2022'
+• Otherwise, the returned index is the first place in the array that has a unique value.
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:1: error: class, interface, enum, or record expected
+Below is an example of how you might specify this method in JML. The specification captures:
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:47: error: class, interface, enum, or record expected
+-------------------------------------------------------------------------------
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:50: error: illegal character: '\u2022'
+• requires arr != null: The method requires a non-null array.  
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:51: error: illegal character: '\u2022'
+• ensures (\result == -1) <==> ( … ): If the method returns -1, then every element has at least one duplicate. Conversely, if every element has at least one duplicate, then the method must return -1.  
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:51: error: illegal character: '\'
+• ensures (\result == -1) <==> ( … ): If the method returns -1, then every element has at least one duplicate. Conversely, if every element has at least one duplicate, then the method must return -1.  
+           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:51: error: illegal character: '\u2026'
+• ensures (\result == -1) <==> ( … ): If the method returns -1, then every element has at least one duplicate. Conversely, if every element has at least one duplicate, then the method must return -1.  
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:52: error: illegal character: '\u2022'
+• ensures (\result != -1) ==> ( … ): If the method returns some valid index, then that index must be the first unique element in the array. Specifically:  
+^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:52: error: illegal character: '\'
+• ensures (\result != -1) ==> ( … ): If the method returns some valid index, then that index must be the first unique element in the array. Specifically:  
+           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:52: error: illegal character: '\u2026'
+• ensures (\result != -1) ==> ( … ): If the method returns some valid index, then that index must be the first unique element in the array. Specifically:  
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:53: error: illegal character: '\u2013'
+  – 0 <= \result < arr.length: The returned index is in range.  
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:53: error: illegal character: '\'
+  – 0 <= \result < arr.length: The returned index is in range.  
+         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:54: error: illegal character: '\u2013'
+  – No other element in the array equals arr[\result].  
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:54: error: illegal character: '\'
+  – No other element in the array equals arr[\result].  
+                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:55: error: illegal character: '\u2013'
+  – For all positions i < \result, arr[i] is not unique (there exists some other position k that has the same value).
+  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:55: error: illegal character: '\'
+  – For all positions i < \result, arr[i] is not unique (there exists some other position k that has the same value).
+                          ^
+19 errors
+
+public class UniqueNumNested {
+
+    /*@
+      @ // The method requires that arr is not null.
+      @ requires arr != null;
+      @ 
+      @ /* If the method returns -1, then every element in arr has at least one duplicate.
+      @    Conversely, if every element has at least one duplicate, the method returns -1. */
+      @ ensures (\result == -1) <==>
+      @    (\forall int i; 0 <= i && i < arr.length;
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+      @ 
+      @ /* If the method returns a valid index, then:
+      @    1) 0 <= \result < arr.length.
+      @    2) The value arr[\result] is unique (no other arr[j] equals it).
+      @    3) For all i < \result, arr[i] is not unique. */
+      @ ensures (\result != -1) ==>
+      @    (0 <= \result && \result < arr.length
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+      @     && (\forall int i; 0 <= i && i < \result;
+      @         (\exists int k; 0 <= k && k < arr.length && k != i && arr[i] == arr[k])));
+      @*/
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            while (j < arr.length) {
+                if (i != j && arr[i] == arr[j]) {
+                    break;
+                }
+                j++;
+            }
+            if (j == arr.length) {
+                // arr[i] is unique
+                return i;
+            }
+        }
+        // No unique element found
+        return -1;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:7: error: Block comments may not be embedded inside JML block comments
+      @ /* If the method returns -1, then every element in arr has at least one duplicate.
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: illegal character: '\'
+      @ ensures (\result == -1) <==>
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: ')' expected
+      @ ensures (\result == -1) <==>
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: <identifier> expected
+      @ ensures (\result == -1) <==>
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: Method specs may not precede a variable declaration
+      @ ensures (\result == -1) <==>
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: <identifier> expected
+      @ ensures (\result == -1) <==>
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: illegal start of type
+      @ ensures (\result == -1) <==>
+                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: <identifier> expected
+      @ ensures (\result == -1) <==>
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: <identifier> expected
+      @ ensures (\result == -1) <==>
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: <identifier> expected
+      @ ensures (\result == -1) <==>
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: illegal start of type
+      @ ensures (\result == -1) <==>
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: <identifier> expected
+      @ ensures (\result == -1) <==>
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: illegal start of expression
+      @ ensures (\result == -1) <==>
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:9: error: ';' expected
+      @ ensures (\result == -1) <==>
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: <identifier> expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: illegal character: '\'
+      @    (\forall int i; 0 <= i && i < arr.length;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: ')' expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: <identifier> expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: illegal start of type
+      @    (\forall int i; 0 <= i && i < arr.length;
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: <identifier> expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: illegal start of type
+      @    (\forall int i; 0 <= i && i < arr.length;
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: ';' expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: illegal start of type
+      @    (\forall int i; 0 <= i && i < arr.length;
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: ';' expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: > expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:10: error: '(' expected
+      @    (\forall int i; 0 <= i && i < arr.length;
+                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal character: '\'
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ')' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal start of type
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal start of type
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ';' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal start of type
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ';' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: > expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: '(' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ';' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal start of type
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ';' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal start of type
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ']' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: illegal start of type
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: ']' expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: error: <identifier> expected
+      @       (\exists int j; 0 <= j && j < arr.length && j != i && arr[i] == arr[j]));
+                                                                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:12: error: <identifier> expected
+      @ 
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:13: error: <identifier> expected
+      @ /* If the method returns a valid index, then:
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: illegal character: '\'
+      @ ensures (\result != -1) ==>
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: ')' expected
+      @ ensures (\result != -1) ==>
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: illegal start of type
+      @ ensures (\result != -1) ==>
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                           ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: illegal start of type
+      @ ensures (\result != -1) ==>
+                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: illegal start of type
+      @ ensures (\result != -1) ==>
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:17: error: <identifier> expected
+      @ ensures (\result != -1) ==>
+                                   ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: <identifier> expected
+      @    (0 <= \result && \result < arr.length
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: illegal character: '\'
+      @    (0 <= \result && \result < arr.length
+                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: ')' expected
+      @    (0 <= \result && \result < arr.length
+                  ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: <identifier> expected
+      @    (0 <= \result && \result < arr.length
+                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: illegal start of type
+      @    (0 <= \result && \result < arr.length
+                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: illegal character: '\'
+      @    (0 <= \result && \result < arr.length
+                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:18: error: > expected
+      @    (0 <= \result && \result < arr.length
+                                         ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: '(' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal character: '\'
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: ',', ')', or '[' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                 ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: ';' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: ';' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: > expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: '(' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: ';' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal character: '\'
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal character: '\'
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                    ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                     ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: illegal start of type
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                      ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: ']' expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                             ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                              ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: error: <identifier> expected
+      @     && (\forall int j; 0 <= j && j < arr.length && j != \result; arr[\result] != arr[j])
+                                                                                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:20: error: <identifier> expected
+      @     && (\forall int i; 0 <= i && i < \result;
+       ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:20: error: illegal start of type
+      @     && (\forall int i; 0 <= i && i < \result;
+            ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:20: error: <identifier> expected
+      @     && (\forall int i; 0 <= i && i < \result;
+              ^
+100 errors
+only showing the first 100 errors, of 139 total; use -Xmaxerrs if you would like to see more
+

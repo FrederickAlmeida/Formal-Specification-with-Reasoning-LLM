@@ -1,0 +1,82 @@
+public class BubbleSort { 
+
+    /*@ requires 0 <= x && x < array.length;
+      @ requires 0 <= y && y < array.length;
+      @ ensures array[x] == \old(array[y]) && array[y] == \old(array[x]);
+      @ ensures (\forall int i; 0 <= i && i < array.length; i != x && i != y ==> array[i] == \old(array[i]));
+      @*/
+    void swap(int x, int y, int array[]) {
+        int temp;     
+        temp = array[x];
+        array[x] = array[y];
+        array[y] = temp;
+    }
+
+    /*@ requires arr != null;
+      @ ensures \result != null && \result.length == arr.length;
+      @ ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i + 1]);
+      @ ensures (\forall int i; 0 <= i && i < arr.length; \result[i] == arr[\old(i)]);
+      @*/
+    int[] bubbleSort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n-1; i++) {	
+            //@ maintaining 0 <= j && j < n - i;
+            //@ maintaining (\forall int k; 0 <= k && k < j; arr[k] <= arr[k + 1]);
+            for (int j = 0; j < n-i-1; j++) {
+                if (arr[j+1] < arr[j]) {  
+                    swap(j, j + 1, arr); 
+                } 
+            }
+        } 
+        return arr;
+    } 
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BubbleSort.java:32: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BubbleSort.java:17:) in method bubbleSort
+        return arr;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BubbleSort.java:17: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BubbleSort.java:32:
+      @ ensures (\forall int i; 0 <= i && i < arr.length - 1; arr[i] <= arr[i + 1]);
+        ^
+2 verification failures
+
+public class BubbleSort { 
+
+    /*@ requires 0 <= x && x < array.length;
+      @ requires 0 <= y && y < array.length;
+      @ ensures array[x] == \old(array[y]) && array[y] == \old(array[x]);
+      @ ensures (\forall int i; 0 <= i && i < array.length; i != x && i != y ==> array[i] == \old(array[i]));
+      @*/
+    void swap(int x, int y, int array[]) {
+        int temp;     
+        temp = array[x];
+        array[x] = array[y];
+        array[y] = temp;
+    }
+
+    /*@ requires arr != null;
+      @ ensures \result != null && \result.length == arr.length;
+      @ ensures (\forall int i; 0 < i && i < arr.length - 1; arr[i] < arr[i + 1]);  
+      @ ensures (\forall int i; 0 <= i && i < arr.length; \result[i] == arr[\old(i)]);
+      @*/
+    int[] bubbleSort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n-1; i++) {	
+            //@ maintaining 0 <= j && j < n - i;
+            //@ maintaining (\forall int k; 0 <= k && k < j; arr[k] <= arr[k + 1]);
+            for (int j = 0; j < n-i-1; j++) {
+                if (arr[j+1] < arr[j]) {  
+                    swap(j, j + 1, arr); 
+                } 
+            }
+        } 
+        return arr;
+    } 
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/BubbleSort.java:27: verify: The prover cannot establish an assertion (PossiblyTooLargeIndex) in method bubbleSort
+                if (arr[j+1] < arr[j]) {  
+                       ^
+1 verification failure
+

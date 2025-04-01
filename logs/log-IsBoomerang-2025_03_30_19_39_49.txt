@@ -1,0 +1,65 @@
+class IsBoomerang {
+    //@ requires points.length == 3;
+    //@ requires (\forall int i; 0 <= i && i < 3; points[i].length == 2);
+    //@ ensures \result <==> (v1[0] * v2[1] - v1[1] * v2[0] != 0);
+    //@ ensures \result <==> (points[1][0] - points[0][0]) * (points[2][1] - points[0][1]) - (points[1][1] - points[0][1]) * (points[2][0] - points[0][0]) != 0;
+    public boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:4: error: cannot find symbol
+    //@ ensures \result <==> (v1[0] * v2[1] - v1[1] * v2[0] != 0);
+                              ^
+  symbol:   variable v1
+  location: class IsBoomerang
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:4: error: cannot find symbol
+    //@ ensures \result <==> (v1[0] * v2[1] - v1[1] * v2[0] != 0);
+                                      ^
+  symbol:   variable v2
+  location: class IsBoomerang
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:4: error: cannot find symbol
+    //@ ensures \result <==> (v1[0] * v2[1] - v1[1] * v2[0] != 0);
+                                              ^
+  symbol:   variable v1
+  location: class IsBoomerang
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:4: error: cannot find symbol
+    //@ ensures \result <==> (v1[0] * v2[1] - v1[1] * v2[0] != 0);
+                                                      ^
+  symbol:   variable v2
+  location: class IsBoomerang
+4 errors
+
+class IsBoomerang {
+    //@ requires points.length == 3;
+    //@ requires (\forall int i; 0 <= i && i < 3; points[i].length == 2);
+    //@ ensures \result <==> ( (points[1][0] - points[0][0]) * (points[2][1] - points[0][1]) 
+    //@                        - (points[1][1] - points[0][1]) * (points[2][0] - points[0][0]) != 0);
+    public boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:9: verify: The prover cannot establish an assertion (Postcondition: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:4:) in method isBoomerang
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+        ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:4: verify: Associated declaration: /Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/IsBoomerang.java:9:
+    //@ ensures \result <==> ( (points[1][0] - points[0][0]) * (points[2][1] - points[0][1]) 
+        ^
+2 verification failures
+
+class IsBoomerang {
+    //@ requires points.length == 3;
+    //@ requires (\forall int i; 0 <= i && i < 3; points[i].length == 2);
+    //@ ensures \result <==> ( (points[1][0] - points[0][0]) * (points[2][1] - points[0][1])   
+    //@                        - (points[1][1] - points[0][1]) * (points[2][0] - points[0][0]) != 0);
+    public boolean isBoomerang(int[][] points) {
+        int[] v1 = {points[1][0] - points[0][0], points[1][1] - points[0][1]};
+        int[] v2 = {points[2][0] - points[0][0], points[2][1] - points[0][1]};
+        return v1[0] * v2[1] - v1[1] * v2[0] != 0;
+    }
+}
+
+

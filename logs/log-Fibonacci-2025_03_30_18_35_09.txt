@@ -1,0 +1,497 @@
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == fib(n) <==> n > 0; // fib(n) is the nth Fibonacci number
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        //@ maintaining 2 <= index && index <= fib.length && fib[0] == 0 && fib[1] == 1;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;         
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:6: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n > 0; // fib(n) is the nth Fibonacci number
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+1 error
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+    //@ ensures \result == fib(n) <==> n > 1; // fib(n) is the nth Fibonacci number
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        //@ maintaining 2 <= index && index <= fib.length && fib[0] == 0 && fib[1] == 1;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;         
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: illegal start of type
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: Incorrectly formed or terminated ensures statement near here
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: invalid method declaration; return type required
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: <identifier> expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: ';' expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                                ^
+5 errors
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+    //@ ensures \result == fib(n) <==> n > 1; // fib(n) is the nth Fibonacci number
+    //@ ensures (\forall int i; 0 <= i && i <= n; fib[i] == fib[i-1] + fib[i-2]) <==> n > 1; // Fibonacci property
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        //@ maintaining 2 <= index && index <= fib.length && fib[0] == 0 && fib[1] == 1;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;         
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: illegal start of type
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: Incorrectly formed or terminated ensures statement near here
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: invalid method declaration; return type required
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: <identifier> expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: ';' expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Describes the Fibonacci property
+                                                ^
+5 errors
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == fib(n) <==> n > 1; // fib(n) is the nth Fibonacci number
+    //@ ensures \result == fib(n) <==> (n > 1 && \forall int i; 0 <= i && i < n; fib[i] == fib[i-1] + fib[i-2]);
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        //@ maintaining 2 <= index && index <= fib.length && fib[0] == 0 && fib[1] == 1;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;         
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n > 1; // fib(n) is the nth Fibonacci number
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:8: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> (n > 1 && \forall int i; 0 <= i && i < n; fib[i] == fib[i-1] + fib[i-2]);
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:8: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> (n > 1 && \forall int i; 0 <= i && i < n; fib[i] == fib[i-1] + fib[i-2]);
+                                                                                 ^
+  symbol:   variable fib
+  location: class Fibonacci
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:8: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> (n > 1 && \forall int i; 0 <= i && i < n; fib[i] == fib[i-1] + fib[i-2]);
+                                                                                           ^
+  symbol:   variable fib
+  location: class Fibonacci
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:8: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> (n > 1 && \forall int i; 0 <= i && i < n; fib[i] == fib[i-1] + fib[i-2]);
+                                                                                                      ^
+  symbol:   variable fib
+  location: class Fibonacci
+5 errors
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // This is a conceptual description; fib(i) is not defined here.
+    //@ ensures \result == (\exists int i; i >= 0 && i <= n; (i == 0 ? 0 : (i == 1 ? 1 : fib(i-1) + fib(i-2)))) <==> n > 1; // Fibonacci definition
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+        int index = 2;
+
+        //@ maintaining 2 <= index && index <= fib.length && fib[0] == 0 && fib[1] == 1;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        while (index < fib.length) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+            index++;         
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: illegal start of type
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // This is a conceptual description; fib(i) is not defined here.
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: Incorrectly formed or terminated ensures statement near here
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // This is a conceptual description; fib(i) is not defined here.
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: invalid method declaration; return type required
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // This is a conceptual description; fib(i) is not defined here.
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: <identifier> expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // This is a conceptual description; fib(i) is not defined here.
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: ';' expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // This is a conceptual description; fib(i) is not defined here.
+                                                ^
+5 errors
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == fib(n) <==> n > 1; // fib(n) is the nth Fibonacci number
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+        else if (n == 1) return 1;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+
+        //@ maintaining 2 <= index && index <= fib.length;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n > 1; // fib(n) is the nth Fibonacci number
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+1 error
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual description of Fibonacci property
+    public static int fibCompute(int n) {
+        if (n < 0) return -1;
+        else if (n == 0) return 0;
+        else if (n == 1) return 1;
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0;
+        fib[1] = 1;
+
+        //@ maintaining 2 <= index && index <= fib.length;
+        //@ maintaining (\forall int i; 2 <= i && i < index; fib[i] == fib[i - 2] + fib[i - 1]);
+        //@ decreases fib.length - index;
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 2] + fib[index - 1];
+        }
+
+        return fib[n];
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: illegal start of type
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual description of Fibonacci property
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: Incorrectly formed or terminated ensures statement near here
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual description of Fibonacci property
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: invalid method declaration; return type required
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual description of Fibonacci property
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: <identifier> expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual description of Fibonacci property
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: ';' expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual description of Fibonacci property
+                                                ^
+5 errors
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0;
+    //@ ensures \result == 0 <==> n == 0;
+    //@ ensures \result == 1 <==> n == 1;
+    //@ ensures \result == fib(n) <==> n > 1; // Conceptual statement about Fibonacci
+    public static int fibCompute(int n) {
+        if (n < 0) return -1; // Error case for negative input
+        else if (n == 0) return 0; // Base case for fib(0)
+        else if (n == 1) return 1; // Base case for fib(1)
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0; // fib(0)
+        fib[1] = 1; // fib(1)
+
+        // Fill the Fibonacci array
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+        }
+
+        return fib[n]; // Return the nth Fibonacci number
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n > 1; // Conceptual statement about Fibonacci
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+1 error
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0; // Error case for negative input
+    //@ ensures \result == 0 <==> n == 0; // Base case for fib(0)
+    //@ ensures \result == 1 <==> n == 1; // Base case for fib(1)
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual statement about Fibonacci
+    public static int fibCompute(int n) {
+        if (n < 0) return -1; // Error case for negative input
+        else if (n == 0) return 0; // Base case for fib(0)
+        else if (n == 1) return 1; // Base case for fib(1)
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0; // fib(0)
+        fib[1] = 1; // fib(1)
+
+        // Fill the Fibonacci array
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+        }
+
+        return fib[n]; // Return the nth Fibonacci number
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: illegal start of type
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual statement about Fibonacci
+                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: Incorrectly formed or terminated ensures statement near here
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual statement about Fibonacci
+                                ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: invalid method declaration; return type required
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual statement about Fibonacci
+                                          ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: <identifier> expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual statement about Fibonacci
+                                               ^
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: ';' expected
+    //@ ensures \result == \sum(i=0..n-1; fib(i)) <==> n > 1; // Conceptual statement about Fibonacci
+                                                ^
+5 errors
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0; // Error case for negative input
+    //@ ensures \result == 0 <==> n == 0; // Base case for fib(0)
+    //@ ensures \result == 1 <==> n == 1; // Base case for fib(1)
+    //@ ensures \result == fib(n) <==> n > 1; // Conceptual statement about Fibonacci
+    public static int fibCompute(int n) {
+        if (n < 0) return -1; // Error case for negative input
+        else if (n == 0) return 0; // Base case for fib(0)
+        else if (n == 1) return 1; // Base case for fib(1)
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0; // fib(0)
+        fib[1] = 1; // fib(1)
+
+        // Fill the Fibonacci array
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+        }
+
+        return fib[n]; // Return the nth Fibonacci number
+    }
+}
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n > 1; // Conceptual statement about Fibonacci
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+1 error
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0; // Error case for negative input
+    //@ ensures \result == 0 <==> n == 0; // Base case for fib(0)
+    //@ ensures \result == 1 <==> n == 1; // Base case for fib(1)
+    //@ ensures \result == fib(n) <==> n > 1; // Conceptual statement about Fibonacci  
+    public static int fibCompute(int n) {
+        if (n < 0) return -1; // Error case for negative input
+        else if (n == 0) return 0; // Base case for fib(0)
+        else if (n == 1) return 1; // Base case for fib(1)
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0; // fib(0)
+        fib[1] = 1; // fib(1)
+
+        // Fill the Fibonacci array
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+        }
+
+        return fib[n]; // Return the nth Fibonacci number
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n > 1; // Conceptual statement about Fibonacci  
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+1 error
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0; // Error case for negative input
+    //@ ensures \result == 0 <==> n == 0; // Base case for fib(0)
+    //@ ensures \result == 1 <==> n == 1; // Base case for fib(1)
+    //@ ensures \result == fib(n) <==> n >= 1; // Conceptual statement about Fibonacci  
+    public static int fibCompute(int n) {
+        if (n < 0) return -1; // Error case for negative input
+        else if (n == 0) return 0; // Base case for fib(0)
+        else if (n == 1) return 1; // Base case for fib(1)
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0; // fib(0)
+        fib[1] = 1; // fib(1)
+
+        // Fill the Fibonacci array
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+        }
+
+        return fib[n]; // Return the nth Fibonacci number
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:7: error: cannot find symbol
+    //@ ensures \result == fib(n) <==> n >= 1; // Conceptual statement about Fibonacci  
+                           ^
+  symbol:   method fib(int)
+  location: class Fibonacci
+1 error
+
+public class Fibonacci {
+
+    //@ requires n >= 0;
+    //@ ensures \result == -1 <==> n < 0; // Error case for negative input
+    //@ ensures \result == 0 <==> n == 0; // Base case for fib(0)
+    //@ ensures \result == 1 <==> n == 1; // Base case for fib(1)
+ 
+    public static int fibCompute(int n) {
+        if (n < 0) return -1; // Error case for negative input
+        else if (n == 0) return 0; // Base case for fib(0)
+        else if (n == 1) return 1; // Base case for fib(1)
+
+        int[] fib = new int[n + 1];
+        fib[0] = 0; // fib(0)
+        fib[1] = 1; // fib(1)
+
+        // Fill the Fibonacci array
+        for (int index = 2; index <= n; index++) {
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+        }
+
+        return fib[n]; // Return the nth Fibonacci number
+    }
+}
+
+/Users/federico/Documents/codes/ufpe/Formal-Specification-with-Reasoning-LLM/tmp/Fibonacci.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method fibCompute
+            fib[index] = fib[index - 1] + fib[index - 2]; // Fibonacci recurrence
+                                             ^
+1 verification failure
+
