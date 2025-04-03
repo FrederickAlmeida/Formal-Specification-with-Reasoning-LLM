@@ -1,0 +1,113 @@
+public class IsPrefix {
+
+    //@ requires pat != null && txt != null;
+    //@ ensures \result <==> (pat.length() <= txt.length() && \forall int i; 0 <= i && i < pat.length(); pat.charAt(i) == txt.charAt(i));
+    public boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        //@ maintaining 0 <= i && i <= pat.length();
+        //@ maintaining (\forall int j; 0 <= j && j < i; pat.charAt(j) == txt.charAt(j));
+        //@ maintaining i == pat.length() ==> \result == true;
+        //@ maintaining i < pat.length() ==> (i < txt.length() && pat.charAt(i) == txt.charAt(i));
+        //@ decreases pat.length() - i;
+        while(i < pat.length()) {
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsPrefix.java:10: error: A \result expression may not be in a loop_invariant clause
+        //@ maintaining i == pat.length() ==> \result == true;
+                                               ^
+1 error
+
+public class IsPrefix {
+
+    //@ requires pat != null && txt != null;
+    //@ ensures \result <==> (pat.length() <= txt.length() && \forall int i; 0 <= i && i < pat.length(); pat.charAt(i) == txt.charAt(i));
+    public boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        //@ maintaining 0 <= i && i <= pat.length();
+        //@ maintaining (\forall int j; 0 <= j && j < i; pat.charAt(j) == txt.charAt(j));
+        //@ maintaining i < pat.length() ==> (i < txt.length() && pat.charAt(i) == txt.charAt(i));
+        //@ decreases pat.length() - i;
+        while(i < pat.length()) {
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsPrefix.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isPrefix
+        //@ maintaining i < pat.length() ==> (i < txt.length() && pat.charAt(i) == txt.charAt(i));
+            ^
+1 verification failure
+
+public class IsPrefix {
+
+    //@ requires pat != null && txt != null;
+    //@ ensures \result <==> (pat.length() <= txt.length() && \forall int i; 0 <= i && i < pat.length(); pat.charAt(i) == txt.charAt(i));
+    public boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        //@ maintaining 0 <= i && i <= pat.length();
+        //@ maintaining (\forall int j; 0 <= j && j < i; pat.charAt(j) == txt.charAt(j));
+        //@ maintaining i < pat.length() ==> (i < txt.length() && pat.charAt(i) == txt.charAt(i));  
+        //@ decreases pat.length() - i;
+        while(i < pat.length()) {
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsPrefix.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isPrefix
+        //@ maintaining i < pat.length() ==> (i < txt.length() && pat.charAt(i) == txt.charAt(i));  
+            ^
+1 verification failure
+
+public class IsPrefix {
+
+    //@ requires pat != null && txt != null;
+    //@ ensures \result <==> (pat.length() <= txt.length() && \forall int i; 0 <= i && i < pat.length(); pat.charAt(i) == txt.charAt(i));
+    public boolean isPrefix (String pat, String txt) {
+        int i = 0;
+
+        //@ maintaining 0 <= i && i <= pat.length();
+        //@ maintaining (\forall int j; 0 <= j && j < i; pat.charAt(j) == txt.charAt(j));
+        //@ maintaining i < pat.length() ==> (i <= txt.length() && pat.charAt(i) == txt.charAt(i));  
+        //@ decreases pat.length() - i;
+        while(i < pat.length()) {
+            if(i >= txt.length() || pat.charAt(i) != txt.charAt(i))
+                return false;
+            i = i + 1;
+        }
+
+        return true;
+    }
+
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsPrefix.java:10: verify: The prover cannot establish an assertion (UndefinedCalledMethodPrecondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/String.jml:333:) in method isPrefix
+        //@ maintaining i < pat.length() ==> (i <= txt.length() && pat.charAt(i) == txt.charAt(i));  
+                                                                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/String.jml:333: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsPrefix.java:10:
+    public /*@ pure @*/ char charAt(int index)
+                             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/CharSequence.jml:79: verify: Precondition conjunct is false: 0 <= index < charArray.length
+      @      requires 0 <= index < charArray.length;
+                                 ^
+3 verification failures
+

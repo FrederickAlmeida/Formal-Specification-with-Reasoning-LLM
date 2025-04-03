@@ -1,0 +1,122 @@
+import java.lang.Math;
+
+public class SolveQuadraticEquation {
+    //@ requires a != 0; // a must not be zero for a valid quadratic equation
+    //@ ensures \result.length == 2; // the result array has exactly two elements
+    //@ ensures (b*b - 4*a*c >= 0) ==> (\result[0] == (-b - Math.sqrt(b*b - 4*a*c)) / (2*a) && \result[1] == 0);
+    //@ ensures (b*b - 4*a*c < 0) ==> (\result[0] == -b / (2*a) && \result[1] == Math.sqrt(- (b*b - 4*a*c)) / (2*a));
+    public static double[] solve(int a, int b, int c) {
+        double[] res = new double[2];
+        double delta = b * b - 4 * a * c;
+        if(delta >= 0) {
+            res[0] = (-b - Math.sqrt(delta)) / (2 * a);
+            res[1] = 0;
+        }
+        else {
+            res[0] = -b / (2*a);
+            res[1] = Math.sqrt(-delta) / (2*a);
+        }
+        return res;
+    } 
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:17: verify: The prover cannot establish an assertion (Precondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:264:) in method solve
+            res[1] = Math.sqrt(-delta) / (2*a);
+                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:264: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:17:
+    public static /*@ pure @*/ double sqrt(double a);
+                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:247: verify: Precondition conjunct is false: Double.isNaN(a) || a < 0.0
+      @   requires Double.isNaN(a) || a < 0.0;
+                                   ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:250: verify: Precondition conjunct is false: a == Double.POSITIVE_INFINITY
+      @   requires a == Double.POSITIVE_INFINITY;
+                     ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:253: verify: Precondition conjunct is false: java.lang.Math.isPositiveZero(a)
+      @   requires isPositiveZero(a);
+                                 ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:256: verify: Precondition conjunct is false: java.lang.Math.isNegativeZero(a)
+      @   requires isNegativeZero(a);
+                                 ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:259: verify: Precondition conjunct is false: a < Double.POSITIVE_INFINITY
+      @   requires a > 0.0 && a < Double.POSITIVE_INFINITY;
+                                ^
+7 verification failures
+
+import java.lang.Math;
+
+public class SolveQuadraticEquation {
+    //@ requires a != 0; // a must not be zero for a valid quadratic equation
+    //@ ensures \result.length == 2; // the result array has exactly two elements
+    //@ ensures (b*b - 4*a*c >= 0) ==> (\result[0] == (-b - Math.sqrt(b*b - 4*a*c)) / (2*a) && \result[1] == 0);
+    //@ ensures (b*b - 4*a*c < 0) ==> (\result[0] == -b / (2*a) && \result[1] == Math.sqrt(- (b*b - 4*a*c)) / (2*a));
+    public static double[] solve(int a, int b, int c) {
+        double[] res = new double[2];
+        double delta = b * b - 4 * a * c;
+        if(delta >= 0) {
+            res[0] = (-b - Math.sqrt(delta)) / (2 * a);
+            res[1] = 0;
+        }
+        else {
+            //@ assert delta < 0; // Ensure that delta is negative
+            //@ assert -delta >= 0; // Ensure that -delta is non-negative for sqrt
+            res[0] = -b / (2*a);
+            res[1] = Math.sqrt(-delta) / (2*a);
+        }
+        return res;
+    } 
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:21: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:6:) in method solve
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:6: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:21:
+    //@ ensures (b*b - 4*a*c >= 0) ==> (\result[0] == (-b - Math.sqrt(b*b - 4*a*c)) / (2*a) && \result[1] == 0);
+        ^
+2 verification failures
+
+import java.lang.Math;
+
+public class SolveQuadraticEquation {
+    //@ requires a != 0; // a must not be zero for a valid quadratic equation
+    //@ ensures \result.length == 2; // the result array has exactly two elements
+    //@ ensures (b*b - 4*a*c > 0) ==> (\result[0] == (-b - Math.sqrt(b*b - 4*a*c)) / (2*a) && \result[1] == 0);  
+    //@ ensures (b*b - 4*a*c < 0) ==> (\result[0] == -b / (2*a) && \result[1] == Math.sqrt(- (b*b - 4*a*c)) / (2*a));
+    public static double[] solve(int a, int b, int c) {
+        double[] res = new double[2];
+        double delta = b * b - 4 * a * c;
+        if(delta >= 0) {
+            res[0] = (-b - Math.sqrt(delta)) / (2 * a);
+            res[1] = 0;
+        }
+        else {
+            //@ assert delta < 0; // Ensure that delta is negative
+            //@ assert -delta >= 0; // Ensure that -delta is non-negative for sqrt
+            res[0] = -b / (2*a);
+            res[1] = Math.sqrt(-delta) / (2*a);
+        }
+        return res;
+    } 
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:19: verify: The prover cannot establish an assertion (Precondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:264:) in method solve
+            res[1] = Math.sqrt(-delta) / (2*a);
+                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:264: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/SolveQuadraticEquation.java:19:
+    public static /*@ pure @*/ double sqrt(double a);
+                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:247: verify: Precondition conjunct is false: Double.isNaN(a) || a < 0.0
+      @   requires Double.isNaN(a) || a < 0.0;
+                                   ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:250: verify: Precondition conjunct is false: a == Double.POSITIVE_INFINITY
+      @   requires a == Double.POSITIVE_INFINITY;
+                     ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:253: verify: Precondition conjunct is false: java.lang.Math.isPositiveZero(a)
+      @   requires isPositiveZero(a);
+                                 ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:256: verify: Precondition conjunct is false: java.lang.Math.isNegativeZero(a)
+      @   requires isNegativeZero(a);
+                                 ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/openjml/specs/java/lang/Math.jml:259: verify: Precondition conjunct is false: a < Double.POSITIVE_INFINITY
+      @   requires a > 0.0 && a < Double.POSITIVE_INFINITY;
+                                ^
+7 verification failures
+

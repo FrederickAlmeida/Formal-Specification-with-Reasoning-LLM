@@ -1,0 +1,380 @@
+public class PrimeNumbers
+{
+    //@ ensures \result != null && \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < n; \result[i] > 1 && \forall int j; 0 <= j && j < i; \result[i] % \result[j] != 0;
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1);
+        //@ maintaining (\forall int i; 0 <= i && i < count; \forall int j; 0 <= j && j < i; primeArray[i] % primeArray[j] != 0);
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            //@ maintaining 2 <= j && j <= num/2;
+            //@ decreases num/2 - j;
+            for (j = 2; j <= num/2; j++)
+            { 
+                if (div(num,j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ ensures n % d == 0 <==> div(n, d);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:8: error: cannot find symbol
+        primeArray = new int[n];
+        ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:9: error: cannot find symbol
+        primeArray[0] = 2;
+        ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:9: error: Could not find a 'put' method for primeArray
+        primeArray[0] = 2;
+                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:12: error: cannot find symbol
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1);
+                                                             ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:13: error: variable j is already defined in method primeList(int)
+        //@ maintaining (\forall int i; 0 <= i && i < count; \forall int j; 0 <= j && j < i; primeArray[i] % primeArray[j] != 0);
+                                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:13: error: cannot find symbol
+        //@ maintaining (\forall int i; 0 <= i && i < count; \forall int j; 0 <= j && j < i; primeArray[i] % primeArray[j] != 0);
+                                                                                             ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:13: error: cannot find symbol
+        //@ maintaining (\forall int i; 0 <= i && i < count; \forall int j; 0 <= j && j < i; primeArray[i] % primeArray[j] != 0);
+                                                                                                             ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:30: error: cannot find symbol
+                primeArray[count - 1] = num;
+                ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:30: error: Could not find a 'put' method for primeArray
+                primeArray[count - 1] = num;
+                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:37: error: cannot find symbol
+        return primeArray; 
+               ^
+  symbol:   variable primeArray
+  location: class PrimeNumbers
+10 errors
+
+public class PrimeNumbers
+{
+    private /*@ spec_public */ int[] primeArray;
+
+    //@ ensures \result != null && \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < n; \result[i] > 1 && (\forall int j; 0 <= j && j < i; \result[i] % \result[j] != 0);
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1);
+        //@ maintaining (\forall int i; 0 <= i && i < count; \forall int k; 0 <= k && k < i; primeArray[i] % primeArray[k] != 0);
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            //@ maintaining 2 <= j && j <= num / 2;
+            //@ decreases num / 2 - j;
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ ensures n % d == 0 <==> div(n, d);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:42: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+    //@ ensures n % d == 0 <==> div(n, d);
+                                   ^
+  Reason: No logical function for method PrimeNumbers.div(n, d) div(int,int)
+error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+  Reason: Unexpected exception: APPLY-HELPER java.lang.NullPointerException: Cannot read field "type" because "expr" is null
+java.lang.NullPointerException: Cannot read field "type" because "expr" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addImplicitConversion(JmlAssertionAdder.java:12095)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlBinary(JmlAssertionAdder.java:15635)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlBinary.accept(JmlTree.java:1647)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:10710)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitParens(JmlAssertionAdder.java:12077)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCParens.accept(JCTree.java:1969)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitIf(JmlAssertionAdder.java:6964)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCIf.accept(JCTree.java:1508)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot read field "type" because "expr" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addImplicitConversion(JmlAssertionAdder.java:12095)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlBinary(JmlAssertionAdder.java:15635)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlBinary.accept(JmlTree.java:1647)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:10710)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitParens(JmlAssertionAdder.java:12077)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCParens.accept(JCTree.java:1969)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitIf(JmlAssertionAdder.java:6964)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCIf.accept(JCTree.java:1508)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.RuntimeException: MISMATCHED BLOCKS
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.popBlock(JmlAssertionAdder.java:1854)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.popBlock(JmlAssertionAdder.java:1838)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.applyHelper(JmlAssertionAdder.java:11040)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitApply(JmlAssertionAdder.java:8031)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1752)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitParens(JmlAssertionAdder.java:12077)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCParens.accept(JCTree.java:1969)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitIf(JmlAssertionAdder.java:6964)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCIf.accept(JCTree.java:1508)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.RuntimeException: MISMATCHED BLOCKS
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.popBlock(JmlAssertionAdder.java:1854)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.popBlock(JmlAssertionAdder.java:1838)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1813)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:75)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertIntoBlock(JmlAssertionAdder.java:1806)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.loopHelperMakeBody(JmlAssertionAdder.java:16730)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlForLoop(JmlAssertionAdder.java:16981)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlForLoop.accept(JmlTree.java:1984)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1235)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+java.lang.NullPointerException: Cannot read field "type" because "expr" is null
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addImplicitConversion(JmlAssertionAdder.java:12095)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlBinary(JmlAssertionAdder.java:15635)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlBinary.accept(JmlTree.java:1647)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertExpr(JmlAssertionAdder.java:1554)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertJML(JmlAssertionAdder.java:1648)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.addPostConditions(JmlAssertionAdder.java:5428)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convertMethodBodyNoInit(JmlAssertionAdder.java:1256)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlMethodDecl(JmlAssertionAdder.java:17247)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlMethodDecl.accept(JmlTree.java:1383)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.visitJmlClassDecl(JmlAssertionAdder.java:15904)
+	at jdk.compiler/org.jmlspecs.openjml.JmlTree$JmlClassDecl.accept(JmlTree.java:1295)
+	at jdk.compiler/com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at jdk.compiler/org.jmlspecs.openjml.visitors.JmlTreeScanner.scan(JmlTreeScanner.java:70)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlAssertionAdder.convert(JmlAssertionAdder.java:1441)
+	at jdk.compiler/org.jmlspecs.openjml.esc.JmlEsc.check(JmlEsc.java:112)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.esc(JmlCompiler.java:536)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.flow(JmlCompiler.java:362)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:936)
+	at jdk.compiler/com.sun.tools.javac.main.JmlCompiler.compile(JmlCompiler.java:197)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:321)
+	at jdk.compiler/org.jmlspecs.openjml.Main.compile(Main.java:534)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:374)
+	at jdk.compiler/org.jmlspecs.openjml.Main.execute(Main.java:332)
+	at jdk.compiler/org.jmlspecs.openjml.Main.main(Main.java:295)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:53)
+2 errors
+

@@ -1,0 +1,267 @@
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires (\forall int i; 0 <= i && i < arr.length; arr[i] != null);
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 <= i && i < arr.length);
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:4: error: bad operand types for binary operator '!='
+    //@ requires (\forall int i; 0 <= i && i < arr.length; arr[i] != null);
+                                                                  ^
+  first type:  int
+  second type: <null>
+1 error
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 <= i && i < arr.length);
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method uniqueNum
+            //@ maintaining (0 <= i && i < arr.length);
+                ^
+1 verification failure
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 < i && i < arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method uniqueNum
+            //@ maintaining (0 < i && i < arr.length);  
+                ^
+1 verification failure
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 < i && i <= arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method uniqueNum
+            //@ maintaining (0 < i && i <= arr.length);  
+                ^
+1 verification failure
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 <= i && i < arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method uniqueNum
+            //@ maintaining (0 <= i && i < arr.length);  
+                ^
+1 verification failure
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 <= i && i <= arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method uniqueNum
+            //@ maintaining (0 <= i && i <= arr.length);  
+                ^
+1 verification failure
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 - 1 <= i && i < arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:5:) in method uniqueNum
+                return i;
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19:
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\forall int k; 0 <= k && k < arr.length; k != \result ==> arr[k] != arr[\result]));
+        ^
+2 verification failures
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 < \result && \result < arr.length && (\forall int k; 0 < k && k < arr.length; k != \result ==> arr[k] != arr[\result]));  
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 - 1 <= i && i < arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:5:) in method uniqueNum
+                return i;
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:19:
+    //@ ensures \result == -1 || (0 < \result && \result < arr.length && (\forall int k; 0 < k && k < arr.length; k != \result ==> arr[k] != arr[\result]));  
+        ^
+2 verification failures
+
+public class UniqueNumNested {
+
+    //@ requires arr != null;
+    //@ requires arr.length >= 0;
+    //@ ensures \result == -1 || (0 < \result && \result < arr.length && (\forall int k; 0 < k && k <= arr.length; k != \result ==> arr[k] != arr[\result]));  
+    //@ ensures \result == -1 ==> (\exists int k; 0 <= k && k < arr.length; (\forall int m; 0 <= m && m < arr.length; arr[m] == arr[k]));
+    public static int uniqueNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int j = 0;
+            //@ maintaining (0 <= j && j <= arr.length);
+            //@ maintaining (0 - 1 <= i && i < arr.length);  
+            //@ decreases arr.length - j;
+            while(j < arr.length) {
+                if(i != j && arr[i] == arr[j])
+                    break;
+                j++;
+            }
+            if(j == arr.length)
+                return i;
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/UniqueNumNested.java:14: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method uniqueNum
+                if(i != j && arr[i] == arr[j])
+                                ^
+1 verification failure
+

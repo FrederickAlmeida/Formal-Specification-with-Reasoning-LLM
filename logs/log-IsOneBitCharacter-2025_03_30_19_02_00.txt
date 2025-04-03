@@ -1,0 +1,1324 @@
+class IsOneBitCharacter {
+    /*@ ensures \result <==> (i == n - 1);
+      @ ensures n >= 1;
+      @ ensures (\forall int j; 0 <= j && j < n; bits[j] == 0 || bits[j] == 1);
+      @ ensures (\forall int j; 0 <= j && j < n - 1; bits[j] == 1 ==> j + 1 < n);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:2: error: cannot find symbol
+    /*@ ensures \result <==> (i == n - 1);
+                              ^
+  symbol:   variable i
+  location: class IsOneBitCharacter
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:2: error: cannot find symbol
+    /*@ ensures \result <==> (i == n - 1);
+                                   ^
+  symbol:   variable n
+  location: class IsOneBitCharacter
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:3: error: cannot find symbol
+      @ ensures n >= 1;
+                ^
+  symbol:   variable n
+  location: class IsOneBitCharacter
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:4: error: cannot find symbol
+      @ ensures (\forall int j; 0 <= j && j < n; bits[j] == 0 || bits[j] == 1);
+                                              ^
+  symbol:   variable n
+  location: class IsOneBitCharacter
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:5: error: cannot find symbol
+      @ ensures (\forall int j; 0 <= j && j < n - 1; bits[j] == 1 ==> j + 1 < n);
+                                              ^
+  symbol:   variable n
+  location: class IsOneBitCharacter
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:5: error: cannot find symbol
+      @ ensures (\forall int j; 0 <= j && j < n - 1; bits[j] == 1 ==> j + 1 < n);
+                                                                              ^
+  symbol:   variable n
+  location: class IsOneBitCharacter
+6 errors
+
+class IsOneBitCharacter {
+    /*@ ensures \result <==> (i == n - 1);
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @ ensures (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:2: error: cannot find symbol
+    /*@ ensures \result <==> (i == n - 1);
+                              ^
+  symbol:   variable i
+  location: class IsOneBitCharacter
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:2: error: cannot find symbol
+    /*@ ensures \result <==> (i == n - 1);
+                                   ^
+  symbol:   variable n
+  location: class IsOneBitCharacter
+2 errors
+
+class IsOneBitCharacter {
+    /*@ ensures \result <==> (i == bits.length - 1);
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @ ensures (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:2: error: cannot find symbol
+    /*@ ensures \result <==> (i == bits.length - 1);
+                              ^
+  symbol:   variable i
+  location: class IsOneBitCharacter
+1 error
+
+class IsOneBitCharacter {
+    /*@ ensures \result <==> (i == bits.length - 1);
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @ ensures (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:2: error: cannot find symbol
+    /*@ ensures \result <==> (i == bits.length - 1);
+                              ^
+  symbol:   variable i
+  location: class IsOneBitCharacter
+1 error
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);  
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (i < n - 1 ==> bits[i] == 0 || bits[i] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i <= n - 1 ==> bits[i] == 0 || bits[i] == 1);  
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (i <= n - 1 ==> bits[i] == 0 || bits[i] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i < n + 1 ==> bits[i] == 0 || bits[i] == 1);  
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (i < n + 1 ==> bits[i] == 0 || bits[i] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+          @ maintaining (i <= n + 1 ==> bits[i] == 0 || bits[i] == 1);  
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:13: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (i <= n + 1 ==> bits[i] == 0 || bits[i] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+ 
+          @ decreases n - i;
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:14: verify: The prover cannot establish an assertion (LoopDecreases) in method isOneBitCharacter
+          @ decreases n - i;
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+ 
+          @ decreases n - i;  
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:14: verify: The prover cannot establish an assertion (LoopDecreases) in method isOneBitCharacter
+          @ decreases n - i;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+ 
+          @ decreases n + i;  
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:14: verify: The prover cannot establish an assertion (LoopDecreases) in method isOneBitCharacter
+          @ decreases n + i;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 < j && j < i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 < j && j < i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 < j && j <= i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 < j && j <= i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 - 1 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 - 1 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 - 1 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 - 1 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 < j && j < i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 < j && j < i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 < j && j < i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 < j && j < i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 < j && j <= i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 < j && j <= i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 < j && j <= i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 < j && j <= i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 - 1 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 - 1 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 - 1 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 - 1 <= j && j < i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 - 1 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 - 1 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\exists int j; 0 - 1 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\exists int j; 0 - 1 <= j && j <= i; bits[j] == 0 || bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 < j && j < i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 < j && j < i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 < j && j <= i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 < j && j <= i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 - 1 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 - 1 <= j && j < i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+          @ maintaining (\forall int j; 0 - 1 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:12: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+          @ maintaining (\forall int j; 0 - 1 <= j && j <= i; bits[j] == 0 && bits[j] == 1);  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 <= i && i <= n;
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 < i && i < n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+        /*@ maintaining 0 < i && i < n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 < i && i <= n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+        /*@ maintaining 0 < i && i <= n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 < i && i - 1 <= n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method isOneBitCharacter
+        /*@ maintaining 0 < i && i - 1 <= n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i < n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 <= i && i < n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i <= n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 <= i && i <= n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 <= i && i - 1 <= n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 <= i && i - 1 <= n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 - 1 <= i && i < n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 - 1 <= i && i < n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 - 1 <= i && i <= n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 - 1 <= i && i <= n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+        /*@ maintaining 0 - 1 <= i && i - 1 <= n;  
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:11: verify: The prover cannot establish an assertion (LoopInvariant) in method isOneBitCharacter
+        /*@ maintaining 0 - 1 <= i && i - 1 <= n;  
+            ^
+1 verification failure
+
+class IsOneBitCharacter {
+    /*@
+      @ ensures \result <==> (bits.length > 0 && bits[bits.length - 1] == 0 && 
+      @          (\forall int j; 0 <= j && j < bits.length - 1; bits[j] == 1 ==> j + 1 < bits.length));
+      @ ensures bits != null;
+      @ ensures bits.length >= 1;
+      @ ensures (\forall int j; 0 <= j && j < bits.length; bits[j] == 0 || bits[j] == 1);
+      @*/
+    public boolean isOneBitCharacter(int[] bits) {
+        int n = bits.length, i = 0;
+ 
+ 
+ 
+ 
+          @*/
+        while (i < n - 1) {
+            i += bits[i] + 1;
+        }
+        return i == n - 1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/IsOneBitCharacter.java:15: error: <identifier> expected
+          @*/
+           ^
+1 error
+

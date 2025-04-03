@@ -1,0 +1,192 @@
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 <= left && left <= right && right < n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 <= left && left <= right && right < n;
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 < left && left < right && right < n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 < left && left < right && right < n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 < left && left < right && right <= n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 < left && left < right && right <= n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 < left && left <= right && right < n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 < left && left <= right && right < n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 < left && left <= right && right <= n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 < left && left <= right && right <= n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 < left && left - 1 <= right && right < n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 < left && left - 1 <= right && right < n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 < left && left - 1 <= right && right <= n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 < left && left - 1 <= right && right <= n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 <= left && left < right && right < n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/ReverseString.java:7: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method reverseString
+        //@ maintaining 0 <= left && left < right && right < n;  
+            ^
+1 verification failure
+
+class ReverseString {
+    //@ requires s != null;
+    //@ requires s.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < s.length; s[i] == \old(s[s.length - 1 - i]));
+    public void reverseString(char[] s) {
+        int n = s.length;
+        //@ maintaining 0 <= left && left < right && right <= n;  
+        //@ maintaining (\forall int i; 0 <= i && i < left; s[i] == \old(s[s.length - 1 - i]));
+        //@ decreases right - left;
+        for (int left = 0, right = n - 1; left < right; ++left, --right) {
+            char tmp = s[left];
+            s[left] = s[right];
+            s[right] = tmp;
+        }
+    }
+}
+

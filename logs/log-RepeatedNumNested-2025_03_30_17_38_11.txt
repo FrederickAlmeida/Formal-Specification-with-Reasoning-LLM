@@ -1,0 +1,1231 @@
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int j; i + 1 <= j && j < arr.length; arr[i] != arr[j]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+    
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: error: variable j is already defined in method repeatedNum(int[])
+            //@ maintaining (\forall int j; i + 1 <= j && j < arr.length; arr[i] != arr[j]);
+                                         ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+    
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:11: verify: The prover cannot establish an assertion (LoopDecreases) in method repeatedNum
+            //@ decreases arr.length - i;
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i; // This line is correct but may need to be adjusted in context
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                //@ maintaining arr[i] != arr[j];
+                //@ decreases arr.length - j; // Decreases based on the inner loop index
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+    
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                //@ decreases arr.length - j;
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+    
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                //@ decreases arr.length - j;
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                if(arr[i] == arr[j])
+                    return i;
+            }
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 < j && j < arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 < j && j < arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 < j && j <= arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 < j && j <= arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j < arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j < arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 <= j && j <= arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 <= j && j <= arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 - 1 <= j && j < arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 - 1 <= j && j < arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i + 1 - 1 <= j && j <= arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i + 1 - 1 <= j && j <= arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i - 1 < j && j < arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i - 1 < j && j < arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i - 1 < j && j <= arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i - 1 < j && j <= arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i - 1 <= j && j < arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i - 1 <= j && j < arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i - 1 <= j && j <= arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i - 1 <= j && j <= arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i - 1 - 1 <= j && j < arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i - 1 - 1 <= j && j < arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+                //@ maintaining i - 1 - 1 <= j && j <= arr.length;  
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:13: error: Loop specifications must immediately precede a loop statement
+                //@ maintaining i - 1 - 1 <= j && j <= arr.length;  
+                    ^
+1 error
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:11: verify: The prover cannot establish an assertion (LoopDecreases) in method repeatedNum
+            //@ decreases arr.length - i;
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length - i;  
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:11: verify: The prover cannot establish an assertion (LoopDecreases) in method repeatedNum
+            //@ decreases arr.length - i;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+            //@ decreases arr.length + i;  
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:11: verify: The prover cannot establish an assertion (LoopDecreases) in method repeatedNum
+            //@ decreases arr.length + i;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 < k && k < arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 < k && k < arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 < k && k <= arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 < k && k <= arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 - 1 <= k && k < arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 - 1 <= k && k < arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\forall int k; i + 1 - 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\forall int k; i + 1 - 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\exists int k; i + 1 < k && k < arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\exists int k; i + 1 < k && k < arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\exists int k; i + 1 < k && k <= arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\exists int k; i + 1 < k && k <= arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\exists int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\exists int k; i + 1 <= k && k < arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\exists int k; i + 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\exists int k; i + 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\exists int k; i + 1 - 1 <= k && k < arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\exists int k; i + 1 - 1 <= k && k < arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+            //@ maintaining (\exists int k; i + 1 - 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:10: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining (\exists int k; i + 1 - 1 <= k && k <= arr.length; arr[i] != arr[k]);  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 <= i && i < arr.length;
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 < i && i < arr.length;  
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 < i && i < arr.length;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 < i && i <= arr.length;  
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 < i && i <= arr.length;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i < arr.length;  
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 <= i && i < arr.length;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 <= i && i <= arr.length;  
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 <= i && i <= arr.length;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 - 1 <= i && i < arr.length;  
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 - 1 <= i && i < arr.length;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            //@ maintaining 0 - 1 <= i && i <= arr.length;  
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:9: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method repeatedNum
+            //@ maintaining 0 - 1 <= i && i <= arr.length;  
+                ^
+1 verification failure
+
+public class RepeatedNumNested {
+
+    //@ requires arr != null;
+    //@ requires 0 <= arr.length && arr.length <= Integer.MAX_VALUE;
+    //@ ensures \result == -1 || (0 <= \result && \result < arr.length && (\exists int k; 0 <= k && k < arr.length; arr[\result] == arr[k] && k != \result));
+    //@ ensures \result == -1 ==> (\forall int i; 0 <= i && i < arr.length; (\forall int j; i < j && j < arr.length; arr[i] != arr[j]));
+    public static int repeatedNum(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+ 
+ 
+ 
+            for (int j = i + 1; j < arr.length; ++j) {
+ 
+                if (arr[i] == arr[j]) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/RepeatedNumNested.java:14: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method repeatedNum
+                if (arr[i] == arr[j]) {
+                       ^
+1 verification failure
+

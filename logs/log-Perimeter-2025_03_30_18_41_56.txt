@@ -1,0 +1,51 @@
+public class Perimeter {   
+
+    //@ ensures \result == 4 * (long)x;
+    //@ requires -32768 <= x && x <= 32767; // Valid range for short
+    long Perimeter(short x) {
+        long squarePerimeter = 4 * (long)x;
+        return squarePerimeter;
+    }
+
+    //@ ensures \result == 5 * (long)x;
+    //@ requires Integer.MIN_VALUE <= x && x <= Integer.MAX_VALUE; // Valid range for int
+    long Perimeter(int x) {
+        long pentagonPerimeter = 5 * (long)x;
+        return pentagonPerimeter;
+    }
+
+    //@ ensures \result == 6 * x;
+    //@ requires Long.MIN_VALUE <= x && x <= Long.MAX_VALUE; // Valid range for long
+    long Perimeter(long x) {
+        long hexagonalPerimeter = 6 * x;
+        return hexagonalPerimeter;
+    }
+
+    //@ ensures \result == 2 * ((long)x + (long)y);
+    //@ requires Integer.MIN_VALUE <= x && x <= Integer.MAX_VALUE; // Valid range for int
+    //@ requires Integer.MIN_VALUE <= y && y <= Integer.MAX_VALUE; // Valid range for int
+    long Perimeter(int x, int y) {
+        long perimeterRectangle = 2 * ((long)x + (long)y);
+        return perimeterRectangle;
+    }
+
+    //@ ensures \result == (long)x + (long)y + (long)z;
+    //@ requires Integer.MIN_VALUE <= x && x <= Integer.MAX_VALUE; // Valid range for int
+    //@ requires Integer.MIN_VALUE <= y && y <= Integer.MAX_VALUE; // Valid range for int
+    //@ requires Integer.MIN_VALUE <= z && z <= Integer.MAX_VALUE; // Valid range for int
+    long Perimeter(int x, int y, int z) {
+        long trianglePerimeter = (long)x + (long)y + (long)z;
+        return trianglePerimeter;
+    }
+
+    //@ ensures \result == (long)w + (long)x + (long)y + (long)z;
+    //@ requires Integer.MIN_VALUE <= w && w <= Integer.MAX_VALUE; // Valid range for int
+    //@ requires Integer.MIN_VALUE <= x && x <= Integer.MAX_VALUE; // Valid range for int
+    //@ requires Integer.MIN_VALUE <= y && y <= Integer.MAX_VALUE; // Valid range for int
+    //@ requires Integer.MIN_VALUE <= z && z <= Integer.MAX_VALUE; // Valid range for int
+    long Perimeter(int w, int x, int y, int z) {
+        long trapeziumPerimeter = (long)w + (long)x + (long)y + (long)z;
+        return trapeziumPerimeter;
+    }
+}
+
