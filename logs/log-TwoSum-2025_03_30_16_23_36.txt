@@ -1,0 +1,320 @@
+class TwoSum {
+    //@ requires nums != null;
+    //@ requires \forall int i; 0 <= i && i < nums.length; nums[i] != null; // Assuming nums is an array of integers
+    //@ ensures \result.length == 0 <==> (\forall int i; 0 <= i && i < nums.length; 
+    //    (\forall int j; i < j && j < nums.length; nums[i] + nums[j] != target));
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+    //    0 <= \result[1] && \result[1] < n && 
+    //    nums[\result[0]] + nums[\result[1]] == target);
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        //@ maintaining 0 <= i && i <= n;
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+        //    (\exists int m; k < m && m < n; nums[k] + nums[m] == target) ==> \result.length == 0);
+        for (int i = 0; i < n; ++i) {
+            //@ maintaining i < n;
+            //@ maintaining (\forall int k; 0 <= k && k < i; 
+            //    (\exists int m; k < m && m < n; nums[k] + nums[m] == target) ==> \result.length == 0);
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ')' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \result is not a type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ';' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \result is not a type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ']' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \result is not a type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                                                            ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ']' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                                                                    ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: > expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                                                                          ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: illegal start of type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < n && 
+                                                                           ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:12: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:12: error: ')' expected
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:16: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+            //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:16: error: ')' expected
+            //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                            ^
+14 errors
+
+class TwoSum {
+    //@ requires nums != null;
+    //@ requires \forall int i; 0 <= i && i < nums.length; nums[i] != null; // Assuming nums is an array of integers
+    //@ ensures \result.length == 0 <==> (\forall int i; 0 <= i && i < nums.length; 
+    //    (\forall int j; i < j && j < nums.length; nums[i] + nums[j] != target));
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+    //    0 <= \result[1] && \result[1] < nums.length && 
+    //    nums[\result[0]] + nums[\result[1]] == target);
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        //@ maintaining 0 <= i && i <= n;
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+        //    (\exists int m; k < m && m < n; nums[k] + nums[m] == target) ==> \result.length == 0);
+        for (int i = 0; i < n; ++i) {
+            //@ maintaining i < n;
+            //@ maintaining (\forall int k; 0 <= k && k < i; 
+            //    (\exists int m; k < m && m < n; nums[k] + nums[m] == target) ==> \result.length == 0);
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ')' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \result is not a type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ';' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \result is not a type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ']' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \result is not a type
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                                                            ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: ']' expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                                                                    ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: > expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                                                                             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+    //@ ensures \result.length == 2 ==> (0 <= \result[0] && \result[0] < nums.length && 
+                                                                                    ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:12: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:12: error: ')' expected
+        //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:16: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+            //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:16: error: ')' expected
+            //@ maintaining (\forall int k; 0 <= k && k < i; 
+                                                            ^
+14 errors
+
+class TwoSum {
+    /*@
+      @ requires nums != null;
+      @ requires nums.length >= 2; // At least two elements are needed to find a pair
+      @ ensures (\result.length == 0) <==> 
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+      @         nums[i] + nums[j] != target);
+      @ ensures (\result.length == 2) ==> 
+      @     (0 <= \result[0] && \result[0] < nums.length && 
+      @      0 <= \result[1] && \result[1] < nums.length && 
+      @      nums[\result[0]] + nums[\result[1]] == target);
+      @ ensures (\result.length == 2) ==> 
+      @     (\result[0] != \result[1]); // Ensure the indices are different
+      @*/
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:19: verify: The prover cannot establish an assertion (PossiblyNegativeIndex) in method twoSum
+                if (nums[i] + nums[j] == target) {
+                        ^
+1 verification failure
+
+class TwoSum {
+    /*@
+      @ requires nums != null;
+      @ requires nums.length >= 2; // At least two elements are needed to find a pair
+      @ ensures (\result.length == 0) <==> 
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+      @         nums[i] + nums[j] != target);
+      @ ensures (\result.length == 2) ==> 
+      @     (0 <= \result[0] && \result[0] < nums.length && 
+      @      0 <= \result[1] && \result[1] < nums.length && 
+      @      nums[\result[0]] + nums[\result[1]] == target);
+      @ ensures (\result.length == 2) ==> 
+      @     (\result[0] != \result[1]); // Ensure the indices are different
+      @*/
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            //@ assume 0 <= i && i < n; // Ensure i is a valid index
+            for (int j = i + 1; j < n; ++j) {
+                //@ assume 0 <= j && j < n; // Ensure j is a valid index
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:22: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:5:) in method twoSum
+                    return new int[]{i, j};
+                    ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:22:
+      @ ensures (\result.length == 0) <==> 
+        ^
+2 verification failures
+
+class TwoSum {
+    /*@
+      @ requires nums != null;
+      @ requires nums.length >= 2; // At least two elements are needed to find a pair
+      @ ensures (\result.length == 0) <==>   
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+      @         nums[i] + nums[j] != target);
+      @ ensures (\result.length == 2) ==> 
+      @     (0 <= \result[0] && \result[0] < nums.length && 
+      @      0 <= \result[1] && \result[1] < nums.length && 
+      @      nums[\result[0]] + nums[\result[1]] == target);
+      @ ensures (\result.length == 2) ==> 
+      @     (\result[0] != \result[1]); // Ensure the indices are different
+      @*/
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            //@ assume 0 <= i && i < n; // Ensure i is a valid index
+            for (int j = i + 1; j < n; ++j) {
+                //@ assume 0 <= j && j < n; // Ensure j is a valid index
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:22: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:5:) in method twoSum
+                    return new int[]{i, j};
+                    ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:22:
+      @ ensures (\result.length == 0) <==>   
+        ^
+2 verification failures
+
+class TwoSum {
+    /*@
+      @ requires nums != null;
+      @ requires nums.length >= 2; // At least two elements are needed to find a pair
+ 
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+      @         nums[i] + nums[j] != target);
+      @ ensures (\result.length == 2) ==> 
+      @     (0 <= \result[0] && \result[0] < nums.length && 
+      @      0 <= \result[1] && \result[1] < nums.length && 
+      @      nums[\result[0]] + nums[\result[1]] == target);
+      @ ensures (\result.length == 2) ==> 
+      @     (\result[0] != \result[1]); // Ensure the indices are different
+      @*/
+    public int[] twoSum(int[] nums, int target) {
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            //@ assume 0 <= i && i < n; // Ensure i is a valid index
+            for (int j = i + 1; j < n; ++j) {
+                //@ assume 0 <= j && j < n; // Ensure j is a valid index
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[0];
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: illegal start of type
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+            ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: Token \forall is not a type
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: illegal start of type
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                                     ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: > expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                                                                  ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: > expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                                                                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                                                                                          ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:6: error: <identifier> expected
+      @     (\forall int i, j; 0 <= i && i < nums.length && 0 <= j && j < nums.length && i != j; 
+                                                                                               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:7: error: ']' expected
+      @         nums[i] + nums[j] != target);
+                     ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:7: error: ';' expected
+      @         nums[i] + nums[j] != target);
+                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:7: error: ']' expected
+      @         nums[i] + nums[j] != target);
+                               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:7: error: ';' expected
+      @         nums[i] + nums[j] != target);
+                                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TwoSum.java:7: error: <identifier> expected
+      @         nums[i] + nums[j] != target);
+                                           ^
+15 errors
+

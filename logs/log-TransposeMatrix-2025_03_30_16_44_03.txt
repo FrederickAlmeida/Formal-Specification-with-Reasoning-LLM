@@ -1,0 +1,375 @@
+public class TransposeMatrix {
+ 
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m, n;
+        m = matrix.length;
+        n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ maintaining 0 <= c && c <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ maintaining 0 <= d && d <= m;
+            //@ maintaining (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c];
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                    ^
+  symbol:   variable j
+  location: class TransposeMatrix
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                         ^
+  symbol:   variable j
+  location: class TransposeMatrix
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                                                       ^
+  symbol:   variable j
+  location: class TransposeMatrix
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                                                                          ^
+  symbol:   variable j
+  location: class TransposeMatrix
+4 errors
+
+public class TransposeMatrix {
+ 
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m, n;
+        m = matrix.length;
+        n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ maintaining 0 <= c && c <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ maintaining 0 <= d && d <= m;
+            //@ maintaining (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c];
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                    ^
+  symbol:   variable j
+  location: class TransposeMatrix
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                         ^
+  symbol:   variable j
+  location: class TransposeMatrix
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                                                       ^
+  symbol:   variable j
+  location: class TransposeMatrix
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:9: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length && 0 <= j && j < matrix[0].length; \result[j][i] == matrix[i][j]);
+                                                                                                                          ^
+  symbol:   variable j
+  location: class TransposeMatrix
+4 errors
+
+public class TransposeMatrix {
+ 
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m, n;
+        m = matrix.length;
+        n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ maintaining 0 <= c && c <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ maintaining 0 <= d && d <= m;
+            //@ maintaining (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c];
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:24: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c];
+                          ^
+  Reason: Double rewriting of ident: c c_983_983___27 c_983_997___33
+1 error
+
+public class TransposeMatrix {
+ 
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ loop_invariant 0 <= c && c <= n;
+        //@ loop_invariant (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ loop_invariant 0 <= d && d <= m;
+            //@ loop_invariant (\forall int i; 0 <= i && i < c; (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c];
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:23: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c];
+                          ^
+  Reason: Double rewriting of ident: c c_979_979___25 c_979_993___31
+1 error
+
+public class TransposeMatrix {
+ 
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ loop_invariant 0 <= c && c <= n;
+        //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+        //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ loop_invariant 0 <= d && d <= m;
+            //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+            //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c];
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c];
+                          ^
+  Reason: Double rewriting of ident: c c_1009_1009___25 c_1009_1023___31
+1 error
+
+public class TransposeMatrix {
+
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ loop_invariant 0 <= c && c <= n;
+        //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+        //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ loop_invariant 0 <= d && d <= m;
+            //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+            //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c]; // Ensure correct assignment
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c]; // Ensure correct assignment
+                          ^
+  Reason: Double rewriting of ident: c c_1008_1008___25 c_1008_1022___31
+1 error
+
+public class TransposeMatrix {
+
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ loop_invariant 0 <= c && c <= n;
+        //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+        //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ loop_invariant 0 <= d && d <= m;
+            //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+            //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c]; // Ensure correct assignment
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c]; // Ensure correct assignment
+                          ^
+  Reason: Double rewriting of ident: c c_1008_1008___25 c_1008_1022___31
+1 error
+
+public class TransposeMatrix {
+
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        //@ loop_invariant 0 <= c && c < n;
+        //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+        //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+        for (int c = 0; c < n; c++) {
+            //@ loop_invariant 0 <= d && d < m;
+            //@ loop_invariant (\forall int i; 0 <= i && i < c; 
+            //@                  (\forall int j; 0 <= j && j < m; transpose[i][j] == matrix[j][i]));
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c]; // Ensure correct assignment
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:25: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c]; // Ensure correct assignment
+                          ^
+  Reason: Double rewriting of ident: c c_1007_1007___25 c_1007_1021___31
+1 error
+
+public class TransposeMatrix {
+
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        // Loop through each column of the original matrix
+        for (int c = 0; c < n; c++) {
+            // Loop through each row of the original matrix
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c]; // Assign transposed values
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:21: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c]; // Assign transposed values
+                          ^
+  Reason: Double rewriting of ident: c c_864_864___26 c_864_878___29
+1 error
+
+public class TransposeMatrix {
+
+    //@ requires matrix != null;
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; matrix[i] != null);
+    //@ requires (\forall int i; 0 <= i && i < matrix.length; (\forall int j; 0 <= j && j < matrix[i].length; true));
+    //@ ensures \result != null;
+    //@ ensures \result.length == matrix[0].length;
+    //@ ensures (\forall int i; 0 <= i && i < matrix[0].length; \result[i].length == matrix.length);
+    //@ ensures (\forall int i; 0 <= i && i < matrix.length; 
+    //@           \forall int j; 0 <= j && j < matrix[i].length; 
+    //@           \result[j][i] == matrix[i][j]);
+    public int[][] transposeMat(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] transpose = new int[n][m];
+
+        // Loop through each column of the original matrix
+        for (int c = 0; c < n; c++) {
+            // Loop through each row of the original matrix
+            for (int d = 0; d < m; d++) {
+                transpose[c][d] = matrix[d][c]; // Assign transposed values
+            }
+        }
+        return transpose;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/TransposeMatrix.java:21: error: A catastrophic JML internal error occurred.  Please report the bug with as much information as you can.
+                transpose[c][d] = matrix[d][c]; // Assign transposed values
+                          ^
+  Reason: Double rewriting of ident: c c_864_864___26 c_864_878___29
+1 error
+

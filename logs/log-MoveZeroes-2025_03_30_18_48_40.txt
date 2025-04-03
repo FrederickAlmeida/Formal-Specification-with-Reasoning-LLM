@@ -1,0 +1,429 @@
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < nums.length; nums[j] != 0 ==> nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; nums[i] != 0);
+        //@ maintaining (\forall int i; left <= i && i < right; nums[i] == 0);
+        //@ maintaining (\forall int i; right <= i && i < n; nums[i] == \old(nums[i]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+1 error
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < nums.length; nums[j] != 0 ==> nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; nums[i] != 0);
+        //@ maintaining (\forall int i; left <= i && i < right; nums[i] == 0);
+        //@ maintaining (\forall int i; right <= i && i < n; nums[i] == \old(nums[i]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+2 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\forall int j; 0 <= j && j < nums.length; nums[j] == \old(nums[j]) || nums[j] == 0);
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; nums[i] != 0);
+        //@ maintaining (\forall int i; left <= i && i < right; nums[i] == 0);
+        //@ maintaining (\forall int i; right <= i && i < n; nums[i] == \old(nums[i]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+2 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < nums.length; j < i ==> nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; nums[i] != 0);
+        //@ maintaining (\forall int i; left <= i && i < right; nums[i] == 0);
+        //@ maintaining (\forall int i; right <= i && i < n; nums[i] == \old(nums[i]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < nums.length; j < i ==> nums[j] == \old(nums[j]));
+                                                                                                                            ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+3 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; nums[i] != 0);
+        //@ maintaining (\forall int i; left <= i && i < right; nums[i] == 0);
+        //@ maintaining (\forall int i; right <= i && i < n; nums[i] == \old(nums[i]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+                                                                                                           ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+3 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int k; 0 <= k && k < left; nums[k] != 0);
+        //@ maintaining (\forall int k; left <= k && k < right; nums[k] == 0);
+        //@ maintaining (\forall int k; right <= k && k < n; nums[k] == \old(nums[k]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+                                                                                                           ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+3 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; 0 <= m && m < k; nums[m] == \old(nums[m]));
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] != 0) ==> (\exists int m; 0 <= m && m < nums.length; nums[m] == \old(nums[k]));
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; k <= m && m < nums.length; nums[m] == \old(nums[m]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int k; 0 <= k && k < left; nums[k] != 0);
+        //@ maintaining (\forall int k; left <= k && k < right; nums[k] == 0);
+        //@ maintaining (\forall int k; right <= k && k < n; nums[k] == \old(nums[k]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; 0 <= m && m < k; nums[m] == \old(nums[m]));
+                                                                                                           ^
+  symbol:   variable k
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] != 0) ==> (\exists int m; 0 <= m && m < nums.length; nums[m] == \old(nums[k]));
+                                                                                                                                             ^
+  symbol:   variable k
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; k <= m && m < nums.length; nums[m] == \old(nums[m]));
+                                                                                             ^
+  symbol:   variable k
+  location: class MoveZeroes
+3 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < left; nums[i] != 0);
+        //@ maintaining (\forall int i; left <= i && i < right; nums[i] == 0);
+        //@ maintaining (\forall int i; right <= i && i < n; nums[i] == \old(nums[i]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+                                                                                                           ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+3 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; 0 <= m && m < k; nums[m] == \old(nums[m]));
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] != 0) ==> (\exists int m; 0 <= m && m < nums.length; nums[m] == \old(nums[k]));
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; k <= m && m < nums.length; nums[m] == \old(nums[m]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int j; 0 <= j && j < left; nums[j] != 0);
+        //@ maintaining (\forall int j; left <= j && j < right; nums[j] == 0);
+        //@ maintaining (\forall int j; right <= j && j < n; nums[j] == \old(nums[j]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; 0 <= m && m < k; nums[m] == \old(nums[m]));
+                                                                                                           ^
+  symbol:   variable k
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] != 0) ==> (\exists int m; 0 <= m && m < nums.length; nums[m] == \old(nums[k]));
+                                                                                                                                             ^
+  symbol:   variable k
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int k; 0 <= k && k < nums.length; nums[k] == 0) ==> (\forall int m; k <= m && m < nums.length; nums[m] == \old(nums[m]));
+                                                                                             ^
+  symbol:   variable k
+  location: class MoveZeroes
+3 errors
+
+class MoveZeroes {
+    //@ requires nums != null && nums.length >= 0;
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+    public void moveZeroes(int[] nums) {
+        int n = nums.length, left = 0, right = 0;
+        //@ maintaining 0 <= left && left <= right && right <= n;
+        //@ maintaining (\forall int j; 0 <= j && j < left; nums[j] != 0);
+        //@ maintaining (\forall int j; left <= j && j < right; nums[j] == 0);
+        //@ maintaining (\forall int j; right <= j && j < n; nums[j] == \old(nums[j]));
+        while (right < n) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
+    //@ requires nums != null && 0 <= left && left < nums.length && 0 <= right && right < nums.length;
+    //@ ensures nums[left] == \old(nums[right]) && nums[right] == \old(nums[left]);
+    public void swap(int[] nums, int left, int right) {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:3: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; 0 <= j && j < i; nums[j] == \old(nums[j]));
+                                                                                                           ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:4: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] != 0) ==> (\exists int j; 0 <= j && j < nums.length; nums[j] == \old(nums[i]));
+                                                                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/MoveZeroes.java:5: error: cannot find symbol
+    //@ ensures (\forall int i; 0 <= i && i < nums.length; nums[i] == 0) ==> (\forall int j; i <= j && j < nums.length; nums[j] == \old(nums[j]));
+                                                                                             ^
+  symbol:   variable i
+  location: class MoveZeroes
+3 errors
+

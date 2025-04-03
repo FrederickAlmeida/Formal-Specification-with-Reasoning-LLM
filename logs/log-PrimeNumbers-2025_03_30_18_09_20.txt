@@ -1,0 +1,602 @@
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < \result.length; \result[i] > 1 && \forall int j; 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+    //@ ensures \result[0] == 2;
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1 && \forall int j; 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures \result[0] == 2;
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \result[0] == 2;
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ']' expected
+    //@ ensures \result[0] == 2;
+                        ^
+3 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < \result.length; \result[i] > 1 && \forall int j; 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+    //@ ensures \result[0] == 2;
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1 && \forall int j; 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures \result[0] == 2;
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \result[0] == 2;
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ']' expected
+    //@ ensures \result[0] == 2;
+                        ^
+3 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < \result.length; \result[i] > 1 && \forall int j; 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+    //@ ensures \result[0] == 2;
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1 && \forall int j; 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures \result[0] == 2;
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \result[0] == 2;
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ']' expected
+    //@ ensures \result[0] == 2;
+                        ^
+3 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < \result.length; \result[i] > 1 && \forall int j; 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1 && \forall int j; 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures \result[0] == 2; // The first prime number is 2
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \result[0] == 2; // The first prime number is 2
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ']' expected
+    //@ ensures \result[0] == 2; // The first prime number is 2
+                        ^
+3 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < \result.length; \result[i] > 1;
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        primeArray = new int[n];
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1 && \forall int j; 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:7: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures \result[0] == 2; // The first prime number is 2
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:7: error: Token \result is not a type
+    //@ ensures \result[0] == 2; // The first prime number is 2
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:7: error: ']' expected
+    //@ ensures \result[0] == 2; // The first prime number is 2
+                        ^
+3 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures \forall int i; 0 <= i && i < \result.length ==> \result[i] > 1;
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        int[] primeArray = new int[n]; // Declare the array here
+        primeArray[0] = 2;
+
+        //@ maintaining 2 <= count && count <= n;
+        //@ maintaining (\forall int i; 0 <= i && i < count; primeArray[i] > 1 && \forall int j; 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Incorrectly formed or terminated ensures statement near here -- perhaps a missing semicolon
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \forall is not a type
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ';' expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: illegal start of type
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                  ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: <identifier> expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ';' expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: <identifier> expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: <identifier> expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: <identifier> expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                             ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                 ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ']' expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: <identifier> expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                          ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: invalid method declaration; return type required
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                                     ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: Token \result is not a type
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: ']' expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                                                 ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: <identifier> expected
+    //@ ensures \forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j);
+                                                                                                                      ^
+17 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length ==> \result[i] > 1);
+    //@ ensures (\forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j));
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        int[] primeArray = new int[n]; // Declare the array here
+        primeArray[0] = 2;
+
+        //@ maintaining (2 <= count && count <= n);
+        //@ maintaining (\forall int i; 0 <= i && i < count ==> primeArray[i] > 1);
+        //@ maintaining (\forall int i, j; 0 <= i && i < count && 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    private static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:6: error: An identifier with private visibility may not be used in a ensures clause with public visibility
+    //@ ensures (\forall int i, j; 0 <= i && i < \result.length && 2 <= j && j <= \result[i] / 2 ==> !div(\result[i], j));
+                                                                                                      ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:16: error: variable j is already defined in method primeList(int)
+        //@ maintaining (\forall int i, j; 0 <= i && i < count && 2 <= j && j <= primeArray[i] / 2 ==> !div(primeArray[i], j));
+                                        ^
+2 errors
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length ==> \result[i] > 1);
+    //@ ensures (\forall int i, k; 0 <= i && i < \result.length && 2 <= k && k <= \result[i] / 2 ==> !div(\result[i], k));
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        int[] primeArray = new int[n]; // Declare the array here
+        primeArray[0] = 2;
+
+        //@ maintaining (2 <= count && count <= n);
+        //@ maintaining (\forall int i; 0 <= i && i < count ==> primeArray[i] > 1);
+        //@ maintaining (\forall int i, k; 0 <= i && i < count && 2 <= k && k <= primeArray[i] / 2 ==> !div(primeArray[i], k));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    public static boolean div(int n, int d) { return n % d == 0; }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:15: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method primeList
+        //@ maintaining (\forall int i; 0 <= i && i < count ==> primeArray[i] > 1);
+            ^
+1 verification failure
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length ==> \result[i] > 1);
+    //@ ensures (\forall int i, k; 0 <= i && i < \result.length && 2 <= k && k <= \result[i] / 2 ==> !div(\result[i], k));
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        int[] primeArray = new int[n]; // Declare the array here
+        primeArray[0] = 2;
+
+        //@ maintaining (2 <= count && count <= n);
+        //@ maintaining (\forall int i; 0 < i && i < count ==> primeArray[i] > 1);  
+        //@ maintaining (\forall int i, k; 0 <= i && i < count && 2 <= k && k <= primeArray[i] / 2 ==> !div(primeArray[i], k));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    public static boolean div(int n, int d) { return n % d == 0; }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:15: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method primeList
+        //@ maintaining (\forall int i; 0 < i && i < count ==> primeArray[i] > 1);  
+            ^
+1 verification failure
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length ==> \result[i] > 1);
+    //@ ensures (\forall int i, k; 0 <= i && i < \result.length && 2 <= k && k <= \result[i] / 2 ==> !div(\result[i], k));
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        int[] primeArray = new int[n]; // Declare the array here
+        primeArray[0] = 2;
+
+        //@ maintaining (2 <= count && count <= n);
+        //@ maintaining (\forall int i; 0 < i && i < count ==> primeArray[i] >= 1);  
+        //@ maintaining (\forall int i, k; 0 <= i && i < count && 2 <= k && k <= primeArray[i] / 2 ==> !div(primeArray[i], k));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    public static boolean div(int n, int d) { return n % d == 0; }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:15: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method primeList
+        //@ maintaining (\forall int i; 0 < i && i < count ==> primeArray[i] >= 1);  
+            ^
+1 verification failure
+
+public class PrimeNumbers
+{
+    //@ requires n > 0;
+    //@ ensures \result.length == n;
+    //@ ensures (\forall int i; 0 <= i && i < \result.length ==> \result[i] > 1);
+    //@ ensures (\forall int i, k; 0 <= i && i < \result.length && 2 <= k && k <= \result[i] / 2 ==> !div(\result[i], k));
+    //@ ensures \result[0] == 2; // The first prime number is 2
+    public int[] primeList(int n)
+    {
+        int status = 1, num = 3, count, j;
+        int[] primeArray = new int[n]; // Declare the array here
+        primeArray[0] = 2;
+
+        //@ maintaining (2 <= count && count <= n);
+        //@ maintaining (\forall int i; 0 < i && i <= count ==> primeArray[i] > 1);  
+        //@ maintaining (\forall int i, k; 0 <= i && i < count && 2 <= k && k <= primeArray[i] / 2 ==> !div(primeArray[i], k));
+        //@ decreases n - count;
+        for (count = 2; count <= n;)
+        { 
+            for (j = 2; j <= num / 2; j++)
+            { 
+                if (div(num, j))
+                {
+                    status = 0;
+                    break;
+                }
+            }
+
+            if (status != 0)
+            {  
+                primeArray[count - 1] = num;
+                count++;
+            }
+            status = 1;
+            num++;
+        } 
+        return primeArray; 
+    }
+
+    //@ requires n >= 0 && d > 0;
+    //@ ensures \result == (n % d == 0);
+    public static boolean div(int n, int d) { return n % d == 0; }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/PrimeNumbers.java:15: verify: The prover cannot establish an assertion (LoopInvariantBeforeLoop) in method primeList
+        //@ maintaining (\forall int i; 0 < i && i <= count ==> primeArray[i] > 1);  
+            ^
+1 verification failure
+

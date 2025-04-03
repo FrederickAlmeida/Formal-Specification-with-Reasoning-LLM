@@ -1,0 +1,319 @@
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 <= i && i < \result.length; 
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 <= i && i < \result.length; 
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 < i && i < \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 < i && i < \result.length;   
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 < i && i <= \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 < i && i <= \result.length;   
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 <= i && i < \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 <= i && i < \result.length;   
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 <= i && i <= \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 <= i && i <= \result.length;   
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 - 1 <= i && i < \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 - 1 <= i && i < \result.length;   
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \forall int i; 0 - 1 <= i && i <= \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \forall int i; 0 - 1 <= i && i <= \result.length;   
+        ^
+2 verification failures
+
+class NextGreaterElem {
+    /*@ requires nums1 != null && nums2 != null;
+      @ requires (\forall int i; 0 <= i && i < nums1.length; \exists int j; 0 <= j && j < nums2.length; nums1[i] == nums2[j]);
+      @ ensures \result.length == nums1.length;
+      @ ensures \exists int i; 0 < i && i < \result.length;   
+      @         (\result[i] == -1 <==> 
+      @         (\forall int j; 0 <= j && j < nums2.length; nums2[j] != nums1[i] && nums2[j] < nums2[nums2.length - 1]) 
+      @         || (\exists int k; 0 <= k && k < nums2.length; nums2[k] == nums1[i] ==> 
+      @         (\exists int l; k < l && l < nums2.length; nums2[l] > nums2[k])));
+      @*/
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int m = nums1.length, n = nums2.length;
+        int[] res = new int[m];
+        for (int i = 0; i < m; ++i) {
+            int j = 0;
+            //@ maintaining 0 <= j && j <= n; 
+            //@ decreases n - j;
+            while (j < n && nums2[j] != nums1[i]) {
+                ++j;
+            }
+            int k = j + 1;
+            //@ maintaining j < n && k <= n;
+            //@ decreases n - k;
+            while (k < n && nums2[k] < nums2[j]) {
+                ++k;
+            }
+            res[i] = k < n ? nums2[k] : -1;
+        }
+        return res;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29: verify: The prover cannot establish an assertion (Postcondition: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5:) in method nextGreaterElement
+        return res;
+        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:5: verify: Associated declaration: /home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/NextGreaterElem.java:29:
+      @ ensures \exists int i; 0 < i && i < \result.length;   
+        ^
+2 verification failures
+

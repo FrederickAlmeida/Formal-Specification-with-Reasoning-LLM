@@ -1,0 +1,559 @@
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break;
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The value expression of a sum or product expression must be a numeric type, not boolean
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)));
+                                                                       ^
+1 error
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break;
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break;
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break;
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: Token \result is not a type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ';' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: Token \sum is not a type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                            ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ';' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: illegal start of type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: <identifier> expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: > expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                                                   ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: illegal start of type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: <identifier> expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                                                                     ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ';' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); (stones.charAt(i) == jewels.charAt(j) ? 1 : 0));
+                                                                                        ^
+11 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break;
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          (stones.charAt(i) == \exists int j; 0 <= j && j < jewels.length(); (stones.charAt(i) == jewels.charAt(j)) ? 1 : 0));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          (stones.charAt(i) == \exists int j; 0 <= j && j < jewels.length(); jewels.charAt(j) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+               ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: Token \result is not a type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ';' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: Token \sum is not a type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                            ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: ';' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: illegal start of type
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                        ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: <identifier> expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:7: error: > expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                   ^
+8 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                       ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i < stones.length(); 
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 < i && i <= stones.length();   
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 < i && i <= stones.length();   
+                                                                         ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 < i && i <= stones.length();   
+                                                                      ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 <= i && i <= stones.length();   
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 <= i && i <= stones.length();   
+                                                                          ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 <= i && i <= stones.length();   
+                                                                       ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= stones.length();   
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: The type or expression near here is invalid (or not implemented): ( token ? in JmlParser.term3())
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= stones.length();   
+                                                                              ^
+/home/CIN/igbt/Desktop/neymar/Formal-Specification-with-Reasoning-LLM/tmp/JewelsInStones.java:5: error: ')' expected
+    //@ ensures \result == (\sum int i; 0 - 1 <= i && i <= stones.length();   
+                                                                           ^
+2 errors
+
+class JewelsInStones {
+    //@ requires jewels != null && stones != null;
+    //@ requires jewels.length() <= 100 && stones.length() <= 100;
+    //@ ensures \result >= 0;
+ 
+    //          ( (\exists int j; 0 <= j && j < jewels.length(); stones.charAt(i) == jewels.charAt(j)) ? 1 : 0 ));
+    public int numJewelsInStones(String jewels, String stones) {
+        int jewelsCount = 0;
+        int jewelsLength = jewels.length(), stonesLength = stones.length();
+        
+        //@ maintaining 0 <= i && i <= stonesLength;
+        //@ maintaining jewelsCount >= 0;
+        //@ decreases stonesLength - i;
+        for (int i = 0; i < stonesLength; i++) {
+            char stone = stones.charAt(i);
+            //@ maintaining 0 <= j && j <= jewelsLength;
+            //@ maintaining jewelsCount >= 0;
+            //@ decreases jewelsLength - j;
+            for (int j = 0; j < jewelsLength; j++) {
+                char jewel = jewels.charAt(j);
+                if (stone == jewel) {
+                    jewelsCount++;
+                    break; // No need to check further jewels for this stone
+                }
+            }
+        }
+        return jewelsCount;
+    }
+}
+
+
